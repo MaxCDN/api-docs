@@ -1,0 +1,8 @@
+{
+  "plugins": [ "./node_modules/wintersmith-less" ],
+  "locals": {
+    "url": "http://docs.maxcdn.com",
+    "name": "MaxCDN API Docs",
+    "owner": "MaxCDN"
+  }
+}

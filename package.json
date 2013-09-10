@@ -1,0 +1,34 @@
+{
+  "name": "maxcdn-api-docs",
+  "description": "API docs built with Wintersmith and Node",
+  "version": "0.0.2",
+  "author": "Nick Baugh <niftylettuce@gmail.com>",
+  "contributors": [
+    {
+      "name": "Nick Baugh, Justin Dorfman",
+      "email": "niftylettuce@gmail.com, jdorfman@maxcdn.com"
+    }
+  ],
+  "keywords": [
+    "netdna",
+    "maxcdn",
+    "api",
+    "docs",
+    "cdn"
+  ],
+  "devDependencies": {},
+  "scripts": {
+    "deploy": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/maxcdn/api-docs.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "mkdirp": "~0.3.5",
+    "wintersmith-less": "~0.1.0",
+    "grunt": "~0.4.1",
+    "wintersmith": "git://github.com/niftylettuce/wintersmith"
+  }
+}
