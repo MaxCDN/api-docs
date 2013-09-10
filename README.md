@@ -1,7 +1,7 @@
 
-# NetDNA API Docs
+# MaxCDN API Docs
 
-[NetDNA](http://www.netdna.com) is a content delivery network ("CDN") provider.
+[MaxCDN](http://www.maxcdn.com) is a Content Delivery Network service.
 
 ## Index
 
@@ -18,31 +18,29 @@
 
 ## Overview
 
-1. Sign up for a free NetDNA [developer account](http://www.netdna.com/netdna-free-trial/).
+1. Login to the [MaxCDN Control Panel](https://cp.maxcdn.com/account/api)
 
-2. Create a [new application](https://cp.netdna.com/account/api/create).
+2. Create a [new application](https://cp.maxcdn.com/account/api/create).
 
 3. Integrate with our RESTful API using your language wrapper:
-  - Node (NPM) <https://github.com/netdna/node-netdna>
-  - .NET <https://github.com/netdna/netdnarws-net>
-  - Ruby <https://github.com/netdna/netdnarws-ruby>
-  - Python <https://github.com/netdna/netdnarws>
-  - PHP <https://github.com/netdna/netdnarws-php>
-  - Perl <https://github.com/netdna/netdnarws-perl>
-
-Follow the documentation for our API below!
-
+	- Node (NPM) <https://github.com/netdna/node-netdna>
+	- .NET <https://github.com/netdna/netdnarws-net>
+	- Ruby <https://github.com/netdna/netdnarws-ruby>
+	- Python <https://github.com/netdna/netdnarws>
+	- PHP <https://github.com/netdna/netdnarws-php>
+	- Perl <https://github.com/netdna/netdnarws-perl>
 
 ## Support
 
-* Have a question? Check out our [Knowledge Base](http://support.netdna.com/) to see if your question has already been answered.
-* Still need help?  Visit our [Contact Page](http://www.netdna.com/contact/) to get in touch.
-* Found a Bug? Visit our [GitHub Issues](https://github.com/netdna/rws-bugs/issues?state=open) page to report it.
-* Feel free to tweet and follow us [@NetDNADeveloper](https://twitter.com/netdnadeveloper) and/or [@NetDNAStatus](https://twitter.com/netdnastatus).
+* Have a question? Check out our [Knowledge Base](http://support.maxcdn.com/) to see if your question has already been answered.
+* Still need help?  Visit our [Contact Page](http://www.maxcdn.com/contact/) to get in touch.
+* Found a Bug? Visit our [GitHub Issues](https://github.com/maxcdn/rws-bugs/issues?state=open) page to report it.
+* Feel free to tweet and follow us [@MaxCDNDeveloper](https://twitter.com/maxcdndeveloper) and/or [@MaxCDN](https://twitter.com/maxcdn).
 
 
 ## Changelog
 
+  - **2013-09-10**  Rebranded for MaxCDN
   - **2013-07-22**  Added JSON responses to SSL
   - **2013-07-09**  Added Authentication section
   - **2013-06-03**  Fixed formatting and display issues
@@ -64,11 +62,11 @@ Follow the documentation for our API below!
 ## Authentication
 
 ### Overview
-The first thing to do in order to use the NetDNA REST Web Service is to register your application. Upon registration, your application will be issued a consumer key and secret which is similar to public and private keys used in ssh protocol. You will need to use this in conjunction with an OAuth library in the programming language of your choice.
+The first thing to do in order to use the MaxCDN REST Web Service (RWS) is to register your application. Upon registration, your application will be issued a consumer key and secret which is similar to public and private keys used in ssh protocol. You will need to use this in conjunction with an OAuth library in the programming language of your choice.
 
 <blockquote><p>OAuth defines three roles: client, server, and resource owner (nicknamed the OAuth Love Triangle by Leah Culver).</p></blockquote>
 
-The NetDNA RWS supports both 2-legged and 3-legged authentication.
+The MaxCDN RWS supports both 2-legged and 3-legged authentication.
 
 3-legged OAuth is best used to allow a 3rd party apps/services (e.g. [Leftronic](https://www.leftronic.com/services/maxcdn/)) access to a users profile - the user just needs to grant access to the app.
 
@@ -102,12 +100,12 @@ Login and go to https://developer.netdna.com/api/apps/create
 All OAuth 1.0a requests use the same basic algorithm for creating a signature base string and a signature.
 
 ### Request Tokens
-The first step to authenticating a user is to obtain a request token from NetDNA.
+The first step to authenticating a user is to obtain a request token from MaxCDN.
 
 The end point for requesting a token is https://rws.netdna.com/oauth/request_token.
 
 ### User Authorization
-The authorize step is where you send the user to the NetDNA RWS authorization page that will allow them to grant your application privileges to use their account with the API. You will need the oauth_token from the previous step to complete this.
+The authorize step is where you send the user to the MaxCDN RWS authorization page that will allow them to grant your application privileges to use their account with the API. You will need the oauth_token from the previous step to complete this.
 
 The endpoint for the authorization url is https://rws.netdna.com/oauth/authorize
 
@@ -186,7 +184,7 @@ function callback(err, response) {
             "edgerules_credits": "0",
             "flex_credits": "-1",
             "id": "#####",
-            "name": "NetDNA sampleCode",
+            "name": "MaxCDN sampleCode",
             "secure_token_pull_credits": "0",
             "server_id": "18",
             "ssl_credits": "1",
