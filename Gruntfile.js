@@ -12,7 +12,7 @@ module.exports = function(grunt){
 
   grunt.initConfig({
       dir: './_deploy'
-    , gitUrl: 'git@github.com:maxcdn/netdna.github.com.git'
+    , gitUrl: 'git@github.com:maxcdn/api-docs.git'
   })
 
   grunt.registerTask('setup', 'Setup deploy directory and initiate git repository', function () {
