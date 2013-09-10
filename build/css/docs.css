@@ -1,36 +1,36 @@
 @font-face {
   font-family: 'CuprumBold';
-  src: url(../font/Cuprum-Bold.ttf) format('truetype');
+  src: url(/font/Cuprum-Bold.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'CuprumRegular';
-  src: url(../font/Cuprum-Regular.ttf) format('truetype');
+  src: url(/font/Cuprum-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'DejaVuSansMonoOblique';
-  src: url(../font/DejaVuSansMono-Oblique.ttf) format('truetype');
+  src: url(/font/DejaVuSansMono-Oblique.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'DejaVuSansMonoBold';
-  src: url(../font/DejaVuSansMono-Bold.ttf) format('truetype');
+  src: url(/font/DejaVuSansMono-Bold.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'DejaVuSansMonoBoldOblique';
-  src: url(../font/DejaVuSansMono-BoldOblique.ttf) format('truetype');
+  src: url(/font/DejaVuSansMono-BoldOblique.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'DejaVuSansMonoBook';
-  src: url(../font/DejaVuSansMono.ttf) format('truetype');
+  src: url(/font/DejaVuSansMono.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
