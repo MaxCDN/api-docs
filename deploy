@@ -1,1 +1,0 @@
-./node_modules/wintersmith/bin/wintersmith build && /usr/bin/rsync -avz --exclude '.git' --progress --human-readable ~/github/maxcdn/api-docs/build/ bootstra@bootstrapcdn.com:~/www/branches/api-docs/
