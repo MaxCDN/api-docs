@@ -23,7 +23,7 @@ npm install -g grunt-cli
 1. Clone the repo, install the  dependencies, and start the preview server.
 
     ```bash
-    git clone git@github.com:netdna/netdna.github.com.git
+    git clone git@github.com:maxcdn/api-docs.git
     npm install
     ./preview
     ```
@@ -53,7 +53,7 @@ npm install -g grunt-cli
 
 ## Support
 
-If you run into issues please contact <niftylettuce@gmail.com>.
+If you run into issues please contact <niftylettuce@gmail.com> or <jdorfman@maxcdn.com>
 
 ## License
 
