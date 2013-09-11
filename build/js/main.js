@@ -92,33 +92,31 @@ $(function() {
 
 // hash function
 $('a').click(function(ev) {
-	
-  if (this.toString().indexOf("github.com") == -1){
+  if ($(this).attr("href").charAt(0) === "#" ){
 		ev.preventDefault();
+
+    var target = this.hash;
+
+    if (target.toString().indexOf('#ruby') ==-1 &&
+        target.toString().indexOf('#python') ==-1 &&
+        target.toString().indexOf('#php') ==-1 &&
+        target.toString().indexOf('#node') ==-1 &&
+        target.toString().indexOf('#response') ==-1 ){
+      if (this.href !== '#') {
+        $('html, body').animate({
+          scrollTop: $(target).offset().top - 80
+        }, 1000);
+      }
+
+      if ($(document).width()< 768 && this.href !== '#') {
+        $('html, body').animate({
+          scrollTop: $(target).offset().top - 0
+        }, 1000);
+      }
+    }
 	} else {
 		$(this).attr('target','_blank');
 	}
-
-  var target = this.hash;
-
-	if (target.toString().indexOf('#ruby') ==-1 &&
-			target.toString().indexOf('#python') ==-1 &&
-			target.toString().indexOf('#php') ==-1 &&
-			target.toString().indexOf('#node') ==-1 &&
-			target.toString().indexOf('#response') ==-1 ){
-		if (this.href !== '#') {
-			$('html, body').animate({
-				scrollTop: $(target).offset().top - 80
-			}, 1000);
-		}
-
-		if ($(document).width()< 768 && this.href !== '#') {
-			$('html, body').animate({
-				scrollTop: $(target).offset().top - 0
-			}, 1000);
-		}
-	}
-
 });
 
 $(function() {

@@ -94,7 +94,7 @@ On a conceptual level 2-legged OAuth simply consists of the first and last steps
 * Client uses his client credentials (and empty token credentials) to access the protected resources on the server
 
 ### Registering Your Application
-Login and go to https://developer.netdna.com/api/apps/create
+Login and go to <https://cp.maxcdn.com/account/api/create>
 
 ### Signing Requests
 All OAuth 1.0a requests use the same basic algorithm for creating a signature base string and a signature.
@@ -102,21 +102,21 @@ All OAuth 1.0a requests use the same basic algorithm for creating a signature ba
 ### Request Tokens
 The first step to authenticating a user is to obtain a request token from MaxCDN.
 
-The end point for requesting a token is https://rws.netdna.com/oauth/request_token.
+The end point for requesting a token is: `https://rws.netdna.com/oauth/request_token`
 
 ### User Authorization
 The authorize step is where you send the user to the MaxCDN RWS authorization page that will allow them to grant your application privileges to use their account with the API. You will need the oauth_token from the previous step to complete this.
 
-The endpoint for the authorization url is https://rws.netdna.com/oauth/authorize
+The endpoint for the authorization url is: `https://rws.netdna.com/oauth/authorize`
 
 
 # Key: Path Parameters
 
 Parameter | Description |
 --- | ---
-{companyalias} | The alias you used when creating your account |
-{zone_type} | The type of zone you are making a request on - one of push,pull, vod, or live |
-{report_type} | The format you want the reports summarized by - one of hourly,daily, or monthly. This value can be left blank to receive thetotals ungrouped. |
+`{companyalias}` | The alias you used when creating your account |
+`{zone_type}` | The type of zone you are making a request on - one of `pull`, `push`, `vod`, or `live` |
+`{report_type}` | The format you want the reports summarized by - one of `hourly`, `daily`, or `monthly`. This value can be left blank to receive thetotals ungrouped. |
 
 # Account API
 

@@ -134,15 +134,15 @@ On a conceptual level it works in the following way:</p>
 <li>Client uses his client credentials (and empty token credentials) to access the protected resources on the server</li>
 </ul>
 <h3>Registering Your Application</h3>
-<p>Login and go to <a href="https://developer.netdna.com/api/apps/create">https://developer.netdna.com/api/apps/create</a></p>
+<p>Login and go to <a href="https://cp.maxcdn.com/account/api/create">https://cp.maxcdn.com/account/api/create</a></p>
 <h3>Signing Requests</h3>
 <p>All OAuth 1.0a requests use the same basic algorithm for creating a signature base string and a signature.</p>
 <h3>Request Tokens</h3>
 <p>The first step to authenticating a user is to obtain a request token from MaxCDN.</p>
-<p>The end point for requesting a token is <a href="https://rws.netdna.com/oauth/request_token">https://rws.netdna.com/oauth/request_token</a>.</p>
+<p>The end point for requesting a token is: <code>https://rws.netdna.com/oauth/request_token</code></p>
 <h3>User Authorization</h3>
 <p>The authorize step is where you send the user to the MaxCDN RWS authorization page that will allow them to grant your application privileges to use their account with the API. You will need the oauth_token from the previous step to complete this.</p>
-<p>The endpoint for the authorization url is <a href="https://rws.netdna.com/oauth/authorize">https://rws.netdna.com/oauth/authorize</a></p>
+<p>The endpoint for the authorization url is: <code>https://rws.netdna.com/oauth/authorize</code></p>
 <h1>Key: Path Parameters</h1>
 <table>
 <thead>
@@ -153,18 +153,18 @@ On a conceptual level it works in the following way:</p>
 </thead>
 <tbody>
 <tr>
-<td>{companyalias}</td>
+<td><code>{companyalias}</code></td>
 <td>The alias you used when creating your account</td>
 <td></td>
 </tr>
 <tr>
-<td>{zone_type}</td>
-<td>The type of zone you are making a request on - one of push,pull, vod, or live</td>
+<td><code>{zone_type}</code></td>
+<td>The type of zone you are making a request on - one of <code>pull</code>, <code>push</code>, <code>vod</code>, or <code>live</code></td>
 <td></td>
 </tr>
 <tr>
-<td>{report_type}</td>
-<td>The format you want the reports summarized by - one of hourly,daily, or monthly. This value can be left blank to receive thetotals ungrouped.</td>
+<td><code>{report_type}</code></td>
+<td>The format you want the reports summarized by - one of <code>hourly</code>, <code>daily</code>, or <code>monthly</code>. This value can be left blank to receive thetotals ungrouped.</td>
 <td></td>
 </tr>
 </tbody>
