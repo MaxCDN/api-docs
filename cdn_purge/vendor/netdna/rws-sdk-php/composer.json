@@ -1,0 +1,22 @@
+{
+    "name": "netdna/rws-sdk-php",
+    "description": "PHP Wrapper for NetDNA Remote Web Services",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "http://developer.netdna.com",
+    "support": {
+        "email": "support@netdna.com",
+        "source": "http://www.github.com/netdna/netdnarws-php"
+    },
+    "require": { 
+        "php": ">=5.3.0",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "NetDNA\\": "src/",
+            "": "src/"
+        }
+    }
+
+}

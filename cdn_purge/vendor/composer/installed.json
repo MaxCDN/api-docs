@@ -1,0 +1,37 @@
+[
+    {
+        "name": "netdna/rws-sdk-php",
+        "version": "2.0.2",
+        "version_normalized": "2.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/netdna/netdnarws-php.git",
+            "reference": "564675b780b8b97302ca8f0860b65eb0fb6b15b9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/netdna/netdnarws-php/zipball/564675b780b8b97302ca8f0860b65eb0fb6b15b9",
+            "reference": "564675b780b8b97302ca8f0860b65eb0fb6b15b9",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3.0"
+        },
+        "time": "2013-09-09 17:33:58",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "NetDNA\\": "src/",
+                "": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "PHP Wrapper for NetDNA Remote Web Services",
+        "homepage": "http://developer.netdna.com"
+    }
+]

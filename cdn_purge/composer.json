@@ -1,0 +1,5 @@
+{
+	"require": {
+		"netdna/rws-sdk-php": "2.*"
+	}
+}
