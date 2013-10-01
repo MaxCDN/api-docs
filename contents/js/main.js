@@ -122,3 +122,10 @@ $('a').click(function(ev) {
 $(function() {
   $('#myTab a:last').tab('show');
 })
+
+// Hide/Show dropdown in side index
+$(function() {
+  $( ".something" ).scroll(function() {
+    // $('.nav-down').toggleClass("hide");
+  })
+})
