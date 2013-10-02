@@ -22,7 +22,7 @@ html(lang='en')
     link(rel="stylesheet", href="/css/prettify.css")
     link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Cuprum:400,700")
     link(rel="stylesheet", href="/css/docs.css")
-  body(data-spy='scroll', data-target='#docs-navbar', data-offset='81')
+  body(data-spy='scroll', data-target='#docs-navbar', data-offset='83')
     #spacer
     .navbar.navbar-inverse.navbar-fixed-top
       .navbar-inner
@@ -38,7 +38,7 @@ html(lang='en')
                   li.active: a(href='#overview') Overview
                   li: a.gotohash(href="#support") Support
                   li: a.gotohash(href="#changelog") Changelog
-                  li.target1: a.gotohash(href="#authentication") Authentication
+                  li: a.gotohash(href="#authentication") Authentication
                   ul.nav-pills.nav-down.hide
                     li.nav-sub: a.gotohash(href="#auth-overview") Authentication Overview
                     li.nav-sub: a.gotohash(href="#3-legged-oauth") 3-legged OAuth
@@ -49,6 +49,11 @@ html(lang='en')
                     li.nav-sub: a.gotohash(href="#user-authorization") User Authorization
                     li.nav-sub: a.gotohash(href="#key-path-parameters") Key Path Parameters
                   li: a.gotohash(href="#account-api") <span id="iconSizer"><i class="icon-maxcdn"></i></span> Account API
+                  ul.nav-pills.nav-down.hide
+                    li.nav-sub: a.gotohash(href="#get-account") Get Account
+                    li.nav-sub: a.gotohash(href="#update-account") Update Account
+                    li.nav-sub: a.gotohash(href="#get-account-address") Get Account Address
+                    li.nav-sub: a.gotohash(href="#update-account-address") Update Account Address
                   li: a.gotohash(href="#users-api") <span id="iconSizer"><i class="icon-user"></i></span> Users API
                   li: a.gotohash(href="#zones-api") <span id="iconSizer"><i class="icon-cloud"></i></span> Zones API
                   li: a.gotohash(href="#reports-by-zone-api") <span id="iconSizer"><i class="icon-file-alt"></i></span> Reports API

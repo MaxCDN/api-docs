@@ -123,17 +123,9 @@ $(function() {
   $('#myTab a:last').tab('show');
 })
 
-// Hide/Show dropdown in side index
-// $(function() {
-//   $( ".something" ).scroll(function() {
-//     // $('.nav-down').toggleClass("hide");
-//   })
-// })
-
-// $('#overview').waypoint(function(direction) {
-//   console.log(direction);
-//   alert('Top of thing hit top of viewport.');
-// });
+//
+// This is to override the Scrollspy to enable a second dropdown
+//
 
 !function ($) {
 
@@ -228,14 +220,19 @@ $(function() {
         if (active.parent('.dropdown-menu').length)  {
           active = active.closest('li.dropdown').addClass('active')
         }
-        console.log(active.parent('.nav-down').length);
+// This enables the extra dropdown on the side nav bar
         if (active.parent('.nav-down').length)  {
-          //make the parent li still active
-          //make the parent ul 'show'
-        }
+          active.parent('.nav-down').removeClass('hide')
+          active.parent('.nav-down').prev().addClass('active')
+        } 
         else {
-          // make past parent unactive
-          // make the parent ul 'hide'
+          $('.nav-down').each(function(idx, dropdown) {
+            $(dropdown).addClass('hide')
+          })
+
+          if (active.next('.nav-down').length)  {
+            active.next('.nav-down').removeClass('hide')
+          }
         }
 
         active.trigger('activate')
