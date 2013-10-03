@@ -382,6 +382,29 @@ i {
 .nav > li > a:focus > i {
   color: #FFFFFF;
 }
+/* side bar dropdown */
+.nav-bold > li > a {
+  color: #0b0d0e;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.nav-bold > .active > a,
+.nav-bold > .active > a:hover,
+.nav-bold > .active > a:focus {
+  font-weight: 900;
+}
+.nav-down {
+  list-style-type: none;
+  font-size: 12px;
+}
+.hide {
+  display: none;
+}
+.docs-navbar .nav-stacked > .active > ul {
+  display: block;
+  margin-bottom: 8px;
+}
 /* add */
 @media (max-width: 979px) {
   .navbar-fixed-top,
