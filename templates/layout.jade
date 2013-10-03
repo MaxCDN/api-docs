@@ -40,7 +40,7 @@ html(lang='en')
                   li: a.gotohash(href="#changelog") Changelog
                   li: a.gotohash(href="#authentication") Authentication
                   ul.nav-bold.nav-down.hide
-                    li.nav-sub: a.gotohash(href="#auth-overview") Authentication Overview
+                    li.nav-sub: a.gotohash(href="#auth-overview") Overview
                     li.nav-sub: a.gotohash(href="#3-legged-oauth") 3-legged OAuth
                     li.nav-sub: a.gotohash(href="#2-legged-oauth") 2-legged OAuth
                     li.nav-sub: a.gotohash(href="#registering-your-application") Registering Your Application
@@ -85,8 +85,11 @@ html(lang='en')
                     li.nav-sub: a.gotohash(href="#reports-by-file-types-api") Reports by File Types API
                     li.nav-sub: a.gotohash(href="#reports-by-file-size-ranges-api") Reports by File Size Ranges API
                     li.nav-sub: a.gotohash(href="#reports-by-directory-api") Reports by Directory API
-                    li.nav-sub: a.gotohash(href="#reports-by-file-name-api") Reports by File Name API
                   li: a.gotohash(href="#reports-by-file-name-api") <span id="iconSizer"><i class="icon-group"></i></span> Clients API
+                  ul.nav-bold.nav-down.hide
+                    li.nav-sub: a.gotohash(href="#reports-by-file-name-api") Reports by File Name API
+                    li.nav-sub: a.gotohash(href="#reports-by-custom-domain-api") Reports by Custom Domain API
+                    li.nav-sub: a.gotohash(href="#reports-for-live-zones-api") Reports for Live Zones API
                   li: a(href='https://github.com/maxcdn/api-docs') <span id="iconSizer"><i class="icon-external-link"></i></span> GitHub Repo
         .span9#readme-docs
           - var content = marked(contents['Readme.md']._content)
