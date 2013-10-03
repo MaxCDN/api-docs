@@ -35,7 +35,7 @@
 * Have a question? Check out our [Knowledge Base](http://support.maxcdn.com/) to see if your question has already been answered.
 * Still need help?  Visit our [Contact Page](http://www.maxcdn.com/contact/) to get in touch.
 * Found a Bug? Visit our [GitHub Issues](https://github.com/maxcdn/rws-bugs/issues?state=open) page to report it.
-* Feel free to tweet and follow us [@MaxCDNDeveloper](https://twitter.com/maxcdndeveloper) and/or [@MaxCDN](https://twitter.com/maxcdn).
+* Feel free to Tweet and follow us [@MaxCDNDeveloper](https://twitter.com/maxcdndeveloper) and [@MaxCDN](https://twitter.com/maxcdn).
 
 
 ## Changelog
@@ -44,20 +44,20 @@
   - **2013-07-22**  Added JSON responses to SSL
   - **2013-07-09**  Added Authentication section
   - **2013-06-03**  Fixed formatting and display issues
-  - **2013-06-02**  Added Ruby Code examples
-  - **2013-05-31**  Added Python Code examples
-  - **2013-05-29**  Added Node Code examples
+  - **2013-06-02**  Added Ruby code examples
+  - **2013-05-31**  Added Python code examples
+  - **2013-05-29**  Added Node code examples
   - **2013-05-28**  Added response examples
-  - **2013-05-25**  Added PHP Code examples
-  - **2013-03-29**  Added "Bad Request" for Purges without file(s) parameter in body
-  - **2013-03-14**  Added .ie to the TLD Validation
-  - **2013-03-12**  Added single file Purge to use cURL multi
+  - **2013-05-25**  Added PHP code examples
+  - **2013-03-29**  Added "Bad Request" for purges without file(s) parameter in body
+  - **2013-03-14**  Added .ie to the TLD validation
+  - **2013-03-12**  Added single file purge to use cURL multi
   - **2013-03-12**  Fixed SSL Update Bug
-  - **2013-03-08**  cURL Multi Purge Files
-  - **2013-03-07**  Fix 3-legged OAuth Restriction
-  - **2013-01-16**  Fixed SSL Bug
-  - **2012-12-05**  Added 2xx_hit calculation to all `statuscodebyfilename` Reports
-  - **2012-02-27**  Released Alpha Version of RWS API.
+  - **2013-03-08**  cURL multi purge files
+  - **2013-03-07**  Fix 3-legged OAuth restriction
+  - **2013-01-16**  Fixed SSL bug
+  - **2012-12-05**  Added 2xx_hit calculation to all `statuscodebyfilename` reports
+  - **2012-02-27**  Released alpha Version of RWS API.
 
 ## Authentication
 
@@ -76,7 +76,7 @@ The MaxCDN RWS supports both 2-legged and 3-legged authentication.
 3-legged OAuth describes the scenario for which OAuth was originally developed: a resource owner wants to give a client access to a server without sharing his credentials (i.e. username/password).
 On a conceptual level it works in the following way:
 
-* Client has signed up to the server and got his client credentials (also known as "consumer key and secret") ahead of time
+* Client has signed up to the server and received their client credentials (also known as "consumer key and secret") ahead of time
 * User wants to give the client access to his protected resources on the server
 * Client retrieves the temporary credentials (also known as "request token") from the server
 * Client redirects the resource owner to the server
@@ -90,7 +90,7 @@ On a conceptual level it works in the following way:
 
 On a conceptual level 2-legged OAuth simply consists of the first and last steps of 3-legged OAuth:
 
-* Client has signed up to the server and got his client credentials (also known as "consumer key and secret"
+* Client has signed up to the server and received their client credentials (also known as "consumer key and secret")
 * Client uses his client credentials (and empty token credentials) to access the protected resources on the server
 
 ### Registering Your Application
@@ -105,7 +105,7 @@ The first step to authenticating a user is to obtain a request token from MaxCDN
 The end point for requesting a token is: `https://rws.netdna.com/oauth/request_token`
 
 ### User Authorization
-The authorize step is where you send the user to the MaxCDN RWS authorization page that will allow them to grant your application privileges to use their account with the API. You will need the oauth_token from the previous step to complete this.
+The User Authorization step sends the user to the MaxCDN RWS authorization page, which grants your application privileges to use their account with the API. You will need the oauth_token from the previous step to complete this.
 
 The endpoint for the authorization url is: `https://rws.netdna.com/oauth/authorize`
 
@@ -114,9 +114,9 @@ The endpoint for the authorization url is: `https://rws.netdna.com/oauth/authori
 
 Parameter | Description |
 --- | ---
-`{companyalias}` | The alias you used when creating your account |
-`{zone_type}` | The type of zone you are making a request on - one of `pull`, `push`, `vod`, or `live` |
-`{report_type}` | The format you want the reports summarized by - one of `hourly`, `daily`, or `monthly`. This value can be left blank to receive thetotals ungrouped. |
+`{companyalias}` | The alias used when creating the account |
+`{zone_type}` | The type of zone you are making a request on — one of `pull`, `push`, `vod`, or `live` |
+`{report_type}` | The format you want the reports summarized by — `hourly`, `daily`, or `monthly`. This value can be left blank to receive ungrouped totals. |
 
 # Account API
 
