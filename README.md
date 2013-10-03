@@ -61,7 +61,7 @@
 
 ## Authentication
 
-### Overview
+### Auth-Overview
 The first thing to do in order to use the MaxCDN REST Web Service (RWS) is to register your application. Upon registration, your application will be issued a consumer key and secret which is similar to public and private keys used in ssh protocol. You will need to use this in conjunction with an OAuth library in the programming language of your choice.
 
 <blockquote><p>OAuth defines three roles: client, server, and resource owner (nicknamed the OAuth Love Triangle by Leah Culver).</p></blockquote>
@@ -110,7 +110,7 @@ The User Authorization step sends the user to the MaxCDN RWS authorization page,
 The endpoint for the authorization url is: `https://rws.netdna.com/oauth/authorize`
 
 
-# Key: Path Parameters
+### Key: Path Parameters
 
 Parameter | Description |
 --- | ---
