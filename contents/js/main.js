@@ -220,11 +220,14 @@ $(function() {
         if (active.parent('.dropdown-menu').length)  {
           active = active.closest('li.dropdown').addClass('active')
         }
-// This enables the extra dropdown on the side nav bar
+//This enables the extra dropdown index on the side nav bar
         if (active.parent('.nav-down').length)  {
+          $('.nav-down').each(function(idx, dropdown) {
+            $(dropdown).addClass('hide')
+          })
           active.parent('.nav-down').removeClass('hide')
           active.parent('.nav-down').prev().addClass('active')
-        } 
+        }
         else {
           $('.nav-down').each(function(idx, dropdown) {
             $(dropdown).addClass('hide')
@@ -234,7 +237,7 @@ $(function() {
             active.next('.nav-down').removeClass('hide')
           }
         }
-
+        
         active.trigger('activate')
       }
 
