@@ -2,3 +2,4 @@ node_modules/
 deploy
 .DS_Store
 cdn_purge/cdn_purge.php
+deploy.sh
