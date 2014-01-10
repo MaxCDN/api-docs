@@ -18,7 +18,7 @@
 
 ## Overview
 
-1. Login to the [MaxCDN Control Panel](https://cp.maxcdn.com/account/api)
+1. Login to the [MaxCDN Control Panel](https://cp.maxcdn.com/account/api).
 
 2. Create a [new application](https://cp.maxcdn.com/account/api/create).
 
@@ -68,30 +68,28 @@ The first thing to do in order to use the MaxCDN REST Web Service (RWS) is to re
 
 The MaxCDN RWS supports both 2-legged and 3-legged authentication.
 
-3-legged OAuth is best used to allow a 3rd party apps/services (e.g. [Leftronic](https://www.leftronic.com/services/maxcdn/)) access to a users profile - the user just needs to grant access to the app.
+3-legged OAuth is best used to allow 3rd party apps/services (e.g. [Leftronic](https://www.leftronic.com/services/maxcdn/)) access to a user's profile - the user just needs to grant access to the app.
 
-2-legged OAuth is more limited in that it only allows a consumer access to resources that belong to it (this is also useful for building a 3rd party app or a control panel where the consumer is a reseller or an account with sub-accounts - this means the reseller/main account also has access to sub-account resources). This does not require any user intervention in the process.
+2-legged OAuth is more limited in that it only allows a consumer access to resources that belong to it. 2-legged OAuth can be useful for building a 3rd party app or a control panel where the consumer is a reseller or an account with sub-accounts (this means the reseller/main account also has access to sub-account resources). This does not require any user intervention in the process.
 
 ### 3-legged OAuth
-3-legged OAuth describes the scenario for which OAuth was originally developed: a resource owner wants to give a client access to a server without sharing his credentials (i.e. username/password).
+3-legged OAuth describes the scenario for which OAuth was originally developed: a resource owner wants to give a client access to a server without sharing their credentials (i.e. username/password).
 On a conceptual level it works in the following way:
 
 * Client has signed up to the server and received their client credentials (also known as "consumer key and secret") ahead of time
-* User wants to give the client access to his protected resources on the server
+* User wants to give the client access to their protected resources on the server
 * Client retrieves the temporary credentials (also known as "request token") from the server
 * Client redirects the resource owner to the server
-* Resource owner grants the client access to his protected resources on the server
+* Resource owner grants the client access to their protected resources on the server
 * Server redirects the user back to the client
 * Client uses the temporary credentials to retrieve the token credentials (also known as "access token") from the server
 * Client uses the token credentials to access the protected resources on the server
 
 ### 2-legged OAuth
-2-legged OAuth describes a typical client-server scenario, without any user involvement.
-
-On a conceptual level 2-legged OAuth simply consists of the first and last steps of 3-legged OAuth:
+2-legged OAuth describes a typical client-server scenario, without any user involvement. On a conceptual level 2-legged OAuth simply consists of the first and last steps of 3-legged OAuth:
 
 * Client has signed up to the server and received their client credentials (also known as "consumer key and secret")
-* Client uses his client credentials (and empty token credentials) to access the protected resources on the server
+* Client uses their client credentials (and empty token credentials) to access the protected resources on the server
 
 ### Registering Your Application
 Login and go to <https://cp.maxcdn.com/account/api/create>
@@ -116,7 +114,7 @@ Parameter | Description |
 --- | ---
 `{companyalias}` | The alias used when creating the account |
 `{zone_type}` | The type of zone you are making a request on — one of `pull`, `push`, `vod`, or `live` |
-`{report_type}` | The format you want the reports summarized by — `hourly`, `daily`, or `monthly`. This value can be left blank to receive ungrouped totals. |
+`{report_type}` | The format you want the reports summarized by — `hourly`, `daily`, or `monthly`. This value can be left blank to receive ungrouped totals |
 
 # Account API
 
@@ -1160,24 +1158,24 @@ Parameter | Description |
 `url` | Origin URL |
 `port` | Port |
 `ip` | IP address of the Origin URL |
-`compress` | On the fly compression of your files served from our edges.GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | Allow us to cache compressed versions of your files from theorigin. GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`compress` | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | Treat Query Strings as a separate cacheable item |
 `set_host_header` | The URL sent as the Host in all HTTP Response Headers |
-`cache_valid` | Ignore the origin Cache-Control Header and set every request tohave a Max-Age of 1d, 7d, 1M or 12M |
-`ignore_setcookie_header` | Ignore any cookies set by the origin in order to make thecontent consistently cacheable |
-`ignore_cache_control` | Ignore any max age values set by the origin and use the CDN setvalue instead |
-`use_stale` | Serve expired content while fetching new content. This willalso cause the CDN to serve expired content in cases where theorigin is down or the file is not found |
-`proxy_cache_lock` | When multiple requests for an uncached file are received, theywill wait until the first response is received rather than sendingeach request back to the origin |
+`cache_valid` | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
+`ignore_setcookie_header` | Ignore any cookies set by the origin in order to make the content consistently cacheable |
+`ignore_cache_control` | Ignore any max age values set by the origin and use the CDN set value instead |
+`use_stale` | Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down or the file is not found |
+`proxy_cache_lock` | When multiple requests for an uncached file are received, they will wait until the first response is received rather than sending each request back to the origin |
 `label` | Something that describes your zone |
-`valid_referers` | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
-`expires` | Set any request with a no "Cache-Control header" from theorigin to stay on the server. Possible values are 1d, 7d, 1M,12M |
+`valid_referers` | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
+`expires` | Set any request with a no "Cache-Control header" from the origin to stay on the server. Possible values are 1d, 7d, 1M, 12M |
 `disallow_robots` | Enable robots.txt |
 `disallow_robots_txt` | Use custom robots.txt |
 `canonical_link_headers` | Pass the canonical URL in the Link HTTP Header |
 `content_disposition` | Force files to download |
 `pseudo_streaming` | Enable the zone for pseudo streaming content |
-`sslshared` | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 `suspend` | Flag denoting if the zone has been suspended |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
@@ -1319,26 +1317,26 @@ Parameter | Default Value | Validation | Description |
 `name` | - | <span class="label important">required</span><br />length: 3-32 chars; only letters, digits, and dash (-)accepted | Pull Zone Name |
 `url` | - | <span class="label important">required</span><br />length: 4-100 chars; only valid URLs accepted | Origin URL |
 `port` | 80 | length: 1-5 chars; only digits accepted | Port |
-`ip` | - | length: 1-10 chars, only digits accepted | Valid IP address of the Origin URL. If omitted, the servicewill try to lookup the IP automatically. |
-`compress` | 0 | only 0 or 1 accepted | On the fly compression of your files served from our edges.Enable GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | 0 | only 0 or 1 accepted | Allow us to cache compressed versions of your files from theorigin. Enable GZip compression for the following file types:text/plain, text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`ip` | - | length: 1-10 chars, only digits accepted | Valid IP address of the Origin URL, if omitted the service will automatically try to find the IP |
+`compress` | 0 | only 0 or 1 accepted | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | 0 | only 0 or 1 accepted | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain, text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | 0 | only 0 or 1 accepted | Treat Query Strings as a separate cacheable item |
 `set_host_header` | - | length: 4-100 chars; only valid URLs accepted | The URL to send as the Host in all HTTP Response Headers |
-`cache_valid` | 1d | length: 1-30 chars; must be a number followed by one of s, m,h, d, M, or Y | Ignore the origin Cache-Control Header and set every request tohave a Max-Age of 1d, 7d, 1M or 12M |
-`ignore_setcookie_header` | 0 | only 0 or 1 accepted | Ignore any cookies set by the origin in order to make thecontent consistently cacheable |
-`ignore_cache_control` | 0 | only 0 or 1 accepted | Ignore any max age values set by the origin and use the CDN setvalue instead |
-`use_stale` | 0 | only 0 or 1 accepted | Serve expired content while fetching new content. This willalso cause the CDN to serve expired content in cases where theorigin is down or the file is not found |
-`proxy_cache_lock` | 0 | only 0 or 1 accepted | When multiple requests for an uncached file are received, theywill wait until the first response is received rather than sendingeach request back to the origin |
+`cache_valid` | 1d | length: 1-30 chars; must be a number followed by one of s, m, h, d, M, or Y | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
+`ignore_setcookie_header` | 0 | only 0 or 1 accepted | Ignore any cookies set by the origin in order to make the content consistently cacheable |
+`ignore_cache_control` | 0 | only 0 or 1 accepted | Ignore any max age values set by the origin and use the CDN set value instead |
+`use_stale` | 0 | only 0 or 1 accepted | Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down or the file is not found |
+`proxy_cache_lock` | 0 | only 0 or 1 accepted | When multiple requests for an uncached file are received, they will wait until the first response is received rather than sending each request back to the origin |
 `label` | - | length: 1-255 chars | Something that describes your zone |
-`valid_referers` | - | length: 1-100 chars | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
-`expires` | 1d | length: 1-32 chars | Set any request with a no "Cache-Control header" from theorigin to stay on the server. Possible values are 1d, 7d, 1M,12M |
+`valid_referers` | - | length: 1-100 chars | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
+`expires` | 1d | length: 1-32 chars | Set any request with a no "Cache-Control header" from the origin to stay on the server. Possible values are 1d, 7d, 1M, 12M |
 `disallow_robots` | 0 | only 0 or 1 accepted | Enable robots.txt |
 `disallow_robots_txt` | - | length 1-255 chars | Use custom robots.txt |
 `canonical_link_headers` | 1 | only 0 or 1 accepted | Pass the canonical URL in the Link HTTP Header |
 `content_disposition` | 0 | only 0 or 1 accepted | Force files to download |
 `pseudo_streaming` | 0 | only 0 or 1 accepted | Enable the zone for pseudo streaming content |
 `secret` | - | length: 1 - 32 chars | Use a secret to protect your files from unwanted visitors |
-`sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 
 
 ### Response Parameters
@@ -1350,24 +1348,24 @@ Parameter | Description |
 `url` | Origin URL |
 `port` | Port |
 `ip` | IP address of the Origin URL |
-`compress` | On the fly compression of your files served from our edges.GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | Allow us to cache compressed versions of your files from theorigin. GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`compress` | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | Treat Query Strings as a separate cacheable item |
 `set_host_header` | The URL sent as the Host in all HTTP Response Headers |
-`cache_valid` | Ignore the origin Cache-Control Header and set every request tohave a Max-Age of 1d, 7d, 1M or 12M |
-`ignore_setcookie_header` | Ignore any cookies set by the origin in order to make thecontent consistently cacheable |
-`ignore_cache_control` | Ignore any max age values set by the origin and use the CDN setvalue instead |
-`use_stale` | Serve expired content while fetching new content. This willalso cause the CDN to serve expired content in cases where theorigin is down or the file is not found |
-`proxy_cache_lock` | When multiple requests for an uncached file are received, theywill wait until the first response is received rather than sendingeach request back to the origin |
+`cache_valid` | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
+`ignore_setcookie_header` | Ignore any cookies set by the origin in order to make the content consistently cacheable |
+`ignore_cache_control` | Ignore any max age values set by the origin and use the CDN set value instead |
+`use_stale` | Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down or the file is not found |
+`proxy_cache_lock` | When multiple requests for an uncached file are received, they will wait until the first response is received rather than sending each request back to the origin |
 `label` | Something that describes your zone |
-`valid_referers` | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
-`expires` | Set any request with a no "Cache-Control header" from theorigin to stay on the server. Possible values are 1d, 7d, 1M,12M |
+`valid_referers` | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
+`expires` | Set any request with a no "Cache-Control header" from the origin to stay on the server. Possible values are 1d, 7d, 1M, 12M |
 `disallow_robots` | Enable robots.txt |
 `disallow_robots_txt` | Use custom robots.txt |
 `canonical_link_headers` | Pass the canonical URL in the Link HTTP Header |
 `content_disposition` | Force files to download |
 `pseudo_streaming` | Enable the zone for pseudo streaming content |
-`sslshared` | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 `suspend` | Flag denoting if the zone has been suspended |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
@@ -1525,25 +1523,25 @@ Parameter | Description |
 `name` | Pull Zone name |
 `url` | Origin URL |
 `port` | Port |
-`ip` | Valid IP address of the Origin URL. If omitted, the servicewill try to lookup the IP automatically. |
-`compress` | On the fly compression of your files served from our edges.GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | Allow us to cache compressed versions of your files from theorigin. GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`ip` | Valid IP address of the Origin URL, if omitted the service will automatically try to find the IP |
+`compress` | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | Treat Query Strings as a separate cacheable item |
 `set_host_header` | The URL sent as the Host in all HTTP Response Headers |
-`cache_valid` | Ignore the origin Cache-Control Header and set every request tohave a Max-Age of 1d, 7d, 1M or 12M |
-`ignore_setcookie_header` | Ignore any cookies set by the origin in order to make thecontent consistently cacheable |
-`ignore_cache_control` | Ignore any max age values set by the origin and use the CDN setvalue instead |
-`use_stale` | Serve expired content while fetching new content. This willalso cause the CDN to serve expired content in cases where theorigin is down or the file is not found |
-`proxy_cache_lock` | When multiple requests for an uncached file are received, theywill wait until the first response is received rather than sendingeach request back to the origin |
+`cache_valid` | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
+`ignore_setcookie_header` | Ignore any cookies set by the origin in order to make the content consistently cacheable |
+`ignore_cache_control` | Ignore any max age values set by the origin and use the CDN set value instead |
+`use_stale` | Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down or the file is not found |
+`proxy_cache_lock` | When multiple requests for an uncached file are received, they will wait until the first response is received rather than sending each request back to the origin |
 `label` | Something that describes your zone |
-`valid_referers` | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
-`expires` | Set any request with a no "Cache-Control header" from theorigin to stay on the server. Possible values are 1d, 7d, 1M,12M |
+`valid_referers` | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
+`expires` | Set any request with a no "Cache-Control header" from the origin to stay on the server. Possible values are 1d, 7d, 1M, 12M |
 `disallow_robots` | Enable robots.txt |
 `disallow_robots_txt` | Use custom robots.txt |
 `canonical_link_headers` | Pass the canonical URL in the Link HTTP Header |
 `content_disposition` | Force files to download |
 `pseudo_streaming` | Enable the zone for pseudo streaming content |
-`sslshared` | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 `suspend` | Flag denoting if the zone has been suspended |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
@@ -1644,25 +1642,25 @@ Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
 `url` | - | length: 4-100 chars; only valid URLs accepted | Origin URL |
 `port` | 80 | length: 1-5 chars; only digits accepted | Port |
-`compress` | 0 | only 0 or 1 accepted | On the fly compression of your files served from our edges.Enable GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | 0 | only 0 or 1 accepted | Allow us to cache compressed versions of your files from theorigin. Enable GZip compression for the following file types:text/plain, text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`compress` | 0 | only 0 or 1 accepted | On the fly compression of your files served from our edges. Enables GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | 0 | only 0 or 1 accepted | Allow us to cache compressed versions of your files from the origin. Enables GZip compression for the following file types:text/plain, text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | 0 | only 0 or 1 accepted | Treat Query Strings as a separate cacheable item |
 `set_host_header` | - | length: 4-100 chars; only valid URLs accepted | The URL to send as the Host in all HTTP Response Headers |
-`cache_valid` | - | length: 1-30 chars; must be a number followed by one of s, m,h, d, M, or Y | Ignore the origin Cache-Control Header and set every request tohave a Max-Age of 1d, 7d, 1M or 12M |
-`ignore_setcookie_header` | 0 | only 0 or 1 accepted | Ignore any cookies set by the origin in order to make thecontent consistently cacheable |
-`ignore_cache_control` | 0 | only 0 or 1 accepted | Ignore any max age values set by the origin and use the CDN setvalue instead |
-`use_stale` | 0 | only 0 or 1 accepted | Serve expired content while fetching new content. This willalso cause the CDN to serve expired content in cases where theorigin is down or the file is not found |
-`proxy_cache_lock` | 0 | only 0 or 1 accepted | When multiple requests for an uncached file are received, theywill wait until the first response is received rather than sendingeach request back to the origin |
+`cache_valid` | - | length: 1-30 chars; must be a number followed by one of s, m, h, d, M, or Y | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
+`ignore_setcookie_header` | 0 | only 0 or 1 accepted | Ignore any cookies set by the origin in order to make the content consistently cacheable |
+`ignore_cache_control` | 0 | only 0 or 1 accepted | Ignore any max age values set by the origin and use the CDN set value instead |
+`use_stale` | 0 | only 0 or 1 accepted | Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down or the file is not found |
+`proxy_cache_lock` | 0 | only 0 or 1 accepted | When multiple requests for an uncached file are received, they will wait until the first response is received rather than sending each request back to the origin |
 `label` | - | length: 1-255 chars | Something that describes your zone |
-`valid_referers` | - | length: 1-100 chars | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
-`expires` | 1d | length: 1-32 chars | Set any request with a no "Cache-Control header" from theorigin to stay on the server. Possible values are 1d, 7d, 1M,12M |
+`valid_referers` | - | length: 1-100 chars | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
+`expires` | 1d | length: 1-32 chars | Set any request with a no "Cache-Control header" from the origin to stay on the server. Possible values are 1d, 7d, 1M, 12M |
 `disallow_robots` | 0 | only 0 or 1 accepted | Enable robots.txt |
 `disallow_robots_txt` | - | length: 1-255 chars | Use custom robots.txt |
 `canonical_link_headers` | 1 | only 0 or 1 accepted | Pass the canonical URL in the Link HTTP Header |
 `content_disposition` | 0 | only 0 or 1 accepted | Force files to download |
 `pseudo_streaming` | 0 | only 0 or 1 accepted | Enable the zone for pseudo streaming content |
 `secret` | - | length: 1 - 32 chars | Use a secret to protect your files from unwanted visitors |
-`sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 
 
 ### Response Parameters
@@ -1673,25 +1671,25 @@ Parameter | Description |
 `name` | Pull Zone name |
 `url` | Origin URL |
 `port` | Port |
-`ip` | Valid IP address of the Origin URL. If omitted, the servicewill try to lookup the IP automatically. |
-`compress` | On the fly compression of your files served from our edges.GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | Allow us to cache compressed versions of your files from theorigin. GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`ip` | Valid IP address of the Origin URL, if omitted the service will automatically try to find the IP |
+`compress` | On the fly compression of your files served from our edges. Enables GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | Allow us to cache compressed versions of your files from the origin. Enables GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | Treat Query Strings as a separate cacheable item |
 `set_host_header` | The URL sent as the Host in all HTTP Response Headers |
-`cache_valid` | Ignore the origin Cache-Control Header and set every request tohave a Max-Age of 1d, 7d, 1M or 12M |
-`ignore_setcookie_header` | Ignore any cookies set by the origin in order to make thecontent consistently cacheable |
-`ignore_cache_control` | Ignore any max age values set by the origin and use the CDN setvalue instead |
-`use_stale` | Serve expired content while fetching new content. This willalso cause the CDN to serve expired content in cases where theorigin is down or the file is not found |
-`proxy_cache_lock` | When multiple requests for an uncached file are received, theywill wait until the first response is received rather than sendingeach request back to the origin |
+`cache_valid` | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
+`ignore_setcookie_header` | Ignore any cookies set by the origin in order to make the content consistently cacheable |
+`ignore_cache_control` | Ignore any max age values set by the origin and use the CDN set value instead |
+`use_stale` | Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down or the file is not found |
+`proxy_cache_lock` | When multiple requests for an uncached file are received, they will wait until the first response is received rather than sending each request back to the origin |
 `label` | Something that describes your zone |
-`valid_referers` | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
-`expires` | Set any request with a no "Cache-Control header" from theorigin to stay on the server. Possible values are 1d, 7d, 1M,12M |
+`valid_referers` | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
+`expires` | Set any request with a no "Cache-Control header" from the origin to stay on the server. Possible values are 1d, 7d, 1M, 12M |
 `disallow_robots` | Enable robots.txt |
 `disallow_robots_txt` | Use custom robots.txt |
 `canonical_link_headers` | Pass the canonical URL in the Link HTTP Header |
 `content_disposition` | Force files to download |
 `pseudo_streaming` | Enable the zone for pseudo streaming content |
-`sslshared` | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 `suspend` | Flag denoting if the zone has been suspended |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
@@ -2408,9 +2406,9 @@ Parameter | Description |
 `id` | Push Zone ID |
 `name` | Push Zone name |
 `label` | Something that describes your zone |
-`valid_referers` | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
+`valid_referers` | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
 `content_disposition` | Force files to download |
-`sslshared` | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 `suspend` | Flag denoting if the zone has been suspended |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
@@ -2521,9 +2519,9 @@ Parameter | Default Value | Validation | Description |
 `name` | - | <span class="label important">required</span><br />length: 3-30 chars; only letters, digits, and dash (-)accepted | Push Zone name |
 `password` | - | <span class="label important">required</span><br />length: 5-30 chars; | Push Zone FTP password |
 `label` | - | length: 1-255 chars | Something that describes your zone |
-`valid_referers` | - | length: 1-200 chars | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
+`valid_referers` | - | length: 1-200 chars | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
 `content_disposition` | 0 | only 0 or 1 accepted | Force files to download |
-`sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 
 
 ### Response Parameters
@@ -2533,9 +2531,9 @@ Parameter | Description |
 `id` | Push Zone ID |
 `name` | Push Zone name |
 `label` | Something that describes your zone |
-`valid_referers` | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
+`valid_referers` | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
 `content_disposition` | Force files to download |
-`sslshared` | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 `suspend` | Flag denoting if the zone has been suspended |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
@@ -2678,9 +2676,9 @@ Parameter | Description |
 `id` | Push Zone ID |
 `name` | Push Zone name |
 `label` | Something that describes your zone |
-`valid_referers` | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
+`valid_referers` | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
 `content_disposition` | Force files to download |
-`sslshared` | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 `suspend` | Flag denoting if the zone has been suspended |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
@@ -2765,9 +2763,9 @@ Updates a push zone specified by the {zone_id} parameter
 Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
 `label` | - | length: 1-255 chars | Something that describes your zone |
-`valid_referers` | - | length: 1-100 chars | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
+`valid_referers` | - | length: 1-100 chars | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
 `content_disposition` | 0 | only 0 or 1 accepted | Force files to download |
-`sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 
 
 ### Response Parameters
@@ -2777,9 +2775,9 @@ Parameter | Description |
 `id` | Push Zone ID |
 `name` | Push Zone name |
 `label` | Something that describes your zone |
-`valid_referers` | List of domains for http referrer protection (separated byspace). Only the domains in the list will be treated as validreferrers |
+`valid_referers` | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
 `content_disposition` | Force files to download |
-`sslshared` | Enable Shared SSL. This feature allows you use your zone inHTTPS mode. You don't need your own SSL certificate, our servernetdna-ssl.com will be used. |
+`sslshared` | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 `suspend` | Flag denoting if the zone has been suspended |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
@@ -4995,7 +4993,7 @@ Parameter | Description |
 `id` | The SSL Certificate ID. |
 `ssl_crt` | The SSL certificate. |
 `ssl_key` | The SSL Private Key. |
-`ssl_cabundle` | The CA Bundle for the cert. |
+`ssl_cabundle` | The CA Bundle for the certificate. |
 `domain` | The domain applicable to this certificate. |
 `date_expiration` | The date of expiration for the certificate. |
 `wildcard` | Flag to signify whether this is a wildcard certificate. |
@@ -5096,7 +5094,7 @@ Parameter | Description |
 `id` | The SSL Certificate ID. |
 `ssl_crt` | The SSL certificate. |
 `ssl_key` | The SSL Private Key. |
-`ssl_cabundle` | The CA Bundle for the cert. |
+`ssl_cabundle` | The CA Bundle for the certificate. |
 `domain` | The domain applicable to this certificate. |
 `date_expiration` | The date of expiration for the certificate. |
 `wildcard` | Flag to signify whether this is a wildcard certificate. |
@@ -5352,7 +5350,7 @@ Create and enable Upstream for a specific {zone_id}.
 
 Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
-`server_url` | - | <span class="label important">required</span><br /> | The server url or ip to provide the streaming resources 
+`server_url` | - | <span class="label important">required</span><br /> | The server URL or IP to provide the streaming resources 
 `port` | - | <span class="label important">required</span><br /> | The port where server is to be called 
 
 
@@ -5362,7 +5360,7 @@ Parameter | Description |
 --- | --- | ---
 `id` | The Upstream ID. 
 `bucket_id` | The bucket_id it belongs to 
-`server_url` | The server url or ip 
+`server_url` | The server URL or IP 
 `port` | The port it uses to call the server 
 
 ### Code Samples
@@ -5425,9 +5423,9 @@ Update the Upstream information for the specified {zone_id}.
 
 Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
-`upstream_id` | - | <span class="label important">required</span><br /> | The Upstream Information you're modifying. 
-`server_url` | - | <span class="label important">required</span><br /> | The server url or ip 
-`port` | - | <span class="label important">required</span><br /> | The port it uses to call the server 
+`upstream_id` | - | <span class="label important">required</span><br /> | The Upstream Information you're modifying
+`server_url` | - | <span class="label important">required</span><br /> | The server URL or IP 
+`port` | - | <span class="label important">required</span><br /> | The port used to call the server 
 
 
 ### Response Parameters
@@ -5436,7 +5434,7 @@ Parameter | Description |
 --- | --- | ---
 `id` | The Upstream ID. 
 `bucket_id` | The bucket_id it belongs to 
-`server_url` | The server url or ip 
+`server_url` | The server URL or IP 
 `port` | The port it uses to call the server 
 
 ### Code Samples
@@ -5569,7 +5567,7 @@ Parameter | Description |
 `hit` | The number of times files were requested |
 `noncache_hit` | The number of times a requested file was not in cache |
 `cache_hit` | The number of times a requested file was already cached |
-`timestamp` | The timestamp for the corresponding {report_type}. |
+`timestamp` | The timestamp for the corresponding {report_type} |
 
 ### Code Samples
 
@@ -5649,7 +5647,7 @@ Parameter | Description |
 `hit` | The number of times files were requested |
 `noncache_hit` | The number of times a requested file was not in cache |
 `cache_hit` | The number of times a requested file was already cached |
-`timestamp` | The timestamp for the corresponding {report_type}. |
+`timestamp` | The timestamp for the corresponding {report_type} |
 
 
 
@@ -5973,13 +5971,13 @@ Parameter | Default Value | Validation | Description |
 Parameter | Description |
 --- | --- | ---
 `pop_id` | Node Id |
-`pop_name` | Node 3 letter code. Only returned when {report_type} is notempty. |
-`pop_description` | Full node name. Only returned when {report_type} is notempty. |
+`pop_name` | Node 3 letter code, only returned when {report_type} is not empty |
+`pop_description` | Full node name, only returned when {report_type} is not empty |
 `size` | The amount of bytes transferred |
 `hit` | The number of times files were requested |
 `noncache_hit` | The number of times a requested file was not in cache |
 `cache_hit` | The number of times a requested file was already cached |
-`timestamp` | A timestamp corresponding to {report_type}. Only returned when{report_type} is not empty. |
+`timestamp` | A timestamp corresponding to {report_type}, only returned when {report_type} is not empty |
 
 ### Code Samples
 
@@ -6148,13 +6146,13 @@ Parameter | Default Value | Validation | Description |
 Parameter | Description |
 --- | --- | ---
 `pop_id` | Node Id |
-`pop_name` | Node 3 letter code. Only returned when {report_type} is notempty. |
-`pop_description` | Full node name. Only returned when {report_type} is notempty. |
+`pop_name` | Node 3 letter code, only returned when {report_type} is not empty |
+`pop_description` | Full node name, only returned when {report_type} is not empty |
 `size` | The amount of bytes transferred |
 `hit` | The number of times files were requested |
 `noncache_hit` | The number of times a requested file was not in cache |
 `cache_hit` | The number of times a requested file was already cached |
-`timestamp` | A timestamp corresponding to {report_type}. Only returned when{report_type} is not empty. |
+`timestamp` | A timestamp corresponding to {report_type}, only returned when {report_type} is not empty |
 
 ### Code Samples
 
@@ -6380,7 +6378,7 @@ Parameter | Description |
 `hit` | The number of times files were requested |
 `noncache_hit` | The number of times a requested file was not in cache |
 `cache_hit` | The number of times a requested file was already cached |
-`timestamp` | A timestamp corresponding to {report_type}. Only returned when{report_type} is not empty. |
+`timestamp` | A timestamp corresponding to {report_type}, only returned when {report_type} is not empty |
 
 ### Code Samples
 
@@ -6466,7 +6464,7 @@ Parameter | Description |
 `hit` | The number of times files were requested |
 `noncache_hit` | The number of times a requested file was not in cache |
 `cache_hit` | The number of times a requested file was already cached |
-`timestamp` | A timestamp corresponding to {report_type}. Only returned when{report_type} is not empty. |
+`timestamp` | A timestamp corresponding to {report_type}, only returned when {report_type} is not empty |
 
 
 
