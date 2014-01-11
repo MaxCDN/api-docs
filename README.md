@@ -40,6 +40,7 @@
 
 ## Changelog
 
+  - **2014-01-10**  Minor grammatical fixes
   - **2013-09-10**  Rebranded for MaxCDN
   - **2013-07-22**  Added JSON responses to SSL
   - **2013-07-09**  Added Authentication section
@@ -70,7 +71,7 @@ The MaxCDN RWS supports both 2-legged and 3-legged authentication.
 
 3-legged OAuth is best used to allow 3rd party apps/services (e.g. [Leftronic](https://www.leftronic.com/services/maxcdn/)) access to a user's profile - the user just needs to grant access to the app.
 
-2-legged OAuth is more limited in that it only allows a consumer access to resources that belong to it. 2-legged OAuth can be useful for building a 3rd party app or a control panel where the consumer is a reseller or an account with sub-accounts (this means the reseller/main account also has access to sub-account resources). This does not require any user intervention in the process.
+2-legged OAuth is more limited in that it only allows a consumer access to resources that belong to it, which can be useful for building a 3rd party app, a control panel where the consumer is a reseller, or an account with sub-accounts (this means the reseller/main account also has access to sub-account resources). This does not require any user intervention in the process.
 
 ### 3-legged OAuth
 3-legged OAuth describes the scenario for which OAuth was originally developed: a resource owner wants to give a client access to a server without sharing their credentials (i.e. username/password).
@@ -609,7 +610,7 @@ Parameter | Default Value | Validation | Description |
 `firstname` | - | <span class="label important">required</span><br />length: 1-32 chars | First Name |
 `lastname` | - | <span class="label important">required</span><br />length: 1-32 chars | Last Name |
 `phone` | - | length: 7, 10, 11, or 14 chars; only digits considered | Phone Number |
-`timezone` | - | valid::timezone | Valid timezone (see [List ofSupported Timezones](http://php.net/manual/en/timezones.php)) |
+`timezone` | - | valid::timezone | Valid timezone (see [List of Supported Timezones](http://php.net/manual/en/timezones.php)) |
 
 
 ### Response Parameters
@@ -796,7 +797,7 @@ Parameter | Default Value | Validation | Description |
 `firstname` | - | length: 1-32 chars | First Name |
 `lastname` | - | length: 1-32 chars | Last Name |
 `phone` | - | length: 7, 10, 11, or 14 chars; only digits considered | Phone Number |
-`timezone` | - | valid::timezone | Valid timezone (see [List ofSupported Timezones](http://php.net/manual/en/timezones.php)) |
+`timezone` | - | valid::timezone | Valid timezone (see [List of Supported Timezones](http://php.net/manual/en/timezones.php)) |
 
 
 ### Response Parameters
@@ -1158,8 +1159,8 @@ Parameter | Description |
 `url` | Origin URL |
 `port` | Port |
 `ip` | IP address of the Origin URL |
-`compress` | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`compress` | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | Treat Query Strings as a separate cacheable item |
 `set_host_header` | The URL sent as the Host in all HTTP Response Headers |
 `cache_valid` | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
@@ -1318,8 +1319,8 @@ Parameter | Default Value | Validation | Description |
 `url` | - | <span class="label important">required</span><br />length: 4-100 chars; only valid URLs accepted | Origin URL |
 `port` | 80 | length: 1-5 chars; only digits accepted | Port |
 `ip` | - | length: 1-10 chars, only digits accepted | Valid IP address of the Origin URL, if omitted the service will automatically try to find the IP |
-`compress` | 0 | only 0 or 1 accepted | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | 0 | only 0 or 1 accepted | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain, text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`compress` | 0 | only 0 or 1 accepted | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | 0 | only 0 or 1 accepted | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | 0 | only 0 or 1 accepted | Treat Query Strings as a separate cacheable item |
 `set_host_header` | - | length: 4-100 chars; only valid URLs accepted | The URL to send as the Host in all HTTP Response Headers |
 `cache_valid` | 1d | length: 1-30 chars; must be a number followed by one of s, m, h, d, M, or Y | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
@@ -1348,8 +1349,8 @@ Parameter | Description |
 `url` | Origin URL |
 `port` | Port |
 `ip` | IP address of the Origin URL |
-`compress` | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`compress` | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | Treat Query Strings as a separate cacheable item |
 `set_host_header` | The URL sent as the Host in all HTTP Response Headers |
 `cache_valid` | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
@@ -1524,8 +1525,8 @@ Parameter | Description |
 `url` | Origin URL |
 `port` | Port |
 `ip` | Valid IP address of the Origin URL, if omitted the service will automatically try to find the IP |
-`compress` | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`compress` | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | Treat Query Strings as a separate cacheable item |
 `set_host_header` | The URL sent as the Host in all HTTP Response Headers |
 `cache_valid` | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
@@ -1642,8 +1643,8 @@ Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
 `url` | - | length: 4-100 chars; only valid URLs accepted | Origin URL |
 `port` | 80 | length: 1-5 chars; only digits accepted | Port |
-`compress` | 0 | only 0 or 1 accepted | On the fly compression of your files served from our edges. Enables GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | 0 | only 0 or 1 accepted | Allow us to cache compressed versions of your files from the origin. Enables GZip compression for the following file types:text/plain, text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`compress` | 0 | only 0 or 1 accepted | On the fly compression of your files served from our edges. Enables GZip compression for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | 0 | only 0 or 1 accepted | Allow us to cache compressed versions of your files from the origin. Enables GZip compression for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | 0 | only 0 or 1 accepted | Treat Query Strings as a separate cacheable item |
 `set_host_header` | - | length: 4-100 chars; only valid URLs accepted | The URL to send as the Host in all HTTP Response Headers |
 `cache_valid` | - | length: 1-30 chars; must be a number followed by one of s, m, h, d, M, or Y | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
@@ -1672,8 +1673,8 @@ Parameter | Description |
 `url` | Origin URL |
 `port` | Port |
 `ip` | Valid IP address of the Origin URL, if omitted the service will automatically try to find the IP |
-`compress` | On the fly compression of your files served from our edges. Enables GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
-`backend_compress` | Allow us to cache compressed versions of your files from the origin. Enables GZip compression for the following file types: text/plain,text/html, text/javascript, text/css, text/xml,application/javascript, application/x-javascript, application/xml,text/x-component, application/json, application/xhtml+xml,application/rss+xml, application/atom+xml, app/vnd.ms-fontobject,image/svg+xml, application/x-font-ttf, font/opentype |
+`compress` | On the fly compression of your files served from our edges. Enables GZip compression for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
+`backend_compress` | Allow us to cache compressed versions of your files from the origin. Enables GZip compression for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | Treat Query Strings as a separate cacheable item |
 `set_host_header` | The URL sent as the Host in all HTTP Response Headers |
 `cache_valid` | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
@@ -2111,7 +2112,7 @@ Adds a new custom domain to {zone_id}
 Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
 `custom_domain` | - | <span class="label important">required</span><br />length: 1-255 chars, valid::custom_domain, !valid::full_domain | A valid custom domain |
-`type` | - | Applies only to Vod Zones and must be either 'vod-rtmp','vod-pseudo', 'vod-direct', or 'vod-ftp' | The type of custom domain being created |
+`type` | - | Applies only to VOD Zones and must be either 'vod-rtmp','vod-pseudo', 'vod-direct', or 'vod-ftp' | The type of custom domain being created |
 
 
 ### Response Parameters
@@ -3092,7 +3093,7 @@ Adds a new custom domain to {zone_id}
 Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
 `custom_domain` | - | <span class="label important">required</span><br />length: 1-255 chars, valid::custom_domain, !valid::full_domain | A valid custom domain |
-`type` | - | Applies only to Vod Zones and must be either 'vod-rtmp','vod-pseudo', 'vod-direct', or 'vod-ftp' | The type of custom domain being created |
+`type` | - | Applies only to VOD Zones and must be either 'vod-rtmp','vod-pseudo', 'vod-direct', or 'vod-ftp' | The type of custom domain being created |
 
 
 ### Response Parameters
@@ -3574,7 +3575,7 @@ api.post('/zones/vod.json', { name: 'newVODZone3', password: 'password' }, funct
 
 ## Get VOD Zones Count
 
-Counts all vod zones on the specified account
+Counts all VOD zones on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
@@ -3585,7 +3586,7 @@ Counts all vod zones on the specified account
 
 Parameter | Description |
 --- | --- | ---
-`count` | The number of vod zones on the specified account |
+`count` | The number of VOD zones on the specified account |
 
 ### Code Samples
 
@@ -4050,7 +4051,7 @@ Adds a new custom domain to {zone_id}
 Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
 `custom_domain` | - | <span class="label important">required</span><br />length: 1-255 chars, valid::custom_domain, !valid::full_domain | A valid custom domain |
-`type` | - | Applies only to Vod Zones and must be either 'vod-rtmp','vod-pseudo', 'vod-direct', or 'vod-ftp' | The type of custom domain being created |
+`type` | - | Applies only to VOD Zones and must be either 'vod-rtmp','vod-pseudo', 'vod-direct', or 'vod-ftp' | The type of custom domain being created |
 
 
 ### Response Parameters
@@ -5452,14 +5453,14 @@ Parameter | Description |
 		<pre>
 type = 'pull'
 id = '96061'
-params = {"upsream_id"=> "93013","server_url"=> "http=>//somedomain.com","port"=> "80"}
+params = {"upstream_id"=> "93013","server_url"=> "http=>//somedomain.com","port"=> "80"}
 api.put('/zones/'+type+'/'+id+'/upstream.json')</pre>
   </div>
   <div class="tab-pane" id="python67">
 		<pre>
 type = 'pull'
 id = '96061'
-params = {"upsream_id": "93013","server_url": "http://somedomain.net","port": "80"}
+params = {"upstream_id": "93013","server_url": "http://somedomain.net","port": "80"}
 api.put('/zones/'+type+'/'+id+'/upstream.json')</pre>
 	</div>
   <div class="tab-pane" id="php67">
