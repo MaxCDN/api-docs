@@ -1,12 +1,12 @@
 {
   "name": "maxcdn-api-docs",
-  "description": "API docs built with Wintersmith and Node",
-  "version": "0.0.2",
+  "description": "MaxCDN API Docs",
+  "version": "0.1.0",
   "author": "Nick Baugh <niftylettuce@gmail.com>",
   "contributors": [
     {
-      "name": "Nick Baugh, Justin Dorfman",
-      "email": "niftylettuce@gmail.com, jdorfman@maxcdn.com"
+      "name": "Nick Baugh, Justin Dorfman, Joshua Mervine",
+      "email": "niftylettuce@gmail.com, jdorfman@maxcdn.com, joshua@mervine.net"
     }
   ],
   "keywords": [
@@ -16,10 +16,10 @@
     "docs",
     "cdn"
   ],
-  "devDependencies": {},
   "scripts": {
-    "deploy": "grunt",
-    "minify": "bash ./scripts/minify.sh"
+    "deploy": "echo \"implement deployment\"",
+    "server": "make server",
+    "build": "make"
   },
   "repository": {
     "type": "git",
@@ -27,11 +27,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "mkdirp": "~0.3.5",
-    "wintersmith-less": "~0.1.0",
-    "grunt": "~0.4.1",
-    "wintersmith": "git://github.com/niftylettuce/wintersmith#1.2.4",
     "uglify-js": "^2.4.12",
-    "uglifycss": "0.0.8"
+    "jade": "^1.2.0",
+    "marked": "^0.3.1",
+    "less": "^1.7.0",
+    "express": "^3.4.8",
+    "minimist": "0.0.8",
+    "watch": "^0.9.0"
   }
 }

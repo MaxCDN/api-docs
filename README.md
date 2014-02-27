@@ -26,7 +26,7 @@
   - Node (NPM) <https://github.com/maxcdn/node-maxcdn>
   - .NET <https://github.com/netdna/netdnarws-net>
   - Ruby <https://github.com/maxcdn/ruby-maxcdn>
-  - Python <https://github.com/maxcdn-python-maxcdn>
+  - Python <https://github.com/maxcdn/python-maxcdn>
   - PHP <https://github.com/netdna/netdnarws-php>
   - Perl <https://github.com/netdna/netdnarws-perl>
 
