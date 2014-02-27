@@ -18,7 +18,8 @@
   ],
   "devDependencies": {},
   "scripts": {
-    "deploy": "grunt"
+    "deploy": "grunt",
+    "minify": "bash ./scripts/minify.sh"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,8 @@
     "mkdirp": "~0.3.5",
     "wintersmith-less": "~0.1.0",
     "grunt": "~0.4.1",
-    "wintersmith": "git://github.com/niftylettuce/wintersmith"
+    "wintersmith": "git://github.com/niftylettuce/wintersmith#1.2.4",
+    "uglify-js": "^2.4.12",
+    "uglifycss": "0.0.8"
   }
 }
