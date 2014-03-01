@@ -45,6 +45,9 @@ make server
 ```bash
 git add .
 git commit -m 'I made some changes'
+
+# WARNING: This will forcefully overide the 'gh-pages' branch with no quarter or mercy.
+#          Be sure you're working on the latest remote version and know what you're doing.
 make deploy
 ```
 

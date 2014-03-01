@@ -52,8 +52,7 @@ server: .PHONY
 
 # Deploy
 ###
-#BRNACH=master
-BRNACH=$(shell git branch | grep "^\*" | sed 's/^\* //')
+BRANCH=master
 
 deploy:  .PHONY
 	@git status | grep "working directory clean" || (echo "ERROR: You have uncommitted changes!"; git status; exit 1)
