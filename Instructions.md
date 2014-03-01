@@ -1,59 +1,59 @@
-
 # Instructions
 
 ## Requirements
 
-* [Node][node]
-* [Grunt](#grunt)
-
-[node]: http://nodejs.org
-
-## Grunt
-
-Install `grunt` after you've installed Node.
-
-```bash
-npm install -g grunt-cli
-```
+* [Node.js](http://nodejs.org)
+* OS: Mac, Linux (maybe Cygwin on Windows?)
 
 ## Quick Start
 
 **NOTE**: For development, always work out of the "source" branch, never, ever touch "master".
 
-1. Clone the repo, install the  dependencies, and start the preview server.
+1.) Clone the repo, install the dependencies, and start the development server.
 
-    ```bash
-    git clone git@github.com:maxcdn/api-docs.git
-    npm install
-    ./preview
-    ```
+```bash
+git clone git@github.com:maxcdn/api-docs.git
+npm install
+make
+make server
+```
+2.) Visit <http://localhost:3000/> in your browser.
 
-2. Visit <http://localhost:8080/> in your browser.
+3.) Making changes:
 
-3. Make changes to `./Readme.md` and refresh the page.
+```bash
+.
+├── config
+│   └── config.json   # site configuration
+├── public
+│   ├── css           # generated css
+│   ├── favicon.ico
+│   ├── font          # fonts
+│   ├── img           # images
+│   ├── index.html    # generated html
+│   └── js            # javascript
+├── README.md          # API Documentation
+└── templates          # Jade and Less templates
 
-4. You can also edit `./templates/layout.jade` for HTML changes using the [Jade][jade] template engine.
+# Warning: Do not edit *.html, *.min.js or *.min.css files manually.
+```
 
-[jade]: http://jade-lang.com
+> Note: Server will automatically regenerate an jade, md, css and js files if they change.
 
-5. Make CSS changes using LESS or plain CSS by editing files in the `./contents/css` folder.
+4.) Build and deploy site.
 
-6. Add images in the `./contents/img/` folder and fonts in the `./contents/font/` folder.
+```bash
+git add .
+git commit -m 'I made some changes'
 
-7. When you're ready to deploy your changes:
-
-    ```bash
-    git add .
-    git commit -m 'I made some changes'
-    git push origin source
-    grunt
-    ```
-
-8. This will automatically build the site, and then deploy it to the master branch.
+# WARNING: This will forcefully overide the 'gh-pages' branch with no quarter or mercy.
+#          Be sure you're working on the latest remote version and know what you're doing.
+make deploy
+```
 
 ## Support
 
-If you run into issues please contact <niftylettuce@gmail.com> or <jdorfman@maxcdn.com>
+If you run into issues please contact <joshua@mervine.net> or <jdorfman@maxcdn.com>
 
 ## License
 
