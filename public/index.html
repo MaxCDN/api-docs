@@ -38,6 +38,7 @@
 </ul>
 <h2 id="changelog">Changelog</h2>
 <ul>
+<li><strong>2014-03-03</strong>  Documented <code>dns_check</code> property of Pull Zones.</li>
 <li><strong>2014-01-10</strong>  Minor grammatical fixes</li>
 <li><strong>2013-09-10</strong>  Rebranded for MaxCDN</li>
 <li><strong>2013-07-22</strong>  Added JSON responses to SSL</li>
@@ -1897,10 +1898,17 @@ api.get(&#39;/zones/pull.json&#39;, function(err, response) {
 <td></td>
 </tr>
 <tr>
+<td><code>dns_check</code></td>
+<td>1</td>
+<td>only 0 or 1 accepted</td>
+<td>This field determines how your Origin resolves. When set to 1, we automatically grab the origin&#39;s IP using DNS. Setting it to 0 allows you explicitly provide the IP of the origin.</td>
+<td></td>
+</tr>
+<tr>
 <td><code>ip</code></td>
 <td>-</td>
 <td>length: 1-10 chars, only digits accepted</td>
-<td>Valid IP address of the Origin URL, if omitted the service will automatically try to find the IP</td>
+<td>Valid IP address of the Origin URL. Be sure to set <code>dns_check</code> to 0 to prevent this value from being overwritten.</td>
 <td></td>
 </tr>
 <tr>
@@ -2587,6 +2595,20 @@ api.get(&#39;/zones/pull.json&#39; + id, function(err, response) {
 <td>80</td>
 <td>length: 1-5 chars; only digits accepted</td>
 <td>Port</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dns_check</code></td>
+<td>1</td>
+<td>only 0 or 1 accepted</td>
+<td>This field determines how your Origin resolves. When set to 1, we automatically grab the origin&#39;s IP using DNS. Setting it to 0 allows you explicitly provide the IP of the origin.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ip</code></td>
+<td>-</td>
+<td>length: 1-10 chars, only digits accepted</td>
+<td>Valid IP address of the Origin URL. Be sure to set <code>dns_check</code> to 0 to prevent this value from being overwritten.</td>
 <td></td>
 </tr>
 <tr>
