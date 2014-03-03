@@ -1318,7 +1318,8 @@ Parameter | Default Value | Validation | Description |
 `name` | - | <span class="label important">required</span><br />length: 3-32 chars; only letters, digits, and dash (-)accepted | Pull Zone Name |
 `url` | - | <span class="label important">required</span><br />length: 4-100 chars; only valid URLs accepted | Origin URL |
 `port` | 80 | length: 1-5 chars; only digits accepted | Port |
-`ip` | - | length: 1-10 chars, only digits accepted | Valid IP address of the Origin URL, if omitted the service will automatically try to find the IP |
+`dns_check` | 1 | only 0 or 1 accepted | This field determines how your Origin resolves. When set to 1, we automatically grab the origin's IP using DNS. Setting it to 0 allows you explicitly provide the IP of the origin. |
+`ip` | - | length: 1-10 chars, only digits accepted | Valid IP address of the Origin URL. Be sure to set `dns_check` to 0 to prevent this value from being overwritten. |
 `compress` | 0 | only 0 or 1 accepted | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
 `backend_compress` | 0 | only 0 or 1 accepted | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | 0 | only 0 or 1 accepted | Treat Query Strings as a separate cacheable item |
@@ -1643,6 +1644,8 @@ Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
 `url` | - | length: 4-100 chars; only valid URLs accepted | Origin URL |
 `port` | 80 | length: 1-5 chars; only digits accepted | Port |
+`dns_check` | 1 | only 0 or 1 accepted | This field determines how your Origin resolves. When set to 1, we automatically grab the origin's IP using DNS. Setting it to 0 allows you explicitly provide the IP of the origin. |
+`ip` | - | length: 1-10 chars, only digits accepted | Valid IP address of the Origin URL. Be sure to set `dns_check` to 0 to prevent this value from being overwritten. |
 `compress` | 0 | only 0 or 1 accepted | On the fly compression of your files served from our edges. Enables GZip compression for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
 `backend_compress` | 0 | only 0 or 1 accepted | Allow us to cache compressed versions of your files from the origin. Enables GZip compression for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | 0 | only 0 or 1 accepted | Treat Query Strings as a separate cacheable item |
