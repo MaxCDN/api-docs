@@ -16,8 +16,7 @@ html(lang='en')
     //- <https://github.com/h5bp/html5-boilerplate>
     link(rel='shortcut icon', href='//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png', type='image/x-icon')
     link(rel="stylesheet", href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css")
-    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css")
-    link(rel="stylesheet", href="css/prettify.min.css")
+    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css")
     link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Cuprum:400,700")
     link(rel="stylesheet", href="css/docs.min.css")
   body(data-spy='scroll', data-target='#docs-navbar', data-offset='83')
@@ -46,20 +45,20 @@ html(lang='en')
                     li.nav-sub: a.gotohash(href="#request-tokens") Request Tokens
                     li.nav-sub: a.gotohash(href="#user-authorization") User Authorization
                     li.nav-sub: a.gotohash(href="#key-path-parameters") Key: Path Parameters
-                  li: a.gotohash(href="#account-api") <span id="iconSizer"><i class="icon-maxcdn"></i></span> Account API
+                  li: a.gotohash(href="#account-api") <span id="iconSizer"><i class="fa fa-maxcdn"></i></span> Account API
                   ul.nav-bold.nav-down.hide
                     li.nav-sub: a.gotohash(href="#get-account") Get Account
                     li.nav-sub: a.gotohash(href="#update-account") Update Account
                     li.nav-sub: a.gotohash(href="#get-account-address") Get Account Address
                     li.nav-sub: a.gotohash(href="#update-account-address") Update Account Address
-                  li: a.gotohash(href="#users-api") <span id="iconSizer"><i class="icon-user"></i></span> Users API
+                  li: a.gotohash(href="#users-api") <span id="iconSizer"><i class="fa fa-user"></i></span> Users API
                   ul.nav-bold.nav-down.hide
                     li.nav-sub: a.gotohash(href="#list-users") List Users
                     li.nav-sub: a.gotohash(href="#create-user") Create User
                     li.nav-sub: a.gotohash(href="#get-user") Get User
                     li.nav-sub: a.gotohash(href="#update-user") Update User
                     li.nav-sub: a.gotohash(href="#delete-user") Delete User
-                  li: a.gotohash(href="#zones-api") <span id="iconSizer"><i class="icon-cloud"></i></span> Zones API
+                  li: a.gotohash(href="#zones-api") <span id="iconSizer"><i class="fa fa-cloud"></i></span> Zones API
                   ul.nav-bold.nav-down.hide
                     li.nav-sub: a.gotohash(href="#list-zones") List Zones
                     li.nav-sub: a.gotohash(href="#get-zone-summary") Get Zone Summary
@@ -73,7 +72,7 @@ html(lang='en')
                     li.nav-sub: a.gotohash(href="#live-zone-api") Live Zone API
                     li.nav-sub: a.gotohash(href="#zones-ssl-api") Zones SSL API
                     li.nav-sub: a.gotohash(href="#zones-upstream-api") Zones Upstream API
-                  li: a.gotohash(href="#reports-by-zone-api") <span id="iconSizer"><i class="icon-file-alt"></i></span> Reports API
+                  li: a.gotohash(href="#reports-by-zone-api") <span id="iconSizer"><i class="fa fa-signal"></i></span> Reports API
                   ul.nav-bold.nav-down.hide
                     li.nav-sub: a.gotohash(href="#list-zone-stats") List Zone Stats
                     li.nav-sub: a.gotohash(href="#list-stats-per-zone") List Stats per Zone
@@ -83,14 +82,14 @@ html(lang='en')
                     li.nav-sub: a.gotohash(href="#reports-by-file-types-api") Reports by File Types API
                     li.nav-sub: a.gotohash(href="#reports-by-file-size-ranges-api") Reports by File Size Ranges API
                     li.nav-sub: a.gotohash(href="#reports-by-directory-api") Reports by Directory API
-                  li: a.gotohash(href="#reports-by-file-name-api") <span id="iconSizer"><i class="icon-group"></i></span> Clients API
+                  li: a.gotohash(href="#reports-by-file-name-api") <span id="iconSizer"><i class="fa fa-group"></i></span> Clients API
                   ul.nav-bold.nav-down.hide
                     li.nav-sub: a.gotohash(href="#reports-by-file-name-api") Reports by File Name API
                     li.nav-sub: a.gotohash(href="#reports-by-custom-domain-api") Reports by Custom Domain API
                     li.nav-sub: a.gotohash(href="#reports-for-live-zones-api") Reports for Live Zones API
-                  li: a(href='https://github.com/maxcdn/api-docs') <span id="iconSizer"><i class="icon-external-link"></i></span> GitHub Repo
+                  li: a(href='https://github.com/maxcdn/api-docs') <span id="iconSizer"><i class="fa fa-external-link"></i></span> GitHub Repo
         .span9#readme-docs!= content
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
+    script(src='//code.jquery.com/jquery-1.8.3.min.js')
     script.
       window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')
     script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js")
