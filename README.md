@@ -40,6 +40,7 @@
 
 ## Changelog
 
+  - **2014-03-03**  Documented `dns_check` property of Pull Zones.
   - **2014-01-10**  Minor grammatical fixes
   - **2013-09-10**  Rebranded for MaxCDN
   - **2013-07-22**  Added JSON responses to SSL
