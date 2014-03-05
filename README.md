@@ -40,7 +40,8 @@
 
 ## Changelog
 
-  - **2014-03-03**  Documented `dns_check` property of Pull Zones.
+  - **2014-03-05**  Added <a href="#get-all-zone-stats">stats per zone</a> reporting endpoint 
+  - **2014-03-03**  Documented `dns_check` property of Pull Zones
   - **2014-01-10**  Minor grammatical fixes
   - **2013-09-10**  Rebranded for MaxCDN
   - **2013-07-22**  Added JSON responses to SSL
@@ -5562,13 +5563,13 @@ api.delete('/zones/' + type + '/' + id + '/upstream.json', function(err, respons
 </div>
 
 
-# Reports by Zone API
+# Reports API
 
-## List Zone Stats
+## Get Account Stats
 
-Gets all zone usage statistics optionally broken up by
+Gets the total usage statistics for your account, optionally broken up by
 {report_type}. If no {report_type} is given the request will return
-the total usage for the zones.
+the total usage on your account.
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
@@ -5644,7 +5645,117 @@ api.get('/reports/stats.json/' + reportType, function(err, response) {
 </div>
 
 
-## List Stats per Zone
+## Get All Zone Stats
+
+Gets the total usage statistics for each of your zones, optionally broken up by
+{report_type}. If no {report_type} is given the timestamp response parameter will be omitted.
+
+<div class="heading">
+<div class="url GET"><span class="http_method">GET</span>
+<span class="path">https://rws.netdna.com/{companyalias}/reports/statsbyzone.json/{report_type}</span></div>
+</div>
+
+### Accepted Request Parameters
+
+Parameter | Default Value | Validation | Description |
+--- | --- | --- | --- | ---
+`date_from` | now() - 1 month | Y-m-d (e.g. 2012-01-01) | Start date |
+`date_to` | now() | Y-m-d (e.g. 2012-01-01) | End date |
+
+
+### Response Parameters
+
+Parameter | Description |
+--- | --- | ---
+`bucket_id` | The Zone ID that corresponds to this set of stats |
+`size` | The amount of bytes transferred |
+`hit` | The number of times files were requested |
+`noncache_hit` | The number of times a requested file was not in cache |
+`cache_hit` | The number of times a requested file was already cached |
+`timestamp` | The timestamp for the corresponding {report_type} |
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab69">
+  <li class="active"><a href="#ruby69" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python69" data-toggle='tab'>Python</a></li>
+  <li><a href="#php69" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node69" data-toggle='tab'>Node</a></li>
+  <li><a href="#response69" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby69">
+    <pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/reports/statsbyzone.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="python69">
+    <pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/reports/statsbyzone.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="php69">
+    <pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/reports/statsbyzone.json/'.$reportType);</pre>
+  </div>
+  <div class="tab-pane" id="node69">
+  <pre>
+var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/reports/statsbyzone.json/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+  </div>
+  <div class="tab-pane" id="response69">
+    <pre>
+{
+  "code": 200,
+  "data": {
+    "page": 1,
+    "pages": 262,
+    "page_size": 50,
+    "current_page_size": 50,
+    "total": 13097,
+    "stats": [
+      {
+        "zone_id": "4816",
+        "size": "20318527",
+        "hit": "280",
+        "cache_hit": "15",
+        "noncache_hit": "265"
+      },
+      {
+        "zone_id": "5023",
+        "size": "18032138",
+        "hit": "119120",
+        "cache_hit": "0",
+        "noncache_hit": "119120"
+      },
+      {
+        "zone_id": "5045",
+        "size": "10656749286",
+        "hit": "950640",
+        "cache_hit": "838432",
+        "noncache_hit": "112208"
+      },
+
+      ....
+
+    ],
+    "summary": {
+      "size": 5.7138288549144e+14,
+      "hit": 17093013874,
+      "cache_hit": 14815205275,
+      "noncache_hit": 2277808599
+    }
+  }
+}</pre>
+  </div>
+</div>
+
+
+## Get a Zone's Stats
 
 Gets the {zone_id} usage statistics optionally broken up by
 {report_type}. If no {report_type} is given the request will return
