@@ -5677,38 +5677,38 @@ Parameter | Description |
 
 ### Code Samples
 
-<ul class="nav nav-tabs" id="myTab69">
-  <li class="active"><a href="#ruby69" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python69" data-toggle='tab'>Python</a></li>
-  <li><a href="#php69" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node69" data-toggle='tab'>Node</a></li>
-  <li><a href="#response69" data-toggle='tab'>Response</a></li>
+<ul class="nav nav-tabs" id="myTab100">
+  <li class="active"><a href="#ruby100" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python100" data-toggle='tab'>Python</a></li>
+  <li><a href="#php100" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node100" data-toggle='tab'>Node</a></li>
+  <li><a href="#response100" data-toggle='tab'>Response</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="ruby69">
+  <div class="tab-pane active" id="ruby100">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statsbyzone.json'+reportType)</pre>
   </div>
-  <div class="tab-pane" id="python69">
+  <div class="tab-pane" id="python100">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statsbyzone.json'+reportType)</pre>
   </div>
-  <div class="tab-pane" id="php69">
+  <div class="tab-pane" id="php100">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/statsbyzone.json/'.$reportType);</pre>
   </div>
-  <div class="tab-pane" id="node69">
+  <div class="tab-pane" id="node100">
   <pre>
 var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statsbyzone.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
-  <div class="tab-pane" id="response69">
+  <div class="tab-pane" id="response100">
     <pre>
 {
   "code": 200,
