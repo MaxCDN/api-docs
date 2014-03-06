@@ -2023,7 +2023,7 @@ function callback(err, response) {
   console.log(response)
 }
 
-// Pruge File
+// Purge File
 var id = '96167'
 var file = '/file1.txt'
 api.delete('/zones/pull.json/' + id + '/cache', file, callback)
@@ -2032,7 +2032,7 @@ function callback(err, response) {
   console.log(response)
 }
 
-// Pruge File
+// Purge File
 var id = '96167'
 var files = [ '/file1.txt', '/file2.txt' ]
 api.delete('/zones/pull.json/' + id + '/cache', files, callback)
