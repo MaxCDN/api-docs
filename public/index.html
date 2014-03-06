@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>MaxCDN - API Docs</title><meta name="description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta http-equiv="cleartype" content="on"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta property="og:site_name" content="MaxCDN - API Docs"><meta property="og:type" content="website"><meta property="og:title" content="MaxCDN - API Docs"><meta property="og:description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta property="og:image" content="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png"><link rel="shortcut icon" href="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png" type="image/x-icon"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css"><link rel="stylesheet" href="css/prettify.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cuprum:400,700"><link rel="stylesheet" href="css/docs.min.css"></head><body data-spy="scroll" data-target="#docs-navbar" data-offset="83"><div id="spacer"></div><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><div class="container"><a href="/" class="brand"></a></div></div></div><div class="container"><div class="row"><div class="span3"><div id="docs-navbar" data-spy="affix"><div class="row"><div class="span3"><ul class="nav nav-pills nav-stacked"><li class="active"><a href="#overview">Overview</a></li><li><a href="#support" class="gotohash">Support</a></li><li><a href="#changelog" class="gotohash">Changelog</a></li><li><a href="#authentication" class="gotohash">Authentication</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#auth-overview" class="gotohash">Overview</a></li><li class="nav-sub"><a href="#3-legged-oauth" class="gotohash">3-legged OAuth</a></li><li class="nav-sub"><a href="#2-legged-oauth" class="gotohash">2-legged OAuth</a></li><li class="nav-sub"><a href="#registering-your-application" class="gotohash">Registering Your Application</a></li><li class="nav-sub"><a href="#signing-requests" class="gotohash">Signing Requests</a></li><li class="nav-sub"><a href="#request-tokens" class="gotohash">Request Tokens</a></li><li class="nav-sub"><a href="#user-authorization" class="gotohash">User Authorization</a></li><li class="nav-sub"><a href="#key-path-parameters" class="gotohash">Key: Path Parameters</a></li></ul><li><a href="#account-api" class="gotohash"><span id="iconSizer"><i class="icon-maxcdn"></i></span> Account API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account" class="gotohash">Get Account</a></li><li class="nav-sub"><a href="#update-account" class="gotohash">Update Account</a></li><li class="nav-sub"><a href="#get-account-address" class="gotohash">Get Account Address</a></li><li class="nav-sub"><a href="#update-account-address" class="gotohash">Update Account Address</a></li></ul><li><a href="#users-api" class="gotohash"><span id="iconSizer"><i class="icon-user"></i></span> Users API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-users" class="gotohash">List Users</a></li><li class="nav-sub"><a href="#create-user" class="gotohash">Create User</a></li><li class="nav-sub"><a href="#get-user" class="gotohash">Get User</a></li><li class="nav-sub"><a href="#update-user" class="gotohash">Update User</a></li><li class="nav-sub"><a href="#delete-user" class="gotohash">Delete User</a></li></ul><li><a href="#zones-api" class="gotohash"><span id="iconSizer"><i class="icon-cloud"></i></span> Zones API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-zones" class="gotohash">List Zones</a></li><li class="nav-sub"><a href="#get-zone-summary" class="gotohash">Get Zone Summary</a></li><li class="nav-sub"><a href="#get-zone-count" class="gotohash">Get Zone Count</a></li><li class="nav-sub"><a href="#pull-zone-api" class="gotohash">Pull Zone API</a></li><li class="nav-sub"><a href="#pull-zone-custom-domains-api" class="gotohash">Pull Zone Custom Domains API</a></li><li class="nav-sub"><a href="#push-zone-api" class="gotohash">Push Zone API</a></li><li class="nav-sub"><a href="#push-zone-custom-domains-api" class="gotohash">Push Zone Custom Domains API</a></li><li class="nav-sub"><a href="#vod-zone-api" class="gotohash">VOD Zone API</a></li><li class="nav-sub"><a href="#vod-zone-custom-domains-api" class="gotohash">VOD Zone Custom Domains API</a></li><li class="nav-sub"><a href="#live-zone-api" class="gotohash">Live Zone API</a></li><li class="nav-sub"><a href="#zones-ssl-api" class="gotohash">Zones SSL API</a></li><li class="nav-sub"><a href="#zones-upstream-api" class="gotohash">Zones Upstream API</a></li></ul><li><a href="#reports-by-zone-api" class="gotohash"><span id="iconSizer"><i class="icon-file-alt"></i></span> Reports API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-zone-stats" class="gotohash">List Zone Stats</a></li><li class="nav-sub"><a href="#list-stats-per-zone" class="gotohash">List Stats per Zone</a></li><li class="nav-sub"><a href="#reports-by-location-api" class="gotohash">Reports by Location API</a></li><li class="nav-sub"><a href="#reports-by-popular-files-api" class="gotohash">Reports by Popular Files API</a></li><li class="nav-sub"><a href="#reports-by-status-codes-api" class="gotohash">Reports by Status Codes API</a></li><li class="nav-sub"><a href="#reports-by-file-types-api" class="gotohash">Reports by File Types API</a></li><li class="nav-sub"><a href="#reports-by-file-size-ranges-api" class="gotohash">Reports by File Size Ranges API</a></li><li class="nav-sub"><a href="#reports-by-directory-api" class="gotohash">Reports by Directory API</a></li></ul><li><a href="#reports-by-file-name-api" class="gotohash"><span id="iconSizer"><i class="icon-group"></i></span> Clients API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#reports-by-file-name-api" class="gotohash">Reports by File Name API</a></li><li class="nav-sub"><a href="#reports-by-custom-domain-api" class="gotohash">Reports by Custom Domain API</a></li><li class="nav-sub"><a href="#reports-for-live-zones-api" class="gotohash">Reports for Live Zones API</a></li></ul><li><a href="https://github.com/maxcdn/api-docs"><span id="iconSizer"><i class="icon-external-link"></i></span> GitHub Repo</a></li></ul></div></div></div></div><div id="readme-docs" class="span9"><h1 id="maxcdn-api-docs">MaxCDN API Docs</h1>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>MaxCDN - API Docs</title><meta name="description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta http-equiv="cleartype" content="on"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta property="og:site_name" content="MaxCDN - API Docs"><meta property="og:type" content="website"><meta property="og:title" content="MaxCDN - API Docs"><meta property="og:description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta property="og:image" content="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png"><link rel="shortcut icon" href="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png" type="image/x-icon"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cuprum:400,700"><link rel="stylesheet" href="css/docs.min.css"></head><body data-spy="scroll" data-target="#docs-navbar" data-offset="83"><div id="spacer"></div><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><div class="container"><a href="/" class="brand"></a></div></div></div><div class="container"><div class="row"><div class="span3"><div id="docs-navbar" data-spy="affix"><div class="row"><div class="span3"><ul class="nav nav-pills nav-stacked"><li class="active"><a href="#overview">Overview</a></li><li><a href="#support" class="gotohash">Support</a></li><li><a href="#changelog" class="gotohash">Changelog</a></li><li><a href="#authentication" class="gotohash">Authentication</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#auth-overview" class="gotohash">Overview</a></li><li class="nav-sub"><a href="#3-legged-oauth" class="gotohash">3-legged OAuth</a></li><li class="nav-sub"><a href="#2-legged-oauth" class="gotohash">2-legged OAuth</a></li><li class="nav-sub"><a href="#registering-your-application" class="gotohash">Registering Your Application</a></li><li class="nav-sub"><a href="#signing-requests" class="gotohash">Signing Requests</a></li><li class="nav-sub"><a href="#request-tokens" class="gotohash">Request Tokens</a></li><li class="nav-sub"><a href="#user-authorization" class="gotohash">User Authorization</a></li><li class="nav-sub"><a href="#key-path-parameters" class="gotohash">Key: Path Parameters</a></li></ul><li><a href="#account-api" class="gotohash"><span id="iconSizer"><i class="fa fa-maxcdn"></i></span> Account API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account" class="gotohash">Get Account</a></li><li class="nav-sub"><a href="#update-account" class="gotohash">Update Account</a></li><li class="nav-sub"><a href="#get-account-address" class="gotohash">Get Account Address</a></li><li class="nav-sub"><a href="#update-account-address" class="gotohash">Update Account Address</a></li></ul><li><a href="#users-api" class="gotohash"><span id="iconSizer"><i class="fa fa-user"></i></span> Users API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-users" class="gotohash">List Users</a></li><li class="nav-sub"><a href="#create-user" class="gotohash">Create User</a></li><li class="nav-sub"><a href="#get-user" class="gotohash">Get User</a></li><li class="nav-sub"><a href="#update-user" class="gotohash">Update User</a></li><li class="nav-sub"><a href="#delete-user" class="gotohash">Delete User</a></li></ul><li><a href="#zones-api" class="gotohash"><span id="iconSizer"><i class="fa fa-cloud"></i></span> Zones API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-zones" class="gotohash">List Zones</a></li><li class="nav-sub"><a href="#get-zone-summary" class="gotohash">Get Zone Summary</a></li><li class="nav-sub"><a href="#get-zone-count" class="gotohash">Get Zone Count</a></li><li class="nav-sub"><a href="#pull-zone-api" class="gotohash">Pull Zone API</a></li><li class="nav-sub"><a href="#pull-zone-custom-domains-api" class="gotohash">Pull Zone Custom Domains API</a></li><li class="nav-sub"><a href="#push-zone-api" class="gotohash">Push Zone API</a></li><li class="nav-sub"><a href="#push-zone-custom-domains-api" class="gotohash">Push Zone Custom Domains API</a></li><li class="nav-sub"><a href="#vod-zone-api" class="gotohash">VOD Zone API</a></li><li class="nav-sub"><a href="#vod-zone-custom-domains-api" class="gotohash">VOD Zone Custom Domains API</a></li><li class="nav-sub"><a href="#live-zone-api" class="gotohash">Live Zone API</a></li><li class="nav-sub"><a href="#zones-ssl-api" class="gotohash">Zones SSL API</a></li><li class="nav-sub"><a href="#zones-upstream-api" class="gotohash">Zones Upstream API</a></li></ul><li><a href="#reports-api" class="gotohash"><span id="iconSizer"><i class="fa fa-signal"></i></span> Reports API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account-stats" class="gotohash">Account Stats</a></li><li class="nav-sub"><a href="#get-all-zone-stats" class="gotohash">Stats for all Zones</a></li><li class="nav-sub"><a href="#get-a-zones-stats" class="gotohash">Stats for a Zone</a></li><li class="nav-sub"><a href="#reports-by-location-api" class="gotohash">Reports by Location API</a></li><li class="nav-sub"><a href="#reports-by-popular-files-api" class="gotohash">Reports by Popular Files API</a></li><li class="nav-sub"><a href="#reports-by-status-codes-api" class="gotohash">Reports by Status Codes API</a></li><li class="nav-sub"><a href="#reports-by-file-types-api" class="gotohash">Reports by File Types API</a></li><li class="nav-sub"><a href="#reports-by-file-size-ranges-api" class="gotohash">Reports by File Size Ranges API</a></li><li class="nav-sub"><a href="#reports-by-directory-api" class="gotohash">Reports by Directory API</a></li></ul><li><a href="#reports-by-file-name-api" class="gotohash"><span id="iconSizer"><i class="fa fa-group"></i></span> Clients API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#reports-by-file-name-api" class="gotohash">Reports by File Name API</a></li><li class="nav-sub"><a href="#reports-by-custom-domain-api" class="gotohash">Reports by Custom Domain API</a></li><li class="nav-sub"><a href="#reports-for-live-zones-api" class="gotohash">Reports for Live Zones API</a></li></ul><li><a href="https://github.com/maxcdn/api-docs"><span id="iconSizer"><i class="fa fa-external-link"></i></span> GitHub Repo</a></li></ul></div></div></div></div><div id="readme-docs" class="span9"><h1 id="maxcdn-api-docs">MaxCDN API Docs</h1>
 <p><a href="http://www.maxcdn.com">MaxCDN</a> is a Content Delivery Network service.</p>
 <h2 id="index">Index</h2>
 <ul>
@@ -9,7 +9,7 @@
 <li><a href="#account-api">Account API</a></li>
 <li><a href="#users-api">Users API</a></li>
 <li><a href="#zones-api">Zones API</a></li>
-<li><a href="#reports-by-zone-api">Reports API</a></li>
+<li><a href="#reports-api">Reports API</a></li>
 <li><a href="#reports-by-file-name-api">Clients API</a></li>
 </ul>
 <h2 id="overview">Overview</h2>
@@ -38,6 +38,8 @@
 </ul>
 <h2 id="changelog">Changelog</h2>
 <ul>
+<li><strong>2014-03-05</strong>  Added <a href="#get-all-zone-stats">stats per zone</a> reporting endpoint </li>
+<li><strong>2014-03-03</strong>  Documented <code>dns_check</code> property of Pull Zones</li>
 <li><strong>2014-01-10</strong>  Minor grammatical fixes</li>
 <li><strong>2013-09-10</strong>  Rebranded for MaxCDN</li>
 <li><strong>2013-07-22</strong>  Added JSON responses to SSL</li>
@@ -1897,10 +1899,17 @@ api.get(&#39;/zones/pull.json&#39;, function(err, response) {
 <td></td>
 </tr>
 <tr>
+<td><code>dns_check</code></td>
+<td>1</td>
+<td>only 0 or 1 accepted</td>
+<td>This field determines how your Origin resolves. When set to 1, we automatically grab the origin&#39;s IP using DNS. Setting it to 0 allows you explicitly provide the IP of the origin.</td>
+<td></td>
+</tr>
+<tr>
 <td><code>ip</code></td>
 <td>-</td>
 <td>length: 1-10 chars, only digits accepted</td>
-<td>Valid IP address of the Origin URL, if omitted the service will automatically try to find the IP</td>
+<td>Valid IP address of the Origin URL. Be sure to set <code>dns_check</code> to 0 to prevent this value from being overwritten.</td>
 <td></td>
 </tr>
 <tr>
@@ -2587,6 +2596,20 @@ api.get(&#39;/zones/pull.json&#39; + id, function(err, response) {
 <td>80</td>
 <td>length: 1-5 chars; only digits accepted</td>
 <td>Port</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dns_check</code></td>
+<td>1</td>
+<td>only 0 or 1 accepted</td>
+<td>This field determines how your Origin resolves. When set to 1, we automatically grab the origin&#39;s IP using DNS. Setting it to 0 allows you explicitly provide the IP of the origin.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ip</code></td>
+<td>-</td>
+<td>length: 1-10 chars, only digits accepted</td>
+<td>Valid IP address of the Origin URL. Be sure to set <code>dns_check</code> to 0 to prevent this value from being overwritten.</td>
 <td></td>
 </tr>
 <tr>
@@ -7749,11 +7772,11 @@ api.delete(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/upstream.json&#39
 </div>
 
 
-<h1 id="reports-by-zone-api">Reports by Zone API</h1>
-<h2 id="list-zone-stats">List Zone Stats</h2>
-<p>Gets all zone usage statistics optionally broken up by
+<h1 id="reports-api">Reports API</h1>
+<h2 id="get-account-stats">Get Account Stats</h2>
+<p>Gets the total usage statistics for your account, optionally broken up by
 {report_type}. If no {report_type} is given the request will return
-the total usage for the zones.</p>
+the total usage on your account.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
 <span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/stats.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/stats.json/{report_type}</a></span></div>
@@ -7872,7 +7895,163 @@ api.get(&#39;/reports/stats.json/&#39; + reportType, function(err, response) {
 </div>
 
 
-<h2 id="list-stats-per-zone">List Stats per Zone</h2>
+<h2 id="get-all-zone-stats">Get All Zone Stats</h2>
+<p>Gets the total usage statistics for each of your zones, optionally broken up by
+{report_type}. If no {report_type} is given the timestamp response parameter will be omitted.</p>
+<div class="heading">
+<div class="url GET"><span class="http_method">GET</span>
+<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/statsbyzone.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/statsbyzone.json/{report_type}</a></span></div>
+</div>
+
+<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default Value</th>
+<th>Validation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>date_from</code></td>
+<td>now() - 1 month</td>
+<td>Y-m-d (e.g. 2012-01-01)</td>
+<td>Start date</td>
+<td></td>
+</tr>
+<tr>
+<td><code>date_to</code></td>
+<td>now()</td>
+<td>Y-m-d (e.g. 2012-01-01)</td>
+<td>End date</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-parameters">Response Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bucket_id</code></td>
+<td>The Zone ID that corresponds to this set of stats</td>
+<td></td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td>The amount of bytes transferred</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hit</code></td>
+<td>The number of times files were requested</td>
+<td></td>
+</tr>
+<tr>
+<td><code>noncache_hit</code></td>
+<td>The number of times a requested file was not in cache</td>
+<td></td>
+</tr>
+<tr>
+<td><code>cache_hit</code></td>
+<td>The number of times a requested file was already cached</td>
+<td></td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>The timestamp for the corresponding {report_type}</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab69">
+  <li class="active"><a href="#ruby69" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python69" data-toggle='tab'>Python</a></li>
+  <li><a href="#php69" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node69" data-toggle='tab'>Node</a></li>
+  <li><a href="#response69" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby69">
+    <pre>
+reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
+api.get(&#39;/reports/statsbyzone.json&#39;+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="python69">
+    <pre>
+reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
+api.get(&#39;/reports/statsbyzone.json&#39;+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="php69">
+    <pre>
+$reportType = &#39;&#39;; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
+$api-&gt;get(&#39;/reports/statsbyzone.json/&#39;.$reportType);</pre>
+  </div>
+  <div class="tab-pane" id="node69">
+  <pre>
+var reportType = &#39;&#39; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
+api.get(&#39;/reports/statsbyzone.json/&#39; + reportType, function(err, response) {
+  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
+})</pre>
+  </div>
+  <div class="tab-pane" id="response69">
+    <pre>
+{
+  &quot;code&quot;: 200,
+  &quot;data&quot;: {
+    &quot;page&quot;: 1,
+    &quot;pages&quot;: 262,
+    &quot;page_size&quot;: 50,
+    &quot;current_page_size&quot;: 50,
+    &quot;total&quot;: 13097,
+    &quot;stats&quot;: [
+      {
+        &quot;zone_id&quot;: &quot;4816&quot;,
+        &quot;size&quot;: &quot;20318527&quot;,
+        &quot;hit&quot;: &quot;280&quot;,
+        &quot;cache_hit&quot;: &quot;15&quot;,
+        &quot;noncache_hit&quot;: &quot;265&quot;
+      },
+      {
+        &quot;zone_id&quot;: &quot;5023&quot;,
+        &quot;size&quot;: &quot;18032138&quot;,
+        &quot;hit&quot;: &quot;119120&quot;,
+        &quot;cache_hit&quot;: &quot;0&quot;,
+        &quot;noncache_hit&quot;: &quot;119120&quot;
+      },
+      {
+        &quot;zone_id&quot;: &quot;5045&quot;,
+        &quot;size&quot;: &quot;10656749286&quot;,
+        &quot;hit&quot;: &quot;950640&quot;,
+        &quot;cache_hit&quot;: &quot;838432&quot;,
+        &quot;noncache_hit&quot;: &quot;112208&quot;
+      },
+
+      ....
+
+    ],
+    &quot;summary&quot;: {
+      &quot;size&quot;: 5.7138288549144e+14,
+      &quot;hit&quot;: 17093013874,
+      &quot;cache_hit&quot;: 14815205275,
+      &quot;noncache_hit&quot;: 2277808599
+    }
+  }
+}</pre>
+  </div>
+</div>
+
+
+<h2 id="get-a-zone-s-stats">Get a Zone&#39;s Stats</h2>
 <p>Gets the {zone_id} usage statistics optionally broken up by
 {report_type}. If no {report_type} is given the request will return
 the total usage for the zones.</p>
@@ -11801,8 +11980,12 @@ api.get(&#39;/reports/live/connectionstats.json/&#39; + reportType, function(err
 }</pre>
   </div>
 </div>
+<<<<<<< HEAD
 </div></div></div><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')
 </script><script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script><script src="js/vendor/prettify.min.js"></script><script src="js/vendor/jquery.ba-hashchange.min.js"></script><script src="js/vendor/jquery.scrollTo.min.js"></script><script src="js/vendor/bootstrap-adjust-hash.min.js"></script><script src="js/main.min.js"></script><script>var _gaq = _gaq || [];
+=======
+</div></div></div><script src="//code.jquery.com/jquery-1.8.3.min.js"></script><script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script><script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script><script src="js/vendor/prettify.min.js"></script><script src="js/vendor/jquery.ba-hashchange.min.js"></script><script src="js/vendor/jquery.scrollTo.min.js"></script><script src="js/vendor/bootstrap-adjust-hash.min.js"></script><script src="js/main.min.js"></script><script>var _gaq = _gaq || [];
+>>>>>>> max/master
 _gaq.push(['_setAccount', 'UA-9245214-1']);
 _gaq.push(['_setDomainName', 'netdna.com']);
 _gaq.push(['_trackPageview']);
