@@ -6,7 +6,7 @@ $(function() {
             // Prepare the link
             var link = item.replace(/\s/g, '-').toLowerCase();
             // Replace all characters that are not A-Z, 0-9, -, _, \s
-            link = link.replace(/[^A-Za-z0-9_-\s]+/g, '');
+            link = link.replace(/[^A-Za-z0-9_\s-]+/g, '');
             i.find('a').attr('href', '#' + link).html(that.highlighter(item));
             return i[0];
         });
@@ -34,7 +34,7 @@ $(function() {
         // Prepare the link
         var link = text.replace(/\s/g, '-').toLowerCase();
         // Replace all characters that are not A-Z, 0-9, -, _, \s
-        link = link.replace(/[^A-Za-z0-9_-\s]+/g, '');
+        link = link.replace(/[^A-Za-z0-9_\s-]+/g, '');
         $(this).html('<a href="#' + link + '" name="' + link + '" id="' + link + '">' + text + '</a>' + (($sup.length !== 0) ? ' ' + $.html($sup) : '' ) );
         $(this).before('<hr />');
     });
@@ -81,7 +81,7 @@ $(function() {
             // Prepare the link
             var link = item.replace(/\s/g, '-').toLowerCase();
             // Replace all characters that are not A-Z, 0-9, -, _, \s
-            link = link.replace(/[^A-Za-z0-9_-\s]+/g, '');
+            link = link.replace(/[^A-Za-z0-9_\s-]+/g, '');
             window.location.hash = '#' + link;
             return item;
         }
@@ -125,8 +125,11 @@ $(function() {
 //
 // This is to override the Scrollspy to enable a second dropdown
 //
+
 !function ($) {
+
   "use strict"; // jshint ;_;
+
 
  /* SCROLLSPY CLASS DEFINITION
   * ========================== */

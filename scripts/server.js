@@ -79,7 +79,7 @@ function handleChange(file) {
     console.log('| Change:', file);
     console.log('--------------------------------------------------------------------------------');
 
-    var make = spawn('make', makeArgs, { stdio: 'inherit' });
+    var make = spawn('make', makeArgs, { env: process.env, stdio: 'inherit' });
 
     make.on('close', function() {
         console.log('--------------------------------------------------------------------------------');

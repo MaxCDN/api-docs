@@ -17,9 +17,11 @@ js: $(MINJS_FILES)
 
 %.min.js : %.js .PHONY
 	# Minifying $@
-	$(BIN)uglifyjs \
-		$< \
-		--output $@
+	@if test "$(PRETTY)"; then \
+		cp $< $@; \
+	else \
+		$(BIN)uglifyjs $< --output $@; \
+	fi
 
 # lessc
 ###
@@ -30,16 +32,16 @@ css: $(MINCSS_FILES)
 
 %.min.css : %.less .PHONY
 	# Generating $@
-	$(BIN)lessc $(shell test "$(PRETTY)" || echo "-x") \
+	@$(BIN)lessc $(shell test "$(PRETTY)" || echo "-x") \
 		$< \
 		$@
-	mv $@ ./public/css/
+	@mv $@ ./public/css/
 
 # Generate
 ###
 generate: .PHONY
 	# Generating ./public/index.html
-	./scripts/generate.js \
+	@./scripts/generate.js $(shell test "$(PRETTY)" && echo "--pretty") \
 		--source README.md \
 		--template ./templates/index.jade \
 		--config ./config/config.json \
