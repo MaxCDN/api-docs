@@ -12,7 +12,7 @@
 * [Account API](#account-api)
 * [Users API](#users-api)
 * [Zones API](#zones-api)
-* [Reports API](#reports-by-zone-api)
+* [Reports API](#reports-api)
 * [Clients API](#reports-by-file-name-api)
 
 
