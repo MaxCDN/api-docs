@@ -2470,6 +2470,11 @@ api.get(&#39;/zones/pull.json/count&#39;, function(err, response) {
 <td></td>
 </tr>
 <tr>
+<td><code>x_forward_for</code></td>
+<td>Add X-Forwarded-For (XFF) HTTP Header</td>
+<td></td>
+</tr>
+<tr>
 <td><code>pseudo_streaming</code></td>
 <td>Enable the zone for pseudo streaming content</td>
 <td></td>
@@ -2572,6 +2577,7 @@ api.get(&#39;/zones/pull.json&#39; + id, function(err, response) {
             &quot;upstream_enabled&quot;: &quot;0&quot;,
             &quot;url&quot;: &quot;<a href="http://somedomain.net">http://somedomain.net</a>&quot;,
             &quot;use_stale&quot;: &quot;0&quot;,
+            &quot;x_forward_for&quot;: &quot;0&quot;,
             &quot;valid_referers&quot;: null
         }
     }
@@ -2739,6 +2745,13 @@ api.get(&#39;/zones/pull.json&#39; + id, function(err, response) {
 <td></td>
 </tr>
 <tr>
+<td><code>x_forward_for</code></td>
+<td>0</td>
+<td>only 0 or 1 accepted</td>
+<td>Add X-Forwarded-For (XFF) HTTP Header</td>
+<td></td>
+</tr>
+<tr>
 <td><code>pseudo_streaming</code></td>
 <td>0</td>
 <td>only 0 or 1 accepted</td>
@@ -2876,6 +2889,11 @@ api.get(&#39;/zones/pull.json&#39; + id, function(err, response) {
 <td></td>
 </tr>
 <tr>
+<td><code>x_forward_for</code></td>
+<td>Add X-Forwarded-For (XFF) HTTP Header</td>
+<td></td>
+</tr>
+<tr>
 <td><code>pseudo_streaming</code></td>
 <td>Enable the zone for pseudo streaming content</td>
 <td></td>
@@ -2981,6 +2999,7 @@ api.put(&#39;/zones/pull.json&#39; + id, { label: &#39;Some other description&#3
             &quot;upstream_enabled&quot;: &quot;0&quot;,
             &quot;url&quot;: &quot;<a href="http://somedomain.net">http://somedomain.net</a>&quot;,
             &quot;use_stale&quot;: &quot;0&quot;,
+            &quot;x_forward_for&quot;: &quot;0&quot;,
             &quot;valid_referers&quot;: null
         }
     }

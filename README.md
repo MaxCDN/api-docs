@@ -1548,6 +1548,7 @@ Parameter | Description |
 `disallow_robots_txt` | Use custom robots.txt |
 `canonical_link_headers` | Pass the canonical URL in the Link HTTP Header |
 `content_disposition` | Force files to download |
+`x_forward_for` | Add X-Forwarded-For (XFF) HTTP Header |
 `pseudo_streaming` | Enable the zone for pseudo streaming content |
 `sslshared` | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 `suspend` | Flag denoting if the zone has been suspended |
@@ -1627,6 +1628,7 @@ api.get('/zones/pull.json' + id, function(err, response) {
             "upstream_enabled": "0",
             "url": "http://somedomain.net",
             "use_stale": "0",
+            "x_forward_for": "0",
             "valid_referers": null
         }
     }
@@ -1668,6 +1670,7 @@ Parameter | Default Value | Validation | Description |
 `disallow_robots_txt` | - | length: 1-255 chars | Use custom robots.txt |
 `canonical_link_headers` | 1 | only 0 or 1 accepted | Pass the canonical URL in the Link HTTP Header |
 `content_disposition` | 0 | only 0 or 1 accepted | Force files to download |
+`x_forward_for` | 0 | only 0 or 1 accepted | Add X-Forwarded-For (XFF) HTTP Header |
 `pseudo_streaming` | 0 | only 0 or 1 accepted | Enable the zone for pseudo streaming content |
 `secret` | - | length: 1 - 32 chars | Use a secret to protect your files from unwanted visitors |
 `sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
@@ -1698,6 +1701,7 @@ Parameter | Description |
 `disallow_robots_txt` | Use custom robots.txt |
 `canonical_link_headers` | Pass the canonical URL in the Link HTTP Header |
 `content_disposition` | Force files to download |
+`x_forward_for` | Add X-Forwarded-For (XFF) HTTP Header |
 `pseudo_streaming` | Enable the zone for pseudo streaming content |
 `sslshared` | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
 `suspend` | Flag denoting if the zone has been suspended |
@@ -1781,6 +1785,7 @@ api.put('/zones/pull.json' + id, { label: 'Some other description' }, function(e
             "upstream_enabled": "0",
             "url": "http://somedomain.net",
             "use_stale": "0",
+            "x_forward_for": "0",
             "valid_referers": null
         }
     }
