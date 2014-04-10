@@ -1,4 +1,3 @@
-
 # MaxCDN API Docs
 
 [MaxCDN](http://www.maxcdn.com) is a Content Delivery Network service.
@@ -40,6 +39,7 @@
 
 ## Changelog
 
+  - **2014-04-10**  Added feature "X-Forwarded-For" to Pull Zone settings
   - **2014-03-05**  Firefox bug fixes.
   - **2014-03-05**  Added <a href="#get-all-zone-stats">stats per zone</a> reporting endpoint
   - **2014-03-03**  Documented `dns_check` property of Pull Zones
