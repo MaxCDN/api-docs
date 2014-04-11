@@ -7,8 +7,6 @@
 
 ## Quick Start
 
-**NOTE**: For development, always work out of the "source" branch, never, ever touch "master".
-
 1.) Clone the repo, install the dependencies, and start the development server.
 
 ```bash
