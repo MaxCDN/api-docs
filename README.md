@@ -2005,7 +2005,12 @@ $api->delete('/zones/pull.json/'.$id.'/cache',$params);
 
 //Purge Files
 $id = '97792';
-$params = array('file'=>'/index.html','file2'=>'/robots.txt');
+$params = array(
+    'files' => array(
+        '/file1.txt',
+        '/file2.txt'
+    )
+);
 $api->delete('/zones/pull.json/'.$id.'/cache',$params);</pre>
   </div>
   <div class="tab-pane" id="node21">
