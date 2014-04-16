@@ -38,6 +38,8 @@
 </ul>
 <h2 id="changelog">Changelog</h2>
 <ul>
+<li><strong>2014-04-15</strong>  Added new MIME type for Pull Zone GZip compression: application/octet-stream</li>
+<li><strong>2014-04-10</strong>  Added feature &quot;X-Forwarded-For&quot; to Pull Zone settings</li>
 <li><strong>2014-03-05</strong>  Firefox bug fixes.</li>
 <li><strong>2014-03-05</strong>  Added <a href="#get-all-zone-stats">stats per zone</a> reporting endpoint</li>
 <li><strong>2014-03-03</strong>  Documented <code>dns_check</code> property of Pull Zones</li>
@@ -1631,7 +1633,7 @@ api.get(&#39;/zones.json/count&#39;, function(err, response) {
 </tr>
 <tr>
 <td><code>compress</code></td>
-<td>Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype</td>
+<td>Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype, application/octet-stream</td>
 <td></td>
 </tr>
 <tr>
@@ -3233,7 +3235,12 @@ $api-&gt;delete(&#39;/zones/pull.json/&#39;.$id.&#39;/cache&#39;,$params);
 
 //Purge Files
 $id = &#39;97792&#39;;
-$params = array(&#39;file&#39;=&gt;&#39;/index.html&#39;,&#39;file2&#39;=&gt;&#39;/robots.txt&#39;);
+$params = array(
+    &#39;files&#39; =&gt; array(
+        &#39;/file1.txt&#39;,
+        &#39;/file2.txt&#39;
+    )
+);
 $api-&gt;delete(&#39;/zones/pull.json/&#39;.$id.&#39;/cache&#39;,$params);</pre>
   </div>
   <div class="tab-pane" id="node21">
