@@ -39,6 +39,7 @@
 
 ## Changelog
 
+  - **2014-04-15**  Added new MIME type for Pull Zone GZip compression: application/octet-stream
   - **2014-04-10**  Added feature "X-Forwarded-For" to Pull Zone settings
   - **2014-03-05**  Firefox bug fixes.
   - **2014-03-05**  Added <a href="#get-all-zone-stats">stats per zone</a> reporting endpoint
@@ -1162,7 +1163,7 @@ Parameter | Description |
 `url` | Origin URL |
 `port` | Port |
 `ip` | IP address of the Origin URL |
-`compress` | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
+`compress` | Enables on the fly GZip compression of your files from our edge servers for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype, application/octet-stream |
 `backend_compress` | Enables us to cache, from origin, GZip compressed versions of your files for the following file types: text/plain, text/html, text/javascript, text/css, text/xml, application/javascript, application/x-javascript, application/xml, text/x-component, application/json, application/xhtml+xml, application/rss+xml, application/atom+xml, app/vnd.ms-fontobject, image/svg+xml, application/x-font-ttf, font/opentype |
 `queries` | Treat Query Strings as a separate cacheable item |
 `set_host_header` | The URL sent as the Host in all HTTP Response Headers |
