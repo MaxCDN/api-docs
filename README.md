@@ -39,6 +39,7 @@
 
 ## Changelog
 
+  - **2014-05-19**  Added feature "SPDY" to Pull and Push Zone settings
   - **2014-04-15**  Added new MIME type for Pull Zone GZip compression: application/octet-stream
   - **2014-04-10**  Added feature "X-Forwarded-For" to Pull Zone settings
   - **2014-03-05**  Firefox bug fixes.
@@ -1185,6 +1186,7 @@ Parameter | Description |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
+`spdy` | Flag denoting if the zone has the SPDY protocol enabled |
 
 ### Code Samples
 
@@ -1260,6 +1262,7 @@ api.get('/zones/pull.json', function(err, response) {
                 "url": "http://somedomain.net",
                 "use_stale": "0",
                 "valid_referers": null
+                "spdy": 0
             },
             <...>,
             {
@@ -1297,6 +1300,7 @@ api.get('/zones/pull.json', function(err, response) {
                 "url": "http://somedomain.net",
                 "use_stale": "0",
                 "valid_referers": null
+                "spdy": 1
             }
         ],
         "total": 3
@@ -1344,6 +1348,7 @@ Parameter | Default Value | Validation | Description |
 `pseudo_streaming` | 0 | only 0 or 1 accepted | Enable the zone for pseudo streaming content |
 `secret` | - | length: 1 - 32 chars | Use a secret to protect your files from unwanted visitors |
 `sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
+`spdy` | 0 | only 0 or 1 accepted | Enable SPDY protocol on the zone |
 
 
 ### Response Parameters
@@ -1378,6 +1383,7 @@ Parameter | Description |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
+`spdy` | Flag denoting if the zone has the SPDY protocol enabled |
 
 ### Code Samples
 
@@ -1452,6 +1458,7 @@ api.post('/zones/pull.json', { name: 'newPullZone2', url: 'http://somedomain.net
             "use_stale": 0,
             "x_forward_for": 0,
             "valid_referers": null
+            "spdy": 1
         }
     }
 }</pre>
@@ -1556,6 +1563,7 @@ Parameter | Description |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
+`spdy` | Flag denoting if the zone has the SPDY protocol enabled |
 
 ### Code Samples
 
@@ -1631,6 +1639,7 @@ api.get('/zones/pull.json' + id, function(err, response) {
             "use_stale": "0",
             "x_forward_for": "0",
             "valid_referers": null
+            "spdy": 1
         }
     }
 }</pre>
@@ -1675,6 +1684,7 @@ Parameter | Default Value | Validation | Description |
 `pseudo_streaming` | 0 | only 0 or 1 accepted | Enable the zone for pseudo streaming content |
 `secret` | - | length: 1 - 32 chars | Use a secret to protect your files from unwanted visitors |
 `sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
+`spdy` | 0 | only 0 or 1 accepted | Enable SPDY protocol on the zone |
 
 
 ### Response Parameters
@@ -1709,6 +1719,7 @@ Parameter | Description |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
+`spdy` | Flag denoting if the zone has the SPDY protocol enabled |
 
 
 ### Code Samples
@@ -1788,6 +1799,7 @@ api.put('/zones/pull.json' + id, { label: 'Some other description' }, function(e
             "use_stale": "0",
             "x_forward_for": "0",
             "valid_referers": null
+            "spdy": 1
         }
     }
 }</pre>
@@ -2453,6 +2465,7 @@ Parameter | Description |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
+`spdy` | Flag denoting if the zone has the SPDY protocol enabled |
 
 ### Code Samples
 
@@ -2513,6 +2526,7 @@ api.get('/zones/push.json', function(err, response) {
                 "tmp_url": "newpushzone2.alias.netdna-cdn.com",
                 "type": "3",
                 "valid_referers": null
+                "spdy": 1
             },
             {
                 "cdn_url": "cdn.somenewdomain2.com",
@@ -2534,6 +2548,7 @@ api.get('/zones/push.json', function(err, response) {
                 "tmp_url": "newpushzone3.alias.netdna-cdn.com",
                 "type": "3",
                 "valid_referers": null
+                "spdy": 0
             }
         ],
         "total": 2
@@ -2562,6 +2577,7 @@ Parameter | Default Value | Validation | Description |
 `valid_referers` | - | length: 1-200 chars | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
 `content_disposition` | 0 | only 0 or 1 accepted | Force files to download |
 `sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
+`spdy` | 0 | only 0 or 1 accepted | Enable SPDY protocol on the zone |
 
 
 ### Response Parameters
@@ -2578,6 +2594,7 @@ Parameter | Description |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
+`spdy` | Flag denoting if the zone has the SPDY protocol enabled |
 
 ### Code Samples
 
@@ -2636,6 +2653,7 @@ api.post('/zones/push.json', { name: 'newPushZone', password: 'password' }, func
             "tmp_url": "newpushzone4.alias.netdna-cdn.com",
             "type": 3,
             "valid_referers": null
+            "spdy": 1
         }
     }
 }</pre>
@@ -2723,6 +2741,7 @@ Parameter | Description |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
+`spdy` | Flag denoting if the zone has the SPDY protocol enabled |
 
 ### Code Samples
 
@@ -2782,6 +2801,7 @@ api.get('/zones/push.json/' + id, function(err, response) {
             "tmp_url": "newpushzone3.alias.netdna-cdn.com",
             "type": "3",
             "valid_referers": null
+            "spdy": 1
         }
     }
 }</pre>
@@ -2806,6 +2826,7 @@ Parameter | Default Value | Validation | Description |
 `valid_referers` | - | length: 1-100 chars | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
 `content_disposition` | 0 | only 0 or 1 accepted | Force files to download |
 `sslshared` | 0 | only 0 or 1 accepted | Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com |
+`spdy` | 0 | only 0 or 1 accepted | Enable SPDY protocol on the zone |
 
 
 ### Response Parameters
@@ -2822,6 +2843,7 @@ Parameter | Description |
 `locked` | Flag denoting if the zone has been locked |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
+`spdy` | Flag denoting if the zone has the SPDY protocol enabled |
 
 ### Code Samples
 
@@ -2884,6 +2906,7 @@ api.get('/zones/push.json/' + id, { label: 'Some other description' }, function(
             "tmp_url": "newpushzone3.alias.netdna-cdn.com",
             "type": "3",
             "valid_referers": null
+            "spdy": 1
         }
     }
 }</pre>

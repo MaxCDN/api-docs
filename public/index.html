@@ -38,6 +38,7 @@
 </ul>
 <h2 id="changelog">Changelog</h2>
 <ul>
+<li><strong>2014-05-19</strong>  Added feature &quot;SPDY&quot; to Pull and Push Zone settings</li>
 <li><strong>2014-04-15</strong>  Added new MIME type for Pull Zone GZip compression: application/octet-stream</li>
 <li><strong>2014-04-10</strong>  Added feature &quot;X-Forwarded-For&quot; to Pull Zone settings</li>
 <li><strong>2014-03-05</strong>  Firefox bug fixes.</li>
@@ -1741,6 +1742,11 @@ api.get(&#39;/zones.json/count&#39;, function(err, response) {
 <td>Date Created</td>
 <td></td>
 </tr>
+<tr>
+<td><code>spdy</code></td>
+<td>Flag denoting if the zone has the SPDY protocol enabled</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
@@ -1816,6 +1822,7 @@ api.get(&#39;/zones/pull.json&#39;, function(err, response) {
                 &quot;url&quot;: &quot;<a href="http://somedomain.net">http://somedomain.net</a>&quot;,
                 &quot;use_stale&quot;: &quot;0&quot;,
                 &quot;valid_referers&quot;: null
+                &quot;spdy&quot;: 0
             },
             &lt;...&gt;,
             {
@@ -1853,6 +1860,7 @@ api.get(&#39;/zones/pull.json&#39;, function(err, response) {
                 &quot;url&quot;: &quot;<a href="http://somedomain.net">http://somedomain.net</a>&quot;,
                 &quot;use_stale&quot;: &quot;0&quot;,
                 &quot;valid_referers&quot;: null
+                &quot;spdy&quot;: 1
             }
         ],
         &quot;total&quot;: 3
@@ -2055,6 +2063,13 @@ api.get(&#39;/zones/pull.json&#39;, function(err, response) {
 <td>Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com</td>
 <td></td>
 </tr>
+<tr>
+<td><code>spdy</code></td>
+<td>0</td>
+<td>only 0 or 1 accepted</td>
+<td>Enable SPDY protocol on the zone</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="response-parameters">Response Parameters</h3>
@@ -2206,6 +2221,11 @@ api.get(&#39;/zones/pull.json&#39;, function(err, response) {
 <td>Date Created</td>
 <td></td>
 </tr>
+<tr>
+<td><code>spdy</code></td>
+<td>Flag denoting if the zone has the SPDY protocol enabled</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
@@ -2280,6 +2300,7 @@ api.post(&#39;/zones/pull.json&#39;, { name: &#39;newPullZone2&#39;, url: &#39;<
             &quot;use_stale&quot;: 0,
             &quot;x_forward_for&quot;: 0,
             &quot;valid_referers&quot;: null
+            &quot;spdy&quot;: 1
         }
     }
 }</pre>
@@ -2506,6 +2527,11 @@ api.get(&#39;/zones/pull.json/count&#39;, function(err, response) {
 <td>Date Created</td>
 <td></td>
 </tr>
+<tr>
+<td><code>spdy</code></td>
+<td>Flag denoting if the zone has the SPDY protocol enabled</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
@@ -2581,6 +2607,7 @@ api.get(&#39;/zones/pull.json&#39; + id, function(err, response) {
             &quot;use_stale&quot;: &quot;0&quot;,
             &quot;x_forward_for&quot;: &quot;0&quot;,
             &quot;valid_referers&quot;: null
+            &quot;spdy&quot;: 1
         }
     }
 }</pre>
@@ -2774,6 +2801,13 @@ api.get(&#39;/zones/pull.json&#39; + id, function(err, response) {
 <td>Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com</td>
 <td></td>
 </tr>
+<tr>
+<td><code>spdy</code></td>
+<td>0</td>
+<td>only 0 or 1 accepted</td>
+<td>Enable SPDY protocol on the zone</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="response-parameters">Response Parameters</h3>
@@ -2925,6 +2959,11 @@ api.get(&#39;/zones/pull.json&#39; + id, function(err, response) {
 <td>Date Created</td>
 <td></td>
 </tr>
+<tr>
+<td><code>spdy</code></td>
+<td>Flag denoting if the zone has the SPDY protocol enabled</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
@@ -3003,6 +3042,7 @@ api.put(&#39;/zones/pull.json&#39; + id, { label: &#39;Some other description&#3
             &quot;use_stale&quot;: &quot;0&quot;,
             &quot;x_forward_for&quot;: &quot;0&quot;,
             &quot;valid_referers&quot;: null
+            &quot;spdy&quot;: 1
         }
     }
 }</pre>
@@ -3797,6 +3837,11 @@ api.delete(&#39;/zones/pull/&#39; + zoneId + &#39;/customdomains.json/&#39; + do
 <td>Date Created</td>
 <td></td>
 </tr>
+<tr>
+<td><code>spdy</code></td>
+<td>Flag denoting if the zone has the SPDY protocol enabled</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
@@ -3857,6 +3902,7 @@ api.get(&#39;/zones/push.json&#39;, function(err, response) {
                 &quot;tmp_url&quot;: &quot;newpushzone2.alias.netdna-cdn.com&quot;,
                 &quot;type&quot;: &quot;3&quot;,
                 &quot;valid_referers&quot;: null
+                &quot;spdy&quot;: 1
             },
             {
                 &quot;cdn_url&quot;: &quot;cdn.somenewdomain2.com&quot;,
@@ -3878,6 +3924,7 @@ api.get(&#39;/zones/push.json&#39;, function(err, response) {
                 &quot;tmp_url&quot;: &quot;newpushzone3.alias.netdna-cdn.com&quot;,
                 &quot;type&quot;: &quot;3&quot;,
                 &quot;valid_referers&quot;: null
+                &quot;spdy&quot;: 0
             }
         ],
         &quot;total&quot;: 2
@@ -3947,6 +3994,13 @@ api.get(&#39;/zones/push.json&#39;, function(err, response) {
 <td>Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com</td>
 <td></td>
 </tr>
+<tr>
+<td><code>spdy</code></td>
+<td>0</td>
+<td>only 0 or 1 accepted</td>
+<td>Enable SPDY protocol on the zone</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="response-parameters">Response Parameters</h3>
@@ -4008,6 +4062,11 @@ api.get(&#39;/zones/push.json&#39;, function(err, response) {
 <td>Date Created</td>
 <td></td>
 </tr>
+<tr>
+<td><code>spdy</code></td>
+<td>Flag denoting if the zone has the SPDY protocol enabled</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
@@ -4066,6 +4125,7 @@ api.post(&#39;/zones/push.json&#39;, { name: &#39;newPushZone&#39;, password: &#
             &quot;tmp_url&quot;: &quot;newpushzone4.alias.netdna-cdn.com&quot;,
             &quot;type&quot;: 3,
             &quot;valid_referers&quot;: null
+            &quot;spdy&quot;: 1
         }
     }
 }</pre>
@@ -4203,6 +4263,11 @@ api.get(&#39;/zones/push.json/count&#39;, function(err, response) {
 <td>Date Created</td>
 <td></td>
 </tr>
+<tr>
+<td><code>spdy</code></td>
+<td>Flag denoting if the zone has the SPDY protocol enabled</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
@@ -4262,6 +4327,7 @@ api.get(&#39;/zones/push.json/&#39; + id, function(err, response) {
             &quot;tmp_url&quot;: &quot;newpushzone3.alias.netdna-cdn.com&quot;,
             &quot;type&quot;: &quot;3&quot;,
             &quot;valid_referers&quot;: null
+            &quot;spdy&quot;: 1
         }
     }
 }</pre>
@@ -4313,6 +4379,13 @@ api.get(&#39;/zones/push.json/&#39; + id, function(err, response) {
 <td>0</td>
 <td>only 0 or 1 accepted</td>
 <td>Enable Shared SSL for your zone, so you can use HTTPS, using our SSL certificate for netdna-ssl.com</td>
+<td></td>
+</tr>
+<tr>
+<td><code>spdy</code></td>
+<td>0</td>
+<td>only 0 or 1 accepted</td>
+<td>Enable SPDY protocol on the zone</td>
 <td></td>
 </tr>
 </tbody>
@@ -4374,6 +4447,11 @@ api.get(&#39;/zones/push.json/&#39; + id, function(err, response) {
 <tr>
 <td><code>creation_date</code></td>
 <td>Date Created</td>
+<td></td>
+</tr>
+<tr>
+<td><code>spdy</code></td>
+<td>Flag denoting if the zone has the SPDY protocol enabled</td>
 <td></td>
 </tr>
 </tbody>
@@ -4438,6 +4516,7 @@ api.get(&#39;/zones/push.json/&#39; + id, { label: &#39;Some other description&#
             &quot;tmp_url&quot;: &quot;newpushzone3.alias.netdna-cdn.com&quot;,
             &quot;type&quot;: &quot;3&quot;,
             &quot;valid_referers&quot;: null
+            &quot;spdy&quot;: 1
         }
     }
 }</pre>
