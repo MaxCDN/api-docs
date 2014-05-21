@@ -7,36 +7,21 @@
 
 ## Quick Start
 
-1.) Clone the repo, install the dependencies, and start the development server.
+1.) Clone the repo, install the dependencies, and start the development server. Make changes directly on master and commit them before running the next steps
+# Warning: Do not edit *.html, *.min.js or *.min.css files manually.
 
 ```bash
 git clone git@github.com:maxcdn/api-docs.git
+```
+
+1.) Install the dependencies, and start the development server.
+
+```bash
 npm install
 make
 make server
 ```
-2.) Visit <http://localhost:3000/> in your browser.
-
-3.) Making changes:
-
-```bash
-.
-├── config
-│   └── config.json   # site configuration
-├── public
-│   ├── css           # generated css
-│   ├── favicon.ico
-│   ├── font          # fonts
-│   ├── img           # images
-│   ├── index.html    # generated html
-│   └── js            # javascript
-├── README.md          # API Documentation
-└── templates          # Jade and Less templates
-
-# Warning: Do not edit *.html, *.min.js or *.min.css files manually.
-```
-
-> Note: Server will automatically regenerate an jade, md, css and js files if they change.
+2.) Visit <http://localhost:3000/> in your browser to view the changes.
 
 4.) Build and deploy site.
 
