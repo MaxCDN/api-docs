@@ -1261,7 +1261,7 @@ api.get('/zones/pull.json', function(err, response) {
                 "upstream_enabled": "0",
                 "url": "http://somedomain.net",
                 "use_stale": "0",
-                "valid_referers": null
+                "valid_referers": null,
                 "spdy": 0
             },
             <...>,
@@ -1299,7 +1299,7 @@ api.get('/zones/pull.json', function(err, response) {
                 "upstream_enabled": "0",
                 "url": "http://somedomain.net",
                 "use_stale": "0",
-                "valid_referers": null
+                "valid_referers": null,
                 "spdy": 1
             }
         ],
@@ -1457,7 +1457,7 @@ api.post('/zones/pull.json', { name: 'newPullZone2', url: 'http://somedomain.net
             "url": "http://somedomain.net",
             "use_stale": 0,
             "x_forward_for": 0,
-            "valid_referers": null
+            "valid_referers": null,
             "spdy": 1
         }
     }
@@ -1638,7 +1638,7 @@ api.get('/zones/pull.json' + id, function(err, response) {
             "url": "http://somedomain.net",
             "use_stale": "0",
             "x_forward_for": "0",
-            "valid_referers": null
+            "valid_referers": null,
             "spdy": 1
         }
     }
@@ -1798,7 +1798,7 @@ api.put('/zones/pull.json' + id, { label: 'Some other description' }, function(e
             "url": "http://somedomain.net",
             "use_stale": "0",
             "x_forward_for": "0",
-            "valid_referers": null
+            "valid_referers": null,
             "spdy": 1
         }
     }
@@ -2525,7 +2525,7 @@ api.get('/zones/push.json', function(err, response) {
                 "suspend": "0",
                 "tmp_url": "newpushzone2.alias.netdna-cdn.com",
                 "type": "3",
-                "valid_referers": null
+                "valid_referers": null,
                 "spdy": 1
             },
             {
@@ -2547,7 +2547,7 @@ api.get('/zones/push.json', function(err, response) {
                 "suspend": "0",
                 "tmp_url": "newpushzone3.alias.netdna-cdn.com",
                 "type": "3",
-                "valid_referers": null
+                "valid_referers": null,
                 "spdy": 0
             }
         ],
@@ -2652,7 +2652,7 @@ api.post('/zones/push.json', { name: 'newPushZone', password: 'password' }, func
             "suspend": 0,
             "tmp_url": "newpushzone4.alias.netdna-cdn.com",
             "type": 3,
-            "valid_referers": null
+            "valid_referers": null,
             "spdy": 1
         }
     }
@@ -2800,7 +2800,7 @@ api.get('/zones/push.json/' + id, function(err, response) {
             "suspend": "0",
             "tmp_url": "newpushzone3.alias.netdna-cdn.com",
             "type": "3",
-            "valid_referers": null
+            "valid_referers": null,
             "spdy": 1
         }
     }
@@ -2905,7 +2905,7 @@ api.get('/zones/push.json/' + id, { label: 'Some other description' }, function(
             "suspend": "0",
             "tmp_url": "newpushzone3.alias.netdna-cdn.com",
             "type": "3",
-            "valid_referers": null
+            "valid_referers": null,
             "spdy": 1
         }
     }
@@ -8554,3 +8554,4 @@ api.get('/reports/live/connectionstats.json/' + reportType, function(err, respon
 }</pre>
   </div>
 </div>
+
