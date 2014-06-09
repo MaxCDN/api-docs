@@ -11,6 +11,7 @@
 <li><a href="#zones-api">Zones API</a></li>
 <li><a href="#reports-api">Reports API</a></li>
 <li><a href="#reports-by-file-name-api">Clients API</a></li>
+<li><a href="#raw-logs-api">Raw Logs API</a></li>
 </ul>
 <h2 id="overview">Overview</h2>
 <ol>
@@ -38,6 +39,7 @@
 </ul>
 <h2 id="changelog">Changelog</h2>
 <ul>
+<li><strong>2014-06-10</strong>  Added documentation for the Raw Logs API</li>
 <li><strong>2014-05-19</strong>  Added feature &quot;SPDY&quot; to Pull and Push Zone settings</li>
 <li><strong>2014-04-15</strong>  Added new MIME type for Pull Zone GZip compression: application/octet-stream</li>
 <li><strong>2014-04-10</strong>  Added feature &quot;X-Forwarded-For&quot; to Pull Zone settings</li>
@@ -12096,6 +12098,447 @@ api.get(&#39;/reports/live/connectionstats.json/&#39; + reportType, function(err
         &quot;stats&quot;: [],
         &quot;total&quot;: &quot;0&quot;
     }
+}</pre>
+  </div>
+</div>
+
+
+<h1 id="raw-logs-api">Raw Logs API</h1>
+<h2 id="get-raw-logs">Get Raw Logs</h2>
+<p>Gets raw log data</p>
+<div class="heading">
+<div class="url GET"><span class="http_method">GET</span>
+<span class="path"><a href="https://rws.netdna.com/{companyalias}/v3/reporting/logs.json">https://rws.netdna.com/{companyalias}/v3/reporting/logs.json</a></span></div>
+</div>
+
+<h3 id="response-parameters">Response Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>limit</code></td>
+<td>Number of records retrieved</td>
+<td></td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>Number of pages not displayed (if there are enough records)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>request_time</code></td>
+<td>Time in milliseconds for request to complete</td>
+<td></td>
+</tr>
+<tr>
+<td><code>next_page_key</code></td>
+<td>Number string that can be used to load the next page</td>
+<td></td>
+</tr>
+<tr>
+<td><code>records</code></td>
+<td>Total records displayed</td>
+<td></td>
+</tr>
+<tr>
+<td><code>bytes</code></td>
+<td>Total bytes of request</td>
+<td></td>
+</tr>
+<tr>
+<td><code>client_asn</code></td>
+<td>Visitor&#39;s &quot;access network&quot; (ISP)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>client_city</code></td>
+<td>Visitor&#39;s city</td>
+<td></td>
+</tr>
+<tr>
+<td><code>client_continent</code></td>
+<td>Visitor&#39;s continent</td>
+<td></td>
+</tr>
+<tr>
+<td><code>client_country</code></td>
+<td>Visitor&#39;s country</td>
+<td></td>
+</tr>
+<tr>
+<td><code>client_dma</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>client_ip</code></td>
+<td>Visitor&#39;s public IP</td>
+<td></td>
+</tr>
+<tr>
+<td><code>client_latitude</code></td>
+<td>Visitor&#39;s geographical latitude (roughly)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>client_longitude</code></td>
+<td>Visitor&#39;s geographical longitude (roughly)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>client_state</code></td>
+<td>Visitor&#39;s state</td>
+<td></td>
+</tr>
+<tr>
+<td><code>company_id</code></td>
+<td>Your company ID</td>
+<td></td>
+</tr>
+<tr>
+<td><code>cache_status</code></td>
+<td>CDN status of the file (HIT, MISS)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hostname</code></td>
+<td>Domain name that was visited</td>
+<td></td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>HTTP request method</td>
+<td></td>
+</tr>
+<tr>
+<td><code>origin_time</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>pop</code></td>
+<td>Point Of Presence that was hit (LAX, LHR, TYO, etc.)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>protocol</code></td>
+<td>HTTP protocol used</td>
+<td></td>
+</tr>
+<tr>
+<td><code>query_string</code></td>
+<td>Query string attached to a file (ex. ver=1.2)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referer</code></td>
+<td>Referring site</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scheme</code></td>
+<td>HTTP or HTTPS</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>HTTP status code (200, 404, 302, etc.)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td>UTC timestamp of the request</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uri</code></td>
+<td>File requested</td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_agent</code></td>
+<td>Text identifying the visitor&#39;s browser</td>
+<td></td>
+</tr>
+<tr>
+<td><code>zone_id</code></td>
+<td>ID of the Push/Pull/VOD zone hit</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default Value</th>
+<th>Validation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>companyalias</code></td>
+<td>-</td>
+<td><span class="label important">required</span><br /></td>
+<td>MaxCDN provided API alias</td>
+<td></td>
+</tr>
+<tr>
+<td><code>start</code></td>
+<td>Now -24 hours</td>
+<td>2014-01-01</td>
+<td>ISO-8601 formatted date/time</td>
+<td></td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>Time of request</td>
+<td>2014-01-31</td>
+<td>ISO-8601 formatted date/time, defaults to the time of request</td>
+<td></td>
+</tr>
+<tr>
+<td><code>zones</code></td>
+<td>-</td>
+<td>1234,5678,9012</td>
+<td>Separate multiple zones by comma</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uri</code></td>
+<td>-</td>
+<td>/images/header.png</td>
+<td>String or regular expression</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>-</td>
+<td>400,404,200,202</td>
+<td>Separate multiple HTTP status codes by comma</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl</code></td>
+<td>both</td>
+<td>nossl, ssl, both</td>
+<td>Filters by SSL traffic (choose nossl, ssl or both)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_agent</code></td>
+<td>-</td>
+<td>Chrome</td>
+<td>Filter logs by requested user agent (string or regular expression)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referer</code></td>
+<td>-</td>
+<td>regex:.*google.com</td>
+<td>Filter logs by a referer(string or regular expression)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pop</code></td>
+<td>-</td>
+<td>sfo,lax,ams</td>
+<td>Filter logs by specific POP (Point Of Presence), use comma separation for multiple POPs. Possible values: ams, atl, aus, chi, dal, den, fra, hkg, jfk, lax, lhr, mia, sea, sfo, sin, sjc, slc, tko, vir</td>
+<td></td>
+</tr>
+<tr>
+<td><code>query_string</code></td>
+<td>-</td>
+<td>regex:duration=all</td>
+<td>Filter logs by query string (string or regular expression)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>1000</td>
+<td>500</td>
+<td>How many records per page should be retrieved)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>start_key</code></td>
+<td>-</td>
+<td>354631834</td>
+<td>String-based key for next record to return, for pagination</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>recent</td>
+<td></td>
+<td>Display records sorted by newest first or oldest first</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab100">
+  <li class="active"><a href="#curl100" data-toggle='tab'>cURL</a></li>
+  <li><a href="#csharp100" data-toggle='tab'>C#</a></li>
+  <li><a href="#javascript100" data-toggle='tab'>JavaScript</a></li>
+  <li><a href="#visualbasic100" data-toggle='tab'>Visual Basic</a></li>
+  <li><a href="#ruby100" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python100" data-toggle='tab'>Python</a></li>
+  <li><a href="#php100" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node100" data-toggle='tab'>Node</a></li>
+  <li><a href="#response100" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="curl100">
+    <pre>
+curl --include \
+ <a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a></pre>
+  </div>
+  <div class="tab-pane" id="csharp100">
+    <pre>
+//Common testing requirement. If you are consuming an API in a sandbox/test region, uncomment this line of code ONLY for non production uses.
+//System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
+var request = System.Net.WebRequest.Create(&quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;) as System.Net.HttpWebRequest;
+request.KeepAlive = true;
+request.Method = &quot;GET&quot;;
+  request.ContentLength = 0;
+string responseContent=null;
+using (var response = request.GetResponse() as System.Net.HttpWebResponse) {
+  using (var reader = new System.IO.StreamReader(response.GetResponseStream())) {
+    responseContent = reader.ReadToEnd();
+  }
+}</pre>
+  </div>
+  <div class="tab-pane" id="javascript100">
+    <pre>
+var xhr = new XMLHttpRequest();
+xhr.open(&quot;GET&quot;, &quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;);
+xhr.onreadystatechange = function () {
+  if (this.readyState == 4) {
+    alert(&#39;Status: &#39;+this.status+&#39;\nHeaders: &#39;+JSON.stringify(this.getAllResponseHeaders())+&#39;\nBody: &#39;+this.responseText);
+  }
+};
+xhr.send(null);</pre>
+  </div>
+  <div class="tab-pane" id="visualbasic100">
+    <pre>
+Dim request = TryCast(System.Net.WebRequest.Create(&quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;), System.Net.HttpWebRequest)
+request.Method = &quot;GET&quot;
+request.ContentLength = 0
+Dim responseContent As String
+Using response = TryCast(request.GetResponse(), System.Net.HttpWebResponse)
+  Using reader = New System.IO.StreamReader(response.GetResponseStream())
+    responseContent = reader.ReadToEnd()
+  End Using
+End Using</pre>
+  </div>
+  <div class="tab-pane" id="ruby100">
+    <pre>
+require &#39;rubygems&#39; if RUBY_VERSION &lt; &#39;1.9&#39;
+require &#39;rest_client&#39;
+
+response = RestClient.get &quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;
+puts response</pre>
+  </div>
+  <div class="tab-pane" id="python100">
+    <pre>
+from urllib2 import Request, urlopen
+request = Request(&quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;)
+response_body = urlopen(request).read()
+print response_body</pre>
+  </div>
+  <div class="tab-pane" id="php100">
+    <pre>
+&lt;?php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, &quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_HEADER, FALSE);
+$response = curl_exec($ch);
+curl_close($ch);
+
+var_dump($response);</pre>
+  </div>
+  <div class="tab-pane" id="node100">
+  <pre>
+var request = require(&quot;request&quot;);
+request({
+  url: &quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;,
+  method: &quot;GET&quot;
+}, function (error, response, body) {
+  console.log(&quot;Status&quot;, response.statusCode);
+  console.log(&quot;Headers&quot;, JSON.stringify(response.headers));
+  console.log(&quot;Response received&quot;, body);
+});</pre>
+  </div>
+  <div class="tab-pane" id="response100">
+    <pre>
+200 (OK)
+Content-Type: application/json
+{
+  &quot;limit&quot;:1000,
+  &quot;page&quot;:1,
+  &quot;total&quot;:3,
+  &quot;next_page_key&quot;:&quot;1234abcdef&quot;,
+  &quot;records&quot;:[
+    {
+      &quot;bytes&quot;:175953,
+      &quot;asn&quot;:&quot;AS4804 Microplex PTY LTD&quot;,
+      &quot;city&quot;:&quot;Brisbane&quot;,
+      &quot;continent&quot;:&quot;OC&quot;,
+      &quot;country&quot;:&quot;AU&quot;,
+      &quot;dma&quot;:&quot;0&quot;,
+      &quot;ip&quot;:&quot;127.0.0.1&quot;,
+      &quot;latitude&quot;:0,
+      &quot;longitude&quot;:1.2345,
+      &quot;cache_status&quot;:&quot;HIT&quot;,
+      &quot;hostname&quot;:&quot;cdn.example.com&quot;,
+      &quot;method&quot;:&quot;GET&quot;,
+      &quot;origin_time&quot;:&quot;0&quot;,
+      &quot;pop&quot;:&quot;lax&quot;,
+      &quot;protocol&quot;:&quot;HTTP/1.1&quot;,
+      &quot;query_string&quot;:&quot;&quot;,
+      &quot;scheme&quot;:&quot;https&quot;,
+      &quot;status_code&quot;:200,
+      &quot;request_time&quot;:&quot;2013-12-11T17:00:12Z&quot;,
+      &quot;uri&quot;:&quot;/content.png&quot;,
+      &quot;user_agent&quot;:&quot;Opera/9.80 (Windows NT 5.1; Edition DriverPack) Presto/2.12.388 Version/12.16&quot;,
+      &quot;zone&quot;:&quot;example&quot;
+    },
+    {
+      &quot;bytes&quot;:175953,
+      &quot;asn&quot;:&quot;AS4804 Microplex PTY LTD&quot;,
+      &quot;city&quot;:&quot;Brisbane&quot;,
+      &quot;continent&quot;:&quot;OC&quot;,
+      &quot;country&quot;:&quot;AU&quot;,
+      &quot;dma&quot;:&quot;0&quot;,
+      &quot;ip&quot;:&quot;127.0.0.1&quot;,
+      &quot;latitude&quot;:0.0,
+      &quot;longitude&quot;:0.12345,
+      &quot;cache_status&quot;:&quot;HIT&quot;,
+      &quot;hostname&quot;:&quot;cdn.example.com&quot;,
+      &quot;method&quot;:&quot;GET&quot;,
+      &quot;origin_time&quot;:&quot;0&quot;,
+      &quot;pop&quot;:&quot;lax&quot;,
+      &quot;protocol&quot;:&quot;HTTP/1.1&quot;,
+      &quot;query_string&quot;:&quot;ver=1.2&quot;,
+      &quot;scheme&quot;:&quot;https&quot;,
+      &quot;status_code&quot;:200,
+      &quot;request_time&quot;:&quot;2013-12-11T17:00:12Z&quot;,
+      &quot;uri&quot;:&quot;/sample/test.swf&quot;,
+      &quot;user_agent&quot;:&quot;Opera/9.80 (Windows NT 5.1; Edition DriverPack) Presto/2.12.388 Version/12.16&quot;,
+      &quot;zone&quot;:&quot;example&quot;
+    }
+  ]
 }</pre>
   </div>
 </div>
