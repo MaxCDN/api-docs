@@ -8561,7 +8561,7 @@ api.get('/reports/live/connectionstats.json/' + reportType, function(err, respon
 
 ## Get Raw Logs
 
-Gets raw log data
+Retrieve up to five days of raw log data
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
@@ -8625,25 +8625,25 @@ Parameter | Default Value | Validation | Description |
 
 ### Code Samples
 
-<ul class="nav nav-tabs" id="myTab100">
-  <li class="active"><a href="#curl100" data-toggle='tab'>cURL</a></li>
-  <li><a href="#csharp100" data-toggle='tab'>C#</a></li>
-  <li><a href="#javascript100" data-toggle='tab'>JavaScript</a></li>
-  <li><a href="#visualbasic100" data-toggle='tab'>Visual Basic</a></li>
-  <li><a href="#ruby100" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python100" data-toggle='tab'>Python</a></li>
-  <li><a href="#php100" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node100" data-toggle='tab'>Node</a></li>
-  <li><a href="#response100" data-toggle='tab'>Response</a></li>
+<ul class="nav nav-tabs" id="myTab101">
+  <li class="active"><a href="#curl101" data-toggle='tab'>cURL</a></li>
+  <li><a href="#csharp101" data-toggle='tab'>C#</a></li>
+  <li><a href="#javascript101" data-toggle='tab'>JavaScript</a></li>
+  <li><a href="#visualbasic101" data-toggle='tab'>Visual Basic</a></li>
+  <li><a href="#ruby101" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python101" data-toggle='tab'>Python</a></li>
+  <li><a href="#php101" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node101" data-toggle='tab'>Node</a></li>
+  <li><a href="#response101" data-toggle='tab'>Response</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="curl100">
+  <div class="tab-pane active" id="curl101">
     <pre>
 curl --include \
  http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent</pre>
   </div>
-  <div class="tab-pane" id="csharp100">
+  <div class="tab-pane" id="csharp101">
     <pre>
 //Common testing requirement. If you are consuming an API in a sandbox/test region, uncomment this line of code ONLY for non production uses.
 //System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
@@ -8659,7 +8659,7 @@ using (var response = request.GetResponse() as System.Net.HttpWebResponse) {
   }
 }</pre>
   </div>
-  <div class="tab-pane" id="javascript100">
+  <div class="tab-pane" id="javascript101">
     <pre>
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent");
@@ -8670,7 +8670,7 @@ xhr.onreadystatechange = function () {
 };
 xhr.send(null);</pre>
   </div>
-  <div class="tab-pane" id="visualbasic100">
+  <div class="tab-pane" id="visualbasic101">
     <pre>
 Dim request = TryCast(System.Net.WebRequest.Create("http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent"), System.Net.HttpWebRequest)
 request.Method = "GET"
@@ -8682,7 +8682,7 @@ Using response = TryCast(request.GetResponse(), System.Net.HttpWebResponse)
   End Using
 End Using</pre>
   </div>
-  <div class="tab-pane" id="ruby100">
+  <div class="tab-pane" id="ruby101">
     <pre>
 require 'rubygems' if RUBY_VERSION < '1.9'
 require 'rest_client'
@@ -8690,14 +8690,14 @@ require 'rest_client'
 response = RestClient.get "http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent"
 puts response</pre>
   </div>
-  <div class="tab-pane" id="python100">
+  <div class="tab-pane" id="python101">
     <pre>
 from urllib2 import Request, urlopen
 request = Request("http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent")
 response_body = urlopen(request).read()
 print response_body</pre>
   </div>
-  <div class="tab-pane" id="php100">
+  <div class="tab-pane" id="php101">
     <pre>
 <?php
 $ch = curl_init();
@@ -8709,7 +8709,7 @@ curl_close($ch);
 
 var_dump($response);</pre>
   </div>
-  <div class="tab-pane" id="node100">
+  <div class="tab-pane" id="node101">
   <pre>
 var request = require("request");
 request({
@@ -8721,7 +8721,7 @@ request({
   console.log("Response received", body);
 });</pre>
   </div>
-  <div class="tab-pane" id="response100">
+  <div class="tab-pane" id="response101">
     <pre>
 200 (OK)
 Content-Type: application/json
