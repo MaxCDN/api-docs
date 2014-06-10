@@ -8582,7 +8582,7 @@ Parameter | Description |
 `client_city` | Visitor's city |
 `client_continent` | Visitor's continent |
 `client_country` | Visitor's country |
-`client_dma` |  |
+`client_dma` | Visitor's "designated market area" |
 `client_ip` | Visitor's public IP |
 `client_latitude` | Visitor's geographical latitude (roughly) |
 `client_longitude` | Visitor's geographical longitude (roughly) |
@@ -8591,7 +8591,7 @@ Parameter | Description |
 `cache_status` | CDN status of the file (HIT, MISS) |
 `hostname` | Domain name that was visited |
 `method` | HTTP request method |
-`origin_time` |  |
+`origin_time` | How long it takes MaxCDN to retrieve the file (if cache status was a MISS) |
 `pop` | Point Of Presence that was hit (LAX, LHR, TYO, etc.) |
 `protocol` | HTTP protocol used |
 `query_string` | Query string attached to a file (ex. ver=1.2) |
