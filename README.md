@@ -8616,7 +8616,7 @@ Parameter | Default Value | Validation | Description |
 `status` | - | 400,404,200,202 | Separate multiple HTTP status codes by comma |
 `ssl` | both | nossl, ssl, both | Filters by SSL traffic (choose nossl, ssl or both) |
 `user_agent` | - | Chrome | Filter logs by requested user agent (string or regular expression) |
-`referer` | - | regex:.*google.com | Filter logs by a referer(string or regular expression) |
+`referer` | - | regex:.*google.com | Filter logs by a referer (string or regular expression) |
 `pop` | - | sfo,lax,ams  | Filter logs by specific POP (Point Of Presence), use comma separation for multiple POPs. Possible values: ams, atl, aus, chi, dal, den, fra, hkg, jfk, lax, lhr, mia, sea, sfo, sin, sjc, slc, tko, vir |
 `query_string` | - | regex:duration=all | Filter logs by query string (string or regular expression) |
 `limit` | 1000 | 500 | How many records per page should be retrieved) |
