@@ -10,7 +10,6 @@
 <li><a href="#users-api">Users API</a></li>
 <li><a href="#zones-api">Zones API</a></li>
 <li><a href="#reports-api">Reports API</a></li>
-<li><a href="#reports-by-file-name-api">Clients API</a></li>
 <li><a href="#raw-logs-api">Raw Logs API</a></li>
 </ul>
 <h2 id="overview">Overview</h2>
@@ -11355,754 +11354,6 @@ api.get(&#39;/reports/&#39; + id + &#39;/&#39; + &#39;/statsbydir.json/&#39; + r
   </div>
 </div>
 
-
-<h1 id="reports-by-file-name-api">Reports By File Name API</h1>
-<h2 id="list-stats-by-file-name">List Stats By File Name</h2>
-<p>Gets usage statistics by file name for your account</p>
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/statsbyfilename.json/{report_type}">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/statsbyfilename.json/{report_type}</a></span></div>
-</div>
-
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date_from</code></td>
-<td>now() - 1 month</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>Start date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>date_to</code></td>
-<td>now()</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>End date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>file_names</code></td>
-<td>A JSON Encoded file names list</td>
-<td></td>
-</tr>
-<tr>
-<td><code>filter</code></td>
-<td>Matching expression for file names</td>
-<td></td>
-</tr>
-<tr>
-<td><code>sort_by</code></td>
-<td>Field to sort by</td>
-<td></td>
-</tr>
-<tr>
-<td><code>sort_dir</code></td>
-<td>Directory to sort files by</td>
-<td></td>
-</tr>
-<tr>
-<td><code>page_size</code></td>
-<td>-</td>
-<td>The number of records returned in the result set</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="response-parameters">Response Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>200</code></td>
-<td>The amount of 200 hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>206</code></td>
-<td>The amount of 206 hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>2xx</code></td>
-<td>The amount of 2xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>3xx</code></td>
-<td>The amount of 3xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>404</code></td>
-<td>The amount of 404 hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>4xx</code></td>
-<td>The amount of 4xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>5xx</code></td>
-<td>The amount of 5xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>bucket_id</code></td>
-<td>The Zone ID for the top level directory</td>
-<td></td>
-</tr>
-<tr>
-<td><code>file_name</code></td>
-<td>URI</td>
-<td></td>
-</tr>
-<tr>
-<td><code>hit</code></td>
-<td>The number of requests made to files within this directory</td>
-<td></td>
-</tr>
-<tr>
-<td><code>size</code></td>
-<td>The amount of bytes transferred from within this directory</td>
-<td></td>
-</tr>
-<tr>
-<td><code>timestampf</code></td>
-<td>Timestamp</td>
-<td></td>
-</tr>
-<tr>
-<td><code>vhost</code></td>
-<td>CDN URL</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab95">
-  <li class="active"><a href="#ruby95" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python95" data-toggle='tab'>Python</a></li>
-  <li><a href="#php95" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node95" data-toggle='tab'>Node</a></li>
-  <li><a href="#response95" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby95">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/statsbyfilename.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="python95">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/statsbyfilename.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php95">
-    <pre>
-$reportType = &#39;&#39;; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-$clientId = &#39;&#39;;
-$api-&gt;get(&#39;/clients/&#39;.$clientId.&#39;/reports/statsbyfilename.json/&#39;.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node95">
-  <pre>
-var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-var clientId = &#39;&#39;
-api.get(&#39;/clients/&#39; + clientId + &#39;/reports/statsbyfilename.json/&#39; + reportType, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response95">
-    <pre>
-{
-    &quot;code&quot;: 200,
-    &quot;data&quot;: {
-        &quot;statsbyfilename&quot;: [
-            {
-                &quot;200&quot;: &quot;0&quot;,
-                &quot;206&quot;: &quot;0&quot;,
-                &quot;2xx&quot;: &quot;0&quot;,
-                &quot;3xx&quot;: &quot;0&quot;,
-                &quot;404&quot;: &quot;0&quot;,
-                &quot;4xx&quot;: &quot;0&quot;,
-                &quot;5xx&quot;: &quot;35036&quot;,
-                &quot;bucket_id&quot;: &quot;21597&quot;,
-                &quot;file_name&quot;: &quot;/&quot;,
-                &quot;hit&quot;: &quot;35036&quot;,
-                &quot;size&quot;: &quot;20110664&quot;,
-                &quot;timestampf&quot;: &quot;2013&quot;,
-                &quot;vhost&quot;: &quot;edge02.nycacorp.netdna-cdn.com&quot;
-            },
-            {
-                &quot;200&quot;: &quot;0&quot;,
-                &quot;206&quot;: &quot;0&quot;,
-                &quot;2xx&quot;: &quot;0&quot;,
-                &quot;3xx&quot;: &quot;0&quot;,
-                &quot;404&quot;: &quot;0&quot;,
-                &quot;4xx&quot;: &quot;2&quot;,
-                &quot;5xx&quot;: &quot;35032&quot;,
-                &quot;bucket_id&quot;: &quot;21597&quot;,
-                &quot;file_name&quot;: &quot;/favicon.ico&quot;,
-                &quot;hit&quot;: &quot;35034&quot;,
-                &quot;size&quot;: &quot;20108368&quot;,
-                &quot;timestampf&quot;: &quot;2013&quot;,
-                &quot;vhost&quot;: &quot;edge02.nycacorp.netdna-cdn.com&quot;
-            }
-        ],
-        &quot;summary&quot;: {
-            &quot;200&quot;: &quot;0&quot;,
-            &quot;206&quot;: &quot;0&quot;,
-            &quot;2xx&quot;: &quot;0&quot;,
-            &quot;3xx&quot;: &quot;0&quot;,
-            &quot;404&quot;: &quot;0&quot;,
-            &quot;4xx&quot;: &quot;2&quot;,
-            &quot;5xx&quot;: &quot;70068&quot;,
-            &quot;hit&quot;: &quot;70070&quot;,
-            &quot;size&quot;: &quot;40219032&quot;
-        },
-        &quot;total&quot;: &quot;2&quot;
-    }
-}</pre>
-  </div>
-</div>
-
-
-<h2 id="list-stats-by-file-name-and-zone-id">List Stats By File Name and Zone Id</h2>
-<p>Gets usage statistics by file name for the specified
-{zone_id}</p>
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/{zone_id}/statsbyfilename.json/{report_type}">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/{zone_id}/statsbyfilename.json/{report_type}</a></span></div>
-</div>
-
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date_from</code></td>
-<td>now() - 1 month</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>Start date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>date_to</code></td>
-<td>now()</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>End date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>file_names</code></td>
-<td>A JSON Encoded file names list</td>
-<td></td>
-</tr>
-<tr>
-<td><code>filter</code></td>
-<td>Matching expression for file names</td>
-<td></td>
-</tr>
-<tr>
-<td><code>sort_by</code></td>
-<td>Field to sort by</td>
-<td></td>
-</tr>
-<tr>
-<td><code>sort_dir</code></td>
-<td>Directory to sort files by</td>
-<td></td>
-</tr>
-<tr>
-<td><code>page_size</code></td>
-<td>-</td>
-<td>The number of records returned in the result set</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="response-parameters">Response Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bucket_id</code></td>
-<td>The Zone ID for the top level directory</td>
-<td></td>
-</tr>
-<tr>
-<td><code>hit</code></td>
-<td>The number of requests made to files within this directory</td>
-<td></td>
-</tr>
-<tr>
-<td><code>size</code></td>
-<td>The amount of bytes transferred from within this directory</td>
-<td></td>
-</tr>
-<tr>
-<td><code>200</code></td>
-<td>The amount of 200 hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>206</code></td>
-<td>The amount of 206 hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>2xx</code></td>
-<td>The amount of 2xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>3xx</code></td>
-<td>The amount of 3xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>404</code></td>
-<td>The amount of 404 hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>4xx</code></td>
-<td>The amount of 4xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>5xx</code></td>
-<td>The amount of 5xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>timestampf</code></td>
-<td>Timestamp</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab96">
-  <li class="active"><a href="#ruby96" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python96" data-toggle='tab'>Python</a></li>
-  <li><a href="#php96" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node96" data-toggle='tab'>Node</a></li>
-  <li><a href="#response96" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby96">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-id = &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/&#39;+id+&#39;/statsbyfilename.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="python96">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-id = &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/&#39;+id+&#39;/statsbyfilename.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php96">
-    <pre>
-$reportType = &#39;&#39;; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-$id = &#39;96061&#39;;
-$clientId = &#39;&#39;;
-$api-&gt;get(&#39;/clients/&#39;.$clientId.&#39;/reports/&#39;.$id.&#39;/statsbyfilename.json/&#39;.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node96">
-  <pre>
-var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-var id = &#39;96061&#39;
-var clientId = &#39;&#39;
-api.get(&#39;/clients/&#39; + clientId + &#39;/reports/&#39; + id + &#39;/statsbyfilename.json/&#39; + reportType, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response96">
-    <pre>
-Non functional</pre>
-  </div>
-</div>
-
-
-
-<h1 id="reports-by-custom-domain-api">Reports By Custom Domain API</h1>
-<h2 id="list-stats-by-directory">List Stats By Directory</h2>
-<p>Gets usage statistics by custom domain for your account. (This
-report has to be enabled by Sales).</p>
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/statsbycustomdomain.json/{report_type}">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/statsbycustomdomain.json/{report_type}</a></span></div>
-</div>
-
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date_from</code></td>
-<td>now() - 1 month</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>Start date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>date_to</code></td>
-<td>now()</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>End date</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="response-parameters">Response Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bucket_id</code></td>
-<td>The Zone ID for the custom domain</td>
-<td></td>
-</tr>
-<tr>
-<td><code>custom_domain_id</code></td>
-<td>The ID of your custom domain</td>
-<td></td>
-</tr>
-<tr>
-<td><code>hit</code></td>
-<td>The number of requests made to this custom domain</td>
-<td></td>
-</tr>
-<tr>
-<td><code>size</code></td>
-<td>The amount of bytes transferred to/from this custom domain</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab97">
-  <li class="active"><a href="#ruby97" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python97" data-toggle='tab'>Python</a></li>
-  <li><a href="#php97" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node97" data-toggle='tab'>Node</a></li>
-  <li><a href="#response97" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby97">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/statsbycustomdomain.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="python97">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/statsbycustomdomain.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php97">
-    <pre>
-$reportType = &#39;&#39;; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-$clientId = &#39;&#39;;
-$api-&gt;get(&#39;clients/&#39;.$clientId.&#39;/reports/statsbycustomdomain.json/&#39;.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node97">
-  <pre>
-var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-var clientId = &#39;&#39;
-api.get(&#39;/clients/&#39; + clientId + &#39;/reports/statsbycustomdomain.json/&#39; + reportType, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response97">
-    <pre>
-{
-    &quot;code&quot;: 200,
-    &quot;data&quot;: {
-        &quot;current_page_size&quot;: 1,
-        &quot;page&quot;: 1,
-        &quot;page_size&quot;: &quot;50&quot;,
-        &quot;pages&quot;: 1,
-        &quot;statsbycustomdomain&quot;: [
-            {
-                &quot;bucket_id&quot;: &quot;21597&quot;,
-                &quot;custom_domain_id&quot;: &quot;0&quot;,
-                &quot;hit&quot;: &quot;70320&quot;,
-                &quot;size&quot;: &quot;40362532&quot;,
-                &quot;vhost&quot;: &quot;edge02.nycacorp.netdna-cdn.com&quot;
-            }
-        ],
-        &quot;summary&quot;: {
-            &quot;hit&quot;: &quot;70320&quot;,
-            &quot;size&quot;: &quot;40362532&quot;
-        },
-        &quot;total&quot;: &quot;1&quot;
-    }
-}</pre>
-  </div>
-</div>
-
-
-<h2 id="list-stats-by-custom-domain-and-zone-id">List Stats By Custom Domain and Zone Id</h2>
-<p>Gets usage statistics by custom domain for the specified
-{zone_id}. (This report has to be enabled by Sales).</p>
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/{zone_id}/statsbycustomdomain.json/{report_type}">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/{zone_id}/statsbycustomdomain.json/{report_type}</a></span></div>
-</div>
-
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date_from</code></td>
-<td>now() - 1 month</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>Start date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>date_to</code></td>
-<td>now()</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>End date</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="response-parameters">Response Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bucket_id</code></td>
-<td>The Zone ID for the top level directory</td>
-<td></td>
-</tr>
-<tr>
-<td><code>custom_domain_id</code></td>
-<td>The ID of the Custom Domain</td>
-<td></td>
-</tr>
-<tr>
-<td><code>hit</code></td>
-<td>The number of requests made to this custom domain</td>
-<td></td>
-</tr>
-<tr>
-<td><code>size</code></td>
-<td>The amount of bytes transferred to/from this custom domain</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab98">
-  <li class="active"><a href="#ruby98" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python98" data-toggle='tab'>Python</a></li>
-  <li><a href="#php98" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node98" data-toggle='tab'>Node</a></li>
-  <li><a href="#response98" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby98">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-zoneId = &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/&#39;+zoneId+&#39;/statsbycustomdomain.json&#39;+reportType)
-</pre>
-  </div>
-  <div class="tab-pane" id="python98">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-zoneId = &#39;84199&#39;
-clientId = &#39;1&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/&#39;+zoneId+&#39;/statsbycustomdomain.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php98">
-    <pre>
-$reportType = &#39;&#39;; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-$zoneId = &#39;&#39;;
-$clientId = &#39;&#39;;
-$api-&gt;get(&#39;clients/&#39;.$clientId.&#39;/reports/&#39;.$zoneId.&#39;/statsbycustomdomain.json/&#39;.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node98">
-  <pre>
-var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-var zoneId = &#39;&#39;
-var clientId = &#39;&#39;
-api.get(&#39;/clients/&#39; + clientId + &#39;/reports/&#39; + zoneId + &#39;/statsbycustomdomain.json/&#39; + reportType, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response98">
-    <pre>
-{
-    &quot;code&quot;: 200,
-    &quot;data&quot;: {
-        &quot;current_page_size&quot;: 0,
-        &quot;page&quot;: 1,
-        &quot;page_size&quot;: &quot;50&quot;,
-        &quot;pages&quot;: 0,
-        &quot;statsbycustomdomain&quot;: [],
-        &quot;summary&quot;: {
-            &quot;hit&quot;: null,
-            &quot;size&quot;: null
-        },
-        &quot;total&quot;: &quot;0&quot;
-    }
-}</pre>
-  </div>
-</div>
-
-
-<h1 id="reports-for-live-zones-api">Reports for Live Zones API</h1>
-<h2 id="list-connection-stats">List Connection Stats</h2>
-<p>Gets zone stats in hourly, daily, or monthly summaries</p>
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/live/connectionstats.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/live/connectionstats.json/{report_type}</a></span></div>
-</div>
-
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date_from</code></td>
-<td>-</td>
-<td>Y-m-d e.g. 2012-01-01</td>
-<td>Start date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>date_to</code></td>
-<td>-</td>
-<td>Y-m-d e.g. 2012-01-01</td>
-<td>End date</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab99">
-  <li class="active"><a href="#ruby99" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python99" data-toggle='tab'>Python</a></li>
-  <li><a href="#php99" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node99" data-toggle='tab'>Node</a></li>
-  <li><a href="#response99" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby99">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-api.get(&#39;/reports/live/connectionstats.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="python99">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-api.get(&#39;/reports/live/connectionstats.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php99">
-    <pre>
-$reportType = &#39;&#39;; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-$api-&gt;get(&#39;/reports/live/connectionstats.json/&#39;.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node99">
-  <pre>
-var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-api.get(&#39;/reports/live/connectionstats.json/&#39; + reportType, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response99">
-    <pre>
-{
-    &quot;code&quot;: 200,
-    &quot;data&quot;: {
-        &quot;current_page_size&quot;: 0,
-        &quot;page&quot;: 1,
-        &quot;page_size&quot;: &quot;50&quot;,
-        &quot;pages&quot;: 0,
-        &quot;stats&quot;: [],
-        &quot;total&quot;: &quot;0&quot;
-    }
-}</pre>
-  </div>
-</div>
-
-
 <h1 id="raw-logs-api">Raw Logs API</h1>
 <h2 id="get-raw-logs">Get Raw Logs</h2>
 <p>Retrieve up to five days of raw log data</p>
@@ -12111,6 +11362,110 @@ api.get(&#39;/reports/live/connectionstats.json/&#39; + reportType, function(err
 <span class="path"><a href="https://rws.netdna.com/{companyalias}/v3/reporting/logs.json">https://rws.netdna.com/{companyalias}/v3/reporting/logs.json</a></span></div>
 </div>
 
+<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default Value</th>
+<th>Validation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td>now() - 1 day</td>
+<td>ISO-8601 formatted date/time</td>
+<td>The start of the range for requests to pull.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>now()</td>
+<td>ISO-8601 formatted date/time</td>
+<td>The end of the range for requests to pull</td>
+<td></td>
+</tr>
+<tr>
+<td><code>zones</code></td>
+<td>-</td>
+<td>CSV of ints</td>
+<td>The specific zones whose requests you want to pull. Separate multiple zone ids by comma</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uri</code></td>
+<td>-</td>
+<td>valid uri of a resource</td>
+<td>Use this filter to view requests made for a specific resource (or group of resources). You can do a literal match or regular expression in this field (i.e. &#39;/images/header.png&#39; or &#39;regex:/images/&#39;)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>-</td>
+<td>CSV of ints</td>
+<td>The specific HTTP status code responses you want to pull. Separate multiple HTTP status codes by comma (i.e. 200,201,304)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl</code></td>
+<td>both</td>
+<td>nossl, ssl, both</td>
+<td>Use this filter to distinguish between SSL and non-SSL traffic (choose nossl, ssl or both)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_agent</code></td>
+<td>-</td>
+<td>Chrome</td>
+<td>Filter logs by requested user agent (string or regular expression)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referer</code></td>
+<td>-</td>
+<td>regex:.*google.com</td>
+<td>Filter logs by a referer (string or regular expression)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pop</code></td>
+<td>-</td>
+<td>sfo,lax,ams</td>
+<td>Filter logs by specific POP (Point Of Presence), use comma separation for multiple POPs. Possible values: ams, atl, aus, chi, dal, den, fra, hkg, jfk, lax, lhr, mia, sea, sfo, sin, sjc, slc, tko, vir</td>
+<td></td>
+</tr>
+<tr>
+<td><code>query_string</code></td>
+<td>-</td>
+<td>regex:duration=all</td>
+<td>Filter logs by query string (string or regular expression)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>1000</td>
+<td>int</td>
+<td>How many records should be retrieved per page</td>
+<td></td>
+</tr>
+<tr>
+<td><code>start_key</code></td>
+<td>-</td>
+<td>354631834</td>
+<td>String-based key for next page of records to return, for easy pagination or streaming</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>recent</td>
+<td></td>
+<td>Display records sorted by newest first or oldest first</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="response-parameters">Response Parameters</h3>
 <table>
 <thead>
@@ -12268,117 +11623,6 @@ api.get(&#39;/reports/live/connectionstats.json/&#39; + reportType, function(err
 <tr>
 <td><code>zone_id</code></td>
 <td>ID of the Push/Pull/VOD zone hit</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>companyalias</code></td>
-<td>-</td>
-<td><span class="label important">required</span><br /></td>
-<td>MaxCDN provided API alias</td>
-<td></td>
-</tr>
-<tr>
-<td><code>start</code></td>
-<td>Now -24 hours</td>
-<td>2014-01-01</td>
-<td>ISO-8601 formatted date/time</td>
-<td></td>
-</tr>
-<tr>
-<td><code>end</code></td>
-<td>Time of request</td>
-<td>2014-01-31</td>
-<td>ISO-8601 formatted date/time, defaults to the time of request</td>
-<td></td>
-</tr>
-<tr>
-<td><code>zones</code></td>
-<td>-</td>
-<td>1234,5678,9012</td>
-<td>Separate multiple zones by comma</td>
-<td></td>
-</tr>
-<tr>
-<td><code>uri</code></td>
-<td>-</td>
-<td>/images/header.png</td>
-<td>String or regular expression</td>
-<td></td>
-</tr>
-<tr>
-<td><code>status</code></td>
-<td>-</td>
-<td>400,404,200,202</td>
-<td>Separate multiple HTTP status codes by comma</td>
-<td></td>
-</tr>
-<tr>
-<td><code>ssl</code></td>
-<td>both</td>
-<td>nossl, ssl, both</td>
-<td>Filters by SSL traffic (choose nossl, ssl or both)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>user_agent</code></td>
-<td>-</td>
-<td>Chrome</td>
-<td>Filter logs by requested user agent (string or regular expression)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>referer</code></td>
-<td>-</td>
-<td>regex:.*google.com</td>
-<td>Filter logs by a referer (string or regular expression)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>pop</code></td>
-<td>-</td>
-<td>sfo,lax,ams</td>
-<td>Filter logs by specific POP (Point Of Presence), use comma separation for multiple POPs. Possible values: ams, atl, aus, chi, dal, den, fra, hkg, jfk, lax, lhr, mia, sea, sfo, sin, sjc, slc, tko, vir</td>
-<td></td>
-</tr>
-<tr>
-<td><code>query_string</code></td>
-<td>-</td>
-<td>regex:duration=all</td>
-<td>Filter logs by query string (string or regular expression)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>limit</code></td>
-<td>1000</td>
-<td>500</td>
-<td>How many records per page should be retrieved)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>start_key</code></td>
-<td>-</td>
-<td>354631834</td>
-<td>String-based key for next record to return, for pagination</td>
-<td></td>
-</tr>
-<tr>
-<td><code>sort</code></td>
-<td>recent</td>
-<td></td>
-<td>Display records sorted by newest first or oldest first</td>
 <td></td>
 </tr>
 </tbody>
