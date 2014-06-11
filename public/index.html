@@ -11375,7 +11375,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/&#39; + &#39;/statsbydir.json/&#39; + r
 <tbody>
 <tr>
 <td><code>start</code></td>
-<td>now() - 1 day</td>
+<td>now() - 1 hour</td>
 <td>ISO-8601 formatted date/time</td>
 <td>The start of the range for requests to pull.</td>
 <td></td>
@@ -11397,7 +11397,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/&#39; + &#39;/statsbydir.json/&#39; + r
 <tr>
 <td><code>uri</code></td>
 <td>-</td>
-<td>valid uri of a resource</td>
+<td>string</td>
 <td>Use this filter to view requests made for a specific resource (or group of resources). You can do a literal match or regular expression in this field (i.e. &#39;/images/header.png&#39; or &#39;regex:/images/&#39;)</td>
 <td></td>
 </tr>
@@ -11411,56 +11411,56 @@ api.get(&#39;/reports/&#39; + id + &#39;/&#39; + &#39;/statsbydir.json/&#39; + r
 <tr>
 <td><code>ssl</code></td>
 <td>both</td>
-<td>nossl, ssl, both</td>
+<td>enum(nossl, ssl, both)</td>
 <td>Use this filter to distinguish between SSL and non-SSL traffic (choose nossl, ssl or both)</td>
 <td></td>
 </tr>
 <tr>
 <td><code>user_agent</code></td>
 <td>-</td>
-<td>Chrome</td>
-<td>Filter logs by requested user agent (string or regular expression)</td>
+<td>string</td>
+<td>Filter logs by specific user agents. You can do a literal match or regular expression in this field (i.e. &#39;Python MaxCDN API Client&#39; or &#39;regex:Chrome&#39;)</td>
 <td></td>
 </tr>
 <tr>
 <td><code>referer</code></td>
 <td>-</td>
-<td>regex:.*google.com</td>
-<td>Filter logs by a referer (string or regular expression)</td>
+<td>string</td>
+<td>Filter logs by a specific referer. You can do a literal match or regular expression in this field (i.e. &#39;www.maxcdn.com&#39; or &#39;regex:maxcdn.com&#39;)</td>
 <td></td>
 </tr>
 <tr>
 <td><code>pop</code></td>
 <td>-</td>
-<td>sfo,lax,ams</td>
-<td>Filter logs by specific POP (Point Of Presence), use comma separation for multiple POPs. Possible values: ams, atl, aus, chi, dal, den, fra, hkg, jfk, lax, lhr, mia, sea, sfo, sin, sjc, slc, tko, vir</td>
+<td>CSV of strings</td>
+<td>Filter logs by specific POPs (Points Of Presence), use comma separation for multiple POPs. Possible values: ams, atl, aus, chi, dal, den, fra, hkg, jfk, lax, lhr, mia, sea, sfo, sin, sjc, slc, tko, vir</td>
 <td></td>
 </tr>
 <tr>
 <td><code>query_string</code></td>
 <td>-</td>
-<td>regex:duration=all</td>
-<td>Filter logs by query string (string or regular expression)</td>
+<td>string</td>
+<td>Filter logs by a specific query string. You can do a literal match or regular expression in this field (i.e. &#39;width=600&#39; or &#39;regex:width&#39;)</td>
 <td></td>
 </tr>
 <tr>
 <td><code>limit</code></td>
-<td>1000</td>
+<td>100</td>
 <td>int</td>
-<td>How many records should be retrieved per page</td>
+<td>How many records should be retrieved per page. Maximum is 1000</td>
 <td></td>
 </tr>
 <tr>
 <td><code>start_key</code></td>
 <td>-</td>
-<td>354631834</td>
-<td>String-based key for next page of records to return, for easy pagination or streaming</td>
+<td>string</td>
+<td>String-based key for next page of records to return, for easy pagination or streaming. This key will be provided in the &quot;next_page_key&quot; from a response.</td>
 <td></td>
 </tr>
 <tr>
 <td><code>sort</code></td>
 <td>recent</td>
-<td></td>
+<td>enum(recent, oldest)</td>
 <td>Display records sorted by newest first or oldest first</td>
 <td></td>
 </tr>
@@ -11477,12 +11477,12 @@ api.get(&#39;/reports/&#39; + id + &#39;/&#39; + &#39;/statsbydir.json/&#39; + r
 <tbody>
 <tr>
 <td><code>limit</code></td>
-<td>Number of records retrieved</td>
+<td>The maximum number of records retrieved</td>
 <td></td>
 </tr>
 <tr>
 <td><code>page</code></td>
-<td>Number of pages not displayed (if there are enough records)</td>
+<td>The current page of records retrieved</td>
 <td></td>
 </tr>
 <tr>
@@ -11629,11 +11629,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/&#39; + &#39;/statsbydir.json/&#39; + r
 </table>
 <h3 id="code-samples">Code Samples</h3>
 <ul class="nav nav-tabs" id="myTab101">
-  <li class="active"><a href="#curl101" data-toggle='tab'>cURL</a></li>
-  <li><a href="#csharp101" data-toggle='tab'>C#</a></li>
-  <li><a href="#javascript101" data-toggle='tab'>JavaScript</a></li>
-  <li><a href="#visualbasic101" data-toggle='tab'>Visual Basic</a></li>
-  <li><a href="#ruby101" data-toggle='tab'>Ruby</a></li>
+  <li class="active"><a href="#ruby101" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python101" data-toggle='tab'>Python</a></li>
   <li><a href="#php101" data-toggle='tab'>PHP</a></li>
   <li><a href="#node101" data-toggle='tab'>Node</a></li>
@@ -11641,88 +11637,29 @@ api.get(&#39;/reports/&#39; + id + &#39;/&#39; + &#39;/statsbydir.json/&#39; + r
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="curl101">
+  <div class="tab-pane active" id="ruby101">
     <pre>
-curl --include \
- <a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a></pre>
-  </div>
-  <div class="tab-pane" id="csharp101">
-    <pre>
-//Common testing requirement. If you are consuming an API in a sandbox/test region, uncomment this line of code ONLY for non production uses.
-//System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
-
-var request = System.Net.WebRequest.Create(&quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;) as System.Net.HttpWebRequest;
-request.KeepAlive = true;
-request.Method = &quot;GET&quot;;
-  request.ContentLength = 0;
-string responseContent=null;
-using (var response = request.GetResponse() as System.Net.HttpWebResponse) {
-  using (var reader = new System.IO.StreamReader(response.GetResponseStream())) {
-    responseContent = reader.ReadToEnd();
-  }
-}</pre>
-  </div>
-  <div class="tab-pane" id="javascript101">
-    <pre>
-var xhr = new XMLHttpRequest();
-xhr.open(&quot;GET&quot;, &quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;);
-xhr.onreadystatechange = function () {
-  if (this.readyState == 4) {
-    alert(&#39;Status: &#39;+this.status+&#39;\nHeaders: &#39;+JSON.stringify(this.getAllResponseHeaders())+&#39;\nBody: &#39;+this.responseText);
-  }
-};
-xhr.send(null);</pre>
-  </div>
-  <div class="tab-pane" id="visualbasic101">
-    <pre>
-Dim request = TryCast(System.Net.WebRequest.Create(&quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;), System.Net.HttpWebRequest)
-request.Method = &quot;GET&quot;
-request.ContentLength = 0
-Dim responseContent As String
-Using response = TryCast(request.GetResponse(), System.Net.HttpWebResponse)
-  Using reader = New System.IO.StreamReader(response.GetResponseStream())
-    responseContent = reader.ReadToEnd()
-  End Using
-End Using</pre>
-  </div>
-  <div class="tab-pane" id="ruby101">
-    <pre>
-require &#39;rubygems&#39; if RUBY_VERSION &lt; &#39;1.9&#39;
-require &#39;rest_client&#39;
-
-response = RestClient.get &quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;
-puts response</pre>
+      api.get(&#39;/v3/reporting/logs.json?start=2014-01-30&amp;end=2014-01-31&amp;status=200&#39;)
+    </pre>
   </div>
   <div class="tab-pane" id="python101">
     <pre>
-from urllib2 import Request, urlopen
-request = Request(&quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;)
-response_body = urlopen(request).read()
-print response_body</pre>
+      params = {&quot;start&quot;:&quot;2014-01-30&quot;, &quot;end&quot;:&quot;2014-01-31&quot;, &quot;status&quot;:&quot;200&quot;}
+      api.get(&#39;/v3/reporting/logs.json&#39;, data=params)
+    </pre>
   </div>
   <div class="tab-pane" id="php101">
     <pre>
-&lt;?php
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, &quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-curl_setopt($ch, CURLOPT_HEADER, FALSE);
-$response = curl_exec($ch);
-curl_close($ch);
-
-var_dump($response);</pre>
+      $params = array(&quot;start&quot;=&gt;&quot;2014-01-30&quot;, &quot;end&quot;=&gt;&quot;2014-01-31&quot;, &quot;status&quot;=&gt;&quot;200&quot;)
+      $api-&gt;get(&#39;/v3/reporting/logs.json&#39;, $params)
+    </pre>
   </div>
   <div class="tab-pane" id="node101">
-  <pre>
-var request = require(&quot;request&quot;);
-request({
-  url: &quot;<a href="http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent">http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&amp;end=2014-01-31&amp;uri=%2Fimages%2Fheader.png&amp;status=400%2C404%2C200%2C202&amp;ssl=nossl&amp;user_agent=regex%3AChrome&amp;referer=regex%3A.%2Agoogle.com&amp;pop=sfo%2Clax%2Cams&amp;query_string=regex%3Aduration%3Dall&amp;limit=1000&amp;sort=recent</a>&quot;,
-  method: &quot;GET&quot;
-}, function (error, response, body) {
-  console.log(&quot;Status&quot;, response.statusCode);
-  console.log(&quot;Headers&quot;, JSON.stringify(response.headers));
-  console.log(&quot;Response received&quot;, body);
-});</pre>
+    <pre>
+      api.get(&#39;v3/reporting/logs.json?start=2014-01-30&amp;end=2014-01-31&amp;status=200&#39;, function(err, response) {
+        console.log(response);
+      });
+    </pre>
   </div>
   <div class="tab-pane" id="response101">
     <pre>
@@ -11753,7 +11690,7 @@ Content-Type: application/json
       &quot;query_string&quot;:&quot;&quot;,
       &quot;scheme&quot;:&quot;https&quot;,
       &quot;status_code&quot;:200,
-      &quot;request_time&quot;:&quot;2013-12-11T17:00:12Z&quot;,
+      &quot;request_time&quot;:&quot;2014-01-30T17:00:12Z&quot;,
       &quot;uri&quot;:&quot;/content.png&quot;,
       &quot;user_agent&quot;:&quot;Opera/9.80 (Windows NT 5.1; Edition DriverPack) Presto/2.12.388 Version/12.16&quot;,
       &quot;zone&quot;:&quot;example&quot;
@@ -11777,7 +11714,7 @@ Content-Type: application/json
       &quot;query_string&quot;:&quot;ver=1.2&quot;,
       &quot;scheme&quot;:&quot;https&quot;,
       &quot;status_code&quot;:200,
-      &quot;request_time&quot;:&quot;2013-12-11T17:00:12Z&quot;,
+      &quot;request_time&quot;:&quot;2014-01-30T17:00:12Z&quot;,
       &quot;uri&quot;:&quot;/sample/test.swf&quot;,
       &quot;user_agent&quot;:&quot;Opera/9.80 (Windows NT 5.1; Edition DriverPack) Presto/2.12.388 Version/12.16&quot;,
       &quot;zone&quot;:&quot;example&quot;

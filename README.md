@@ -8093,27 +8093,27 @@ Retrieve up to five days of raw log data
 
 Parameter | Default Value | Validation | Description |
 --- | --- | --- | ---
-`start` | now() - 1 day | ISO-8601 formatted date/time | The start of the range for requests to pull. |
+`start` | now() - 1 hour | ISO-8601 formatted date/time | The start of the range for requests to pull. |
 `end` | now() | ISO-8601 formatted date/time | The end of the range for requests to pull |
 `zones` | - | CSV of ints | The specific zones whose requests you want to pull. Separate multiple zone ids by comma |
-`uri` | - | valid uri of a resource | Use this filter to view requests made for a specific resource (or group of resources). You can do a literal match or regular expression in this field (i.e. '/images/header.png' or 'regex:/images/') |
+`uri` | - | string | Use this filter to view requests made for a specific resource (or group of resources). You can do a literal match or regular expression in this field (i.e. '/images/header.png' or 'regex:/images/') |
 `status` | - | CSV of ints | The specific HTTP status code responses you want to pull. Separate multiple HTTP status codes by comma (i.e. 200,201,304) |
-`ssl` | both | nossl, ssl, both | Use this filter to distinguish between SSL and non-SSL traffic (choose nossl, ssl or both) |
-`user_agent` | - | Chrome | Filter logs by requested user agent (string or regular expression) |
-`referer` | - | regex:.*google.com | Filter logs by a referer (string or regular expression) |
-`pop` | - | sfo,lax,ams  | Filter logs by specific POP (Point Of Presence), use comma separation for multiple POPs. Possible values: ams, atl, aus, chi, dal, den, fra, hkg, jfk, lax, lhr, mia, sea, sfo, sin, sjc, slc, tko, vir |
-`query_string` | - | regex:duration=all | Filter logs by query string (string or regular expression) |
-`limit` | 1000 | int | How many records should be retrieved per page |
-`start_key` | - | 354631834 | String-based key for next page of records to return, for easy pagination or streaming |
-`sort` | recent | | Display records sorted by newest first or oldest first |
+`ssl` | both | enum(nossl, ssl, both) | Use this filter to distinguish between SSL and non-SSL traffic (choose nossl, ssl or both) |
+`user_agent` | - | string | Filter logs by specific user agents. You can do a literal match or regular expression in this field (i.e. 'Python MaxCDN API Client' or 'regex:Chrome') |
+`referer` | - | string | Filter logs by a specific referer. You can do a literal match or regular expression in this field (i.e. 'www.maxcdn.com' or 'regex:maxcdn.com') |
+`pop` | - | CSV of strings  | Filter logs by specific POPs (Points Of Presence), use comma separation for multiple POPs. Possible values: ams, atl, aus, chi, dal, den, fra, hkg, jfk, lax, lhr, mia, sea, sfo, sin, sjc, slc, tko, vir |
+`query_string` | - | string | Filter logs by a specific query string. You can do a literal match or regular expression in this field (i.e. 'width=600' or 'regex:width') |
+`limit` | 100 | int | How many records should be retrieved per page. Maximum is 1000 |
+`start_key` | - | string | String-based key for next page of records to return, for easy pagination or streaming. This key will be provided in the "next_page_key" from a response. |
+`sort` | recent | enum(recent, oldest) | Display records sorted by newest first or oldest first |
 
 
 ### Response Parameters
 
 Parameter | Description |
 --- | --- | ---
-`limit` | Number of records retrieved |
-`page` | Number of pages not displayed (if there are enough records) |
+`limit` | The maximum number of records retrieved |
+`page` | The current page of records retrieved |
 `request_time` | Time in milliseconds for request to complete |
 `next_page_key` | Number string that can be used to load the next page |
 `records` | Total records displayed |
@@ -8146,11 +8146,7 @@ Parameter | Description |
 ### Code Samples
 
 <ul class="nav nav-tabs" id="myTab101">
-  <li class="active"><a href="#curl101" data-toggle='tab'>cURL</a></li>
-  <li><a href="#csharp101" data-toggle='tab'>C#</a></li>
-  <li><a href="#javascript101" data-toggle='tab'>JavaScript</a></li>
-  <li><a href="#visualbasic101" data-toggle='tab'>Visual Basic</a></li>
-  <li><a href="#ruby101" data-toggle='tab'>Ruby</a></li>
+  <li class="active"><a href="#ruby101" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python101" data-toggle='tab'>Python</a></li>
   <li><a href="#php101" data-toggle='tab'>PHP</a></li>
   <li><a href="#node101" data-toggle='tab'>Node</a></li>
@@ -8158,88 +8154,29 @@ Parameter | Description |
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="curl101">
+  <div class="tab-pane active" id="ruby101">
     <pre>
-curl --include \
- http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent</pre>
-  </div>
-  <div class="tab-pane" id="csharp101">
-    <pre>
-//Common testing requirement. If you are consuming an API in a sandbox/test region, uncomment this line of code ONLY for non production uses.
-//System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
-
-var request = System.Net.WebRequest.Create("http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent") as System.Net.HttpWebRequest;
-request.KeepAlive = true;
-request.Method = "GET";
-  request.ContentLength = 0;
-string responseContent=null;
-using (var response = request.GetResponse() as System.Net.HttpWebResponse) {
-  using (var reader = new System.IO.StreamReader(response.GetResponseStream())) {
-    responseContent = reader.ReadToEnd();
-  }
-}</pre>
-  </div>
-  <div class="tab-pane" id="javascript101">
-    <pre>
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent");
-xhr.onreadystatechange = function () {
-  if (this.readyState == 4) {
-    alert('Status: '+this.status+'\nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'\nBody: '+this.responseText);
-  }
-};
-xhr.send(null);</pre>
-  </div>
-  <div class="tab-pane" id="visualbasic101">
-    <pre>
-Dim request = TryCast(System.Net.WebRequest.Create("http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent"), System.Net.HttpWebRequest)
-request.Method = "GET"
-request.ContentLength = 0
-Dim responseContent As String
-Using response = TryCast(request.GetResponse(), System.Net.HttpWebResponse)
-  Using reader = New System.IO.StreamReader(response.GetResponseStream())
-    responseContent = reader.ReadToEnd()
-  End Using
-End Using</pre>
-  </div>
-  <div class="tab-pane" id="ruby101">
-    <pre>
-require 'rubygems' if RUBY_VERSION < '1.9'
-require 'rest_client'
-
-response = RestClient.get "http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent"
-puts response</pre>
+      api.get('/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200')
+    </pre>
   </div>
   <div class="tab-pane" id="python101">
     <pre>
-from urllib2 import Request, urlopen
-request = Request("http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent")
-response_body = urlopen(request).read()
-print response_body</pre>
+      params = {"start":"2014-01-30", "end":"2014-01-31", "status":"200"}
+      api.get('/v3/reporting/logs.json', data=params)
+    </pre>
   </div>
   <div class="tab-pane" id="php101">
     <pre>
-<?php
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-curl_setopt($ch, CURLOPT_HEADER, FALSE);
-$response = curl_exec($ch);
-curl_close($ch);
-
-var_dump($response);</pre>
+      $params = array("start"=>"2014-01-30", "end"=>"2014-01-31", "status"=>"200")
+      $api->get('/v3/reporting/logs.json', $params)
+    </pre>
   </div>
   <div class="tab-pane" id="node101">
-  <pre>
-var request = require("request");
-request({
-  url: "http://maxcdn.apiary-mock.com//v3/reporting/logs.json?start=2014-01-01&end=2014-01-31&uri=%2Fimages%2Fheader.png&status=400%2C404%2C200%2C202&ssl=nossl&user_agent=regex%3AChrome&referer=regex%3A.%2Agoogle.com&pop=sfo%2Clax%2Cams&query_string=regex%3Aduration%3Dall&limit=1000&sort=recent",
-  method: "GET"
-}, function (error, response, body) {
-  console.log("Status", response.statusCode);
-  console.log("Headers", JSON.stringify(response.headers));
-  console.log("Response received", body);
-});</pre>
+    <pre>
+      api.get('v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200', function(err, response) {
+        console.log(response);
+      });
+    </pre>
   </div>
   <div class="tab-pane" id="response101">
     <pre>
@@ -8270,7 +8207,7 @@ Content-Type: application/json
       "query_string":"",
       "scheme":"https",
       "status_code":200,
-      "request_time":"2013-12-11T17:00:12Z",
+      "request_time":"2014-01-30T17:00:12Z",
       "uri":"/content.png",
       "user_agent":"Opera/9.80 (Windows NT 5.1; Edition DriverPack) Presto/2.12.388 Version/12.16",
       "zone":"example"
@@ -8294,7 +8231,7 @@ Content-Type: application/json
       "query_string":"ver=1.2",
       "scheme":"https",
       "status_code":200,
-      "request_time":"2013-12-11T17:00:12Z",
+      "request_time":"2014-01-30T17:00:12Z",
       "uri":"/sample/test.swf",
       "user_agent":"Opera/9.80 (Windows NT 5.1; Edition DriverPack) Presto/2.12.388 Version/12.16",
       "zone":"example"
