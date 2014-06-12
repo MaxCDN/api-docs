@@ -8156,32 +8156,26 @@ Parameter | Description |
 <div class="tab-content">
   <div class="tab-pane active" id="ruby101">
     <pre>
-      api.get('/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200')
-    </pre>
+api.get('/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200')</pre>
   </div>
   <div class="tab-pane" id="python101">
     <pre>
-      params = {"start":"2014-01-30", "end":"2014-01-31", "status":"200"}
-      api.get('/v3/reporting/logs.json', data=params)
-    </pre>
+params = {"start":"2014-01-30", "end":"2014-01-31", "status":"200"}
+api.get('/v3/reporting/logs.json', data=params)</pre>
   </div>
   <div class="tab-pane" id="php101">
     <pre>
-      $params = array("start"=>"2014-01-30", "end"=>"2014-01-31", "status"=>"200")
-      $api->get('/v3/reporting/logs.json', $params)
-    </pre>
+$params = array("start"=>"2014-01-30", "end"=>"2014-01-31", "status"=>"200")
+$api->get('/v3/reporting/logs.json', $params)</pre>
   </div>
   <div class="tab-pane" id="node101">
     <pre>
-      api.get('v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200', function(err, response) {
-        console.log(response);
-      });
-    </pre>
+api.get('v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200', function(err, response) {
+  console.log(response);
+});</pre>
   </div>
   <div class="tab-pane" id="response101">
     <pre>
-200 (OK)
-Content-Type: application/json
 {
   "limit":1000,
   "page":1,
