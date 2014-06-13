@@ -38,6 +38,7 @@
 </ul>
 <h2 id="changelog">Changelog</h2>
 <ul>
+<li><strong>2014-06-13</strong>  Updated all URL endpoints to rws.maxcdn.com</li>
 <li><strong>2014-06-10</strong>  Added documentation for the Raw Logs API</li>
 <li><strong>2014-05-19</strong>  Added feature &quot;SPDY&quot; to Pull and Push Zone settings</li>
 <li><strong>2014-04-15</strong>  Added new MIME type for Pull Zone GZip compression: application/octet-stream</li>
@@ -98,10 +99,10 @@ On a conceptual level it works in the following way:</p>
 <p>All OAuth 1.0a requests use the same basic algorithm for creating a signature base string and a signature.</p>
 <h3 id="request-tokens">Request Tokens</h3>
 <p>The first step to authenticating a user is to obtain a request token from MaxCDN.</p>
-<p>The end point for requesting a token is: <code>https://rws.netdna.com/oauth/request_token</code></p>
+<p>The end point for requesting a token is: <code>https://rws.maxcdn.com/oauth/request_token</code></p>
 <h3 id="user-authorization">User Authorization</h3>
 <p>The User Authorization step sends the user to the MaxCDN RWS authorization page, which grants your application privileges to use their account with the API. You will need the oauth_token from the previous step to complete this.</p>
-<p>The endpoint for the authorization url is: <code>https://rws.netdna.com/oauth/authorize</code></p>
+<p>The endpoint for the authorization url is: <code>https://rws.maxcdn.com/oauth/authorize</code></p>
 <h3 id="key-path-parameters">Key: Path Parameters</h3>
 <table>
 <thead>
@@ -133,7 +134,7 @@ On a conceptual level it works in the following way:</p>
 <p>Gets account information</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/account.json">https://rws.netdna.com/{companyalias}/account.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/account.json">https://rws.maxcdn.com/{companyalias}/account.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -247,7 +248,7 @@ function callback(err, response) {
 <p>Updates account information</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/account.json">https://rws.netdna.com/{companyalias}/account.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/account.json">https://rws.maxcdn.com/{companyalias}/account.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -385,7 +386,7 @@ function callback(err, response) {
 <p>Gets account address information</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/account.json/address">https://rws.netdna.com/{companyalias}/account.json/address</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/account.json/address">https://rws.maxcdn.com/{companyalias}/account.json/address</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -501,7 +502,7 @@ function callback(err, response) {
 <p>Updates account address information</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/account.json/address">https://rws.netdna.com/{companyalias}/account.json/address</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/account.json/address">https://rws.maxcdn.com/{companyalias}/account.json/address</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -674,7 +675,7 @@ function callback(err, response) {
 <p>Returns a list of all users on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/users.json">https://rws.netdna.com/{companyalias}/users.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/users.json">https://rws.maxcdn.com/{companyalias}/users.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -853,7 +854,7 @@ function callback(err, response) {
 <p>Creates a new user on the specified account</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/users.json">https://rws.netdna.com/{companyalias}/users.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/users.json">https://rws.maxcdn.com/{companyalias}/users.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -1044,7 +1045,7 @@ function callback(err, response) {
 <p>Gets a user specified by the {user_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/users.json/{user_id}">https://rws.netdna.com/{companyalias}/users.json/{user_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/users.json/{user_id}">https://rws.maxcdn.com/{companyalias}/users.json/{user_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -1156,7 +1157,7 @@ function callback(err, response) {
 <p>Updates a user specified by the {user_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/users.json/{user_id}">https://rws.netdna.com/{companyalias}/users.json/{user_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/users.json/{user_id}">https://rws.maxcdn.com/{companyalias}/users.json/{user_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -1318,7 +1319,7 @@ function callback(err, response) {
 <p>Deletes a user specified by the {user_id} parameter</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/users.json/{user_id}">https://rws.netdna.com/{companyalias}/users.json/{user_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/users.json/{user_id}">https://rws.maxcdn.com/{companyalias}/users.json/{user_id}</a></span></div>
 </div>
 
 
@@ -1370,7 +1371,7 @@ function callback(err, response) {
 <p>Returns a list of all zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones.json">https://rws.netdna.com/{companyalias}/zones.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones.json">https://rws.maxcdn.com/{companyalias}/zones.json</a></span></div>
 </div>
 
 <h3 id="code-samples-">Code Samples  @</h3>
@@ -1448,7 +1449,7 @@ api.get(&#39;/zones.json&#39;, function(err, response) {
 account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones.json/summary">https://rws.netdna.com/{companyalias}/zones.json/summary</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones.json/summary">https://rws.maxcdn.com/{companyalias}/zones.json/summary</a></span></div>
 </div>
 
 
@@ -1532,7 +1533,7 @@ api.get(&#39;/zones.json/summary&#39;, function(err, response) {
 <p>Counts all zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones.json/count">https://rws.netdna.com/{companyalias}/zones.json/count</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones.json/count">https://rws.maxcdn.com/{companyalias}/zones.json/count</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -1596,7 +1597,7 @@ api.get(&#39;/zones.json/count&#39;, function(err, response) {
 <p>Returns a list of all pull zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json">https://rws.netdna.com/{companyalias}/zones/pull.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json">https://rws.maxcdn.com/{companyalias}/zones/pull.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -1875,7 +1876,7 @@ api.get(&#39;/zones/pull.json&#39;, function(err, response) {
 <p>Creates a new pull zone</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json">https://rws.netdna.com/{companyalias}/zones/pull.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json">https://rws.maxcdn.com/{companyalias}/zones/pull.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -2313,7 +2314,7 @@ api.post(&#39;/zones/pull.json&#39;, { name: &#39;newPullZone2&#39;, url: &#39;<
 <p>Counts all pull zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json/count">https://rws.netdna.com/{companyalias}/zones/pull.json/count</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json/count">https://rws.maxcdn.com/{companyalias}/zones/pull.json/count</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -2376,7 +2377,7 @@ api.get(&#39;/zones/pull.json/count&#39;, function(err, response) {
 <p>Gets a pull zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -2620,7 +2621,7 @@ api.get(&#39;/zones/pull.json&#39; + id, function(err, response) {
 <p>Updates a pull zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -3055,7 +3056,7 @@ api.put(&#39;/zones/pull.json&#39; + id, { label: &#39;Some other description&#3
 <p>Deletes a pull zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
 </div>
 
 
@@ -3104,7 +3105,7 @@ api.delete(&#39;/zones/pull.json&#39; + id, function(err, response) {
 <p>Enables a pull zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/enable.json">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/enable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/enable.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/enable.json</a></span></div>
 </div>
 
 
@@ -3154,7 +3155,7 @@ api.put(&#39;/zones/pull/&#39; + id + &#39;/enable.json&#39;, function(err, resp
 <p>Disables a pull zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/disable.json">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/disable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/disable.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/disable.json</a></span></div>
 </div>
 
 
@@ -3203,7 +3204,7 @@ api.put(&#39;/zones/pull&#39; + id + &#39;disable.json&#39;, function(err, respo
 <p>Purges pull zone cache</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}/cache">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}/cache</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}/cache">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}/cache</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -3327,7 +3328,7 @@ function callback(err, response) {
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -3412,7 +3413,7 @@ api.get(&#39;/zones/pull/&#39; + id + &#39;/customdomains.json&#39;, function(er
 <p>Adds a new custom domain to {zone_id}</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -3525,7 +3526,7 @@ api.post(&#39;/zones/pull/&#39; + id + &#39;/customdomains.json&#39;, { custom_d
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -3612,7 +3613,7 @@ api.get(&#39;/zones/pull/&#39; + id + &#39;/customdomains.json/&#39; + domainId,
 <p>Updates a custom domain specified by the id parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -3722,7 +3723,7 @@ api.put(&#39;/zones/pull/&#39; + zoneId + &#39;/customdomains.json/&#39; + domai
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 
@@ -3776,7 +3777,7 @@ api.delete(&#39;/zones/pull/&#39; + zoneId + &#39;/customdomains.json/&#39; + do
 <p>Returns a list of all push zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json">https://rws.netdna.com/{companyalias}/zones/push.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json">https://rws.maxcdn.com/{companyalias}/zones/push.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -3939,7 +3940,7 @@ api.get(&#39;/zones/push.json&#39;, function(err, response) {
 <p>Creates a new push zone</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json">https://rws.netdna.com/{companyalias}/zones/push.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json">https://rws.maxcdn.com/{companyalias}/zones/push.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -4138,7 +4139,7 @@ api.post(&#39;/zones/push.json&#39;, { name: &#39;newPushZone&#39;, password: &#
 <p>Counts all push zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json/count">https://rws.netdna.com/{companyalias}/zones/push.json/count</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json/count">https://rws.maxcdn.com/{companyalias}/zones/push.json/count</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -4202,7 +4203,7 @@ api.get(&#39;/zones/push.json/count&#39;, function(err, response) {
 <p>Gets a push zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -4340,7 +4341,7 @@ api.get(&#39;/zones/push.json/&#39; + id, function(err, response) {
 <p>Updates a push zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -4529,7 +4530,7 @@ api.get(&#39;/zones/push.json/&#39; + id, { label: &#39;Some other description&#
 <p>Deletes a push zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -4577,7 +4578,7 @@ api.delete(&#39;/zones/push.json/&#39; + id, function(err, response) {
 <p>Enables a push zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/enable.json">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/enable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/enable.json">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/enable.json</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -4625,7 +4626,7 @@ api.put(&#39;/zones/push/&#39; + id + &#39;/enable.json&#39;, function(err, resp
 <p>Disables a push zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/disable.json">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/disable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/disable.json">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/disable.json</a></span></div>
 </div>
 
 
@@ -4676,7 +4677,7 @@ api.put(&#39;/zones/push/&#39; + id + &#39;/disable.json&#39;, function(err, res
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -4761,7 +4762,7 @@ api.get(&#39;/zones/push/&#39; + id + &#39;/customdomains.json&#39;, function(er
 <p>Adds a new custom domain to {zone_id}</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -4875,7 +4876,7 @@ api.post(&#39;/zones/push/&#39; + id + &#39;/customdomains.json&#39;, { custom_d
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -4961,7 +4962,7 @@ api.get(&#39;/zones/push/&#39; + zoneId + &#39;/customdomains.json/&#39; + domai
 <p>Updates a custom domain specified by the id parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -5072,7 +5073,7 @@ api.put(&#39;/zones/push/&#39; + zoneId + &#39;/customdomains.json/&#39; + domai
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 
@@ -5126,7 +5127,7 @@ api.delete(&#39;/zones/push/&#39; + zoneId + &#39;/customdomains.json/&#39; + do
 <p>Returns a list of all VOD zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json">https://rws.netdna.com/{companyalias}/zones/vod.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json">https://rws.maxcdn.com/{companyalias}/zones/vod.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -5265,7 +5266,7 @@ api.get(&#39;/zones/vod.json&#39;, function(err, response) {
 <p>Creates a new VOD zone</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json">https://rws.netdna.com/{companyalias}/zones/vod.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json">https://rws.maxcdn.com/{companyalias}/zones/vod.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -5421,7 +5422,7 @@ api.post(&#39;/zones/vod.json&#39;, { name: &#39;newVODZone3&#39;, password: &#3
 <p>Counts all VOD zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json/count">https://rws.netdna.com/{companyalias}/zones/vod.json/count</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json/count">https://rws.maxcdn.com/{companyalias}/zones/vod.json/count</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -5484,7 +5485,7 @@ api.get(&#39;/zones/vod.json/count&#39;, function(err, response) {
 <p>Gets a VOD zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -5600,7 +5601,7 @@ api.get(&#39;/zones/vod.json/&#39; + id, function(err, response) {
 <p>Updates a VOD zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -5753,7 +5754,7 @@ api.put(&#39;/zones/vod.json/&#39; + id, { label: &#39;Some other description&#3
 <p>Deletes a VOD zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -5801,7 +5802,7 @@ api.delete(&#39;/zones/vod.json/&#39; + id, function(err, response) {
 <p>Enables a VOD zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/enable.json">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/enable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/enable.json">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/enable.json</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -5849,7 +5850,7 @@ api.put(&#39;/zones/vod/&#39; + id + &#39;/enable.json&#39;, function(err, respo
 <p>Disables a VOD zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/disable.json">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/disable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/disable.json">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/disable.json</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -5899,7 +5900,7 @@ api.put(&#39;/zones/vod/&#39; + id + &#39;/disable.json&#39;, function(err, resp
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -5984,7 +5985,7 @@ api.get(&#39;/zones/vod.json/&#39; + id + &#39;/customdomains.json, function(err
 <p>Adds a new custom domain to {zone_id}</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -6097,7 +6098,7 @@ api.post(&#39;/zones/vod/&#39; + id + &#39;/customdomains.json&#39;, { custom_do
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -6183,7 +6184,7 @@ api.get(&#39;/zones/vod/&#39; + zoneId + &#39;/customdomains.json/&#39; + domain
 <p>Updates a custom domain specified by the id parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -6293,7 +6294,7 @@ api.put(&#39;/zones/vod/&#39; + zoneId + &#39;/customdomains.json/&#39; + domain
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 
@@ -6347,7 +6348,7 @@ api.delete(&#39;/zones/vod/&#39; + zoneId + &#39;/customdomains.json/&#39; + dom
 <p>Returns a list of all live zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json">https://rws.netdna.com/{companyalias}/zones/live.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json">https://rws.maxcdn.com/{companyalias}/zones/live.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -6476,7 +6477,7 @@ api.get(&#39;/zones/live.json&#39;, function(err, response) {
 <p>Creates a new live zone</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json">https://rws.netdna.com/{companyalias}/zones/live.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json">https://rws.maxcdn.com/{companyalias}/zones/live.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -6620,7 +6621,7 @@ api.post(&#39;/zones/live.json&#39;,  { name: &#39;newLiveZone3&#39;, password: 
 <p>Counts all live zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json/count">https://rws.netdna.com/{companyalias}/zones/live.json/count</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json/count">https://rws.maxcdn.com/{companyalias}/zones/live.json/count</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -6684,7 +6685,7 @@ api.get(&#39;/zones.json&#39;, function(err, response) {
 <p>Gets a live zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -6795,7 +6796,7 @@ api.get(&#39;/zones/live.json/&#39; + id, function(err, response) {
 <p>Updates a live zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -6944,7 +6945,7 @@ api.put(&#39;/zones/live.json/&#39; + id, { label: &#39;Some other description&#
 <p>Deletes a live zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -6992,7 +6993,7 @@ api.delete(&#39;/zones/live.json/&#39; + id, function(err, response) {
 <p>Enables a live zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live/{zone_id}/enable.json">https://rws.netdna.com/{companyalias}/zones/live/{zone_id}/enable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live/{zone_id}/enable.json">https://rws.maxcdn.com/{companyalias}/zones/live/{zone_id}/enable.json</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -7040,7 +7041,7 @@ api.put(&#39;/zones/live/&#39; + id + &#39;/enable.json&#39;, function(err, resp
 <p>Disables a live zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live/{zone_id}/disable.json">https://rws.netdna.com/{companyalias}/zones/live/{zone_id}/disable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live/{zone_id}/disable.json">https://rws.maxcdn.com/{companyalias}/zones/live/{zone_id}/disable.json</a></span></div>
 </div>
 
 
@@ -7091,7 +7092,7 @@ api.put(&#39;/zones/live/&#39; + id + &#39;/disable.json&#39;, function(err, res
 {zone_id}.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -7157,7 +7158,7 @@ api.get(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, funct
 {zone_id}.</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -7313,7 +7314,7 @@ api.post(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, { ss
 {zone_id}.</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -7470,7 +7471,7 @@ api.put(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, { ssl
 {zone_id}.</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
 </div>
 
 
@@ -7579,7 +7580,7 @@ api.delete(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, fu
 <p>Get the upstream information for the specified {zone_id}.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -7629,7 +7630,7 @@ api.post(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/upstream.json&#39;,
 <p>Create and enable Upstream for a specific {zone_id}.</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -7734,7 +7735,7 @@ api.post(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/upstream.json&#39;,
 <p>Update the Upstream information for the specified {zone_id}.</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -7845,7 +7846,7 @@ api.put(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/upstream.json&#39;, 
 <p>Remove the Upstream Information for the specified {zone_id}.</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
 </div>
 
 
@@ -7899,7 +7900,7 @@ api.delete(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/upstream.json&#39
 the total usage on your account.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/stats.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/stats.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/stats.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/stats.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -8020,7 +8021,7 @@ api.get(&#39;/reports/stats.json/&#39; + reportType, function(err, response) {
 {report_type}. If no {report_type} is given the timestamp response parameter will be omitted.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/statsbyzone.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/statsbyzone.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/statsbyzone.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/statsbyzone.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -8177,7 +8178,7 @@ api.get(&#39;/reports/statsbyzone.json/&#39; + reportType, function(err, respons
 the total usage for the zones.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/stats.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/stats.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/stats.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/stats.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -8308,7 +8309,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/stats.json/&#39; + reportType, function
 <p>Gets a list of all active nodes (locations)</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/nodes.json">https://rws.netdna.com/{companyalias}/reports/nodes.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/nodes.json">https://rws.maxcdn.com/{companyalias}/reports/nodes.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -8443,7 +8444,7 @@ api.get(&#39;/reports/nodes.json&#39;, function(err, response) {
 {zone_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -8573,7 +8574,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/nodes.json&#39;, function(err, response
 the total usage broken up by node.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/nodes.json/stats/{report_type}">https://rws.netdna.com/{companyalias}/reports/nodes.json/stats/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/nodes.json/stats/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/nodes.json/stats/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -8802,7 +8803,7 @@ nodes and optionally {report_type}. If no {report_type} is given
 the request will return the total usage broken up by node.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/stats/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/stats/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/stats/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/stats/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -8942,7 +8943,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/nodes.json/stats/&#39; + reportType, fu
 <p>Gets the node information for the specified {node_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/nodes.json/{node_id}">https://rws.netdna.com/{companyalias}/reports/nodes.json/{node_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/nodes.json/{node_id}">https://rws.maxcdn.com/{companyalias}/reports/nodes.json/{node_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -9025,7 +9026,7 @@ api.get(&#39;/reports/nodes.json/&#39; + id, function(err, response) {
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -9115,7 +9116,7 @@ broken up by {report_type}. If no {report_type} is given the
 request will return the total usage for the node.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/nodes.json/{node_id}/stats/{report_type}">https://rws.netdna.com/{companyalias}/reports/nodes.json/{node_id}/stats/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/nodes.json/{node_id}/stats/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/nodes.json/{node_id}/stats/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9243,7 +9244,7 @@ optionally broken up by {report_type}. If no {report_type} is given
 the request will return the total usage for the node.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}/stats/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}/stats/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}/stats/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}/stats/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9375,7 +9376,7 @@ api.get(&#39;/reports/&#39; + zoneId + &#39;/nodes.json/&#39; + nodeId + &#39;/s
 grouped into daily statistics</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/popularfiles.json">https://rws.netdna.com/{companyalias}/reports/popularfiles.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/popularfiles.json">https://rws.maxcdn.com/{companyalias}/reports/popularfiles.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9500,7 +9501,7 @@ api.get(&#39;/reports/popularfiles.json&#39;, function(err, response) {
 filtered by {zone_type} and grouped into daily statistics</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/popularfiles.json">https://rws.netdna.com/{companyalias}/reports/{zone_type}/popularfiles.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/popularfiles.json">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/popularfiles.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9629,7 +9630,7 @@ api.get(&#39;/reports/&#39; + type + &#39;/popularfiles.json&#39;, function(err,
 <p>Gets HTTP status code response statistics for your account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/statuscodes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/statuscodes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/statuscodes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/statuscodes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9744,7 +9745,7 @@ api.get(&#39;/reports/statuscodes.json/&#39; + reportType, function(err, respons
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/statuscodes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/statuscodes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statuscodes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statuscodes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9857,7 +9858,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/statuscodes.json/&#39; + reportType, fu
 {zone_type}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/statuscodes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/statuscodes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/statuscodes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/statuscodes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9976,7 +9977,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/statuscodes.json/&#39; + reportTy
 {zone_type} and {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/statuscodes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/statuscodes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/statuscodes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/statuscodes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10093,7 +10094,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/&#39; + id + &#39;/statuscodes.js
 <p>Gets file type statistics for your account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/filetypes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/filetypes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/filetypes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/filetypes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10205,7 +10206,7 @@ api.get(&#39;/reports/filetypes.json&#39;, function(err, response) {
 <p>Gets file type statistics for a specific {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/filetypes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/filetypes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/filetypes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/filetypes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10316,7 +10317,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/filetypes.json/&#39; + reportType, func
 <p>Gets file type statistics for a specific {zone_type}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/filetypes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/filetypes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/filetypes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/filetypes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -10406,7 +10407,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/filetypes.json/&#39; + reportType
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/filetypes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/filetypes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/filetypes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/filetypes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10523,7 +10524,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/&#39; + id + &#39;/filetypes.json
 ranges</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/filesizes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/filesizes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/filesizes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/filesizes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10669,7 +10670,7 @@ api.get(&#39;/reports/filesizes.json/&#39; + reportType, function(err, response)
 file size ranges</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/filesizes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/filesizes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/filesizes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/filesizes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10817,7 +10818,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/filesizes.json/&#39; + reportType, func
 file size ranges</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/filesizes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/filesizes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/filesizes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/filesizes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10965,7 +10966,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/filesizes.json/&#39; + reportType
 {zone_id} based on file size ranges</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/filesizes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/filesizes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/filesizes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/filesizes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -11118,7 +11119,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/&#39; + id + &#39;/filesizes.json
 report has to be enabled by Sales).</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/statsbydir.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/statsbydir.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/statsbydir.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/statsbydir.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -11237,7 +11238,7 @@ api.get(&#39;/reports/statsbydir.json/&#39; + reportType, function(err, response
 (This report has to be enabled by Sales).</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -11359,7 +11360,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/&#39; + &#39;/statsbydir.json/&#39; + r
 <p>Retrieve up to five days of raw log data</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/v3/reporting/logs.json">https://rws.netdna.com/{companyalias}/v3/reporting/logs.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/v3/reporting/logs.json">https://rws.maxcdn.com/{companyalias}/v3/reporting/logs.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
