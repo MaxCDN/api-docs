@@ -13,22 +13,21 @@
 <li><a href="#raw-logs-api">Raw Logs API</a></li>
 </ul>
 <h2 id="overview">Overview</h2>
-<ol>
+<ul>
 <li><p>Login to the <a href="https://cp.maxcdn.com/account/api">MaxCDN Control Panel</a>.</p>
 </li>
 <li><p>Create a <a href="https://cp.maxcdn.com/account/api/create">new application</a>.</p>
 </li>
 <li><p>Integrate with our RESTful API using your language wrapper:</p>
 <ul>
-<li>Node (NPM) <a href="https://github.com/maxcdn/node-maxcdn">https://github.com/maxcdn/node-maxcdn</a></li>
-<li>.NET <a href="https://github.com/netdna/netdnarws-net">https://github.com/netdna/netdnarws-net</a></li>
-<li>Ruby <a href="https://github.com/maxcdn/ruby-maxcdn">https://github.com/maxcdn/ruby-maxcdn</a></li>
-<li>Python <a href="https://github.com/maxcdn/python-maxcdn">https://github.com/maxcdn/python-maxcdn</a></li>
-<li>PHP <a href="https://github.com/netdna/netdnarws-php">https://github.com/netdna/netdnarws-php</a></li>
-<li>Perl <a href="https://github.com/netdna/netdnarws-perl">https://github.com/netdna/netdnarws-perl</a></li>
+<li><a href="https://github.com/maxcdn/node-maxcdn">Node</a></li>
+<li><a href="https://github.com/maxcdn/ruby-maxcdn">Ruby</a></li>
+<li><a href="https://github.com/maxcdn/python-maxcdn">Python</a></li>
+<li><a href="https://github.com/netdna/netdnarws-php">PHP</a></li>
+<li><a href="http://godoc.org/github.com/jmervine/go-maxcdn">Go <sup>Beta</sup></a></li>
 </ul>
 </li>
-</ol>
+</ul>
 <h2 id="support">Support</h2>
 <ul>
 <li>Have a question? Check out our <a href="http://support.maxcdn.com/">Knowledge Base</a> to see if your question has already been answered.</li>
@@ -38,6 +37,8 @@
 </ul>
 <h2 id="changelog">Changelog</h2>
 <ul>
+<li><strong>2014-06-20</strong>  Removed create Live Zone endpoint (EOL)</li>
+<li><strong>2014-06-19</strong>  Removed links outdated Perl and .NET SDKs, added Go SDK (beta)</li>
 <li><strong>2014-06-13</strong>  Updated all URL endpoints to rws.maxcdn.com</li>
 <li><strong>2014-06-10</strong>  Added documentation for the Raw Logs API</li>
 <li><strong>2014-05-19</strong>  Added feature &quot;SPDY&quot; to Pull and Push Zone settings</li>
@@ -6472,151 +6473,6 @@ api.get(&#39;/zones/live.json&#39;, function(err, response) {
   </div>
 </div>
 
-
-<h2 id="create-live-zone">Create Live Zone</h2>
-<p>Creates a new live zone</p>
-<div class="heading">
-<div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json">https://rws.maxcdn.com/{companyalias}/zones/live.json</a></span></div>
-</div>
-
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>name</code></td>
-<td>-</td>
-<td><span class="label important">required</span><br />length: 3-30 chars; only letters, digits, and dash (-)accepted</td>
-<td>Your desired zone name</td>
-<td></td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>-</td>
-<td><span class="label important">required</span><br />length: 5-30 chars</td>
-<td>Your desired password</td>
-<td></td>
-</tr>
-<tr>
-<td><code>label</code></td>
-<td>-</td>
-<td>length: 1-255 chars</td>
-<td>Something that describes your zone</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="response-parameters">Response Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>Live Zone ID</td>
-<td></td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td>Live Zone name</td>
-<td></td>
-</tr>
-<tr>
-<td><code>label</code></td>
-<td>The zone&#39;s description</td>
-<td></td>
-</tr>
-<tr>
-<td><code>suspend</code></td>
-<td>Flag denoting if the zone has been suspended</td>
-<td></td>
-</tr>
-<tr>
-<td><code>locked</code></td>
-<td>Flag denoting if the zone has been locked</td>
-<td></td>
-</tr>
-<tr>
-<td><code>inactive</code></td>
-<td>Flag denoting if the zone has been deleted</td>
-<td></td>
-</tr>
-<tr>
-<td><code>creation_date</code></td>
-<td>Date Created</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab54">
-  <li class="active"><a href="#ruby54" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python54" data-toggle='tab'>Python</a></li>
-  <li><a href="#php54" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node54" data-toggle='tab'>Node</a></li>
-  <li><a href="#response54" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby54">
-    <pre>
-params = {&quot;name&quot;=&gt;&quot;newLiveZone99&quot;,&quot;password&quot;=&gt;&quot;password&quot;}
-api.post(&#39;/zones/live.json&#39;,params)</pre>
-  </div>
-  <div class="tab-pane" id="python54">
-    <pre>
-params = {&quot;name&quot;:&quot;newliveZone7&quot;,&quot;password&quot;:&quot;password&quot;}
-api.post(&#39;/zones/live.json&#39;,data=params)</pre>
-  </div>
-  <div class="tab-pane" id="php54">
-    <pre>
-$params = array(&quot;name&quot;=&gt;&quot;newLiveZone3&quot;,&quot;password&quot;=&gt;&quot;password&quot;);
-$api-&gt;post(&#39;/zones/live.json&#39;, $params);</pre>
-  </div>
-  <div class="tab-pane" id="node54">
-  <pre>
-api.post(&#39;/zones/live.json&#39;,  { name: &#39;newLiveZone3&#39;, password: &#39;password&#39; }, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response54">
-    <pre>
-{
-    &quot;code&quot;: 201,
-    &quot;data&quot;: {
-        &quot;livezone&quot;: {
-            &quot;cdn_url&quot;: &quot;newlivezone4.alias.netdna-cdn.com&quot;,
-            &quot;creation_date&quot;: &quot;2013-05-24 17:01:30&quot;,
-            &quot;id&quot;: 97323,
-            &quot;inactive&quot;: 0,
-            &quot;label&quot;: null,
-            &quot;locked&quot;: 0,
-            &quot;name&quot;: &quot;newlivezone4&quot;,
-            &quot;pub_url&quot;: &quot;publish.newlivezone4.alias.netdna-cdn.com/live/97323&quot;,
-            &quot;server_id&quot;: 3,
-            &quot;suspend&quot;: 0,
-            &quot;tmp_url&quot;: &quot;newlivezone4.alias.netdna-cdn.com&quot;,
-            &quot;type&quot;: 5,
-            &quot;view_url&quot;: &quot;newlivezone4.alias.netdna-cdn.com/live/97323&quot;
-        }
-    }
-}</pre>
-  </div>
-</div>
-
-
 <h2 id="get-live-zones-count">Get Live Zones Count</h2>
 <p>Counts all live zones on the specified account</p>
 <div class="heading">
@@ -6981,103 +6837,6 @@ api.delete(&#39;/zones/live.json/&#39; + id, function(err, response) {
 })</pre>
   </div>
   <div class="tab-pane" id="response58">
-    <pre>
-{
-  &quot;code&quot;:200
-}</pre>
-  </div>
-</div>
-
-
-<h2 id="enable-live-zone">Enable Live Zone</h2>
-<p>Enables a live zone specified by the {zone_id} parameter</p>
-<div class="heading">
-<div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live/{zone_id}/enable.json">https://rws.maxcdn.com/{companyalias}/zones/live/{zone_id}/enable.json</a></span></div>
-</div>
-
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab59">
-  <li class="active"><a href="#ruby59" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python59" data-toggle='tab'>Python</a></li>
-  <li><a href="#php59" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node59" data-toggle='tab'>Node</a></li>
-  <li><a href="#response59" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby59">
-    <pre>
-id = &#39;97795&#39;
-api.put(&#39;/zones/live/&#39;+id+&#39;/enable.json&#39;)</pre>
-  </div>
-  <div class="tab-pane" id="python59">
-    <pre>
-id = &#39;96193&#39;
-api.put(&#39;/zones/live/&#39;+id+&#39;/enable.json&#39;)</pre>
-  </div>
-  <div class="tab-pane" id="php59">
-    <pre>
-$id = &#39;96061&#39;;
-$api-&gt;put(&#39;/zones/live/&#39;.$id.&#39;/enable.json&#39;);</pre>
-  </div>
-  <div class="tab-pane" id="node59">
-  <pre>
-var id = &#39;96061&#39;
-api.put(&#39;/zones/live/&#39; + id + &#39;/enable.json&#39;, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response59">
-    <pre>
-{
-  &quot;code&quot;:200
-}</pre>
-  </div>
-</div>
-
-
-<h2 id="disable-live-zone">Disable Live Zone</h2>
-<p>Disables a live zone specified by the {zone_id} parameter</p>
-<div class="heading">
-<div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live/{zone_id}/disable.json">https://rws.maxcdn.com/{companyalias}/zones/live/{zone_id}/disable.json</a></span></div>
-</div>
-
-
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab60">
-  <li class="active"><a href="#ruby60" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python60" data-toggle='tab'>Python</a></li>
-  <li><a href="#php60" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node60" data-toggle='tab'>Node</a></li>
-  <li><a href="#response60" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby60">
-    <pre>
-id = &#39;97795&#39;
-api.put(&#39;/zones/live/&#39;+id+&#39;/disable.json&#39;)</pre>
-  </div>
-  <div class="tab-pane" id="python60">
-    <pre>
-id = &#39;96193&#39;
-api.put(&#39;/zones/live/&#39;+id+&#39;/disable.json&#39;)</pre>
-  </div>
-  <div class="tab-pane" id="php60">
-    <pre>
-$id = &#39;96061&#39;;
-api-&gt;put(&#39;/zones/live/&#39;.$id.&#39;/disable.json&#39;);</pre>
-  </div>
-  <div class="tab-pane" id="node60">
-  <pre>
-var id = &#39;96061&#39;
-api.put(&#39;/zones/live/&#39; + id + &#39;/disable.json&#39;, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response60">
     <pre>
 {
   &quot;code&quot;:200
