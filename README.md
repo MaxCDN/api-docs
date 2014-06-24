@@ -37,6 +37,7 @@
 
 ## Changelog
 
+  - **2014-06-24**  Updated BootstrapCDN and favicon urls
   - **2014-06-20**  Removed create Live Zone endpoint (EOL)
   - **2014-06-19**  Removed links outdated Perl and .NET SDKs, added Go SDK (beta)
   - **2014-06-13**  Updated all URL endpoints to rws.maxcdn.com
