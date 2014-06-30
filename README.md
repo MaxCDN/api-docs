@@ -1323,7 +1323,7 @@ Creates a new pull zone
 
 Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
-`name` | - | <span class="label important">required</span><br />length: 3-32 chars; only letters, digits, and dash (-)accepted | Pull Zone Name |
+`name` | - | <span class="label important">required</span><br />length: 3-30 chars; only letters, digits, and dash (-)accepted | Pull Zone Name |
 `url` | - | <span class="label important">required</span><br />length: 4-100 chars; only valid URLs accepted | Origin URL |
 `port` | 80 | length: 1-5 chars; only digits accepted | Port |
 `dns_check` | 1 | only 0 or 1 accepted | This field determines how your Origin resolves. When set to 1, we automatically grab the origin's IP using DNS. Setting it to 0 allows you explicitly provide the IP of the origin. |
