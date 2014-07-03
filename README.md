@@ -25,7 +25,7 @@
  * [Ruby](https://github.com/maxcdn/ruby-maxcdn)
  * [Python](https://github.com/maxcdn/python-maxcdn)
  * [PHP](https://github.com/netdna/netdnarws-php)
- * [Go <sup>Beta</sup>](http://godoc.org/github.com/jmervine/go-maxcdn)
+ * [Go <sup>Beta</sup>](http://godoc.org/github.com/MaxCDN/go-maxcdn)
 
 ## Support
 
