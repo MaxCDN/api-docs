@@ -38,6 +38,7 @@
 
 ## Changelog
 
+  - **2014-07-11**  Updated PHP and .NET libs
   - **2014-06-30**  Add RUM code for webperf measuring
   - **2014-06-24**  Updated BootstrapCDN and favicon urls
   - **2014-06-20**  Removed create Live Zone endpoint (EOL)
