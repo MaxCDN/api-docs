@@ -38,6 +38,7 @@
 
 ## Changelog
 
+  - **2014-07-16**  Added SNI option on SSL Installation
   - **2014-07-11**  Updated PHP and .NET libs
   - **2014-06-30**  Add RUM code for webperf measuring
   - **2014-06-24**  Updated BootstrapCDN and favicon urls
@@ -4860,7 +4861,8 @@ Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
 `ssl_crt` | - | <span class="label important">required</span><br /> | The SSL certificate you are installing. |
 `ssl_key` | - | <span class="label important">required</span><br /> | The key for the SSL certificate you are installing. |
-`ssl_cabundle` | - | The CA Bundle for the SSL Certificate you are installing. |
+`ssl_cabundle` | - | - | The CA Bundle for the SSL Certificate you are installing. |
+`ssl_sni` | 0 | only 0 or 1 accepted | If this flag is set to 1 your zone will use SNI to identify your certificate, rather than requiring a dedicated IP. |
 
 
 ### Response Parameters

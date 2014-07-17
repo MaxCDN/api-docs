@@ -40,6 +40,7 @@
 </ul>
 <h2 id="changelog">Changelog</h2>
 <ul>
+<li><strong>2014-07-16</strong>  Added SNI option on SSL Installation</li>
 <li><strong>2014-07-11</strong>  Updated PHP and .NET libs</li>
 <li><strong>2014-06-30</strong>  Add RUM code for webperf measuring</li>
 <li><strong>2014-06-24</strong>  Updated BootstrapCDN and favicon urls</li>
@@ -6954,7 +6955,15 @@ api.get(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, funct
 <tr>
 <td><code>ssl_cabundle</code></td>
 <td>-</td>
+<td>-</td>
 <td>The CA Bundle for the SSL Certificate you are installing.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl_sni</code></td>
+<td>0</td>
+<td>only 0 or 1 accepted</td>
+<td>If this flag is set to 1 your zone will use SNI to identify your certificate, rather than requiring a dedicated IP.</td>
 <td></td>
 </tr>
 </tbody>
