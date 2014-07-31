@@ -12,22 +12,21 @@
 * [Users API](#users-api)
 * [Zones API](#zones-api)
 * [Reports API](#reports-api)
-* [Clients API](#reports-by-file-name-api)
-
+* [Raw Logs API](#raw-logs-api)
 
 ## Overview
 
-1. Login to the [MaxCDN Control Panel](https://cp.maxcdn.com/account/api).
+* Login to the [MaxCDN Control Panel](https://cp.maxcdn.com/account/api).
 
-2. Create a [new application](https://cp.maxcdn.com/account/api/create).
+* Create a [new application](https://cp.maxcdn.com/account/api/create).
 
-3. Integrate with our RESTful API using your language wrapper:
-  - Node (NPM) <https://github.com/maxcdn/node-maxcdn>
-  - .NET <https://github.com/netdna/netdnarws-net>
-  - Ruby <https://github.com/maxcdn/ruby-maxcdn>
-  - Python <https://github.com/maxcdn/python-maxcdn>
-  - PHP <https://github.com/netdna/netdnarws-php>
-  - Perl <https://github.com/netdna/netdnarws-perl>
+* Integrate with our RESTful API using a language wrapper:
+ * [Node](https://github.com/maxcdn/node-maxcdn)
+ * [Ruby](https://github.com/maxcdn/ruby-maxcdn)
+ * [Python](https://github.com/maxcdn/python-maxcdn)
+ * [PHP](https://github.com/MaxCDN/php-maxcdn)
+ * [.NET](https://github.com/MaxCDN/dotnet-maxcdn)
+ * [Go <sup>Beta</sup>](http://godoc.org/github.com/MaxCDN/go-maxcdn)
 
 ## Support
 
@@ -39,6 +38,14 @@
 
 ## Changelog
 
+  - **2014-07-16**  Added SNI option on SSL Installation
+  - **2014-07-11**  Updated PHP and .NET libs
+  - **2014-06-30**  Add RUM code for webperf measuring
+  - **2014-06-24**  Updated BootstrapCDN and favicon urls
+  - **2014-06-20**  Removed create Live Zone endpoint (EOL)
+  - **2014-06-19**  Removed links outdated Perl and .NET SDKs, added Go SDK (beta)
+  - **2014-06-13**  Updated all URL endpoints to rws.maxcdn.com
+  - **2014-06-10**  Added documentation for the Raw Logs API
   - **2014-05-19**  Added feature "SPDY" to Pull and Push Zone settings
   - **2014-04-15**  Added new MIME type for Pull Zone GZip compression: application/octet-stream
   - **2014-04-10**  Added feature "X-Forwarded-For" to Pull Zone settings
@@ -106,12 +113,12 @@ All OAuth 1.0a requests use the same basic algorithm for creating a signature ba
 ### Request Tokens
 The first step to authenticating a user is to obtain a request token from MaxCDN.
 
-The end point for requesting a token is: `https://rws.netdna.com/oauth/request_token`
+The end point for requesting a token is: `https://rws.maxcdn.com/oauth/request_token`
 
 ### User Authorization
 The User Authorization step sends the user to the MaxCDN RWS authorization page, which grants your application privileges to use their account with the API. You will need the oauth_token from the previous step to complete this.
 
-The endpoint for the authorization url is: `https://rws.netdna.com/oauth/authorize`
+The endpoint for the authorization url is: `https://rws.maxcdn.com/oauth/authorize`
 
 
 ### Key: Path Parameters
@@ -130,7 +137,7 @@ Gets account information
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/account.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/account.json</span></div>
 </div>
 
 ### Response Parameters
@@ -209,7 +216,7 @@ Updates account information
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/account.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/account.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -300,7 +307,7 @@ Gets account address information
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/account.json/address</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/account.json/address</span></div>
 </div>
 
 ### Response Parameters
@@ -378,7 +385,7 @@ Updates account address information
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/account.json/address</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/account.json/address</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -471,7 +478,7 @@ Returns a list of all users on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/users.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/users.json</span></div>
 </div>
 
 ### Response Parameters
@@ -603,7 +610,7 @@ Creates a new user on the specified account
 
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path">https://rws.netdna.com/{companyalias}/users.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/users.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -705,7 +712,7 @@ Gets a user specified by the {user_id} parameter
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/users.json/{user_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/users.json/{user_id}</span></div>
 </div>
 
 ### Response Parameters
@@ -791,7 +798,7 @@ Updates a user specified by the {user_id} parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/users.json/{user_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/users.json/{user_id}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -889,7 +896,7 @@ Deletes a user specified by the {user_id} parameter
 
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path">https://rws.netdna.com/{companyalias}/users.json/{user_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/users.json/{user_id}</span></div>
 </div>
 
 
@@ -945,7 +952,7 @@ Returns a list of all zones on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones.json</span></div>
 </div>
 
 ### Code Samples  @
@@ -1026,7 +1033,7 @@ account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones.json/summary</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones.json/summary</span></div>
 </div>
 
 
@@ -1092,7 +1099,7 @@ Counts all zones on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones.json/count</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones.json/count</span></div>
 </div>
 
 ### Response Parameters
@@ -1152,7 +1159,7 @@ Returns a list of all pull zones on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull.json</span></div>
 </div>
 
 ### Response Parameters
@@ -1316,7 +1323,7 @@ Creates a new pull zone
 
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -1472,7 +1479,7 @@ Counts all pull zones on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull.json/count</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull.json/count</span></div>
 </div>
 
 ### Response Parameters
@@ -1528,7 +1535,7 @@ Gets a pull zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}</span></div>
 </div>
 
 ### Response Parameters
@@ -1653,7 +1660,7 @@ Updates a pull zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -1813,7 +1820,7 @@ Deletes a pull zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}</span></div>
 </div>
 
 
@@ -1865,7 +1872,7 @@ Enables a pull zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/enable.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/enable.json</span></div>
 </div>
 
 
@@ -1918,7 +1925,7 @@ Disables a pull zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/disable.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/disable.json</span></div>
 </div>
 
 
@@ -1970,7 +1977,7 @@ Purges pull zone cache
 
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}/cache</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}/cache</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -2085,7 +2092,7 @@ Returns a list of all custom domains on the zone specified by
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</span></div>
 </div>
 
 ### Response Parameters
@@ -2155,7 +2162,7 @@ Adds a new custom domain to {zone_id}
 
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -2235,7 +2242,7 @@ Gets a custom domain specified by the {zone_id} and
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</span></div>
 </div>
 
 ### Response Parameters
@@ -2307,7 +2314,7 @@ Updates a custom domain specified by the id parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -2390,7 +2397,7 @@ Deletes a custom domain specified by the {zone_id} and
 
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</span></div>
 </div>
 
 
@@ -2448,7 +2455,7 @@ Returns a list of all push zones on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push.json</span></div>
 </div>
 
 ### Response Parameters
@@ -2564,7 +2571,7 @@ Creates a new push zone
 
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -2667,7 +2674,7 @@ Counts all push zones on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push.json/count</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push.json/count</span></div>
 </div>
 
 ### Response Parameters
@@ -2724,7 +2731,7 @@ Gets a push zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}</span></div>
 </div>
 
 ### Response Parameters
@@ -2815,7 +2822,7 @@ Updates a push zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -2920,7 +2927,7 @@ Deletes a push zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}</span></div>
 </div>
 
 ### Code Samples
@@ -2971,7 +2978,7 @@ Enables a push zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/enable.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/enable.json</span></div>
 </div>
 
 ### Code Samples
@@ -3022,7 +3029,7 @@ Disables a push zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/disable.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/disable.json</span></div>
 </div>
 
 
@@ -3077,7 +3084,7 @@ Returns a list of all custom domains on the zone specified by
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json</span></div>
 </div>
 
 ### Response Parameters
@@ -3147,7 +3154,7 @@ Adds a new custom domain to {zone_id}
 
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -3227,7 +3234,7 @@ Gets a custom domain specified by the {zone_id} and
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</span></div>
 </div>
 
 ### Response Parameters
@@ -3298,7 +3305,7 @@ Updates a custom domain specified by the id parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -3381,7 +3388,7 @@ Deletes a custom domain specified by the {zone_id} and
 
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</span></div>
 </div>
 
 
@@ -3439,7 +3446,7 @@ Returns a list of all VOD zones on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod.json</span></div>
 </div>
 
 ### Response Parameters
@@ -3547,7 +3554,7 @@ Creates a new VOD zone
 
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -3641,7 +3648,7 @@ Counts all VOD zones on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod.json/count</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod.json/count</span></div>
 </div>
 
 ### Response Parameters
@@ -3697,7 +3704,7 @@ Gets a VOD zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}</span></div>
 </div>
 
 ### Response Parameters
@@ -3782,7 +3789,7 @@ Updates a VOD zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -3879,7 +3886,7 @@ Deletes a VOD zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}</span></div>
 </div>
 
 ### Code Samples
@@ -3930,7 +3937,7 @@ Enables a VOD zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/enable.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/enable.json</span></div>
 </div>
 
 ### Code Samples
@@ -3981,7 +3988,7 @@ Disables a VOD zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/disable.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/disable.json</span></div>
 </div>
 
 ### Code Samples
@@ -4035,7 +4042,7 @@ Returns a list of all custom domains on the zone specified by
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</span></div>
 </div>
 
 ### Response Parameters
@@ -4105,7 +4112,7 @@ Adds a new custom domain to {zone_id}
 
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -4184,7 +4191,7 @@ Gets a custom domain specified by the {zone_id} and
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</span></div>
 </div>
 
 ### Response Parameters
@@ -4255,7 +4262,7 @@ Updates a custom domain specified by the id parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -4337,7 +4344,7 @@ Deletes a custom domain specified by the {zone_id} and
 
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</span></div>
 </div>
 
 
@@ -4395,7 +4402,7 @@ Returns a list of all live zones on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/live.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/live.json</span></div>
 </div>
 
 ### Response Parameters
@@ -4486,102 +4493,13 @@ api.get('/zones/live.json', function(err, response) {
   </div>
 </div>
 
-
-## Create Live Zone
-
-Creates a new live zone
-
-<div class="heading">
-<div class="url POST"><span class="http_method">POST</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/live.json</span></div>
-</div>
-
-### Accepted Request Parameters
-
-Parameter | Default Value | Validation | Description |
---- | --- | --- | --- | ---
-`name` | - | <span class="label important">required</span><br />length: 3-30 chars; only letters, digits, and dash (-)accepted | Your desired zone name |
-`password` | - | <span class="label important">required</span><br />length: 5-30 chars | Your desired password |
-`label` | - | length: 1-255 chars | Something that describes your zone |
-
-
-### Response Parameters
-
-Parameter | Description |
---- | --- | ---
-`id` | Live Zone ID |
-`name` | Live Zone name |
-`label` | The zone's description |
-`suspend` | Flag denoting if the zone has been suspended |
-`locked` | Flag denoting if the zone has been locked |
-`inactive` | Flag denoting if the zone has been deleted |
-`creation_date` | Date Created |
-
-### Code Samples
-
-<ul class="nav nav-tabs" id="myTab54">
-  <li class="active"><a href="#ruby54" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python54" data-toggle='tab'>Python</a></li>
-  <li><a href="#php54" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node54" data-toggle='tab'>Node</a></li>
-  <li><a href="#response54" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby54">
-    <pre>
-params = {"name"=>"newLiveZone99","password"=>"password"}
-api.post('/zones/live.json',params)</pre>
-  </div>
-  <div class="tab-pane" id="python54">
-    <pre>
-params = {"name":"newliveZone7","password":"password"}
-api.post('/zones/live.json',data=params)</pre>
-  </div>
-  <div class="tab-pane" id="php54">
-    <pre>
-$params = array("name"=>"newLiveZone3","password"=>"password");
-$api->post('/zones/live.json', $params);</pre>
-  </div>
-  <div class="tab-pane" id="node54">
-  <pre>
-api.post('/zones/live.json',  { name: 'newLiveZone3', password: 'password' }, function(err, response) {
-  console.log('err', err, 'response', response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response54">
-    <pre>
-{
-    "code": 201,
-    "data": {
-        "livezone": {
-            "cdn_url": "newlivezone4.alias.netdna-cdn.com",
-            "creation_date": "2013-05-24 17:01:30",
-            "id": 97323,
-            "inactive": 0,
-            "label": null,
-            "locked": 0,
-            "name": "newlivezone4",
-            "pub_url": "publish.newlivezone4.alias.netdna-cdn.com/live/97323",
-            "server_id": 3,
-            "suspend": 0,
-            "tmp_url": "newlivezone4.alias.netdna-cdn.com",
-            "type": 5,
-            "view_url": "newlivezone4.alias.netdna-cdn.com/live/97323"
-        }
-    }
-}</pre>
-  </div>
-</div>
-
-
 ## Get Live Zones Count
 
 Counts all live zones on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/live.json/count</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/live.json/count</span></div>
 </div>
 
 ### Response Parameters
@@ -4638,7 +4556,7 @@ Gets a live zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}</span></div>
 </div>
 
 ### Response Parameters
@@ -4718,7 +4636,7 @@ Updates a live zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -4811,7 +4729,7 @@ Deletes a live zone specified by the {zone_id} parameter
 
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}</span></div>
 </div>
 
 ### Code Samples
@@ -4856,109 +4774,6 @@ api.delete('/zones/live.json/' + id, function(err, response) {
 </div>
 
 
-## Enable Live Zone
-
-Enables a live zone specified by the {zone_id} parameter
-
-<div class="heading">
-<div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/live/{zone_id}/enable.json</span></div>
-</div>
-
-### Code Samples
-
-<ul class="nav nav-tabs" id="myTab59">
-  <li class="active"><a href="#ruby59" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python59" data-toggle='tab'>Python</a></li>
-  <li><a href="#php59" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node59" data-toggle='tab'>Node</a></li>
-  <li><a href="#response59" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby59">
-    <pre>
-id = '97795'
-api.put('/zones/live/'+id+'/enable.json')</pre>
-  </div>
-  <div class="tab-pane" id="python59">
-    <pre>
-id = '96193'
-api.put('/zones/live/'+id+'/enable.json')</pre>
-  </div>
-  <div class="tab-pane" id="php59">
-    <pre>
-$id = '96061';
-$api->put('/zones/live/'.$id.'/enable.json');</pre>
-  </div>
-  <div class="tab-pane" id="node59">
-  <pre>
-var id = '96061'
-api.put('/zones/live/' + id + '/enable.json', function(err, response) {
-  console.log('err', err, 'response', response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response59">
-    <pre>
-{
-  "code":200
-}</pre>
-  </div>
-</div>
-
-
-## Disable Live Zone
-
-Disables a live zone specified by the {zone_id} parameter
-
-<div class="heading">
-<div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/live/{zone_id}/disable.json</span></div>
-</div>
-
-
-### Code Samples
-
-<ul class="nav nav-tabs" id="myTab60">
-  <li class="active"><a href="#ruby60" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python60" data-toggle='tab'>Python</a></li>
-  <li><a href="#php60" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node60" data-toggle='tab'>Node</a></li>
-  <li><a href="#response60" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby60">
-    <pre>
-id = '97795'
-api.put('/zones/live/'+id+'/disable.json')</pre>
-  </div>
-  <div class="tab-pane" id="python60">
-    <pre>
-id = '96193'
-api.put('/zones/live/'+id+'/disable.json')</pre>
-  </div>
-  <div class="tab-pane" id="php60">
-    <pre>
-$id = '96061';
-api->put('/zones/live/'.$id.'/disable.json');</pre>
-  </div>
-  <div class="tab-pane" id="node60">
-  <pre>
-var id = '96061'
-api.put('/zones/live/' + id + '/disable.json', function(err, response) {
-  console.log('err', err, 'response', response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response60">
-    <pre>
-{
-  "code":200
-}</pre>
-  </div>
-</div>
-
-
 # Zones SSL API
 
 ## Get Zone's SSL Information
@@ -4968,7 +4783,7 @@ Get the SSL certificate for the specified {zone_type} and
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</span></div>
 </div>
 
 ### Code Samples
@@ -5037,7 +4852,7 @@ Upload an SSL certificate for the specified {zone_type} and
 
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -5046,7 +4861,8 @@ Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
 `ssl_crt` | - | <span class="label important">required</span><br /> | The SSL certificate you are installing. |
 `ssl_key` | - | <span class="label important">required</span><br /> | The key for the SSL certificate you are installing. |
-`ssl_cabundle` | - | The CA Bundle for the SSL Certificate you are installing. |
+`ssl_cabundle` | - | - | The CA Bundle for the SSL Certificate you are installing. |
+`ssl_sni` | 0 | only 0 or 1 accepted | If this flag is set to 1 your zone will use SNI to identify your certificate, rather than requiring a dedicated IP. |
 
 
 ### Response Parameters
@@ -5138,7 +4954,7 @@ Update the SSL certificate for the specified {zone_type} and
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -5240,7 +5056,7 @@ Remove the SSL certificate for the specified {zone_type} and
 
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</span></div>
 </div>
 
 
@@ -5353,7 +5169,7 @@ Get the upstream information for the specified {zone_id}.
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</span></div>
 </div>
 
 ### Code Samples
@@ -5406,7 +5222,7 @@ Create and enable Upstream for a specific {zone_id}.
 
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -5479,7 +5295,7 @@ Update the Upstream information for the specified {zone_id}.
 
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -5553,7 +5369,7 @@ Remove the Upstream Information for the specified {zone_id}.
 
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</span></div>
 </div>
 
 
@@ -5611,7 +5427,7 @@ the total usage on your account.
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/stats.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/stats.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -5690,7 +5506,7 @@ Gets the total usage statistics for each of your zones, optionally broken up by
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/statsbyzone.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/statsbyzone.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -5801,7 +5617,7 @@ the total usage for the zones.
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_id}/stats.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/stats.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -5893,7 +5709,7 @@ Gets a list of all active nodes (locations)
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/nodes.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/nodes.json</span></div>
 </div>
 
 ### Response Parameters
@@ -6013,7 +5829,7 @@ Gets a list of all active nodes (locations) specified by the
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json</span></div>
 </div>
 
 ### Response Parameters
@@ -6128,7 +5944,7 @@ the total usage broken up by node.
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/nodes.json/stats/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/nodes.json/stats/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -6303,7 +6119,7 @@ the request will return the total usage broken up by node.
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/stats/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/stats/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -6389,7 +6205,7 @@ Gets the node information for the specified {node_id}
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/nodes.json/{node_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/nodes.json/{node_id}</span></div>
 </div>
 
 ### Response Parameters
@@ -6457,7 +6273,7 @@ Gets the node information for the specified {node_id} and
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}</span></div>
 </div>
 
 ### Response Parameters
@@ -6532,7 +6348,7 @@ request will return the total usage for the node.
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/nodes.json/{node_id}/stats/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/nodes.json/{node_id}/stats/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -6618,7 +6434,7 @@ the request will return the total usage for the node.
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}/stats/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}/stats/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -6711,7 +6527,7 @@ grouped into daily statistics
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/popularfiles.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/popularfiles.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -6790,7 +6606,7 @@ filtered by {zone_type} and grouped into daily statistics
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_type}/popularfiles.json</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/popularfiles.json</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -6876,7 +6692,7 @@ Gets HTTP status code response statistics for your account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/statuscodes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/statuscodes.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -6957,7 +6773,7 @@ Gets HTTP status code response statistics for a specific
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_id}/statuscodes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statuscodes.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -7036,7 +6852,7 @@ Gets HTTP status code response statistics for a specific
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_type}/statuscodes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/statuscodes.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -7121,7 +6937,7 @@ Gets HTTP status code response statistics for a specific
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/statuscodes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/statuscodes.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -7207,7 +7023,7 @@ Gets file type statistics for your account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/filetypes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/filetypes.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -7289,7 +7105,7 @@ Gets file type statistics for a specific {zone_id}
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_id}/filetypes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/filetypes.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -7370,7 +7186,7 @@ Gets file type statistics for a specific {zone_type}
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_type}/filetypes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/filetypes.json/{report_type}</span></div>
 </div>
 
 ### Response Parameters
@@ -7449,7 +7265,7 @@ Gets file type statistics for a specific {zone_type} and
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/filetypes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/filetypes.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -7538,7 +7354,7 @@ ranges
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/filesizes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/filesizes.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -7630,7 +7446,7 @@ file size ranges
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_id}/filesizes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/filesizes.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -7724,7 +7540,7 @@ file size ranges
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_type}/filesizes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/filesizes.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -7818,7 +7634,7 @@ Gets request statistics for the specified {zone_type} and
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/filesizes.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/filesizes.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -7919,7 +7735,7 @@ report has to be enabled by Sales).
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/statsbydir.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/statsbydir.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -8000,7 +7816,7 @@ Gets usage statistics by directory for the specified {zone_id}.
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}</span></div>
 </div>
 
 ### Accepted Request Parameters
@@ -8078,479 +7894,159 @@ api.get('/reports/' + id + '/' + '/statsbydir.json/' + reportType, function(err,
   </div>
 </div>
 
+# Raw Logs API
 
-# Reports By File Name API
+## Get Raw Logs
 
-## List Stats By File Name
-
-Gets usage statistics by file name for your account
+Retrieve up to five days of raw log data
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/statsbyfilename.json/{report_type}</span></div>
+<span class="path">https://rws.maxcdn.com/{companyalias}/v3/reporting/logs.json</span></div>
 </div>
 
 ### Accepted Request Parameters
 
 Parameter | Default Value | Validation | Description |
---- | --- | --- | --- | ---
-`date_from` | now() - 1 month | Y-m-d (e.g. 2012-01-01) | Start date |
-`date_to` | now() | Y-m-d (e.g. 2012-01-01) | End date |
-`file_names` | A JSON Encoded file names list |
-`filter` | Matching expression for file names |
-`sort_by` | Field to sort by |
-`sort_dir` | Directory to sort files by |
-`page_size` | - | The number of records returned in the result set |
+--- | --- | --- | ---
+`start` | now() - 1 hour | ISO-8601 formatted date/time | The start of the range for requests to pull. |
+`end` | now() | ISO-8601 formatted date/time | The end of the range for requests to pull |
+`zones` | - | CSV of ints | The specific zones whose requests you want to pull. Separate multiple zone ids by comma |
+`uri` | - | string | Use this filter to view requests made for a specific resource (or group of resources). You can do a literal match or regular expression in this field (i.e. '/images/header.png' or 'regex:/images/') |
+`status` | - | CSV of ints | The specific HTTP status code responses you want to pull. Separate multiple HTTP status codes by comma (i.e. 200,201,304) |
+`ssl` | both | enum(nossl, ssl, both) | Use this filter to distinguish between SSL and non-SSL traffic (choose nossl, ssl or both) |
+`user_agent` | - | string | Filter logs by specific user agents. You can do a literal match or regular expression in this field (i.e. 'Python MaxCDN API Client' or 'regex:Chrome') |
+`referer` | - | string | Filter logs by a specific referer. You can do a literal match or regular expression in this field (i.e. 'www.maxcdn.com' or 'regex:maxcdn.com') |
+`pop` | - | CSV of strings  | Filter logs by specific POPs (Points Of Presence), use comma separation for multiple POPs. Possible values: ams, atl, aus, chi, dal, den, fra, hkg, jfk, lax, lhr, mia, sea, sfo, sin, sjc, slc, tko, vir |
+`query_string` | - | string | Filter logs by a specific query string. You can do a literal match or regular expression in this field (i.e. 'width=600' or 'regex:width') |
+`limit` | 100 | int | How many records should be retrieved per page. Maximum is 1000 |
+`start_key` | - | string | String-based key for next page of records to return, for easy pagination or streaming. This key will be provided in the "next_page_key" from a response. |
+`sort` | recent | enum(recent, oldest) | Display records sorted by newest first or oldest first |
 
 
 ### Response Parameters
 
 Parameter | Description |
 --- | --- | ---
-`200` | The amount of 200 hits |
-`206` | The amount of 206 hits |
-`2xx` | The amount of 2xx hits |
-`3xx` | The amount of 3xx hits |
-`404` | The amount of 404 hits |
-`4xx` | The amount of 4xx hits |
-`5xx` | The amount of 5xx hits |
-`bucket_id` | The Zone ID for the top level directory |
-`file_name` | URI |
-`hit` | The number of requests made to files within this directory |
-`size` | The amount of bytes transferred from within this directory |
-`timestampf` | Timestamp |
-`vhost` | CDN URL |
+`limit` | The maximum number of records retrieved |
+`page` | The current page of records retrieved |
+`request_time` | Time in milliseconds for request to complete |
+`next_page_key` | Number string that can be used to load the next page |
+`records` | Total records displayed |
+`bytes` | Total bytes of request |
+`client_asn` | Visitor's "access network" (ISP) |
+`client_city` | Visitor's city |
+`client_continent` | Visitor's continent |
+`client_country` | Visitor's country |
+`client_dma` | Visitor's "designated market area" |
+`client_ip` | Visitor's public IP |
+`client_latitude` | Visitor's geographical latitude (roughly) |
+`client_longitude` | Visitor's geographical longitude (roughly) |
+`client_state` | Visitor's state |
+`company_id` | Your company ID |
+`cache_status` | CDN status of the file (HIT, MISS) |
+`hostname` | Domain name that was visited |
+`method` | HTTP request method |
+`origin_time` | How long it takes MaxCDN to retrieve the file (if cache status was a MISS) |
+`pop` | Point Of Presence that was hit (LAX, LHR, TYO, etc.) |
+`protocol` | HTTP protocol used |
+`query_string` | Query string attached to a file (ex. ver=1.2) |
+`referer` | Referring site |
+`scheme` | HTTP or HTTPS |
+`status` | HTTP status code (200, 404, 302, etc.) |
+`time` | UTC timestamp of the request |
+`uri` | File requested |
+`user_agent` | Text identifying the visitor's browser |
+`zone_id` | ID of the Push/Pull/VOD zone hit |
 
 ### Code Samples
 
-<ul class="nav nav-tabs" id="myTab95">
-  <li class="active"><a href="#ruby95" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python95" data-toggle='tab'>Python</a></li>
-  <li><a href="#php95" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node95" data-toggle='tab'>Node</a></li>
-  <li><a href="#response95" data-toggle='tab'>Response</a></li>
+<ul class="nav nav-tabs" id="myTab101">
+  <li class="active"><a href="#ruby101" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python101" data-toggle='tab'>Python</a></li>
+  <li><a href="#php101" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node101" data-toggle='tab'>Node</a></li>
+  <li><a href="#response101" data-toggle='tab'>Response</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="ruby95">
+  <div class="tab-pane active" id="ruby101">
     <pre>
-reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
-clientId = ''
-api.get('/clients/'+clientId+'/reports/statsbyfilename.json'+reportType)</pre>
+api.get('/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200')</pre>
   </div>
-  <div class="tab-pane" id="python95">
+  <div class="tab-pane" id="python101">
     <pre>
-reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
-clientId = ''
-api.get('/clients/'+clientId+'/reports/statsbyfilename.json'+reportType)</pre>
+params = {"start":"2014-01-30", "end":"2014-01-31", "status":"200"}
+api.get('/v3/reporting/logs.json', data=params)</pre>
   </div>
-  <div class="tab-pane" id="php95">
+  <div class="tab-pane" id="php101">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
-$clientId = '';
-$api->get('/clients/'.$clientId.'/reports/statsbyfilename.json/'.$reportType);</pre>
+$params = array("start"=>"2014-01-30", "end"=>"2014-01-31", "status"=>"200")
+$api->get('/v3/reporting/logs.json', $params)</pre>
   </div>
-  <div class="tab-pane" id="node95">
-  <pre>
-var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
-var clientId = ''
-api.get('/clients/' + clientId + '/reports/statsbyfilename.json/' + reportType, function(err, response) {
-  console.log('err', err, 'response', response)
-})</pre>
+  <div class="tab-pane" id="node101">
+    <pre>
+api.get('v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200', function(err, response) {
+  console.log(response);
+});</pre>
   </div>
-  <div class="tab-pane" id="response95">
+  <div class="tab-pane" id="response101">
     <pre>
 {
-    "code": 200,
-    "data": {
-        "statsbyfilename": [
-            {
-                "200": "0",
-                "206": "0",
-                "2xx": "0",
-                "3xx": "0",
-                "404": "0",
-                "4xx": "0",
-                "5xx": "35036",
-                "bucket_id": "21597",
-                "file_name": "/",
-                "hit": "35036",
-                "size": "20110664",
-                "timestampf": "2013",
-                "vhost": "edge02.nycacorp.netdna-cdn.com"
-            },
-            {
-                "200": "0",
-                "206": "0",
-                "2xx": "0",
-                "3xx": "0",
-                "404": "0",
-                "4xx": "2",
-                "5xx": "35032",
-                "bucket_id": "21597",
-                "file_name": "/favicon.ico",
-                "hit": "35034",
-                "size": "20108368",
-                "timestampf": "2013",
-                "vhost": "edge02.nycacorp.netdna-cdn.com"
-            }
-        ],
-        "summary": {
-            "200": "0",
-            "206": "0",
-            "2xx": "0",
-            "3xx": "0",
-            "404": "0",
-            "4xx": "2",
-            "5xx": "70068",
-            "hit": "70070",
-            "size": "40219032"
-        },
-        "total": "2"
+  "limit":1000,
+  "page":1,
+  "total":3,
+  "next_page_key":"1234abcdef",
+  "records":[
+    {
+      "bytes":175953,
+      "asn":"AS4804 Microplex PTY LTD",
+      "city":"Brisbane",
+      "continent":"OC",
+      "country":"AU",
+      "dma":"0",
+      "ip":"127.0.0.1",
+      "latitude":0,
+      "longitude":1.2345,
+      "cache_status":"HIT",
+      "hostname":"cdn.example.com",
+      "method":"GET",
+      "origin_time":"0",
+      "pop":"lax",
+      "protocol":"HTTP/1.1",
+      "query_string":"",
+      "scheme":"https",
+      "status_code":200,
+      "request_time":"2014-01-30T17:00:12Z",
+      "uri":"/content.png",
+      "user_agent":"Opera/9.80 (Windows NT 5.1; Edition DriverPack) Presto/2.12.388 Version/12.16",
+      "zone":"example"
+    },
+    {
+      "bytes":175953,
+      "asn":"AS4804 Microplex PTY LTD",
+      "city":"Brisbane",
+      "continent":"OC",
+      "country":"AU",
+      "dma":"0",
+      "ip":"127.0.0.1",
+      "latitude":0.0,
+      "longitude":0.12345,
+      "cache_status":"HIT",
+      "hostname":"cdn.example.com",
+      "method":"GET",
+      "origin_time":"0",
+      "pop":"lax",
+      "protocol":"HTTP/1.1",
+      "query_string":"ver=1.2",
+      "scheme":"https",
+      "status_code":200,
+      "request_time":"2014-01-30T17:00:12Z",
+      "uri":"/sample/test.swf",
+      "user_agent":"Opera/9.80 (Windows NT 5.1; Edition DriverPack) Presto/2.12.388 Version/12.16",
+      "zone":"example"
     }
-}</pre>
-  </div>
-</div>
-
-
-## List Stats By File Name and Zone Id
-
-Gets usage statistics by file name for the specified
-{zone_id}
-
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/{zone_id}/statsbyfilename.json/{report_type}</span></div>
-</div>
-
-### Accepted Request Parameters
-
-Parameter | Default Value | Validation | Description |
---- | --- | --- | --- | ---
-`date_from` | now() - 1 month | Y-m-d (e.g. 2012-01-01) | Start date |
-`date_to` | now() | Y-m-d (e.g. 2012-01-01) | End date |
-`file_names` | A JSON Encoded file names list |
-`filter` | Matching expression for file names |
-`sort_by` | Field to sort by |
-`sort_dir` | Directory to sort files by |
-`page_size` | - | The number of records returned in the result set |
-
-
-### Response Parameters
-
-Parameter | Description |
---- | --- | ---
-`bucket_id` | The Zone ID for the top level directory |
-`hit` | The number of requests made to files within this directory |
-`size` | The amount of bytes transferred from within this directory |
-`200` | The amount of 200 hits |
-`206` | The amount of 206 hits |
-`2xx` | The amount of 2xx hits |
-`3xx` | The amount of 3xx hits |
-`404` | The amount of 404 hits |
-`4xx` | The amount of 4xx hits |
-`5xx` | The amount of 5xx hits |
-`timestampf` | Timestamp |
-
-
-### Code Samples
-
-<ul class="nav nav-tabs" id="myTab96">
-  <li class="active"><a href="#ruby96" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python96" data-toggle='tab'>Python</a></li>
-  <li><a href="#php96" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node96" data-toggle='tab'>Node</a></li>
-  <li><a href="#response96" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby96">
-    <pre>
-reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
-id = ''
-clientId = ''
-api.get('/clients/'+clientId+'/reports/'+id+'/statsbyfilename.json'+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="python96">
-    <pre>
-reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
-id = ''
-clientId = ''
-api.get('/clients/'+clientId+'/reports/'+id+'/statsbyfilename.json'+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php96">
-    <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
-$id = '96061';
-$clientId = '';
-$api->get('/clients/'.$clientId.'/reports/'.$id.'/statsbyfilename.json/'.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node96">
-  <pre>
-var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
-var id = '96061'
-var clientId = ''
-api.get('/clients/' + clientId + '/reports/' + id + '/statsbyfilename.json/' + reportType, function(err, response) {
-  console.log('err', err, 'response', response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response96">
-    <pre>
-Non functional</pre>
-  </div>
-</div>
-
-
-
-# Reports By Custom Domain API
-
-## List Stats By Directory
-
-Gets usage statistics by custom domain for your account. (This
-report has to be enabled by Sales).
-
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/statsbycustomdomain.json/{report_type}</span></div>
-</div>
-
-### Accepted Request Parameters
-
-Parameter | Default Value | Validation | Description |
---- | --- | --- | --- | ---
-`date_from` | now() - 1 month | Y-m-d (e.g. 2012-01-01) | Start date |
-`date_to` | now() | Y-m-d (e.g. 2012-01-01) | End date |
-
-
-### Response Parameters
-
-Parameter | Description |
---- | --- | ---
-`bucket_id` | The Zone ID for the custom domain |
-`custom_domain_id` | The ID of your custom domain |
-`hit` | The number of requests made to this custom domain |
-`size` | The amount of bytes transferred to/from this custom domain |
-
-### Code Samples
-
-<ul class="nav nav-tabs" id="myTab97">
-  <li class="active"><a href="#ruby97" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python97" data-toggle='tab'>Python</a></li>
-  <li><a href="#php97" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node97" data-toggle='tab'>Node</a></li>
-  <li><a href="#response97" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby97">
-    <pre>
-reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
-clientId = ''
-api.get('/clients/'+clientId+'/reports/statsbycustomdomain.json'+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="python97">
-    <pre>
-reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
-clientId = ''
-api.get('/clients/'+clientId+'/reports/statsbycustomdomain.json'+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php97">
-    <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
-$clientId = '';
-$api->get('clients/'.$clientId.'/reports/statsbycustomdomain.json/'.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node97">
-  <pre>
-var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
-var clientId = ''
-api.get('/clients/' + clientId + '/reports/statsbycustomdomain.json/' + reportType, function(err, response) {
-  console.log('err', err, 'response', response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response97">
-    <pre>
-{
-    "code": 200,
-    "data": {
-        "current_page_size": 1,
-        "page": 1,
-        "page_size": "50",
-        "pages": 1,
-        "statsbycustomdomain": [
-            {
-                "bucket_id": "21597",
-                "custom_domain_id": "0",
-                "hit": "70320",
-                "size": "40362532",
-                "vhost": "edge02.nycacorp.netdna-cdn.com"
-            }
-        ],
-        "summary": {
-            "hit": "70320",
-            "size": "40362532"
-        },
-        "total": "1"
-    }
-}</pre>
-  </div>
-</div>
-
-
-## List Stats By Custom Domain and Zone Id
-
-Gets usage statistics by custom domain for the specified
-{zone_id}. (This report has to be enabled by Sales).
-
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/{zone_id}/statsbycustomdomain.json/{report_type}</span></div>
-</div>
-
-### Accepted Request Parameters
-
-Parameter | Default Value | Validation | Description |
---- | --- | --- | --- | ---
-`date_from` | now() - 1 month | Y-m-d (e.g. 2012-01-01) | Start date |
-`date_to` | now() | Y-m-d (e.g. 2012-01-01) | End date |
-
-
-### Response Parameters
-
-Parameter | Description |
---- | --- | ---
-`bucket_id` | The Zone ID for the top level directory |
-`custom_domain_id` | The ID of the Custom Domain |
-`hit` | The number of requests made to this custom domain |
-`size` | The amount of bytes transferred to/from this custom domain |
-
-
-### Code Samples
-
-<ul class="nav nav-tabs" id="myTab98">
-  <li class="active"><a href="#ruby98" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python98" data-toggle='tab'>Python</a></li>
-  <li><a href="#php98" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node98" data-toggle='tab'>Node</a></li>
-  <li><a href="#response98" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby98">
-    <pre>
-reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
-zoneId = ''
-clientId = ''
-api.get('/clients/'+clientId+'/reports/'+zoneId+'/statsbycustomdomain.json'+reportType)
-</pre>
-  </div>
-  <div class="tab-pane" id="python98">
-    <pre>
-reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
-zoneId = '84199'
-clientId = '1'
-api.get('/clients/'+clientId+'/reports/'+zoneId+'/statsbycustomdomain.json'+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php98">
-    <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
-$zoneId = '';
-$clientId = '';
-$api->get('clients/'.$clientId.'/reports/'.$zoneId.'/statsbycustomdomain.json/'.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node98">
-  <pre>
-var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
-var zoneId = ''
-var clientId = ''
-api.get('/clients/' + clientId + '/reports/' + zoneId + '/statsbycustomdomain.json/' + reportType, function(err, response) {
-  console.log('err', err, 'response', response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response98">
-    <pre>
-{
-    "code": 200,
-    "data": {
-        "current_page_size": 0,
-        "page": 1,
-        "page_size": "50",
-        "pages": 0,
-        "statsbycustomdomain": [],
-        "summary": {
-            "hit": null,
-            "size": null
-        },
-        "total": "0"
-    }
-}</pre>
-  </div>
-</div>
-
-
-# Reports for Live Zones API
-
-## List Connection Stats
-
-Gets zone stats in hourly, daily, or monthly summaries
-
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/reports/live/connectionstats.json/{report_type}</span></div>
-</div>
-
-### Accepted Request Parameters
-
-Parameter | Default Value | Validation | Description |
---- | --- | --- | --- | ---
-`date_from` | - | Y-m-d e.g. 2012-01-01 | Start date |
-`date_to` | - | Y-m-d e.g. 2012-01-01 | End date |
-
-### Code Samples
-
-<ul class="nav nav-tabs" id="myTab99">
-  <li class="active"><a href="#ruby99" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python99" data-toggle='tab'>Python</a></li>
-  <li><a href="#php99" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node99" data-toggle='tab'>Node</a></li>
-  <li><a href="#response99" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby99">
-    <pre>
-reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
-api.get('/reports/live/connectionstats.json'+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="python99">
-    <pre>
-reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
-api.get('/reports/live/connectionstats.json'+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php99">
-    <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
-$api->get('/reports/live/connectionstats.json/'.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node99">
-  <pre>
-var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
-api.get('/reports/live/connectionstats.json/' + reportType, function(err, response) {
-  console.log('err', err, 'response', response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response99">
-    <pre>
-{
-    "code": 200,
-    "data": {
-        "current_page_size": 0,
-        "page": 1,
-        "page_size": "50",
-        "pages": 0,
-        "stats": [],
-        "total": "0"
-    }
+  ]
 }</pre>
   </div>
 </div>

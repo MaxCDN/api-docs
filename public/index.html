@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>MaxCDN - API Docs</title><meta name="description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta http-equiv="cleartype" content="on"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta property="og:site_name" content="MaxCDN - API Docs"><meta property="og:type" content="website"><meta property="og:title" content="MaxCDN - API Docs"><meta property="og:description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta property="og:image" content="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png"><link rel="shortcut icon" href="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png" type="image/x-icon"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cuprum:400,700"><link rel="stylesheet" href="css/docs.min.css"></head><body data-spy="scroll" data-target="#docs-navbar" data-offset="83"><div id="spacer"></div><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><div class="container"><a href="/" class="brand"></a></div></div></div><div class="container"><div class="row"><div class="span3"><div id="docs-navbar" data-spy="affix"><div class="row"><div class="span3"><ul class="nav nav-pills nav-stacked"><li class="active"><a href="#overview">Overview</a></li><li><a href="#support" class="gotohash">Support</a></li><li><a href="#changelog" class="gotohash">Changelog</a></li><li><a href="#authentication" class="gotohash">Authentication</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#auth-overview" class="gotohash">Overview</a></li><li class="nav-sub"><a href="#3-legged-oauth" class="gotohash">3-legged OAuth</a></li><li class="nav-sub"><a href="#2-legged-oauth" class="gotohash">2-legged OAuth</a></li><li class="nav-sub"><a href="#registering-your-application" class="gotohash">Registering Your Application</a></li><li class="nav-sub"><a href="#signing-requests" class="gotohash">Signing Requests</a></li><li class="nav-sub"><a href="#request-tokens" class="gotohash">Request Tokens</a></li><li class="nav-sub"><a href="#user-authorization" class="gotohash">User Authorization</a></li><li class="nav-sub"><a href="#key-path-parameters" class="gotohash">Key: Path Parameters</a></li></ul><li><a href="#account-api" class="gotohash"><span id="iconSizer"><i class="fa fa-maxcdn"></i></span> Account API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account" class="gotohash">Get Account</a></li><li class="nav-sub"><a href="#update-account" class="gotohash">Update Account</a></li><li class="nav-sub"><a href="#get-account-address" class="gotohash">Get Account Address</a></li><li class="nav-sub"><a href="#update-account-address" class="gotohash">Update Account Address</a></li></ul><li><a href="#users-api" class="gotohash"><span id="iconSizer"><i class="fa fa-user"></i></span> Users API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-users" class="gotohash">List Users</a></li><li class="nav-sub"><a href="#create-user" class="gotohash">Create User</a></li><li class="nav-sub"><a href="#get-user" class="gotohash">Get User</a></li><li class="nav-sub"><a href="#update-user" class="gotohash">Update User</a></li><li class="nav-sub"><a href="#delete-user" class="gotohash">Delete User</a></li></ul><li><a href="#zones-api" class="gotohash"><span id="iconSizer"><i class="fa fa-cloud"></i></span> Zones API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-zones" class="gotohash">List Zones</a></li><li class="nav-sub"><a href="#get-zone-summary" class="gotohash">Get Zone Summary</a></li><li class="nav-sub"><a href="#get-zone-count" class="gotohash">Get Zone Count</a></li><li class="nav-sub"><a href="#pull-zone-api" class="gotohash">Pull Zone API</a></li><li class="nav-sub"><a href="#pull-zone-custom-domains-api" class="gotohash">Pull Zone Custom Domains API</a></li><li class="nav-sub"><a href="#push-zone-api" class="gotohash">Push Zone API</a></li><li class="nav-sub"><a href="#push-zone-custom-domains-api" class="gotohash">Push Zone Custom Domains API</a></li><li class="nav-sub"><a href="#vod-zone-api" class="gotohash">VOD Zone API</a></li><li class="nav-sub"><a href="#vod-zone-custom-domains-api" class="gotohash">VOD Zone Custom Domains API</a></li><li class="nav-sub"><a href="#live-zone-api" class="gotohash">Live Zone API</a></li><li class="nav-sub"><a href="#zones-ssl-api" class="gotohash">Zones SSL API</a></li><li class="nav-sub"><a href="#zones-upstream-api" class="gotohash">Zones Upstream API</a></li></ul><li><a href="#reports-api" class="gotohash"><span id="iconSizer"><i class="fa fa-signal"></i></span> Reports API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account-stats" class="gotohash">Account Stats</a></li><li class="nav-sub"><a href="#get-all-zone-stats" class="gotohash">Stats for all Zones</a></li><li class="nav-sub"><a href="#get-a-zones-stats" class="gotohash">Stats for a Zone</a></li><li class="nav-sub"><a href="#reports-by-location-api" class="gotohash">Reports by Location API</a></li><li class="nav-sub"><a href="#reports-by-popular-files-api" class="gotohash">Reports by Popular Files API</a></li><li class="nav-sub"><a href="#reports-by-status-codes-api" class="gotohash">Reports by Status Codes API</a></li><li class="nav-sub"><a href="#reports-by-file-types-api" class="gotohash">Reports by File Types API</a></li><li class="nav-sub"><a href="#reports-by-file-size-ranges-api" class="gotohash">Reports by File Size Ranges API</a></li><li class="nav-sub"><a href="#reports-by-directory-api" class="gotohash">Reports by Directory API</a></li></ul><li><a href="#reports-by-file-name-api" class="gotohash"><span id="iconSizer"><i class="fa fa-group"></i></span> Clients API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#reports-by-file-name-api" class="gotohash">Reports by File Name API</a></li><li class="nav-sub"><a href="#reports-by-custom-domain-api" class="gotohash">Reports by Custom Domain API</a></li><li class="nav-sub"><a href="#reports-for-live-zones-api" class="gotohash">Reports for Live Zones API</a></li></ul><li><a href="https://github.com/maxcdn/api-docs"><span id="iconSizer"><i class="fa fa-external-link"></i></span> GitHub Repo</a></li></ul></div></div></div></div><div id="readme-docs" class="span9"><h1 id="maxcdn-api-docs">MaxCDN API Docs</h1>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>MaxCDN - API Docs</title><meta name="description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta http-equiv="cleartype" content="on"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta property="og:site_name" content="MaxCDN - API Docs"><meta property="og:type" content="website"><meta property="og:title" content="MaxCDN - API Docs"><meta property="og:description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta property="og:image" content="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png"><link rel="shortcut icon" href="//secure-cdn.maxcdn.com/favicon.ico" type="image/x-icon"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cuprum:400,700"><link rel="stylesheet" href="css/docs.min.css"><script>var _prum = [['id', '53b1af3fabe53de146b25c9e'], ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() { var s = document.getElementsByTagName('script')[0] , p = document.createElement('script'); p.async = 'async'; p.src = '//rum-static.pingdom.net/prum.min.js'; s.parentNode.insertBefore(p, s); })();
+</script></head><body data-spy="scroll" data-target="#docs-navbar" data-offset="83"><div id="spacer"></div><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><div class="container"><a href="/" class="brand"></a></div></div></div><div class="container"><div class="row"><div class="span3"><div id="docs-navbar" data-spy="affix"><div class="row"><div class="span3"><ul class="nav nav-pills nav-stacked"><li class="active"><a href="#overview">Overview</a></li><li><a href="#support" class="gotohash">Support</a></li><li><a href="#changelog" class="gotohash">Changelog</a></li><li><a href="#authentication" class="gotohash">Authentication</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#auth-overview" class="gotohash">Overview</a></li><li class="nav-sub"><a href="#3-legged-oauth" class="gotohash">3-legged OAuth</a></li><li class="nav-sub"><a href="#2-legged-oauth" class="gotohash">2-legged OAuth</a></li><li class="nav-sub"><a href="#registering-your-application" class="gotohash">Registering Your Application</a></li><li class="nav-sub"><a href="#signing-requests" class="gotohash">Signing Requests</a></li><li class="nav-sub"><a href="#request-tokens" class="gotohash">Request Tokens</a></li><li class="nav-sub"><a href="#user-authorization" class="gotohash">User Authorization</a></li><li class="nav-sub"><a href="#key-path-parameters" class="gotohash">Key: Path Parameters</a></li></ul><li><a href="#account-api" class="gotohash"><span id="iconSizer"><i class="fa fa-maxcdn"></i></span> Account API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account" class="gotohash">Get Account</a></li><li class="nav-sub"><a href="#update-account" class="gotohash">Update Account</a></li><li class="nav-sub"><a href="#get-account-address" class="gotohash">Get Account Address</a></li><li class="nav-sub"><a href="#update-account-address" class="gotohash">Update Account Address</a></li></ul><li><a href="#users-api" class="gotohash"><span id="iconSizer"><i class="fa fa-user"></i></span> Users API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-users" class="gotohash">List Users</a></li><li class="nav-sub"><a href="#create-user" class="gotohash">Create User</a></li><li class="nav-sub"><a href="#get-user" class="gotohash">Get User</a></li><li class="nav-sub"><a href="#update-user" class="gotohash">Update User</a></li><li class="nav-sub"><a href="#delete-user" class="gotohash">Delete User</a></li></ul><li><a href="#zones-api" class="gotohash"><span id="iconSizer"><i class="fa fa-cloud"></i></span> Zones API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-zones" class="gotohash">List Zones</a></li><li class="nav-sub"><a href="#get-zone-summary" class="gotohash">Get Zone Summary</a></li><li class="nav-sub"><a href="#get-zone-count" class="gotohash">Get Zone Count</a></li><li class="nav-sub"><a href="#pull-zone-api" class="gotohash">Pull Zone API</a></li><li class="nav-sub"><a href="#pull-zone-custom-domains-api" class="gotohash">Pull Zone Custom Domains API</a></li><li class="nav-sub"><a href="#push-zone-api" class="gotohash">Push Zone API</a></li><li class="nav-sub"><a href="#push-zone-custom-domains-api" class="gotohash">Push Zone Custom Domains API</a></li><li class="nav-sub"><a href="#vod-zone-api" class="gotohash">VOD Zone API</a></li><li class="nav-sub"><a href="#vod-zone-custom-domains-api" class="gotohash">VOD Zone Custom Domains API</a></li><li class="nav-sub"><a href="#live-zone-api" class="gotohash">Live Zone API</a></li><li class="nav-sub"><a href="#zones-ssl-api" class="gotohash">Zones SSL API</a></li><li class="nav-sub"><a href="#zones-upstream-api" class="gotohash">Zones Upstream API</a></li></ul><li><a href="#reports-api" class="gotohash"><span id="iconSizer"><i class="fa fa-signal"></i></span> Reports API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account-stats" class="gotohash">Account Stats</a></li><li class="nav-sub"><a href="#get-all-zone-stats" class="gotohash">Stats for all Zones</a></li><li class="nav-sub"><a href="#get-a-zones-stats" class="gotohash">Stats for a Zone</a></li><li class="nav-sub"><a href="#reports-by-location-api" class="gotohash">Reports by Location API</a></li><li class="nav-sub"><a href="#reports-by-popular-files-api" class="gotohash">Reports by Popular Files API</a></li><li class="nav-sub"><a href="#reports-by-status-codes-api" class="gotohash">Reports by Status Codes API</a></li><li class="nav-sub"><a href="#reports-by-file-types-api" class="gotohash">Reports by File Types API</a></li><li class="nav-sub"><a href="#reports-by-file-size-ranges-api" class="gotohash">Reports by File Size Ranges API</a></li><li class="nav-sub"><a href="#reports-by-directory-api" class="gotohash">Reports by Directory API</a></li></ul><li><a href="#raw-logs-api" class="gotohash"><span id="iconSizer"><i class="fa fa-archive"></i></span> Raw Logs API</a></li><li><a href="https://github.com/maxcdn/api-docs"><span id="iconSizer"><i class="fa fa-external-link"></i></span> GitHub Repo</a></li></ul></div></div></div></div><div id="readme-docs" class="span9"><h1 id="maxcdn-api-docs">MaxCDN API Docs</h1>
 <p><a href="http://www.maxcdn.com">MaxCDN</a> is a Content Delivery Network service.</p>
 <h2 id="index">Index</h2>
 <ul>
@@ -10,25 +12,25 @@
 <li><a href="#users-api">Users API</a></li>
 <li><a href="#zones-api">Zones API</a></li>
 <li><a href="#reports-api">Reports API</a></li>
-<li><a href="#reports-by-file-name-api">Clients API</a></li>
+<li><a href="#raw-logs-api">Raw Logs API</a></li>
 </ul>
 <h2 id="overview">Overview</h2>
-<ol>
+<ul>
 <li><p>Login to the <a href="https://cp.maxcdn.com/account/api">MaxCDN Control Panel</a>.</p>
 </li>
 <li><p>Create a <a href="https://cp.maxcdn.com/account/api/create">new application</a>.</p>
 </li>
-<li><p>Integrate with our RESTful API using your language wrapper:</p>
+<li><p>Integrate with our RESTful API using a language wrapper:</p>
 <ul>
-<li>Node (NPM) <a href="https://github.com/maxcdn/node-maxcdn">https://github.com/maxcdn/node-maxcdn</a></li>
-<li>.NET <a href="https://github.com/netdna/netdnarws-net">https://github.com/netdna/netdnarws-net</a></li>
-<li>Ruby <a href="https://github.com/maxcdn/ruby-maxcdn">https://github.com/maxcdn/ruby-maxcdn</a></li>
-<li>Python <a href="https://github.com/maxcdn/python-maxcdn">https://github.com/maxcdn/python-maxcdn</a></li>
-<li>PHP <a href="https://github.com/netdna/netdnarws-php">https://github.com/netdna/netdnarws-php</a></li>
-<li>Perl <a href="https://github.com/netdna/netdnarws-perl">https://github.com/netdna/netdnarws-perl</a></li>
+<li><a href="https://github.com/maxcdn/node-maxcdn">Node</a></li>
+<li><a href="https://github.com/maxcdn/ruby-maxcdn">Ruby</a></li>
+<li><a href="https://github.com/maxcdn/python-maxcdn">Python</a></li>
+<li><a href="https://github.com/MaxCDN/php-maxcdn">PHP</a></li>
+<li><a href="https://github.com/MaxCDN/dotnet-maxcdn">.NET</a></li>
+<li><a href="http://godoc.org/github.com/MaxCDN/go-maxcdn">Go <sup>Beta</sup></a></li>
 </ul>
 </li>
-</ol>
+</ul>
 <h2 id="support">Support</h2>
 <ul>
 <li>Have a question? Check out our <a href="http://support.maxcdn.com/">Knowledge Base</a> to see if your question has already been answered.</li>
@@ -38,6 +40,14 @@
 </ul>
 <h2 id="changelog">Changelog</h2>
 <ul>
+<li><strong>2014-07-16</strong>  Added SNI option on SSL Installation</li>
+<li><strong>2014-07-11</strong>  Updated PHP and .NET libs</li>
+<li><strong>2014-06-30</strong>  Add RUM code for webperf measuring</li>
+<li><strong>2014-06-24</strong>  Updated BootstrapCDN and favicon urls</li>
+<li><strong>2014-06-20</strong>  Removed create Live Zone endpoint (EOL)</li>
+<li><strong>2014-06-19</strong>  Removed links outdated Perl and .NET SDKs, added Go SDK (beta)</li>
+<li><strong>2014-06-13</strong>  Updated all URL endpoints to rws.maxcdn.com</li>
+<li><strong>2014-06-10</strong>  Added documentation for the Raw Logs API</li>
 <li><strong>2014-05-19</strong>  Added feature &quot;SPDY&quot; to Pull and Push Zone settings</li>
 <li><strong>2014-04-15</strong>  Added new MIME type for Pull Zone GZip compression: application/octet-stream</li>
 <li><strong>2014-04-10</strong>  Added feature &quot;X-Forwarded-For&quot; to Pull Zone settings</li>
@@ -97,10 +107,10 @@ On a conceptual level it works in the following way:</p>
 <p>All OAuth 1.0a requests use the same basic algorithm for creating a signature base string and a signature.</p>
 <h3 id="request-tokens">Request Tokens</h3>
 <p>The first step to authenticating a user is to obtain a request token from MaxCDN.</p>
-<p>The end point for requesting a token is: <code>https://rws.netdna.com/oauth/request_token</code></p>
+<p>The end point for requesting a token is: <code>https://rws.maxcdn.com/oauth/request_token</code></p>
 <h3 id="user-authorization">User Authorization</h3>
 <p>The User Authorization step sends the user to the MaxCDN RWS authorization page, which grants your application privileges to use their account with the API. You will need the oauth_token from the previous step to complete this.</p>
-<p>The endpoint for the authorization url is: <code>https://rws.netdna.com/oauth/authorize</code></p>
+<p>The endpoint for the authorization url is: <code>https://rws.maxcdn.com/oauth/authorize</code></p>
 <h3 id="key-path-parameters">Key: Path Parameters</h3>
 <table>
 <thead>
@@ -132,7 +142,7 @@ On a conceptual level it works in the following way:</p>
 <p>Gets account information</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/account.json">https://rws.netdna.com/{companyalias}/account.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/account.json">https://rws.maxcdn.com/{companyalias}/account.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -246,7 +256,7 @@ function callback(err, response) {
 <p>Updates account information</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/account.json">https://rws.netdna.com/{companyalias}/account.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/account.json">https://rws.maxcdn.com/{companyalias}/account.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -384,7 +394,7 @@ function callback(err, response) {
 <p>Gets account address information</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/account.json/address">https://rws.netdna.com/{companyalias}/account.json/address</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/account.json/address">https://rws.maxcdn.com/{companyalias}/account.json/address</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -500,7 +510,7 @@ function callback(err, response) {
 <p>Updates account address information</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/account.json/address">https://rws.netdna.com/{companyalias}/account.json/address</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/account.json/address">https://rws.maxcdn.com/{companyalias}/account.json/address</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -673,7 +683,7 @@ function callback(err, response) {
 <p>Returns a list of all users on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/users.json">https://rws.netdna.com/{companyalias}/users.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/users.json">https://rws.maxcdn.com/{companyalias}/users.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -852,7 +862,7 @@ function callback(err, response) {
 <p>Creates a new user on the specified account</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/users.json">https://rws.netdna.com/{companyalias}/users.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/users.json">https://rws.maxcdn.com/{companyalias}/users.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -1043,7 +1053,7 @@ function callback(err, response) {
 <p>Gets a user specified by the {user_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/users.json/{user_id}">https://rws.netdna.com/{companyalias}/users.json/{user_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/users.json/{user_id}">https://rws.maxcdn.com/{companyalias}/users.json/{user_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -1155,7 +1165,7 @@ function callback(err, response) {
 <p>Updates a user specified by the {user_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/users.json/{user_id}">https://rws.netdna.com/{companyalias}/users.json/{user_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/users.json/{user_id}">https://rws.maxcdn.com/{companyalias}/users.json/{user_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -1317,7 +1327,7 @@ function callback(err, response) {
 <p>Deletes a user specified by the {user_id} parameter</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/users.json/{user_id}">https://rws.netdna.com/{companyalias}/users.json/{user_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/users.json/{user_id}">https://rws.maxcdn.com/{companyalias}/users.json/{user_id}</a></span></div>
 </div>
 
 
@@ -1369,7 +1379,7 @@ function callback(err, response) {
 <p>Returns a list of all zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones.json">https://rws.netdna.com/{companyalias}/zones.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones.json">https://rws.maxcdn.com/{companyalias}/zones.json</a></span></div>
 </div>
 
 <h3 id="code-samples-">Code Samples  @</h3>
@@ -1447,7 +1457,7 @@ api.get(&#39;/zones.json&#39;, function(err, response) {
 account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones.json/summary">https://rws.netdna.com/{companyalias}/zones.json/summary</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones.json/summary">https://rws.maxcdn.com/{companyalias}/zones.json/summary</a></span></div>
 </div>
 
 
@@ -1531,7 +1541,7 @@ api.get(&#39;/zones.json/summary&#39;, function(err, response) {
 <p>Counts all zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones.json/count">https://rws.netdna.com/{companyalias}/zones.json/count</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones.json/count">https://rws.maxcdn.com/{companyalias}/zones.json/count</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -1595,7 +1605,7 @@ api.get(&#39;/zones.json/count&#39;, function(err, response) {
 <p>Returns a list of all pull zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json">https://rws.netdna.com/{companyalias}/zones/pull.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json">https://rws.maxcdn.com/{companyalias}/zones/pull.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -1874,7 +1884,7 @@ api.get(&#39;/zones/pull.json&#39;, function(err, response) {
 <p>Creates a new pull zone</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json">https://rws.netdna.com/{companyalias}/zones/pull.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json">https://rws.maxcdn.com/{companyalias}/zones/pull.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -2312,7 +2322,7 @@ api.post(&#39;/zones/pull.json&#39;, { name: &#39;newPullZone2&#39;, url: &#39;<
 <p>Counts all pull zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json/count">https://rws.netdna.com/{companyalias}/zones/pull.json/count</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json/count">https://rws.maxcdn.com/{companyalias}/zones/pull.json/count</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -2375,7 +2385,7 @@ api.get(&#39;/zones/pull.json/count&#39;, function(err, response) {
 <p>Gets a pull zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -2619,7 +2629,7 @@ api.get(&#39;/zones/pull.json&#39; + id, function(err, response) {
 <p>Updates a pull zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -3054,7 +3064,7 @@ api.put(&#39;/zones/pull.json&#39; + id, { label: &#39;Some other description&#3
 <p>Deletes a pull zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}</a></span></div>
 </div>
 
 
@@ -3103,7 +3113,7 @@ api.delete(&#39;/zones/pull.json&#39; + id, function(err, response) {
 <p>Enables a pull zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/enable.json">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/enable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/enable.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/enable.json</a></span></div>
 </div>
 
 
@@ -3153,7 +3163,7 @@ api.put(&#39;/zones/pull/&#39; + id + &#39;/enable.json&#39;, function(err, resp
 <p>Disables a pull zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/disable.json">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/disable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/disable.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/disable.json</a></span></div>
 </div>
 
 
@@ -3202,7 +3212,7 @@ api.put(&#39;/zones/pull&#39; + id + &#39;disable.json&#39;, function(err, respo
 <p>Purges pull zone cache</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}/cache">https://rws.netdna.com/{companyalias}/zones/pull.json/{zone_id}/cache</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}/cache">https://rws.maxcdn.com/{companyalias}/zones/pull.json/{zone_id}/cache</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -3326,7 +3336,7 @@ function callback(err, response) {
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -3411,7 +3421,7 @@ api.get(&#39;/zones/pull/&#39; + id + &#39;/customdomains.json&#39;, function(er
 <p>Adds a new custom domain to {zone_id}</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -3524,7 +3534,7 @@ api.post(&#39;/zones/pull/&#39; + id + &#39;/customdomains.json&#39;, { custom_d
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -3611,7 +3621,7 @@ api.get(&#39;/zones/pull/&#39; + id + &#39;/customdomains.json/&#39; + domainId,
 <p>Updates a custom domain specified by the id parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -3721,7 +3731,7 @@ api.put(&#39;/zones/pull/&#39; + zoneId + &#39;/customdomains.json/&#39; + domai
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 
@@ -3775,7 +3785,7 @@ api.delete(&#39;/zones/pull/&#39; + zoneId + &#39;/customdomains.json/&#39; + do
 <p>Returns a list of all push zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json">https://rws.netdna.com/{companyalias}/zones/push.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json">https://rws.maxcdn.com/{companyalias}/zones/push.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -3938,7 +3948,7 @@ api.get(&#39;/zones/push.json&#39;, function(err, response) {
 <p>Creates a new push zone</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json">https://rws.netdna.com/{companyalias}/zones/push.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json">https://rws.maxcdn.com/{companyalias}/zones/push.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -4137,7 +4147,7 @@ api.post(&#39;/zones/push.json&#39;, { name: &#39;newPushZone&#39;, password: &#
 <p>Counts all push zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json/count">https://rws.netdna.com/{companyalias}/zones/push.json/count</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json/count">https://rws.maxcdn.com/{companyalias}/zones/push.json/count</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -4201,7 +4211,7 @@ api.get(&#39;/zones/push.json/count&#39;, function(err, response) {
 <p>Gets a push zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -4339,7 +4349,7 @@ api.get(&#39;/zones/push.json/&#39; + id, function(err, response) {
 <p>Updates a push zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -4528,7 +4538,7 @@ api.get(&#39;/zones/push.json/&#39; + id, { label: &#39;Some other description&#
 <p>Deletes a push zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/push.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -4576,7 +4586,7 @@ api.delete(&#39;/zones/push.json/&#39; + id, function(err, response) {
 <p>Enables a push zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/enable.json">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/enable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/enable.json">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/enable.json</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -4624,7 +4634,7 @@ api.put(&#39;/zones/push/&#39; + id + &#39;/enable.json&#39;, function(err, resp
 <p>Disables a push zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/disable.json">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/disable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/disable.json">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/disable.json</a></span></div>
 </div>
 
 
@@ -4675,7 +4685,7 @@ api.put(&#39;/zones/push/&#39; + id + &#39;/disable.json&#39;, function(err, res
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -4760,7 +4770,7 @@ api.get(&#39;/zones/push/&#39; + id + &#39;/customdomains.json&#39;, function(er
 <p>Adds a new custom domain to {zone_id}</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -4874,7 +4884,7 @@ api.post(&#39;/zones/push/&#39; + id + &#39;/customdomains.json&#39;, { custom_d
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -4960,7 +4970,7 @@ api.get(&#39;/zones/push/&#39; + zoneId + &#39;/customdomains.json/&#39; + domai
 <p>Updates a custom domain specified by the id parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -5071,7 +5081,7 @@ api.put(&#39;/zones/push/&#39; + zoneId + &#39;/customdomains.json/&#39; + domai
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/push/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 
@@ -5125,7 +5135,7 @@ api.delete(&#39;/zones/push/&#39; + zoneId + &#39;/customdomains.json/&#39; + do
 <p>Returns a list of all VOD zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json">https://rws.netdna.com/{companyalias}/zones/vod.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json">https://rws.maxcdn.com/{companyalias}/zones/vod.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -5264,7 +5274,7 @@ api.get(&#39;/zones/vod.json&#39;, function(err, response) {
 <p>Creates a new VOD zone</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json">https://rws.netdna.com/{companyalias}/zones/vod.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json">https://rws.maxcdn.com/{companyalias}/zones/vod.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -5420,7 +5430,7 @@ api.post(&#39;/zones/vod.json&#39;, { name: &#39;newVODZone3&#39;, password: &#3
 <p>Counts all VOD zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json/count">https://rws.netdna.com/{companyalias}/zones/vod.json/count</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json/count">https://rws.maxcdn.com/{companyalias}/zones/vod.json/count</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -5483,7 +5493,7 @@ api.get(&#39;/zones/vod.json/count&#39;, function(err, response) {
 <p>Gets a VOD zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -5599,7 +5609,7 @@ api.get(&#39;/zones/vod.json/&#39; + id, function(err, response) {
 <p>Updates a VOD zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -5752,7 +5762,7 @@ api.put(&#39;/zones/vod.json/&#39; + id, { label: &#39;Some other description&#3
 <p>Deletes a VOD zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/vod.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -5800,7 +5810,7 @@ api.delete(&#39;/zones/vod.json/&#39; + id, function(err, response) {
 <p>Enables a VOD zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/enable.json">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/enable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/enable.json">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/enable.json</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -5848,7 +5858,7 @@ api.put(&#39;/zones/vod/&#39; + id + &#39;/enable.json&#39;, function(err, respo
 <p>Disables a VOD zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/disable.json">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/disable.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/disable.json">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/disable.json</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -5898,7 +5908,7 @@ api.put(&#39;/zones/vod/&#39; + id + &#39;/disable.json&#39;, function(err, resp
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -5983,7 +5993,7 @@ api.get(&#39;/zones/vod.json/&#39; + id + &#39;/customdomains.json, function(err
 <p>Adds a new custom domain to {zone_id}</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -6096,7 +6106,7 @@ api.post(&#39;/zones/vod/&#39; + id + &#39;/customdomains.json&#39;, { custom_do
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -6182,7 +6192,7 @@ api.get(&#39;/zones/vod/&#39; + zoneId + &#39;/customdomains.json/&#39; + domain
 <p>Updates a custom domain specified by the id parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -6292,7 +6302,7 @@ api.put(&#39;/zones/vod/&#39; + zoneId + &#39;/customdomains.json/&#39; + domain
 {customdomain_id} parameters</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.netdna.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}">https://rws.maxcdn.com/{companyalias}/zones/vod/{zone_id}/customdomains.json/{customdomain_id}</a></span></div>
 </div>
 
 
@@ -6346,7 +6356,7 @@ api.delete(&#39;/zones/vod/&#39; + zoneId + &#39;/customdomains.json/&#39; + dom
 <p>Returns a list of all live zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json">https://rws.netdna.com/{companyalias}/zones/live.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json">https://rws.maxcdn.com/{companyalias}/zones/live.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -6470,156 +6480,11 @@ api.get(&#39;/zones/live.json&#39;, function(err, response) {
   </div>
 </div>
 
-
-<h2 id="create-live-zone">Create Live Zone</h2>
-<p>Creates a new live zone</p>
-<div class="heading">
-<div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json">https://rws.netdna.com/{companyalias}/zones/live.json</a></span></div>
-</div>
-
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>name</code></td>
-<td>-</td>
-<td><span class="label important">required</span><br />length: 3-30 chars; only letters, digits, and dash (-)accepted</td>
-<td>Your desired zone name</td>
-<td></td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>-</td>
-<td><span class="label important">required</span><br />length: 5-30 chars</td>
-<td>Your desired password</td>
-<td></td>
-</tr>
-<tr>
-<td><code>label</code></td>
-<td>-</td>
-<td>length: 1-255 chars</td>
-<td>Something that describes your zone</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="response-parameters">Response Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>Live Zone ID</td>
-<td></td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td>Live Zone name</td>
-<td></td>
-</tr>
-<tr>
-<td><code>label</code></td>
-<td>The zone&#39;s description</td>
-<td></td>
-</tr>
-<tr>
-<td><code>suspend</code></td>
-<td>Flag denoting if the zone has been suspended</td>
-<td></td>
-</tr>
-<tr>
-<td><code>locked</code></td>
-<td>Flag denoting if the zone has been locked</td>
-<td></td>
-</tr>
-<tr>
-<td><code>inactive</code></td>
-<td>Flag denoting if the zone has been deleted</td>
-<td></td>
-</tr>
-<tr>
-<td><code>creation_date</code></td>
-<td>Date Created</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab54">
-  <li class="active"><a href="#ruby54" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python54" data-toggle='tab'>Python</a></li>
-  <li><a href="#php54" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node54" data-toggle='tab'>Node</a></li>
-  <li><a href="#response54" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby54">
-    <pre>
-params = {&quot;name&quot;=&gt;&quot;newLiveZone99&quot;,&quot;password&quot;=&gt;&quot;password&quot;}
-api.post(&#39;/zones/live.json&#39;,params)</pre>
-  </div>
-  <div class="tab-pane" id="python54">
-    <pre>
-params = {&quot;name&quot;:&quot;newliveZone7&quot;,&quot;password&quot;:&quot;password&quot;}
-api.post(&#39;/zones/live.json&#39;,data=params)</pre>
-  </div>
-  <div class="tab-pane" id="php54">
-    <pre>
-$params = array(&quot;name&quot;=&gt;&quot;newLiveZone3&quot;,&quot;password&quot;=&gt;&quot;password&quot;);
-$api-&gt;post(&#39;/zones/live.json&#39;, $params);</pre>
-  </div>
-  <div class="tab-pane" id="node54">
-  <pre>
-api.post(&#39;/zones/live.json&#39;,  { name: &#39;newLiveZone3&#39;, password: &#39;password&#39; }, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response54">
-    <pre>
-{
-    &quot;code&quot;: 201,
-    &quot;data&quot;: {
-        &quot;livezone&quot;: {
-            &quot;cdn_url&quot;: &quot;newlivezone4.alias.netdna-cdn.com&quot;,
-            &quot;creation_date&quot;: &quot;2013-05-24 17:01:30&quot;,
-            &quot;id&quot;: 97323,
-            &quot;inactive&quot;: 0,
-            &quot;label&quot;: null,
-            &quot;locked&quot;: 0,
-            &quot;name&quot;: &quot;newlivezone4&quot;,
-            &quot;pub_url&quot;: &quot;publish.newlivezone4.alias.netdna-cdn.com/live/97323&quot;,
-            &quot;server_id&quot;: 3,
-            &quot;suspend&quot;: 0,
-            &quot;tmp_url&quot;: &quot;newlivezone4.alias.netdna-cdn.com&quot;,
-            &quot;type&quot;: 5,
-            &quot;view_url&quot;: &quot;newlivezone4.alias.netdna-cdn.com/live/97323&quot;
-        }
-    }
-}</pre>
-  </div>
-</div>
-
-
 <h2 id="get-live-zones-count">Get Live Zones Count</h2>
 <p>Counts all live zones on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json/count">https://rws.netdna.com/{companyalias}/zones/live.json/count</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json/count">https://rws.maxcdn.com/{companyalias}/zones/live.json/count</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -6683,7 +6548,7 @@ api.get(&#39;/zones.json&#39;, function(err, response) {
 <p>Gets a live zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -6794,7 +6659,7 @@ api.get(&#39;/zones/live.json/&#39; + id, function(err, response) {
 <p>Updates a live zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -6943,7 +6808,7 @@ api.put(&#39;/zones/live.json/&#39; + id, { label: &#39;Some other description&#
 <p>Deletes a live zone specified by the {zone_id} parameter</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}">https://rws.netdna.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}">https://rws.maxcdn.com/{companyalias}/zones/live.json/{zone_id}</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -6987,110 +6852,13 @@ api.delete(&#39;/zones/live.json/&#39; + id, function(err, response) {
 </div>
 
 
-<h2 id="enable-live-zone">Enable Live Zone</h2>
-<p>Enables a live zone specified by the {zone_id} parameter</p>
-<div class="heading">
-<div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live/{zone_id}/enable.json">https://rws.netdna.com/{companyalias}/zones/live/{zone_id}/enable.json</a></span></div>
-</div>
-
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab59">
-  <li class="active"><a href="#ruby59" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python59" data-toggle='tab'>Python</a></li>
-  <li><a href="#php59" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node59" data-toggle='tab'>Node</a></li>
-  <li><a href="#response59" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby59">
-    <pre>
-id = &#39;97795&#39;
-api.put(&#39;/zones/live/&#39;+id+&#39;/enable.json&#39;)</pre>
-  </div>
-  <div class="tab-pane" id="python59">
-    <pre>
-id = &#39;96193&#39;
-api.put(&#39;/zones/live/&#39;+id+&#39;/enable.json&#39;)</pre>
-  </div>
-  <div class="tab-pane" id="php59">
-    <pre>
-$id = &#39;96061&#39;;
-$api-&gt;put(&#39;/zones/live/&#39;.$id.&#39;/enable.json&#39;);</pre>
-  </div>
-  <div class="tab-pane" id="node59">
-  <pre>
-var id = &#39;96061&#39;
-api.put(&#39;/zones/live/&#39; + id + &#39;/enable.json&#39;, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response59">
-    <pre>
-{
-  &quot;code&quot;:200
-}</pre>
-  </div>
-</div>
-
-
-<h2 id="disable-live-zone">Disable Live Zone</h2>
-<p>Disables a live zone specified by the {zone_id} parameter</p>
-<div class="heading">
-<div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/live/{zone_id}/disable.json">https://rws.netdna.com/{companyalias}/zones/live/{zone_id}/disable.json</a></span></div>
-</div>
-
-
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab60">
-  <li class="active"><a href="#ruby60" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python60" data-toggle='tab'>Python</a></li>
-  <li><a href="#php60" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node60" data-toggle='tab'>Node</a></li>
-  <li><a href="#response60" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby60">
-    <pre>
-id = &#39;97795&#39;
-api.put(&#39;/zones/live/&#39;+id+&#39;/disable.json&#39;)</pre>
-  </div>
-  <div class="tab-pane" id="python60">
-    <pre>
-id = &#39;96193&#39;
-api.put(&#39;/zones/live/&#39;+id+&#39;/disable.json&#39;)</pre>
-  </div>
-  <div class="tab-pane" id="php60">
-    <pre>
-$id = &#39;96061&#39;;
-api-&gt;put(&#39;/zones/live/&#39;.$id.&#39;/disable.json&#39;);</pre>
-  </div>
-  <div class="tab-pane" id="node60">
-  <pre>
-var id = &#39;96061&#39;
-api.put(&#39;/zones/live/&#39; + id + &#39;/disable.json&#39;, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response60">
-    <pre>
-{
-  &quot;code&quot;:200
-}</pre>
-  </div>
-</div>
-
-
 <h1 id="zones-ssl-api">Zones SSL API</h1>
 <h2 id="get-zone-s-ssl-information">Get Zone&#39;s SSL Information</h2>
 <p>Get the SSL certificate for the specified {zone_type} and
 {zone_id}.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -7156,7 +6924,7 @@ api.get(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, funct
 {zone_id}.</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -7187,7 +6955,15 @@ api.get(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, funct
 <tr>
 <td><code>ssl_cabundle</code></td>
 <td>-</td>
+<td>-</td>
 <td>The CA Bundle for the SSL Certificate you are installing.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl_sni</code></td>
+<td>0</td>
+<td>only 0 or 1 accepted</td>
+<td>If this flag is set to 1 your zone will use SNI to identify your certificate, rather than requiring a dedicated IP.</td>
 <td></td>
 </tr>
 </tbody>
@@ -7312,7 +7088,7 @@ api.post(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, { ss
 {zone_id}.</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -7469,7 +7245,7 @@ api.put(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, { ssl
 {zone_id}.</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/ssl.json</a></span></div>
 </div>
 
 
@@ -7578,7 +7354,7 @@ api.delete(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, fu
 <p>Get the upstream information for the specified {zone_id}.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
 </div>
 
 <h3 id="code-samples">Code Samples</h3>
@@ -7628,7 +7404,7 @@ api.post(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/upstream.json&#39;,
 <p>Create and enable Upstream for a specific {zone_id}.</p>
 <div class="heading">
 <div class="url POST"><span class="http_method">POST</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -7733,7 +7509,7 @@ api.post(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/upstream.json&#39;,
 <p>Update the Upstream information for the specified {zone_id}.</p>
 <div class="heading">
 <div class="url PUT"><span class="http_method">PUT</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -7844,7 +7620,7 @@ api.put(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/upstream.json&#39;, 
 <p>Remove the Upstream Information for the specified {zone_id}.</p>
 <div class="heading">
 <div class="url DELETE"><span class="http_method">DELETE</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.netdna.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json">https://rws.maxcdn.com/{companyalias}/zones/{zone_type}/{zone_id}/upstream.json</a></span></div>
 </div>
 
 
@@ -7898,7 +7674,7 @@ api.delete(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/upstream.json&#39
 the total usage on your account.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/stats.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/stats.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/stats.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/stats.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -8019,7 +7795,7 @@ api.get(&#39;/reports/stats.json/&#39; + reportType, function(err, response) {
 {report_type}. If no {report_type} is given the timestamp response parameter will be omitted.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/statsbyzone.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/statsbyzone.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/statsbyzone.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/statsbyzone.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -8176,7 +7952,7 @@ api.get(&#39;/reports/statsbyzone.json/&#39; + reportType, function(err, respons
 the total usage for the zones.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/stats.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/stats.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/stats.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/stats.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -8307,7 +8083,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/stats.json/&#39; + reportType, function
 <p>Gets a list of all active nodes (locations)</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/nodes.json">https://rws.netdna.com/{companyalias}/reports/nodes.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/nodes.json">https://rws.maxcdn.com/{companyalias}/reports/nodes.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -8442,7 +8218,7 @@ api.get(&#39;/reports/nodes.json&#39;, function(err, response) {
 {zone_id} parameter</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -8572,7 +8348,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/nodes.json&#39;, function(err, response
 the total usage broken up by node.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/nodes.json/stats/{report_type}">https://rws.netdna.com/{companyalias}/reports/nodes.json/stats/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/nodes.json/stats/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/nodes.json/stats/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -8801,7 +8577,7 @@ nodes and optionally {report_type}. If no {report_type} is given
 the request will return the total usage broken up by node.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/stats/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/stats/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/stats/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/stats/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -8941,7 +8717,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/nodes.json/stats/&#39; + reportType, fu
 <p>Gets the node information for the specified {node_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/nodes.json/{node_id}">https://rws.netdna.com/{companyalias}/reports/nodes.json/{node_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/nodes.json/{node_id}">https://rws.maxcdn.com/{companyalias}/reports/nodes.json/{node_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -9024,7 +8800,7 @@ api.get(&#39;/reports/nodes.json/&#39; + id, function(err, response) {
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -9114,7 +8890,7 @@ broken up by {report_type}. If no {report_type} is given the
 request will return the total usage for the node.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/nodes.json/{node_id}/stats/{report_type}">https://rws.netdna.com/{companyalias}/reports/nodes.json/{node_id}/stats/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/nodes.json/{node_id}/stats/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/nodes.json/{node_id}/stats/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9242,7 +9018,7 @@ optionally broken up by {report_type}. If no {report_type} is given
 the request will return the total usage for the node.</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}/stats/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}/stats/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}/stats/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/nodes.json/{node_id}/stats/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9374,7 +9150,7 @@ api.get(&#39;/reports/&#39; + zoneId + &#39;/nodes.json/&#39; + nodeId + &#39;/s
 grouped into daily statistics</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/popularfiles.json">https://rws.netdna.com/{companyalias}/reports/popularfiles.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/popularfiles.json">https://rws.maxcdn.com/{companyalias}/reports/popularfiles.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9499,7 +9275,7 @@ api.get(&#39;/reports/popularfiles.json&#39;, function(err, response) {
 filtered by {zone_type} and grouped into daily statistics</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/popularfiles.json">https://rws.netdna.com/{companyalias}/reports/{zone_type}/popularfiles.json</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/popularfiles.json">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/popularfiles.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9628,7 +9404,7 @@ api.get(&#39;/reports/&#39; + type + &#39;/popularfiles.json&#39;, function(err,
 <p>Gets HTTP status code response statistics for your account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/statuscodes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/statuscodes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/statuscodes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/statuscodes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9743,7 +9519,7 @@ api.get(&#39;/reports/statuscodes.json/&#39; + reportType, function(err, respons
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/statuscodes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/statuscodes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statuscodes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statuscodes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9856,7 +9632,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/statuscodes.json/&#39; + reportType, fu
 {zone_type}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/statuscodes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/statuscodes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/statuscodes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/statuscodes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -9975,7 +9751,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/statuscodes.json/&#39; + reportTy
 {zone_type} and {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/statuscodes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/statuscodes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/statuscodes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/statuscodes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10092,7 +9868,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/&#39; + id + &#39;/statuscodes.js
 <p>Gets file type statistics for your account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/filetypes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/filetypes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/filetypes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/filetypes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10204,7 +9980,7 @@ api.get(&#39;/reports/filetypes.json&#39;, function(err, response) {
 <p>Gets file type statistics for a specific {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/filetypes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/filetypes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/filetypes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/filetypes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10315,7 +10091,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/filetypes.json/&#39; + reportType, func
 <p>Gets file type statistics for a specific {zone_type}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/filetypes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/filetypes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/filetypes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/filetypes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -10405,7 +10181,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/filetypes.json/&#39; + reportType
 {zone_id}</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/filetypes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/filetypes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/filetypes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/filetypes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10522,7 +10298,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/&#39; + id + &#39;/filetypes.json
 ranges</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/filesizes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/filesizes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/filesizes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/filesizes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10668,7 +10444,7 @@ api.get(&#39;/reports/filesizes.json/&#39; + reportType, function(err, response)
 file size ranges</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/filesizes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/filesizes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/filesizes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/filesizes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10816,7 +10592,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/filesizes.json/&#39; + reportType, func
 file size ranges</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/filesizes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/filesizes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/filesizes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/filesizes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -10964,7 +10740,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/filesizes.json/&#39; + reportType
 {zone_id} based on file size ranges</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/filesizes.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_type}/{zone_id}/filesizes.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/filesizes.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_type}/{zone_id}/filesizes.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -11117,7 +10893,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/&#39; + id + &#39;/filesizes.json
 report has to be enabled by Sales).</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/statsbydir.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/statsbydir.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/statsbydir.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/statsbydir.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -11236,7 +11012,7 @@ api.get(&#39;/reports/statsbydir.json/&#39; + reportType, function(err, response
 (This report has to be enabled by Sales).</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -11353,13 +11129,12 @@ api.get(&#39;/reports/&#39; + id + &#39;/&#39; + &#39;/statsbydir.json/&#39; + r
   </div>
 </div>
 
-
-<h1 id="reports-by-file-name-api">Reports By File Name API</h1>
-<h2 id="list-stats-by-file-name">List Stats By File Name</h2>
-<p>Gets usage statistics by file name for your account</p>
+<h1 id="raw-logs-api">Raw Logs API</h1>
+<h2 id="get-raw-logs">Get Raw Logs</h2>
+<p>Retrieve up to five days of raw log data</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/statsbyfilename.json/{report_type}">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/statsbyfilename.json/{report_type}</a></span></div>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/v3/reporting/logs.json">https://rws.maxcdn.com/{companyalias}/v3/reporting/logs.json</a></span></div>
 </div>
 
 <h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
@@ -11374,43 +11149,94 @@ api.get(&#39;/reports/&#39; + id + &#39;/&#39; + &#39;/statsbydir.json/&#39; + r
 </thead>
 <tbody>
 <tr>
-<td><code>date_from</code></td>
-<td>now() - 1 month</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>Start date</td>
+<td><code>start</code></td>
+<td>now() - 1 hour</td>
+<td>ISO-8601 formatted date/time</td>
+<td>The start of the range for requests to pull.</td>
 <td></td>
 </tr>
 <tr>
-<td><code>date_to</code></td>
+<td><code>end</code></td>
 <td>now()</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>End date</td>
+<td>ISO-8601 formatted date/time</td>
+<td>The end of the range for requests to pull</td>
 <td></td>
 </tr>
 <tr>
-<td><code>file_names</code></td>
-<td>A JSON Encoded file names list</td>
-<td></td>
-</tr>
-<tr>
-<td><code>filter</code></td>
-<td>Matching expression for file names</td>
-<td></td>
-</tr>
-<tr>
-<td><code>sort_by</code></td>
-<td>Field to sort by</td>
-<td></td>
-</tr>
-<tr>
-<td><code>sort_dir</code></td>
-<td>Directory to sort files by</td>
-<td></td>
-</tr>
-<tr>
-<td><code>page_size</code></td>
+<td><code>zones</code></td>
 <td>-</td>
-<td>The number of records returned in the result set</td>
+<td>CSV of ints</td>
+<td>The specific zones whose requests you want to pull. Separate multiple zone ids by comma</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uri</code></td>
+<td>-</td>
+<td>string</td>
+<td>Use this filter to view requests made for a specific resource (or group of resources). You can do a literal match or regular expression in this field (i.e. &#39;/images/header.png&#39; or &#39;regex:/images/&#39;)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>-</td>
+<td>CSV of ints</td>
+<td>The specific HTTP status code responses you want to pull. Separate multiple HTTP status codes by comma (i.e. 200,201,304)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl</code></td>
+<td>both</td>
+<td>enum(nossl, ssl, both)</td>
+<td>Use this filter to distinguish between SSL and non-SSL traffic (choose nossl, ssl or both)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_agent</code></td>
+<td>-</td>
+<td>string</td>
+<td>Filter logs by specific user agents. You can do a literal match or regular expression in this field (i.e. &#39;Python MaxCDN API Client&#39; or &#39;regex:Chrome&#39;)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referer</code></td>
+<td>-</td>
+<td>string</td>
+<td>Filter logs by a specific referer. You can do a literal match or regular expression in this field (i.e. &#39;www.maxcdn.com&#39; or &#39;regex:maxcdn.com&#39;)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pop</code></td>
+<td>-</td>
+<td>CSV of strings</td>
+<td>Filter logs by specific POPs (Points Of Presence), use comma separation for multiple POPs. Possible values: ams, atl, aus, chi, dal, den, fra, hkg, jfk, lax, lhr, mia, sea, sfo, sin, sjc, slc, tko, vir</td>
+<td></td>
+</tr>
+<tr>
+<td><code>query_string</code></td>
+<td>-</td>
+<td>string</td>
+<td>Filter logs by a specific query string. You can do a literal match or regular expression in this field (i.e. &#39;width=600&#39; or &#39;regex:width&#39;)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>100</td>
+<td>int</td>
+<td>How many records should be retrieved per page. Maximum is 1000</td>
+<td></td>
+</tr>
+<tr>
+<td><code>start_key</code></td>
+<td>-</td>
+<td>string</td>
+<td>String-based key for next page of records to return, for easy pagination or streaming. This key will be provided in the &quot;next_page_key&quot; from a response.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>recent</td>
+<td>enum(recent, oldest)</td>
+<td>Display records sorted by newest first or oldest first</td>
 <td></td>
 </tr>
 </tbody>
@@ -11425,682 +11251,249 @@ api.get(&#39;/reports/&#39; + id + &#39;/&#39; + &#39;/statsbydir.json/&#39; + r
 </thead>
 <tbody>
 <tr>
-<td><code>200</code></td>
-<td>The amount of 200 hits</td>
+<td><code>limit</code></td>
+<td>The maximum number of records retrieved</td>
 <td></td>
 </tr>
 <tr>
-<td><code>206</code></td>
-<td>The amount of 206 hits</td>
+<td><code>page</code></td>
+<td>The current page of records retrieved</td>
 <td></td>
 </tr>
 <tr>
-<td><code>2xx</code></td>
-<td>The amount of 2xx hits</td>
+<td><code>request_time</code></td>
+<td>Time in milliseconds for request to complete</td>
 <td></td>
 </tr>
 <tr>
-<td><code>3xx</code></td>
-<td>The amount of 3xx hits</td>
+<td><code>next_page_key</code></td>
+<td>Number string that can be used to load the next page</td>
 <td></td>
 </tr>
 <tr>
-<td><code>404</code></td>
-<td>The amount of 404 hits</td>
+<td><code>records</code></td>
+<td>Total records displayed</td>
 <td></td>
 </tr>
 <tr>
-<td><code>4xx</code></td>
-<td>The amount of 4xx hits</td>
+<td><code>bytes</code></td>
+<td>Total bytes of request</td>
 <td></td>
 </tr>
 <tr>
-<td><code>5xx</code></td>
-<td>The amount of 5xx hits</td>
+<td><code>client_asn</code></td>
+<td>Visitor&#39;s &quot;access network&quot; (ISP)</td>
 <td></td>
 </tr>
 <tr>
-<td><code>bucket_id</code></td>
-<td>The Zone ID for the top level directory</td>
+<td><code>client_city</code></td>
+<td>Visitor&#39;s city</td>
 <td></td>
 </tr>
 <tr>
-<td><code>file_name</code></td>
-<td>URI</td>
+<td><code>client_continent</code></td>
+<td>Visitor&#39;s continent</td>
 <td></td>
 </tr>
 <tr>
-<td><code>hit</code></td>
-<td>The number of requests made to files within this directory</td>
+<td><code>client_country</code></td>
+<td>Visitor&#39;s country</td>
 <td></td>
 </tr>
 <tr>
-<td><code>size</code></td>
-<td>The amount of bytes transferred from within this directory</td>
+<td><code>client_dma</code></td>
+<td>Visitor&#39;s &quot;designated market area&quot;</td>
 <td></td>
 </tr>
 <tr>
-<td><code>timestampf</code></td>
-<td>Timestamp</td>
+<td><code>client_ip</code></td>
+<td>Visitor&#39;s public IP</td>
 <td></td>
 </tr>
 <tr>
-<td><code>vhost</code></td>
-<td>CDN URL</td>
+<td><code>client_latitude</code></td>
+<td>Visitor&#39;s geographical latitude (roughly)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>client_longitude</code></td>
+<td>Visitor&#39;s geographical longitude (roughly)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>client_state</code></td>
+<td>Visitor&#39;s state</td>
+<td></td>
+</tr>
+<tr>
+<td><code>company_id</code></td>
+<td>Your company ID</td>
+<td></td>
+</tr>
+<tr>
+<td><code>cache_status</code></td>
+<td>CDN status of the file (HIT, MISS)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hostname</code></td>
+<td>Domain name that was visited</td>
+<td></td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>HTTP request method</td>
+<td></td>
+</tr>
+<tr>
+<td><code>origin_time</code></td>
+<td>How long it takes MaxCDN to retrieve the file (if cache status was a MISS)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pop</code></td>
+<td>Point Of Presence that was hit (LAX, LHR, TYO, etc.)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>protocol</code></td>
+<td>HTTP protocol used</td>
+<td></td>
+</tr>
+<tr>
+<td><code>query_string</code></td>
+<td>Query string attached to a file (ex. ver=1.2)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referer</code></td>
+<td>Referring site</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scheme</code></td>
+<td>HTTP or HTTPS</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>HTTP status code (200, 404, 302, etc.)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td>UTC timestamp of the request</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uri</code></td>
+<td>File requested</td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_agent</code></td>
+<td>Text identifying the visitor&#39;s browser</td>
+<td></td>
+</tr>
+<tr>
+<td><code>zone_id</code></td>
+<td>ID of the Push/Pull/VOD zone hit</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab95">
-  <li class="active"><a href="#ruby95" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python95" data-toggle='tab'>Python</a></li>
-  <li><a href="#php95" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node95" data-toggle='tab'>Node</a></li>
-  <li><a href="#response95" data-toggle='tab'>Response</a></li>
+<ul class="nav nav-tabs" id="myTab101">
+  <li class="active"><a href="#ruby101" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python101" data-toggle='tab'>Python</a></li>
+  <li><a href="#php101" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node101" data-toggle='tab'>Node</a></li>
+  <li><a href="#response101" data-toggle='tab'>Response</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="ruby95">
+  <div class="tab-pane active" id="ruby101">
     <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/statsbyfilename.json&#39;+reportType)</pre>
+api.get(&#39;/v3/reporting/logs.json?start=2014-01-30&amp;end=2014-01-31&amp;status=200&#39;)</pre>
   </div>
-  <div class="tab-pane" id="python95">
+  <div class="tab-pane" id="python101">
     <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/statsbyfilename.json&#39;+reportType)</pre>
+params = {&quot;start&quot;:&quot;2014-01-30&quot;, &quot;end&quot;:&quot;2014-01-31&quot;, &quot;status&quot;:&quot;200&quot;}
+api.get(&#39;/v3/reporting/logs.json&#39;, data=params)</pre>
   </div>
-  <div class="tab-pane" id="php95">
+  <div class="tab-pane" id="php101">
     <pre>
-$reportType = &#39;&#39;; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-$clientId = &#39;&#39;;
-$api-&gt;get(&#39;/clients/&#39;.$clientId.&#39;/reports/statsbyfilename.json/&#39;.$reportType);</pre>
+$params = array(&quot;start&quot;=&gt;&quot;2014-01-30&quot;, &quot;end&quot;=&gt;&quot;2014-01-31&quot;, &quot;status&quot;=&gt;&quot;200&quot;)
+$api-&gt;get(&#39;/v3/reporting/logs.json&#39;, $params)</pre>
   </div>
-  <div class="tab-pane" id="node95">
-  <pre>
-var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-var clientId = &#39;&#39;
-api.get(&#39;/clients/&#39; + clientId + &#39;/reports/statsbyfilename.json/&#39; + reportType, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
+  <div class="tab-pane" id="node101">
+    <pre>
+api.get(&#39;v3/reporting/logs.json?start=2014-01-30&amp;end=2014-01-31&amp;status=200&#39;, function(err, response) {
+  console.log(response);
+});</pre>
   </div>
-  <div class="tab-pane" id="response95">
+  <div class="tab-pane" id="response101">
     <pre>
 {
-    &quot;code&quot;: 200,
-    &quot;data&quot;: {
-        &quot;statsbyfilename&quot;: [
-            {
-                &quot;200&quot;: &quot;0&quot;,
-                &quot;206&quot;: &quot;0&quot;,
-                &quot;2xx&quot;: &quot;0&quot;,
-                &quot;3xx&quot;: &quot;0&quot;,
-                &quot;404&quot;: &quot;0&quot;,
-                &quot;4xx&quot;: &quot;0&quot;,
-                &quot;5xx&quot;: &quot;35036&quot;,
-                &quot;bucket_id&quot;: &quot;21597&quot;,
-                &quot;file_name&quot;: &quot;/&quot;,
-                &quot;hit&quot;: &quot;35036&quot;,
-                &quot;size&quot;: &quot;20110664&quot;,
-                &quot;timestampf&quot;: &quot;2013&quot;,
-                &quot;vhost&quot;: &quot;edge02.nycacorp.netdna-cdn.com&quot;
-            },
-            {
-                &quot;200&quot;: &quot;0&quot;,
-                &quot;206&quot;: &quot;0&quot;,
-                &quot;2xx&quot;: &quot;0&quot;,
-                &quot;3xx&quot;: &quot;0&quot;,
-                &quot;404&quot;: &quot;0&quot;,
-                &quot;4xx&quot;: &quot;2&quot;,
-                &quot;5xx&quot;: &quot;35032&quot;,
-                &quot;bucket_id&quot;: &quot;21597&quot;,
-                &quot;file_name&quot;: &quot;/favicon.ico&quot;,
-                &quot;hit&quot;: &quot;35034&quot;,
-                &quot;size&quot;: &quot;20108368&quot;,
-                &quot;timestampf&quot;: &quot;2013&quot;,
-                &quot;vhost&quot;: &quot;edge02.nycacorp.netdna-cdn.com&quot;
-            }
-        ],
-        &quot;summary&quot;: {
-            &quot;200&quot;: &quot;0&quot;,
-            &quot;206&quot;: &quot;0&quot;,
-            &quot;2xx&quot;: &quot;0&quot;,
-            &quot;3xx&quot;: &quot;0&quot;,
-            &quot;404&quot;: &quot;0&quot;,
-            &quot;4xx&quot;: &quot;2&quot;,
-            &quot;5xx&quot;: &quot;70068&quot;,
-            &quot;hit&quot;: &quot;70070&quot;,
-            &quot;size&quot;: &quot;40219032&quot;
-        },
-        &quot;total&quot;: &quot;2&quot;
+  &quot;limit&quot;:1000,
+  &quot;page&quot;:1,
+  &quot;total&quot;:3,
+  &quot;next_page_key&quot;:&quot;1234abcdef&quot;,
+  &quot;records&quot;:[
+    {
+      &quot;bytes&quot;:175953,
+      &quot;asn&quot;:&quot;AS4804 Microplex PTY LTD&quot;,
+      &quot;city&quot;:&quot;Brisbane&quot;,
+      &quot;continent&quot;:&quot;OC&quot;,
+      &quot;country&quot;:&quot;AU&quot;,
+      &quot;dma&quot;:&quot;0&quot;,
+      &quot;ip&quot;:&quot;127.0.0.1&quot;,
+      &quot;latitude&quot;:0,
+      &quot;longitude&quot;:1.2345,
+      &quot;cache_status&quot;:&quot;HIT&quot;,
+      &quot;hostname&quot;:&quot;cdn.example.com&quot;,
+      &quot;method&quot;:&quot;GET&quot;,
+      &quot;origin_time&quot;:&quot;0&quot;,
+      &quot;pop&quot;:&quot;lax&quot;,
+      &quot;protocol&quot;:&quot;HTTP/1.1&quot;,
+      &quot;query_string&quot;:&quot;&quot;,
+      &quot;scheme&quot;:&quot;https&quot;,
+      &quot;status_code&quot;:200,
+      &quot;request_time&quot;:&quot;2014-01-30T17:00:12Z&quot;,
+      &quot;uri&quot;:&quot;/content.png&quot;,
+      &quot;user_agent&quot;:&quot;Opera/9.80 (Windows NT 5.1; Edition DriverPack) Presto/2.12.388 Version/12.16&quot;,
+      &quot;zone&quot;:&quot;example&quot;
+    },
+    {
+      &quot;bytes&quot;:175953,
+      &quot;asn&quot;:&quot;AS4804 Microplex PTY LTD&quot;,
+      &quot;city&quot;:&quot;Brisbane&quot;,
+      &quot;continent&quot;:&quot;OC&quot;,
+      &quot;country&quot;:&quot;AU&quot;,
+      &quot;dma&quot;:&quot;0&quot;,
+      &quot;ip&quot;:&quot;127.0.0.1&quot;,
+      &quot;latitude&quot;:0.0,
+      &quot;longitude&quot;:0.12345,
+      &quot;cache_status&quot;:&quot;HIT&quot;,
+      &quot;hostname&quot;:&quot;cdn.example.com&quot;,
+      &quot;method&quot;:&quot;GET&quot;,
+      &quot;origin_time&quot;:&quot;0&quot;,
+      &quot;pop&quot;:&quot;lax&quot;,
+      &quot;protocol&quot;:&quot;HTTP/1.1&quot;,
+      &quot;query_string&quot;:&quot;ver=1.2&quot;,
+      &quot;scheme&quot;:&quot;https&quot;,
+      &quot;status_code&quot;:200,
+      &quot;request_time&quot;:&quot;2014-01-30T17:00:12Z&quot;,
+      &quot;uri&quot;:&quot;/sample/test.swf&quot;,
+      &quot;user_agent&quot;:&quot;Opera/9.80 (Windows NT 5.1; Edition DriverPack) Presto/2.12.388 Version/12.16&quot;,
+      &quot;zone&quot;:&quot;example&quot;
     }
+  ]
 }</pre>
   </div>
 </div>
-
-
-<h2 id="list-stats-by-file-name-and-zone-id">List Stats By File Name and Zone Id</h2>
-<p>Gets usage statistics by file name for the specified
-{zone_id}</p>
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/{zone_id}/statsbyfilename.json/{report_type}">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/{zone_id}/statsbyfilename.json/{report_type}</a></span></div>
-</div>
-
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date_from</code></td>
-<td>now() - 1 month</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>Start date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>date_to</code></td>
-<td>now()</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>End date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>file_names</code></td>
-<td>A JSON Encoded file names list</td>
-<td></td>
-</tr>
-<tr>
-<td><code>filter</code></td>
-<td>Matching expression for file names</td>
-<td></td>
-</tr>
-<tr>
-<td><code>sort_by</code></td>
-<td>Field to sort by</td>
-<td></td>
-</tr>
-<tr>
-<td><code>sort_dir</code></td>
-<td>Directory to sort files by</td>
-<td></td>
-</tr>
-<tr>
-<td><code>page_size</code></td>
-<td>-</td>
-<td>The number of records returned in the result set</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="response-parameters">Response Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bucket_id</code></td>
-<td>The Zone ID for the top level directory</td>
-<td></td>
-</tr>
-<tr>
-<td><code>hit</code></td>
-<td>The number of requests made to files within this directory</td>
-<td></td>
-</tr>
-<tr>
-<td><code>size</code></td>
-<td>The amount of bytes transferred from within this directory</td>
-<td></td>
-</tr>
-<tr>
-<td><code>200</code></td>
-<td>The amount of 200 hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>206</code></td>
-<td>The amount of 206 hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>2xx</code></td>
-<td>The amount of 2xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>3xx</code></td>
-<td>The amount of 3xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>404</code></td>
-<td>The amount of 404 hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>4xx</code></td>
-<td>The amount of 4xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>5xx</code></td>
-<td>The amount of 5xx hits</td>
-<td></td>
-</tr>
-<tr>
-<td><code>timestampf</code></td>
-<td>Timestamp</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab96">
-  <li class="active"><a href="#ruby96" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python96" data-toggle='tab'>Python</a></li>
-  <li><a href="#php96" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node96" data-toggle='tab'>Node</a></li>
-  <li><a href="#response96" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby96">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-id = &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/&#39;+id+&#39;/statsbyfilename.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="python96">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-id = &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/&#39;+id+&#39;/statsbyfilename.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php96">
-    <pre>
-$reportType = &#39;&#39;; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-$id = &#39;96061&#39;;
-$clientId = &#39;&#39;;
-$api-&gt;get(&#39;/clients/&#39;.$clientId.&#39;/reports/&#39;.$id.&#39;/statsbyfilename.json/&#39;.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node96">
-  <pre>
-var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-var id = &#39;96061&#39;
-var clientId = &#39;&#39;
-api.get(&#39;/clients/&#39; + clientId + &#39;/reports/&#39; + id + &#39;/statsbyfilename.json/&#39; + reportType, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response96">
-    <pre>
-Non functional</pre>
-  </div>
-</div>
-
-
-
-<h1 id="reports-by-custom-domain-api">Reports By Custom Domain API</h1>
-<h2 id="list-stats-by-directory">List Stats By Directory</h2>
-<p>Gets usage statistics by custom domain for your account. (This
-report has to be enabled by Sales).</p>
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/statsbycustomdomain.json/{report_type}">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/statsbycustomdomain.json/{report_type}</a></span></div>
-</div>
-
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date_from</code></td>
-<td>now() - 1 month</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>Start date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>date_to</code></td>
-<td>now()</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>End date</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="response-parameters">Response Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bucket_id</code></td>
-<td>The Zone ID for the custom domain</td>
-<td></td>
-</tr>
-<tr>
-<td><code>custom_domain_id</code></td>
-<td>The ID of your custom domain</td>
-<td></td>
-</tr>
-<tr>
-<td><code>hit</code></td>
-<td>The number of requests made to this custom domain</td>
-<td></td>
-</tr>
-<tr>
-<td><code>size</code></td>
-<td>The amount of bytes transferred to/from this custom domain</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab97">
-  <li class="active"><a href="#ruby97" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python97" data-toggle='tab'>Python</a></li>
-  <li><a href="#php97" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node97" data-toggle='tab'>Node</a></li>
-  <li><a href="#response97" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby97">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/statsbycustomdomain.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="python97">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/statsbycustomdomain.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php97">
-    <pre>
-$reportType = &#39;&#39;; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-$clientId = &#39;&#39;;
-$api-&gt;get(&#39;clients/&#39;.$clientId.&#39;/reports/statsbycustomdomain.json/&#39;.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node97">
-  <pre>
-var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-var clientId = &#39;&#39;
-api.get(&#39;/clients/&#39; + clientId + &#39;/reports/statsbycustomdomain.json/&#39; + reportType, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response97">
-    <pre>
-{
-    &quot;code&quot;: 200,
-    &quot;data&quot;: {
-        &quot;current_page_size&quot;: 1,
-        &quot;page&quot;: 1,
-        &quot;page_size&quot;: &quot;50&quot;,
-        &quot;pages&quot;: 1,
-        &quot;statsbycustomdomain&quot;: [
-            {
-                &quot;bucket_id&quot;: &quot;21597&quot;,
-                &quot;custom_domain_id&quot;: &quot;0&quot;,
-                &quot;hit&quot;: &quot;70320&quot;,
-                &quot;size&quot;: &quot;40362532&quot;,
-                &quot;vhost&quot;: &quot;edge02.nycacorp.netdna-cdn.com&quot;
-            }
-        ],
-        &quot;summary&quot;: {
-            &quot;hit&quot;: &quot;70320&quot;,
-            &quot;size&quot;: &quot;40362532&quot;
-        },
-        &quot;total&quot;: &quot;1&quot;
-    }
-}</pre>
-  </div>
-</div>
-
-
-<h2 id="list-stats-by-custom-domain-and-zone-id">List Stats By Custom Domain and Zone Id</h2>
-<p>Gets usage statistics by custom domain for the specified
-{zone_id}. (This report has to be enabled by Sales).</p>
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/{zone_id}/statsbycustomdomain.json/{report_type}">https://rws.netdna.com/{companyalias}/clients/{client_id}/reports/{zone_id}/statsbycustomdomain.json/{report_type}</a></span></div>
-</div>
-
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date_from</code></td>
-<td>now() - 1 month</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>Start date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>date_to</code></td>
-<td>now()</td>
-<td>Y-m-d (e.g. 2012-01-01)</td>
-<td>End date</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="response-parameters">Response Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>bucket_id</code></td>
-<td>The Zone ID for the top level directory</td>
-<td></td>
-</tr>
-<tr>
-<td><code>custom_domain_id</code></td>
-<td>The ID of the Custom Domain</td>
-<td></td>
-</tr>
-<tr>
-<td><code>hit</code></td>
-<td>The number of requests made to this custom domain</td>
-<td></td>
-</tr>
-<tr>
-<td><code>size</code></td>
-<td>The amount of bytes transferred to/from this custom domain</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab98">
-  <li class="active"><a href="#ruby98" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python98" data-toggle='tab'>Python</a></li>
-  <li><a href="#php98" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node98" data-toggle='tab'>Node</a></li>
-  <li><a href="#response98" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby98">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-zoneId = &#39;&#39;
-clientId = &#39;&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/&#39;+zoneId+&#39;/statsbycustomdomain.json&#39;+reportType)
-</pre>
-  </div>
-  <div class="tab-pane" id="python98">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-zoneId = &#39;84199&#39;
-clientId = &#39;1&#39;
-api.get(&#39;/clients/&#39;+clientId+&#39;/reports/&#39;+zoneId+&#39;/statsbycustomdomain.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php98">
-    <pre>
-$reportType = &#39;&#39;; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-$zoneId = &#39;&#39;;
-$clientId = &#39;&#39;;
-$api-&gt;get(&#39;clients/&#39;.$clientId.&#39;/reports/&#39;.$zoneId.&#39;/statsbycustomdomain.json/&#39;.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node98">
-  <pre>
-var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-var zoneId = &#39;&#39;
-var clientId = &#39;&#39;
-api.get(&#39;/clients/&#39; + clientId + &#39;/reports/&#39; + zoneId + &#39;/statsbycustomdomain.json/&#39; + reportType, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response98">
-    <pre>
-{
-    &quot;code&quot;: 200,
-    &quot;data&quot;: {
-        &quot;current_page_size&quot;: 0,
-        &quot;page&quot;: 1,
-        &quot;page_size&quot;: &quot;50&quot;,
-        &quot;pages&quot;: 0,
-        &quot;statsbycustomdomain&quot;: [],
-        &quot;summary&quot;: {
-            &quot;hit&quot;: null,
-            &quot;size&quot;: null
-        },
-        &quot;total&quot;: &quot;0&quot;
-    }
-}</pre>
-  </div>
-</div>
-
-
-<h1 id="reports-for-live-zones-api">Reports for Live Zones API</h1>
-<h2 id="list-connection-stats">List Connection Stats</h2>
-<p>Gets zone stats in hourly, daily, or monthly summaries</p>
-<div class="heading">
-<div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/reports/live/connectionstats.json/{report_type}">https://rws.netdna.com/{companyalias}/reports/live/connectionstats.json/{report_type}</a></span></div>
-</div>
-
-<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default Value</th>
-<th>Validation</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date_from</code></td>
-<td>-</td>
-<td>Y-m-d e.g. 2012-01-01</td>
-<td>Start date</td>
-<td></td>
-</tr>
-<tr>
-<td><code>date_to</code></td>
-<td>-</td>
-<td>Y-m-d e.g. 2012-01-01</td>
-<td>End date</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="code-samples">Code Samples</h3>
-<ul class="nav nav-tabs" id="myTab99">
-  <li class="active"><a href="#ruby99" data-toggle='tab'>Ruby</a></li>
-  <li><a href="#python99" data-toggle='tab'>Python</a></li>
-  <li><a href="#php99" data-toggle='tab'>PHP</a></li>
-  <li><a href="#node99" data-toggle='tab'>Node</a></li>
-  <li><a href="#response99" data-toggle='tab'>Response</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="ruby99">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-api.get(&#39;/reports/live/connectionstats.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="python99">
-    <pre>
-reportType = &#39;&#39; #Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-api.get(&#39;/reports/live/connectionstats.json&#39;+reportType)</pre>
-  </div>
-  <div class="tab-pane" id="php99">
-    <pre>
-$reportType = &#39;&#39;; //Vaild input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-$api-&gt;get(&#39;/reports/live/connectionstats.json/&#39;.$reportType);</pre>
-  </div>
-  <div class="tab-pane" id="node99">
-  <pre>
-var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-api.get(&#39;/reports/live/connectionstats.json/&#39; + reportType, function(err, response) {
-  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
-})</pre>
-  </div>
-  <div class="tab-pane" id="response99">
-    <pre>
-{
-    &quot;code&quot;: 200,
-    &quot;data&quot;: {
-        &quot;current_page_size&quot;: 0,
-        &quot;page&quot;: 1,
-        &quot;page_size&quot;: &quot;50&quot;,
-        &quot;pages&quot;: 0,
-        &quot;stats&quot;: [],
-        &quot;total&quot;: &quot;0&quot;
-    }
-}</pre>
-  </div>
-</div>
-</div></div></div><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')
-</script><script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script><script src="js/vendor/prettify.min.js"></script><script src="js/vendor/jquery.ba-hashchange.min.js"></script><script src="js/vendor/jquery.scrollTo.min.js"></script><script src="js/vendor/bootstrap-adjust-hash.min.js"></script><script src="js/main.min.js"></script><script>var _gaq = _gaq || [];
+</div></div></div><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')
+</script><script src="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script><script src="js/vendor/prettify.min.js"></script><script src="js/vendor/jquery.ba-hashchange.min.js"></script><script src="js/vendor/jquery.scrollTo.min.js"></script><script src="js/vendor/bootstrap-adjust-hash.min.js"></script><script src="js/main.min.js"></script><script>var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-9245214-1']);
 _gaq.push(['_setDomainName', 'netdna.com']);
 _gaq.push(['_trackPageview']);
