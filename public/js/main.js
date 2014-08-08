@@ -35,7 +35,7 @@ $(function() {
         var link = text.replace(/\s/g, '-').toLowerCase();
         // Replace all characters that are not A-Z, 0-9, -, _, \s
         link = link.replace(/[^A-Za-z0-9_\s-]+/g, '');
-        $(this).html('<a href="#' + link + '" name="' + link + '" id="' + link + '">' + text + '</a>' + (($sup.length !== 0) ? ' ' + $.html($sup) : '' ) );
+        $(this).html('<a name="' + link + '" id="' + link + '">' + text + '</a>' + (($sup.length !== 0) ? ' ' + $.html($sup) : '' ) );
         $(this).before('<hr />');
     });
 
@@ -129,7 +129,6 @@ $(function() {
 !function ($) {
 
   "use strict"; // jshint ;_;
-
 
  /* SCROLLSPY CLASS DEFINITION
   * ========================== */
@@ -285,3 +284,4 @@ $(function() {
   })
 
 }(window.jQuery);
+
