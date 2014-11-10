@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>MaxCDN - API Docs</title><meta name="description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta http-equiv="cleartype" content="on"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta property="og:site_name" content="MaxCDN - API Docs"><meta property="og:type" content="website"><meta property="og:title" content="MaxCDN - API Docs"><meta property="og:description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta property="og:image" content="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png"><link rel="shortcut icon" href="//secure-cdn.maxcdn.com/favicon.ico" type="image/x-icon"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cuprum:400,700"><link rel="stylesheet" href="css/docs.min.css"><script>var _prum = [['id', '53b1af3fabe53de146b25c9e'], ['mark', 'firstbyte', (new Date()).getTime()]];
 (function() { var s = document.getElementsByTagName('script')[0] , p = document.createElement('script'); p.async = 'async'; p.src = '//rum-static.pingdom.net/prum.min.js'; s.parentNode.insertBefore(p, s); })();
-</script></head><body data-spy="scroll" data-target="#docs-navbar" data-offset="83"><div id="spacer"></div><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container"><a href="/" class="brand"></a><ul class="nav pull-right"><li><a href="/">API Docs</a></li><li><a href="http://www.maxcdn.com">MaxCDN.com</a></li></ul></div></div></div><div class="pageTitle">API Docs</div><div class="container"><div class="row"><div class="span3"><div id="docs-navbar" data-spy="affix" data-offset-top="102"><div class="row"><div class="span3"><ul class="nav nav-pills nav-stacked"><li class="active"><a href="#overview">Overview</a></li><li><a href="#support" class="gotohash">Support</a></li><li><a href="#changelog" class="gotohash">Changelog</a></li><li><a href="#authentication" class="gotohash">Authentication</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#auth-overview" class="gotohash">Overview</a></li><li class="nav-sub"><a href="#3-legged-oauth" class="gotohash">3-legged OAuth</a></li><li class="nav-sub"><a href="#2-legged-oauth" class="gotohash">2-legged OAuth</a></li><li class="nav-sub"><a href="#registering-your-application" class="gotohash">Registering Your Application</a></li><li class="nav-sub"><a href="#signing-requests" class="gotohash">Signing Requests</a></li><li class="nav-sub"><a href="#request-tokens" class="gotohash">Request Tokens</a></li><li class="nav-sub"><a href="#user-authorization" class="gotohash">User Authorization</a></li><li class="nav-sub"><a href="#key-path-parameters" class="gotohash">Key: Path Parameters</a></li></ul><li><a href="#account-api" class="gotohash"><span id="iconSizer"><i class="fa fa-maxcdn"></i></span> Account API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account" class="gotohash">Get Account</a></li><li class="nav-sub"><a href="#update-account" class="gotohash">Update Account</a></li><li class="nav-sub"><a href="#get-account-address" class="gotohash">Get Account Address</a></li><li class="nav-sub"><a href="#update-account-address" class="gotohash">Update Account Address</a></li></ul><li><a href="#users-api" class="gotohash"><span id="iconSizer"><i class="fa fa-user"></i></span> Users API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-users" class="gotohash">List Users</a></li><li class="nav-sub"><a href="#create-user" class="gotohash">Create User</a></li><li class="nav-sub"><a href="#get-user" class="gotohash">Get User</a></li><li class="nav-sub"><a href="#update-user" class="gotohash">Update User</a></li><li class="nav-sub"><a href="#delete-user" class="gotohash">Delete User</a></li></ul><li><a href="#zones-api" class="gotohash"><span id="iconSizer"><i class="fa fa-cloud"></i></span> Zones API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-zones" class="gotohash">List Zones</a></li><li class="nav-sub"><a href="#get-zone-summary" class="gotohash">Get Zone Summary</a></li><li class="nav-sub"><a href="#get-zone-count" class="gotohash">Get Zone Count</a></li><li class="nav-sub"><a href="#pull-zone-api" class="gotohash">Pull Zone API</a></li><li class="nav-sub"><a href="#pull-zone-custom-domains-api" class="gotohash">Pull Zone Custom Domains API</a></li><li class="nav-sub"><a href="#push-zone-api" class="gotohash">Push Zone API</a></li><li class="nav-sub"><a href="#push-zone-custom-domains-api" class="gotohash">Push Zone Custom Domains API</a></li><li class="nav-sub"><a href="#vod-zone-api" class="gotohash">VOD Zone API</a></li><li class="nav-sub"><a href="#vod-zone-custom-domains-api" class="gotohash">VOD Zone Custom Domains API</a></li><li class="nav-sub"><a href="#live-zone-api" class="gotohash">Live Zone API</a></li><li class="nav-sub"><a href="#zones-ssl-api" class="gotohash">Zones SSL API</a></li><li class="nav-sub"><a href="#zones-upstream-api" class="gotohash">Zones Upstream API</a></li></ul><li><a href="#reports-api" class="gotohash"><span id="iconSizer"><i class="fa fa-signal"></i></span> Reports API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account-stats" class="gotohash">Account Stats</a></li><li class="nav-sub"><a href="#get-all-zone-stats" class="gotohash">Stats for all Zones</a></li><li class="nav-sub"><a href="#get-a-zones-stats" class="gotohash">Stats for a Zone</a></li><li class="nav-sub"><a href="#reports-by-location-api" class="gotohash">Reports by Location API</a></li><li class="nav-sub"><a href="#reports-by-popular-files-api" class="gotohash">Reports by Popular Files API</a></li><li class="nav-sub"><a href="#reports-by-status-codes-api" class="gotohash">Reports by Status Codes API</a></li><li class="nav-sub"><a href="#reports-by-file-types-api" class="gotohash">Reports by File Types API</a></li><li class="nav-sub"><a href="#reports-by-file-size-ranges-api" class="gotohash">Reports by File Size Ranges API</a></li><li class="nav-sub"><a href="#reports-by-directory-api" class="gotohash">Reports by Directory API</a></li></ul><li><a href="#raw-logs-api" class="gotohash"><span id="iconSizer"><i class="fa fa-archive"></i></span> Raw Logs API</a></li><li><a href="https://github.com/maxcdn/api-docs"><span id="iconSizer"><i class="fa fa-external-link"></i></span> GitHub Repo</a></li></ul></div></div></div></div><div id="readme-docs" class="span9"><h1 id="maxcdn-api-docs">MaxCDN API Docs</h1>
+</script></head><body data-spy="scroll" data-target="#docs-navbar" data-offset="83"><div id="spacer"></div><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container"><a href="/" class="brand"></a><ul class="nav pull-right"><li><a href="/">API Docs</a></li><li><a href="http://www.maxcdn.com">MaxCDN.com</a></li></ul></div></div></div><div class="pageTitle">API Docs</div><div class="container"><div class="row"><div class="span3"><div id="docs-navbar" data-spy="affix" data-offset-top="102"><div class="row"><div class="span3"><ul class="nav nav-pills nav-stacked"><li class="active"><a href="#overview">Overview</a></li><li><a href="#support" class="gotohash">Support</a></li><li><a href="#changelog" class="gotohash">Changelog</a></li><li><a href="#authentication" class="gotohash">Authentication</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#auth-overview" class="gotohash">Overview</a></li><li class="nav-sub"><a href="#3-legged-oauth" class="gotohash">3-legged OAuth</a></li><li class="nav-sub"><a href="#2-legged-oauth" class="gotohash">2-legged OAuth</a></li><li class="nav-sub"><a href="#registering-your-application" class="gotohash">Registering Your Application</a></li><li class="nav-sub"><a href="#signing-requests" class="gotohash">Signing Requests</a></li><li class="nav-sub"><a href="#request-tokens" class="gotohash">Request Tokens</a></li><li class="nav-sub"><a href="#user-authorization" class="gotohash">User Authorization</a></li><li class="nav-sub"><a href="#key-path-parameters" class="gotohash">Key: Path Parameters</a></li></ul><li><a href="#account-api" class="gotohash"><span id="iconSizer"><i class="fa fa-maxcdn"></i></span> Account API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account" class="gotohash">Get Account</a></li><li class="nav-sub"><a href="#update-account" class="gotohash">Update Account</a></li><li class="nav-sub"><a href="#get-account-address" class="gotohash">Get Account Address</a></li><li class="nav-sub"><a href="#update-account-address" class="gotohash">Update Account Address</a></li></ul><li><a href="#users-api" class="gotohash"><span id="iconSizer"><i class="fa fa-user"></i></span> Users API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-users" class="gotohash">List Users</a></li><li class="nav-sub"><a href="#create-user" class="gotohash">Create User</a></li><li class="nav-sub"><a href="#get-user" class="gotohash">Get User</a></li><li class="nav-sub"><a href="#update-user" class="gotohash">Update User</a></li><li class="nav-sub"><a href="#delete-user" class="gotohash">Delete User</a></li></ul><li><a href="#zones-api" class="gotohash"><span id="iconSizer"><i class="fa fa-cloud"></i></span> Zones API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-zones" class="gotohash">List Zones</a></li><li class="nav-sub"><a href="#get-zone-summary" class="gotohash">Get Zone Summary</a></li><li class="nav-sub"><a href="#get-zone-count" class="gotohash">Get Zone Count</a></li><li class="nav-sub"><a href="#pull-zone-api" class="gotohash">Pull Zone API</a></li><li class="nav-sub"><a href="#pull-zone-custom-domains-api" class="gotohash">Pull Zone Custom Domains API</a></li><li class="nav-sub"><a href="#push-zone-api" class="gotohash">Push Zone API</a></li><li class="nav-sub"><a href="#push-zone-custom-domains-api" class="gotohash">Push Zone Custom Domains API</a></li><li class="nav-sub"><a href="#vod-zone-api" class="gotohash">VOD Zone API</a></li><li class="nav-sub"><a href="#vod-zone-custom-domains-api" class="gotohash">VOD Zone Custom Domains API</a></li><li class="nav-sub"><a href="#live-zone-api" class="gotohash">Live Zone API</a></li><li class="nav-sub"><a href="#zones-ssl-api" class="gotohash">Zones SSL API</a></li><li class="nav-sub"><a href="#zones-upstream-api" class="gotohash">Zones Upstream API</a></li></ul><li><a href="#reports-api" class="gotohash"><span id="iconSizer"><i class="fa fa-signal"></i></span> Reports API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account-stats" class="gotohash">Account Stats</a></li><li class="nav-sub"><a href="#get-all-zone-stats" class="gotohash">Stats for all Zones</a></li><li class="nav-sub"><a href="#get-a-zones-stats" class="gotohash">Stats for a Zone</a></li><li class="nav-sub"><a href="#reports-by-location-api" class="gotohash">Reports by Location API</a></li><li class="nav-sub"><a href="#reports-by-popular-files-api" class="gotohash">Reports by Popular Files API</a></li><li class="nav-sub"><a href="#reports-by-status-codes-api" class="gotohash">Reports by Status Codes API</a></li><li class="nav-sub"><a href="#reports-by-file-types-api" class="gotohash">Reports by File Types API</a></li><li class="nav-sub"><a href="#reports-by-file-size-ranges-api" class="gotohash">Reports by File Size Ranges API</a></li><li class="nav-sub"><a href="#reports-by-directory-api" class="gotohash">Reports by Directory API</a></li></ul><li><a href="#raw-logs-api" class="gotohash"><span id="iconSizer"><i class="fa fa-archive"></i></span> Raw Logs API</a></li><li><a href="#origin-shield-api" class="gotohash"><span id="iconSizer"><i class="fa fa-shield"></i></span> Origin Shield API</a></li><li><a href="https://github.com/maxcdn/api-docs"><span id="iconSizer"><i class="fa fa-external-link"></i></span> GitHub Repo</a></li></ul></div></div></div></div><div id="readme-docs" class="span9"><h1 id="maxcdn-api-docs">MaxCDN API Docs</h1>
 <p><a href="http://www.maxcdn.com">MaxCDN</a> is a Content Delivery Network service.</p>
 <h2 id="index">Index</h2>
 <ul>
@@ -13,6 +13,7 @@
 <li><a href="#zones-api">Zones API</a></li>
 <li><a href="#reports-api">Reports API</a></li>
 <li><a href="#raw-logs-api">Raw Logs API</a></li>
+<li><a href="#origin-shield-api">Origin Shield API</a></li>
 </ul>
 <h2 id="overview">Overview</h2>
 <ul>
@@ -10890,8 +10891,7 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/&#39; + id + &#39;/filesizes.json
 
 <h1 id="reports-by-directory-api">Reports By Directory API</h1>
 <h2 id="list-stats-by-directory">List Stats By Directory</h2>
-<p>Gets usage statistics by directory for your account. (This
-report has to be enabled by Sales).</p>
+<p>Gets usage statistics by directory for your account (this report has to be enabled by our sales department)</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
 <span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/statsbydir.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/statsbydir.json/{report_type}</a></span></div>
@@ -11009,8 +11009,7 @@ api.get(&#39;/reports/statsbydir.json/&#39; + reportType, function(err, response
 
 
 <h2 id="list-stats-by-directory-and-zone-id">List Stats By Directory and Zone Id</h2>
-<p>Gets usage statistics by directory for the specified {zone_id}.
-(This report has to be enabled by Sales).</p>
+<p>Gets usage statistics by directory for the specified {zone_id} (this report has to be enabled by our sales department)</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
 <span class="path"><a href="https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}">https://rws.maxcdn.com/{companyalias}/reports/{zone_id}/statsbydir.json/{report_type}</a></span></div>
@@ -11494,8 +11493,260 @@ api.get(&#39;v3/reporting/logs.json?start=2014-01-30&amp;end=2014-01-31&amp;stat
   </div>
 </div>
 
-</div></div></div><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')
+
+<h1 id="origin-shield-api">Origin Shield API</h1>
+<h2 id="enable-origin-shield">Enable Origin Shield</h2>
+<p>Enable an Origin Shield on your Pull Zone</p>
+<div class="heading">
+<div class="url POST"><span class="http_method">POST</span>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/zoneshields.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/zoneshields.json</a></span></div>
+</div>
+
+<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>location</code></td>
+<td>Possible values: sjc, vir, ams</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-parameters">Response Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>The numerical ID of your request</td>
+<td></td>
+</tr>
+<tr>
+<td><code>zone_id</code></td>
+<td>Your Pull Zone ID</td>
+<td></td>
+</tr>
+<tr>
+<td><code>reporting_code</code></td>
+<td>The chosen geographical location of the Origin Shield</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab102">
+  <li class="active"><a href="#ruby102" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python102" data-toggle='tab'>Python</a></li>
+  <li><a href="#php102" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node102" data-toggle='tab'>Node</a></li>
+  <li><a href="#response102" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby102">
+    <pre>
+id = &#39;97167&#39;
+params = {&quot;location&quot;=&gt;&quot;sjc&quot;}
+api.post(&#39;/zones/pull/&#39;+id+&#39;/zoneshields.json&#39;, params)</pre>
+  </div>
+  <div class="tab-pane" id="python102">
+    <pre>
+id = &#39;97167&#39;
+params = {&quot;location&quot;:&quot;sjc&quot;}
+api.post(&#39;/zones/pull/&#39;+id+&#39;/zoneshields.json&#39;, params)</pre>
+  </div>
+  <div class="tab-pane" id="php102">
+    <pre>
+$id = &#39;97167&#39;;
+$params = array(&quot;location&quot;=&gt;&quot;sjc&quot;);
+$api-&gt;post(&#39;/zones/pull/&#39;.$id.&#39;/zoneshields.json&#39;, $params)</pre>
+  </div>
+  <div class="tab-pane" id="node102">
+    <pre>
+var id = &#39;96167&#39;
+api.post(&#39;/zones/pull/&#39; + id + &#39;/zoneshields.json&#39;, { location: &#39;sjc&#39; }, function(err, response) {
+  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
+})</pre>
+  </div>
+  <div class="tab-pane" id="response102">
+    <pre>
+{
+  &quot;data&quot;: {
+    &quot;zoneshields&quot;: [
+      {
+        &quot;id&quot;: 26,
+        &quot;zone_id&quot;: &quot;97167&quot;,
+        &quot;reporting_code&quot;: &quot;sjc&quot;,
+      },
+    ]
+  },
+  &quot;code&quot;: 201
+}</pre>
+  </div>
+</div>
+
+
+<h2 id="update-origin-shield">Update Origin Shield</h2>
+<p>Update the active Origin Shield for your Pull Zone</p>
+<div class="heading">
+<div class="url PUT"><span class="http_method">PUT</span>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/zoneshields.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/zoneshields.json</a></span></div>
+</div>
+
+<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>location</code></td>
+<td>Possible values: sjc, vir, ams</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-parameters">Response Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>The numerical ID of your request</td>
+<td></td>
+</tr>
+<tr>
+<td><code>zone_id</code></td>
+<td>Your Pull Zone ID</td>
+<td></td>
+</tr>
+<tr>
+<td><code>reporting_code</code></td>
+<td>The chosen geographical location of the Origin Shield</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab103">
+  <li class="active"><a href="#ruby103" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python103" data-toggle='tab'>Python</a></li>
+  <li><a href="#php103" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node103" data-toggle='tab'>Node</a></li>
+  <li><a href="#response103" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby103">
+    <pre>
+id = &#39;97167&#39;
+params = {&quot;location&quot;=&gt;&quot;ams&quot;}
+api.put(&#39;/zones/pull/&#39;+id+&#39;/zoneshields.json&#39;, params)</pre>
+  </div>
+  <div class="tab-pane" id="python103">
+    <pre>
+id = &#39;97167&#39;
+params = {&quot;location&quot;:&quot;ams&quot;}
+api.put(&#39;/zones/pull/&#39;+id+&#39;/zoneshields.json&#39;, params)</pre>
+  </div>
+  <div class="tab-pane" id="php103">
+    <pre>
+$id = &#39;97167&#39;;
+$params = array(&quot;location&quot;=&gt;&quot;ams&quot;);
+$api-&gt;put(&#39;/zones/pull/&#39;.$id.&#39;/zoneshields.json&#39;, $params)</pre>
+  </div>
+  <div class="tab-pane" id="node103">
+    <pre>
+var id = &#39;96167&#39;
+api.put(&#39;/zones/pull/&#39; + id + &#39;/zoneshields.json&#39;, { location: &#39;ams&#39; }, function(err, response) {
+  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
+})</pre>
+  </div>
+  <div class="tab-pane" id="response103">
+    <pre>
+{
+  &quot;data&quot;: {
+    &quot;zoneshields&quot;: [
+      {
+        &quot;id&quot;: 26,
+        &quot;zone_id&quot;: &quot;97167&quot;,
+        &quot;reporting_code&quot;: &quot;ams&quot;,
+      },
+    ]
+  },
+  &quot;code&quot;: 201
+}</pre>
+  </div>
+</div>
+
+
+<h2 id="delete-origin-shield">Delete Origin Shield</h2>
+<p>Remove the active Origin Shield from your Pull Zone</p>
+<div class="heading">
+<div class="url DELETE"><span class="http_method">DELETE</span>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/zoneshields.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/zoneshields.json</a></span></div>
+</div>
+
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab104">
+  <li class="active"><a href="#ruby104" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python104" data-toggle='tab'>Python</a></li>
+  <li><a href="#php104" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node104" data-toggle='tab'>Node</a></li>
+  <li><a href="#response104" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby104">
+    <pre>
+id = &#39;97167&#39;
+api.delete(&#39;/zones/pull/&#39;+id+&#39;/zoneshields.json&#39;)</pre>
+  </div>
+  <div class="tab-pane" id="python104">
+    <pre>
+id = &#39;97167&#39;
+api.delete(&#39;/zones/pull/&#39;+id+&#39;/zoneshields.json&#39;)</pre>
+  </div>
+  <div class="tab-pane" id="php104">
+    <pre>
+$id = &#39;97167&#39;;
+$api-&gt;delete(&#39;/zones/pull/&#39;.$id.&#39;/zoneshields.json&#39;)</pre>
+  </div>
+  <div class="tab-pane" id="node104">
+    <pre>
+var id = &#39;96167&#39;
+api.delete(&#39;/zones/pull/&#39; + id + &#39;/zoneshields.json&#39;, function(err, response) {
+  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
+})</pre>
+  </div>
+  <div class="tab-pane" id="response104">
+    <pre>
+{
+  &quot;code&quot;: 200
+}</pre>
+  </div>
+</div></div></div></div><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')
 </script><script src="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script><script src="js/vendor/prettify.min.js"></script><script src="js/vendor/jquery.ba-hashchange.min.js"></script><script src="js/vendor/jquery.scrollTo.min.js"></script><script src="js/vendor/bootstrap-adjust-hash.min.js"></script><script src="js/main.min.js"></script><script>var _gaq = _gaq || [];
+
 _gaq.push(['_setAccount', 'UA-9245214-1']);
 _gaq.push(['_setDomainName', 'netdna.com']);
 _gaq.push(['_trackPageview']);

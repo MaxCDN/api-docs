@@ -13,6 +13,7 @@
 * [Zones API](#zones-api)
 * [Reports API](#reports-api)
 * [Raw Logs API](#raw-logs-api)
+* [Origin Shield API](#origin-shield-api)
 
 ## Overview
 
@@ -7731,8 +7732,7 @@ api.get('/reports/' + zoneType + '/' + id + '/filesizes.json/' + reportType, fun
 
 ## List Stats By Directory
 
-Gets usage statistics by directory for your account. (This
-report has to be enabled by Sales).
+Gets usage statistics by directory for your account (this report has to be enabled by our sales department)
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
@@ -7812,8 +7812,7 @@ api.get('/reports/statsbydir.json/' + reportType, function(err, response) {
 
 ## List Stats By Directory and Zone Id
 
-Gets usage statistics by directory for the specified {zone_id}.
-(This report has to be enabled by Sales).
+Gets usage statistics by directory for the specified {zone_id} (this report has to be enabled by our sales department)
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
@@ -8052,3 +8051,209 @@ api.get('v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200', fun
   </div>
 </div>
 
+
+# Origin Shield API
+
+## Enable Origin Shield
+
+Enable an Origin Shield on your Pull Zone
+
+<div class="heading">
+<div class="url POST"><span class="http_method">POST</span>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/zoneshields.json</span></div>
+</div>
+
+### Accepted Request Parameters
+
+Parameter | Description |
+--- | --- | ---
+`location` | Possible values: sjc, vir, ams |
+
+### Response Parameters
+
+Parameter | Description |
+--- | --- | ---
+`id` | The numerical ID of your request |
+`zone_id` | Your Pull Zone ID |
+`reporting_code` | The chosen geographical location of the Origin Shield |
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab102">
+  <li class="active"><a href="#ruby102" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python102" data-toggle='tab'>Python</a></li>
+  <li><a href="#php102" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node102" data-toggle='tab'>Node</a></li>
+  <li><a href="#response102" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby102">
+    <pre>
+id = '97167'
+params = {"location"=>"sjc"}
+api.post('/zones/pull/'+id+'/zoneshields.json', params)</pre>
+  </div>
+  <div class="tab-pane" id="python102">
+    <pre>
+id = '97167'
+params = {"location":"sjc"}
+api.post('/zones/pull/'+id+'/zoneshields.json', params)</pre>
+  </div>
+  <div class="tab-pane" id="php102">
+    <pre>
+$id = '97167';
+$params = array("location"=>"sjc");
+$api->post('/zones/pull/'.$id.'/zoneshields.json', $params)</pre>
+  </div>
+  <div class="tab-pane" id="node102">
+    <pre>
+var id = '96167'
+api.post('/zones/pull/' + id + '/zoneshields.json', { location: 'sjc' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+  </div>
+  <div class="tab-pane" id="response102">
+    <pre>
+{
+  "data": {
+    "zoneshields": [
+      {
+        "id": 26,
+        "zone_id": "97167",
+        "reporting_code": "sjc",
+      },
+    ]
+  },
+  "code": 201
+}</pre>
+  </div>
+</div>
+
+
+## Update Origin Shield
+
+Update the active Origin Shield for your Pull Zone
+
+<div class="heading">
+<div class="url PUT"><span class="http_method">PUT</span>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/zoneshields.json</span></div>
+</div>
+
+### Accepted Request Parameters
+
+Parameter | Description |
+--- | --- | ---
+`location` | Possible values: sjc, vir, ams |
+
+### Response Parameters
+
+Parameter | Description |
+--- | --- | ---
+`id` | The numerical ID of your request |
+`zone_id` | Your Pull Zone ID |
+`reporting_code` | The chosen geographical location of the Origin Shield |
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab103">
+  <li class="active"><a href="#ruby103" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python103" data-toggle='tab'>Python</a></li>
+  <li><a href="#php103" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node103" data-toggle='tab'>Node</a></li>
+  <li><a href="#response103" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby103">
+    <pre>
+id = '97167'
+params = {"location"=>"ams"}
+api.put('/zones/pull/'+id+'/zoneshields.json', params)</pre>
+  </div>
+  <div class="tab-pane" id="python103">
+    <pre>
+id = '97167'
+params = {"location":"ams"}
+api.put('/zones/pull/'+id+'/zoneshields.json', params)</pre>
+  </div>
+  <div class="tab-pane" id="php103">
+    <pre>
+$id = '97167';
+$params = array("location"=>"ams");
+$api->put('/zones/pull/'.$id.'/zoneshields.json', $params)</pre>
+  </div>
+  <div class="tab-pane" id="node103">
+    <pre>
+var id = '96167'
+api.put('/zones/pull/' + id + '/zoneshields.json', { location: 'ams' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+  </div>
+  <div class="tab-pane" id="response103">
+    <pre>
+{
+  "data": {
+    "zoneshields": [
+      {
+        "id": 26,
+        "zone_id": "97167",
+        "reporting_code": "ams",
+      },
+    ]
+  },
+  "code": 201
+}</pre>
+  </div>
+</div>
+
+
+## Delete Origin Shield
+
+Remove the active Origin Shield from your Pull Zone
+
+<div class="heading">
+<div class="url DELETE"><span class="http_method">DELETE</span>
+<span class="path">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/zoneshields.json</span></div>
+</div>
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab104">
+  <li class="active"><a href="#ruby104" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python104" data-toggle='tab'>Python</a></li>
+  <li><a href="#php104" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node104" data-toggle='tab'>Node</a></li>
+  <li><a href="#response104" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby104">
+    <pre>
+id = '97167'
+api.delete('/zones/pull/'+id+'/zoneshields.json')</pre>
+  </div>
+  <div class="tab-pane" id="python104">
+    <pre>
+id = '97167'
+api.delete('/zones/pull/'+id+'/zoneshields.json')</pre>
+  </div>
+  <div class="tab-pane" id="php104">
+    <pre>
+$id = '97167';
+$api->delete('/zones/pull/'.$id.'/zoneshields.json')</pre>
+  </div>
+  <div class="tab-pane" id="node104">
+    <pre>
+var id = '96167'
+api.delete('/zones/pull/' + id + '/zoneshields.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+  </div>
+  <div class="tab-pane" id="response104">
+    <pre>
+{
+  "code": 200
+}</pre>
+  </div>
+</div>
