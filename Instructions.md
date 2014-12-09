@@ -35,6 +35,17 @@ git commit -m 'I made some changes'
 make deploy
 ```
 
+5.) Finally you need to run a Python script:
+```python
+#!/usr/bin/python
+# simple script to purge maxcdn website(s)
+from netdnarws import NetDNA
+api = NetDNA("ALIAS", "KEY", "SECRET")
+for zone_id in [113937]: #docs.maxcdn.com
+        api.delete("/zones/pull.json/%i/cache" % zone_id)
+print "Purged Docs"
+```
+
 ## Support
 
 If you run into issues please contact <joshua@mervine.net> or <jdorfman@maxcdn.com>
