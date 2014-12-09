@@ -39,6 +39,7 @@
 
 ## Changelog
 
+  - **2014-12-09**  Added new <a href="#origin-shield-api">Origin Shield API</a> documentation
   - **2014-10-20**  Updated description for `use_stale`
   - **2014-07-16**  Added SNI option on SSL Installation
   - **2014-07-11**  Updated PHP and .NET libs
