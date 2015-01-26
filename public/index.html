@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>MaxCDN - API Docs</title><meta name="description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta http-equiv="cleartype" content="on"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta property="og:site_name" content="MaxCDN - API Docs"><meta property="og:type" content="website"><meta property="og:title" content="MaxCDN - API Docs"><meta property="og:description" content="Manage your applications or platform on MaxCDN with our advanced RESTful API, allowing you to instantly manage users, zones, and accounts with ease."><meta property="og:image" content="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png"><link rel="shortcut icon" href="//secure-cdn.maxcdn.com/favicon.ico" type="image/x-icon"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cuprum:400,700"><link rel="stylesheet" href="css/docs.min.css"><script>var _prum = [['id', '53b1af3fabe53de146b25c9e'], ['mark', 'firstbyte', (new Date()).getTime()]];
 (function() { var s = document.getElementsByTagName('script')[0] , p = document.createElement('script'); p.async = 'async'; p.src = '//rum-static.pingdom.net/prum.min.js'; s.parentNode.insertBefore(p, s); })();
-</script></head><body data-spy="scroll" data-target="#docs-navbar" data-offset="83"><div id="spacer"></div><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container"><a href="/" class="brand"></a><ul class="nav pull-right"><li><a href="/">API Docs</a></li><li><a href="http://www.maxcdn.com">MaxCDN.com</a></li></ul></div></div></div><div class="pageTitle">API Docs</div><div class="container"><div class="row"><div class="span3"><div id="docs-navbar" data-spy="affix" data-offset-top="102"><div class="row"><div class="span3"><ul class="nav nav-pills nav-stacked"><li class="active"><a href="#overview">Overview</a></li><li><a href="#support" class="gotohash">Support</a></li><li><a href="#changelog" class="gotohash">Changelog</a></li><li><a href="#authentication" class="gotohash">Authentication</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#auth-overview" class="gotohash">Overview</a></li><li class="nav-sub"><a href="#3-legged-oauth" class="gotohash">3-legged OAuth</a></li><li class="nav-sub"><a href="#2-legged-oauth" class="gotohash">2-legged OAuth</a></li><li class="nav-sub"><a href="#registering-your-application" class="gotohash">Registering Your Application</a></li><li class="nav-sub"><a href="#signing-requests" class="gotohash">Signing Requests</a></li><li class="nav-sub"><a href="#request-tokens" class="gotohash">Request Tokens</a></li><li class="nav-sub"><a href="#user-authorization" class="gotohash">User Authorization</a></li><li class="nav-sub"><a href="#key-path-parameters" class="gotohash">Key: Path Parameters</a></li></ul><li><a href="#account-api" class="gotohash"><span id="iconSizer"><i class="fa fa-maxcdn"></i></span> Account API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account" class="gotohash">Get Account</a></li><li class="nav-sub"><a href="#update-account" class="gotohash">Update Account</a></li><li class="nav-sub"><a href="#get-account-address" class="gotohash">Get Account Address</a></li><li class="nav-sub"><a href="#update-account-address" class="gotohash">Update Account Address</a></li></ul><li><a href="#users-api" class="gotohash"><span id="iconSizer"><i class="fa fa-user"></i></span> Users API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-users" class="gotohash">List Users</a></li><li class="nav-sub"><a href="#create-user" class="gotohash">Create User</a></li><li class="nav-sub"><a href="#get-user" class="gotohash">Get User</a></li><li class="nav-sub"><a href="#update-user" class="gotohash">Update User</a></li><li class="nav-sub"><a href="#delete-user" class="gotohash">Delete User</a></li></ul><li><a href="#zones-api" class="gotohash"><span id="iconSizer"><i class="fa fa-cloud"></i></span> Zones API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-zones" class="gotohash">List Zones</a></li><li class="nav-sub"><a href="#get-zone-summary" class="gotohash">Get Zone Summary</a></li><li class="nav-sub"><a href="#get-zone-count" class="gotohash">Get Zone Count</a></li><li class="nav-sub"><a href="#pull-zone-api" class="gotohash">Pull Zone API</a></li><li class="nav-sub"><a href="#pull-zone-custom-domains-api" class="gotohash">Pull Zone Custom Domains API</a></li><li class="nav-sub"><a href="#push-zone-api" class="gotohash">Push Zone API</a></li><li class="nav-sub"><a href="#push-zone-custom-domains-api" class="gotohash">Push Zone Custom Domains API</a></li><li class="nav-sub"><a href="#vod-zone-api" class="gotohash">VOD Zone API</a></li><li class="nav-sub"><a href="#vod-zone-custom-domains-api" class="gotohash">VOD Zone Custom Domains API</a></li><li class="nav-sub"><a href="#zones-ssl-api" class="gotohash">Zones SSL API</a></li><li class="nav-sub"><a href="#zones-upstream-api" class="gotohash">Zones Upstream API</a></li></ul><li><a href="#reports-api" class="gotohash"><span id="iconSizer"><i class="fa fa-signal"></i></span> Reports API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account-stats" class="gotohash">Account Stats</a></li><li class="nav-sub"><a href="#get-all-zone-stats" class="gotohash">Stats for all Zones</a></li><li class="nav-sub"><a href="#get-a-zones-stats" class="gotohash">Stats for a Zone</a></li><li class="nav-sub"><a href="#reports-by-location-api" class="gotohash">Reports by Location API</a></li><li class="nav-sub"><a href="#reports-by-popular-files-api" class="gotohash">Reports by Popular Files API</a></li><li class="nav-sub"><a href="#reports-by-status-codes-api" class="gotohash">Reports by Status Codes API</a></li><li class="nav-sub"><a href="#reports-by-file-types-api" class="gotohash">Reports by File Types API</a></li><li class="nav-sub"><a href="#reports-by-file-size-ranges-api" class="gotohash">Reports by File Size Ranges API</a></li><li class="nav-sub"><a href="#reports-by-directory-api" class="gotohash">Reports by Directory API</a></li></ul><li><a href="#raw-logs-api" class="gotohash"><span id="iconSizer"><i class="fa fa-archive"></i></span> Raw Logs API</a></li><li><a href="#origin-shield-api" class="gotohash"><span id="iconSizer"><i class="fa fa-shield"></i></span> Origin Shield API</a></li><li><a href="https://github.com/maxcdn/api-docs"><span id="iconSizer"><i class="fa fa-external-link"></i></span> GitHub Repo</a></li></ul></div></div></div></div><div id="readme-docs" class="span9"><h1 id="maxcdn-api-docs">MaxCDN API Docs</h1>
+</script></head><body data-spy="scroll" data-target="#docs-navbar" data-offset="83"><div id="spacer"></div><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container"><a href="/" class="brand"></a><ul class="nav pull-right"><li><a href="/">API Docs</a></li><li><a href="http://www.maxcdn.com">MaxCDN.com</a></li></ul></div></div></div><div class="pageTitle">API Docs</div><div class="container"><div class="row"><div class="span3"><div id="docs-navbar" data-spy="affix" data-offset-top="102"><div class="row"><div class="span3"><ul class="nav nav-pills nav-stacked"><li class="active"><a href="#overview">Overview</a></li><li><a href="#support" class="gotohash">Support</a></li><li><a href="#changelog" class="gotohash">Changelog</a></li><li><a href="#authentication" class="gotohash">Authentication</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#auth-overview" class="gotohash">Overview</a></li><li class="nav-sub"><a href="#3-legged-oauth" class="gotohash">3-legged OAuth</a></li><li class="nav-sub"><a href="#2-legged-oauth" class="gotohash">2-legged OAuth</a></li><li class="nav-sub"><a href="#registering-your-application" class="gotohash">Registering Your Application</a></li><li class="nav-sub"><a href="#signing-requests" class="gotohash">Signing Requests</a></li><li class="nav-sub"><a href="#request-tokens" class="gotohash">Request Tokens</a></li><li class="nav-sub"><a href="#user-authorization" class="gotohash">User Authorization</a></li><li class="nav-sub"><a href="#key-path-parameters" class="gotohash">Key: Path Parameters</a></li></ul><li><a href="#account-api" class="gotohash"><span id="iconSizer"><i class="fa fa-maxcdn"></i></span> Account API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account" class="gotohash">Get Account</a></li><li class="nav-sub"><a href="#update-account" class="gotohash">Update Account</a></li><li class="nav-sub"><a href="#get-account-address" class="gotohash">Get Account Address</a></li><li class="nav-sub"><a href="#update-account-address" class="gotohash">Update Account Address</a></li></ul><li><a href="#users-api" class="gotohash"><span id="iconSizer"><i class="fa fa-user"></i></span> Users API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-users" class="gotohash">List Users</a></li><li class="nav-sub"><a href="#create-user" class="gotohash">Create User</a></li><li class="nav-sub"><a href="#get-user" class="gotohash">Get User</a></li><li class="nav-sub"><a href="#update-user" class="gotohash">Update User</a></li><li class="nav-sub"><a href="#delete-user" class="gotohash">Delete User</a></li></ul><li><a href="#zones-api" class="gotohash"><span id="iconSizer"><i class="fa fa-cloud"></i></span> Zones API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-zones" class="gotohash">List Zones</a></li><li class="nav-sub"><a href="#get-zone-summary" class="gotohash">Get Zone Summary</a></li><li class="nav-sub"><a href="#get-zone-count" class="gotohash">Get Zone Count</a></li><li class="nav-sub"><a href="#pull-zone-api" class="gotohash">Pull Zone API</a></li><li class="nav-sub"><a href="#pull-zone-custom-domains-api" class="gotohash">Pull Zone Custom Domains API</a></li><li class="nav-sub"><a href="#push-zone-api" class="gotohash">Push Zone API</a></li><li class="nav-sub"><a href="#push-zone-custom-domains-api" class="gotohash">Push Zone Custom Domains API</a></li><li class="nav-sub"><a href="#vod-zone-api" class="gotohash">VOD Zone API</a></li><li class="nav-sub"><a href="#vod-zone-custom-domains-api" class="gotohash">VOD Zone Custom Domains API</a></li><li class="nav-sub"><a href="#zones-ssl-api" class="gotohash">Zones SSL API</a></li><li class="nav-sub"><a href="#zones-upstream-api" class="gotohash">Zones Upstream API</a></li></ul><li><a href="#reports-api" class="gotohash"><span id="iconSizer"><i class="fa fa-signal"></i></span> Reports API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account-stats" class="gotohash">Account Stats</a></li><li class="nav-sub"><a href="#get-all-zone-stats" class="gotohash">Stats for all Zones</a></li><li class="nav-sub"><a href="#get-a-zones-stats" class="gotohash">Stats for a Zone</a></li><li class="nav-sub"><a href="#reports-by-location-api" class="gotohash">Reports by Location API</a></li><li class="nav-sub"><a href="#reports-by-popular-files-api" class="gotohash">Reports by Popular Files API</a></li><li class="nav-sub"><a href="#reports-by-status-codes-api" class="gotohash">Reports by Status Codes API</a></li><li class="nav-sub"><a href="#reports-by-file-types-api" class="gotohash">Reports by File Types API</a></li><li class="nav-sub"><a href="#reports-by-file-size-ranges-api" class="gotohash">Reports by File Size Ranges API</a></li><li class="nav-sub"><a href="#reports-by-directory-api" class="gotohash">Reports by Directory API</a></li></ul><li><a href="#raw-logs-api" class="gotohash"><span id="iconSizer"><i class="fa fa-archive"></i></span> Raw Logs API</a></li><li><a href="#origin-shield-api" class="gotohash"><span id="iconSizer"><i class="fa fa-shield"></i></span> Origin Shield API</a></li><li><a href="#ssl-certificate-api" class="gotohash"><span id="iconSizer"><i class="fa fa-ssl"></i></span> SSL API</a></li><li><a href="https://github.com/maxcdn/api-docs"><span id="iconSizer"><i class="fa fa-external-link"></i></span> GitHub Repo</a></li></ul></div></div></div></div><div id="readme-docs" class="span9"><h1 id="maxcdn-api-docs">MaxCDN API Docs</h1>
 <p><a href="http://www.maxcdn.com">MaxCDN</a> is a Content Delivery Network service.</p>
 <h2 id="index">Index</h2>
 <ul>
@@ -14,6 +14,7 @@
 <li><a href="#reports-api">Reports API</a></li>
 <li><a href="#raw-logs-api">Raw Logs API</a></li>
 <li><a href="#origin-shield-api">Origin Shield API</a></li>
+<li><a href="#ssl-certificate-api">SSL API</a></li>
 </ul>
 <h2 id="overview">Overview</h2>
 <ul>
@@ -41,6 +42,7 @@
 </ul>
 <h2 id="changelog">Changelog</h2>
 <ul>
+<li><strong>2015-01-19</strong>  Added account-level SSL</li>
 <li><strong>2014-12-18</strong>  Removed Live Zone API documentation (EOL)</li>
 <li><strong>2014-12-09</strong>  Added new <a href="#origin-shield-api">Origin Shield API</a> documentation</li>
 <li><strong>2014-10-20</strong>  Updated description for <code>use_stale</code></li>
@@ -681,6 +683,8 @@ function callback(err, response) {
 }</pre>
   </div>
 </div>
+
+
 
 <h1 id="users-api">Users API</h1>
 <h2 id="list-users">List Users</h2>
@@ -1376,7 +1380,6 @@ function callback(err, response) {
 }</pre>
   </div>
 </div>
-
 
 <h1 id="zones-api">Zones API</h1>
 <h2 id="list-zones">List Zones</h2>
@@ -6389,6 +6392,7 @@ api.get(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, funct
   &quot;data&quot;:{
     &quot;ssl&quot;:{
       &quot;id&quot;:1459,
+      &quot;ssl_id&quot;:1234
       &quot;ssl_crt&quot;:&quot;-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n&quot;,
       &quot;ssl_key&quot;:&quot;-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----&quot;,
       &quot;ssl_cabundle&quot;:null,
@@ -6424,16 +6428,22 @@ api.get(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, funct
 </thead>
 <tbody>
 <tr>
+<td><code>ssl_id</code></td>
+<td>-</td>
+<td>digit</td>
+<td>id of previously created certificate (NOTE: This will become required in future revisions)</td>
+</tr>
+<tr>
 <td><code>ssl_crt</code></td>
 <td>-</td>
-<td><span class="label important">required</span><br /></td>
-<td>The SSL certificate you are installing.</td>
+<td>-</td>
+<td>The SSL certificate you are installing. (NOTE: Not required if ssl_id specified)</td>
 <td></td>
 </tr>
 <tr>
 <td><code>ssl_key</code></td>
 <td>-</td>
-<td><span class="label important">required</span><br /></td>
+<td>-</td>
 <td>The key for the SSL certificate you are installing.</td>
 <td></td>
 </tr>
@@ -6587,6 +6597,12 @@ api.post(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, { ss
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>ssl_id</code></td>
+<td>-</td>
+<td>digit</td>
+<td>id of previously created certificate (NOTE: This will become required in future revisions)</td>
+</tr>
 <tr>
 <td><code>ssl_crt</code></td>
 <td>-</td>
@@ -11225,6 +11241,483 @@ api.delete(&#39;/zones/pull/&#39; + id + &#39;/zoneshields.json&#39;, function(e
     <pre>
 {
   &quot;code&quot;: 200
+}</pre>
+  </div>
+</div>
+
+<h1 id="ssl-certificate-api">SSL Certificate API</h1>
+<h2 id="list-certificates">List Certificates</h2>
+<p>Returns a list of all certificates on the specified account</p>
+<div class="heading">
+<div class="url GET"><span class="http_method">GET</span>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/ssl.json">https://rws.maxcdn.com/{companyalias}/ssl.json</a></span></div>
+</div>
+
+<h3 id="response-parameters">Response Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>certificates</code></td>
+<td>An array of certificates for the given user</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab106">
+  <li class="active"><a href="#ruby106" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python106" data-toggle='tab'>Python</a></li>
+  <li><a href="#php106" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node106" data-toggle='tab'>Node</a></li>
+  <li><a href="#response106" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby106">
+    <pre>
+api.get(&#39;/ssl.json&#39;)</pre>
+  </div>
+  <div class="tab-pane" id="python106">
+    <pre>
+api.get(&#39;/ssl.json&#39;)</pre>
+  </div>
+  <div class="tab-pane" id="php106">
+    <pre>
+$api-&gt;get(&#39;/ssl.json&#39;);</pre>
+  </div>
+  <div class="tab-pane" id="node106">
+  <pre>
+api.get(&#39;/ssl.json&#39;, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="response106">
+    <pre>
+{
+    &quot;code&quot;: 200,
+    &quot;data&quot;: {
+        &quot;current<em>page_size&quot;: 1,
+        &quot;page&quot;: 1,
+        &quot;page_size&quot;: &quot;50&quot;,
+        &quot;pages&quot;: 1,
+        &quot;total&quot;: 1,
+        &quot;certificates&quot;: [
+            {
+                &quot;id&quot;: &quot;1234&quot;,
+                &quot;company_id&quot;: &quot;42&quot;,
+                &quot;domain&quot;: &quot;*.example.com&quot;,
+                &quot;zone_count&quot;: &quot;5&quot;,
+                &quot;date_updated&quot;: &quot;2013-05-15 17:33:09&quot;,
+                &quot;date_expiration&quot;: &quot;2015-11-15&quot;,
+                &quot;ssl_cabundle&quot;: &quot;&quot;,
+                &quot;globalsign&quot;: &quot;0&quot;,
+                &quot;wilcard&quot;: &quot;1&quot;,
+                &quot;ssl_crt&quot;: &quot;-----BEGIN CERTIFICATE-----\n...-----END CERTIFICATE-----&quot;,
+                &quot;name&quot;: &quot;auto</em>*.example.com_2015-11-15_2013-05-15:173309&quot;
+            }
+        ]
+    }
+}</pre>
+  </div>
+</div>
+
+
+<h2 id="create-certificate">Create Certificate</h2>
+<p>Creates a new SSL Certificate on the specified account</p>
+<div class="heading">
+<div class="url POST"><span class="http_method">POST</span>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/ssl.json">https://rws.maxcdn.com/{companyalias}/ssl.json</a></span></div>
+</div>
+
+<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default Value</th>
+<th>Validation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ssl_crt</code></td>
+<td>-</td>
+<td><span class="label important">required</span><br />length: text;</td>
+<td>Certificate</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl_key</code></td>
+<td>-</td>
+<td><span class="label important">required</span><br />length: text</td>
+<td>Certificate Private Key</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl_cabundle</code></td>
+<td>-</td>
+<td>length: text</td>
+<td>Certificate Authority Intermediate Bundle</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>auto<em>{domain}</em>{expiration}_{update}</td>
+<td>length: 1-255</td>
+<td>Use descriptive name</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-parameters">Response Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ssl</code></td>
+<td>The information about the certificate (see List Certificates response)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab107">
+  <li class="active"><a href="#ruby107" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python107" data-toggle='tab'>Python</a></li>
+  <li><a href="#php107" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node107" data-toggle='tab'>Node</a></li>
+  <li><a href="#response107" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby107">
+    <pre>
+params={&quot;ssl_crt&quot;=&gt;&quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,&quot;ssl_key&quot;=&gt;&quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,&quot;ssl_cabundle&quot;=&gt;&quot;-----BEGIN CERTIFICATE.....&quot;, &quot;name&quot;=&gt;&quot;Our <em>.example.com wildcard&quot;}
+api.post(&#39;/ssl.json&#39;,params )</pre>
+  </div>
+  <div class="tab-pane" id="python107">
+    <pre>
+$params = array(&quot;ssl_crt&quot;=&gt;&quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,&quot;ssl_key&quot;=&gt;&quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,&quot;ssl_cabundle&quot;=&gt;&quot;-----BEGIN CERTIFICATE.....&quot;, &quot;name&quot;=&gt;&quot;Our </em>.example.com wildcard&quot;);
+api.post(&#39;/ssl.json&#39;,data=params )</pre>
+  </div>
+  <div class="tab-pane" id="php107">
+    <pre>
+$params = array(&quot;ssl_crt&quot;=&gt;&quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,&quot;ssl_key&quot;=&gt;&quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,&quot;ssl_cabundle&quot;=&gt;&quot;-----BEGIN CERTIFICATE.....&quot;, &quot;name&quot;=&gt;&quot;Our <em>.example.com wildcard&quot;);
+$api-&gt;post(&#39;/ssl.json&#39;,$params );</pre>
+  </div>
+  <div class="tab-pane" id="node107">
+  <pre>
+api.post(&#39;/ssl.json&#39;, { ssl_crt:&quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,ssl_key:&quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,ssl_cabundle:&quot;-----BEGIN CERTIFICATE.....&quot;,name:&quot;Our </em>.example.com wildcard&quot; }, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="response107">
+    <pre>
+{
+    &quot;code&quot;: 200,
+    &quot;data&quot;: {
+        &quot;current_page_size&quot;: 1,
+        &quot;page&quot;: 1,
+        &quot;page_size&quot;: &quot;50&quot;,
+        &quot;pages&quot;: 1,
+        &quot;total&quot;: 1,
+        &quot;ssl&quot;: 
+            {
+                &quot;id&quot;: &quot;1234&quot;,
+                &quot;company_id&quot;: &quot;42&quot;,
+                &quot;domain&quot;: &quot;<em>.example.com&quot;,
+                &quot;zone_count&quot;: &quot;5&quot;,
+                &quot;date_updated&quot;: &quot;2013-05-15 17:33:09&quot;,
+                &quot;date_expiration&quot;: &quot;2015-11-15&quot;,
+                &quot;ssl_cabundle&quot;: &quot;&quot;,
+                &quot;globalsign&quot;: &quot;0&quot;,
+                &quot;wilcard&quot;: &quot;1&quot;,
+                &quot;ssl_crt&quot;: &quot;-----BEGIN CERTIFICATE-----\n...-----END CERTIFICATE-----&quot;,
+                &quot;name&quot;: &quot;Our </em>.example.com wildcard&quot;
+            }
+    }
+}</pre>
+  </div>
+</div>
+
+
+<h2 id="get-ssl-certificate">Get SSL Certificate</h2>
+<p>Gets a specific SSL certificate by the {ssl_id} parameter</p>
+<div class="heading">
+<div class="url GET"><span class="http_method">GET</span>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/ssl.json/{ssl_id}">https://rws.maxcdn.com/{companyalias}/ssl.json/{ssl_id}</a></span></div>
+</div>
+
+<h3 id="response-parameters">Response Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ssl</code></td>
+<td>The information about the certificate (see List Certificates response)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab108">
+  <li class="active"><a href="#ruby108" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python108" data-toggle='tab'>Python</a></li>
+  <li><a href="#php108" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node108" data-toggle='tab'>Node</a></li>
+  <li><a href="#response108" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby108">
+    <pre>
+id = &#39;1234&#39;
+api.get(&#39;/ssl.json/&#39;+id)</pre>
+  </div>
+  <div class="tab-pane" id="python108">
+    <pre>
+id = &#39;1234&#39;
+api.get(&#39;/ssl.json/&#39;+id)</pre>
+  </div>
+  <div class="tab-pane" id="php108">
+    <pre>
+$id = &#39;1234&#39;;
+$api-&gt;get(&#39;/ssl.json/&#39;.$id);</pre>
+  </div>
+  <div class="tab-pane" id="node108">
+  <pre>
+var id = &#39;1234&#39;
+api.get(&#39;/ssl.json/&#39; + id, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="response108">
+    <pre>
+{
+    &quot;code&quot;: 200,
+    &quot;data&quot;: {
+       &quot;ssl&quot;: 
+            {
+                &quot;id&quot;: &quot;1234&quot;,
+                &quot;company_id&quot;: &quot;42&quot;,
+                &quot;domain&quot;: &quot;<em>.example.com&quot;,
+                &quot;zone_count&quot;: &quot;5&quot;,
+                &quot;date_updated&quot;: &quot;2013-05-15 17:33:09&quot;,
+                &quot;date_expiration&quot;: &quot;2015-11-15&quot;,
+                &quot;ssl_cabundle&quot;: &quot;&quot;,
+                &quot;globalsign&quot;: &quot;0&quot;,
+                &quot;wilcard&quot;: &quot;1&quot;,
+                &quot;ssl_crt&quot;: &quot;-----BEGIN CERTIFICATE-----\n...-----END CERTIFICATE-----&quot;,
+                &quot;name&quot;: &quot;Our </em>.example.com wildcard&quot;
+            }
+        }
+    }
+}</pre>
+  </div>
+</div>
+
+
+<h2 id="update-ssl-certificate">Update SSL Certificate</h2>
+<p>Updates an SSL Certificate specified by the {user_id} parameter </p>
+<div class="heading">
+<div class="url PUT"><span class="http_method">PUT</span>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/users.json/{user_id}">https://rws.maxcdn.com/{companyalias}/users.json/{user_id}</a></span></div>
+</div>
+
+<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default Value</th>
+<th>Validation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ssl_crt</code></td>
+<td>-</td>
+<td><span class="label important">required</span><br />length: text;</td>
+<td>Certificate</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl_key</code></td>
+<td>-</td>
+<td><span class="label important">required</span><br />length: text</td>
+<td>Certificate Private Key</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl_cabundle</code></td>
+<td>-</td>
+<td>length: text</td>
+<td>Certificate Authority Intermediate Bundle</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>auto<em>{domain}</em>{expiration}_{update}</td>
+<td>length: 1-255</td>
+<td>Use descriptive name</td>
+<td></td>
+</tr>
+<tr>
+<td><code>force</code></td>
+<td>0</td>
+<td>digit</td>
+<td>Override check to ensure that the domain has not changed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-parameters">Response Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ssl</code></td>
+<td>The information about the certificate (see List Certificates response)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab109">
+  <li class="active"><a href="#ruby109" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python109" data-toggle='tab'>Python</a></li>
+  <li><a href="#php109" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node109" data-toggle='tab'>Node</a></li>
+  <li><a href="#response109" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby109">
+  <pre>
+id = &#39;1234&#39;
+params={&quot;ssl_crt&quot;=&gt;&quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,&quot;ssl_key&quot;=&gt;&quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,&quot;ssl_cabundle&quot;=&gt;&quot;-----BEGIN CERTIFICATE.....&quot;, &quot;name&quot;=&gt;&quot;Our <em>.example.com wildcard&quot;}
+api.put(&#39;/ssl.json/&#39;+id,params)
+</pre>
+  </div>
+  <div class="tab-pane" id="python109">
+    <pre>
+api.put(&#39;/ssl.json/&#39;+id,params={ &#39;ssl_crt&#39;:&quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,&#39;ssl_key&#39;:&quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,&#39;ssl_cabundle&#39;:&quot;-----BEGIN CERTIFICATE.....&quot;,&#39;name&#39;:&quot;Our new </em>.example.com wildcard&quot; })</pre>
+  </div>
+  <div class="tab-pane" id="php109">
+    <pre>
+$id = &#39;1234&#39;;
+$params = array(&quot;ssl_crt&quot;=&gt;&quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,&quot;ssl_key&quot;=&gt;&quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,&quot;ssl_cabundle&quot;=&gt;&quot;-----BEGIN CERTIFICATE.....&quot;, &quot;name&quot;=&gt;&quot;Our <em>.example.com wildcard&quot;);
+$api-&gt;put(&#39;/ssl.json/&#39;.$id,$params);</pre>
+</div>
+  <div class="tab-pane" id="node109">
+  <pre>
+var id = &#39;1234&#39;
+api.put(&#39;/ssl.json/&#39; + id, { ssl_crt:&quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,ssl_key:&quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,ssl_cabundle:&quot;-----BEGIN CERTIFICATE.....&quot;,name:&quot;Our </em>.example.com wildcard&quot; }, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="response109">
+    <pre>
+{
+    &quot;code&quot;: 200,
+    &quot;data&quot;: {
+      &quot;ssl&quot;: 
+            {
+                &quot;id&quot;: &quot;1234&quot;,
+                &quot;company_id&quot;: &quot;42&quot;,
+                &quot;domain&quot;: &quot;<em>.example.com&quot;,
+                &quot;zone_count&quot;: &quot;5&quot;,
+                &quot;date_updated&quot;: &quot;2013-05-15 17:33:09&quot;,
+                &quot;date_expiration&quot;: &quot;2015-11-15&quot;,
+                &quot;ssl_cabundle&quot;: &quot;&quot;,
+                &quot;globalsign&quot;: &quot;0&quot;,
+                &quot;wilcard&quot;: &quot;1&quot;,
+                &quot;ssl_crt&quot;: &quot;-----BEGIN CERTIFICATE-----\n...-----END CERTIFICATE-----&quot;,
+                &quot;name&quot;: &quot;Our </em>.example.com wildcard&quot;
+            }
+    }
+}</pre>
+  </div>
+</div>
+
+
+<h2 id="delete-ssl-certificiate">Delete SSL Certificiate</h2>
+<p>Deletes a certificate specified by the {ssl_id} parameter</p>
+<div class="heading">
+<div class="url DELETE"><span class="http_method">DELETE</span>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/ssl.json/{ssl_id}">https://rws.maxcdn.com/{companyalias}/ssl.json/{ssl_id}</a></span></div>
+</div>
+
+
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab110">
+  <li class="active"><a href="#ruby110" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python110" data-toggle='tab'>Python</a></li>
+  <li><a href="#php110" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node110" data-toggle='tab'>Node</a></li>
+  <li><a href="#response110" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby110">
+    <pre>
+id = &#39;1234&#39;
+api.delete(&#39;/ssl.json/&#39;+id)</pre>
+  </div>
+  <div class="tab-pane" id="python110">
+    <pre>
+id = &#39;1234&#39;
+api.delete(&#39;/ssl.json/&#39;+id)</pre>
+  </div>
+  <div class="tab-pane" id="php110">
+    <pre>
+$id = &#39;1234&#39;;
+$api-&gt;delete(&#39;/ssl.json/&#39;.$id);</pre>
+  </div>
+  <div class="tab-pane" id="node110">
+  <pre>
+var id = &#39;1234&#39;
+api.delete(&#39;/ssl.json/&#39; + id, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="response110">
+    <pre>
+{
+  &quot;code&quot;:200
 }</pre>
   </div>
 </div>
