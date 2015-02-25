@@ -288,7 +288,7 @@ function callback(err, response) {
   </div>
   <div class="tab-pane" id="csharp2">
   <pre>
-api.Put("/account.json/", "name=UserName");
+api.Put("/account.json", "name=UserName");
 </pre>
   </div>
   <div class="tab-pane" id="response2">
