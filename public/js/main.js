@@ -100,6 +100,7 @@ $('a').click(function(ev) {
                 target.toString().indexOf('#python') ==-1 &&
                 target.toString().indexOf('#php') ==-1 &&
                 target.toString().indexOf('#node') ==-1 &&
+                target.toString().indexOf('#csharp') ==-1 &&
                 target.toString().indexOf('#response') ==-1 ) {
             if (this.href !== '#') {
                 $('html, body').animate({
