@@ -235,7 +235,7 @@ function callback(err, response) {
     <div class="tab-pane" id="csharp1">
   <pre>
   api.Get(&quot;/account.json/&quot;);
-  </pre>
+</pre>
   </div>
   <div class="tab-pane" id="response1">
     <pre>
@@ -348,6 +348,7 @@ function callback(err, response) {
   <li><a href="#python2" data-toggle='tab'>Python</a></li>
   <li><a href="#php2" data-toggle='tab'>PHP</a></li>
   <li><a href="#node2" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp2" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response2" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -374,6 +375,11 @@ function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
 }</pre>
+  </div>
+  <div class="tab-pane" id="csharp2">
+  <pre>
+api.Put(&quot;/account.json&quot;, &quot;name=UserName&quot;);
+</pre>
   </div>
   <div class="tab-pane" id="response2">
     <pre>
