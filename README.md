@@ -165,6 +165,7 @@ Parameter | Description |
   <li><a href="#python1" data-toggle='tab'>Python</a></li>
   <li><a href="#php1" data-toggle='tab'>PHP</a></li>
   <li><a href="#node1" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp1" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response1" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -187,6 +188,11 @@ function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
 }</pre>
+  </div>
+    <div class="tab-pane" id="csharp1">
+  <pre>
+  api.Get("/account.json/");
+  </pre>
   </div>
   <div class="tab-pane" id="response1">
     <pre>
