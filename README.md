@@ -349,6 +349,7 @@ Parameter | Description |
   <li><a href="#python3" data-toggle='tab'>Python</a></li>
   <li><a href="#php3" data-toggle='tab'>PHP</a></li>
   <li><a href="#node3" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp3" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response3" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -372,7 +373,11 @@ function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
 }</pre>
-  </div>
+  <div class="tab-pane" id="csharp3">
+  <pre>
+api.Get("/account.json/address");
+</pre>
+</div>
   <div class="tab-pane" id="response3">
     <pre>
 {
