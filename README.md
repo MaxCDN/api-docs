@@ -444,6 +444,7 @@ Parameter | Description |
   <li><a href="#python4" data-toggle='tab'>Python</a></li>
   <li><a href="#php4" data-toggle='tab'>PHP</a></li>
   <li><a href="#node4" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp4" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response4" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -471,6 +472,11 @@ function callback(err, response) {
   console.log(response)
 }</pre>
   </div>
+  <div class="tab-pane" id="csharp4">
+  <pre>
+  api.Put("/account.json/address","street1=1234 Main Street");
+</pre>
+  </div> 
   <div class="tab-pane" id="response4">
     <pre>
 {
@@ -528,6 +534,7 @@ Parameter | Description |
   <li><a href="#python5" data-toggle='tab'>Python</a></li>
   <li><a href="#php5" data-toggle='tab'>PHP</a></li>
   <li><a href="#node5" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp5" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response5" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -552,6 +559,11 @@ function callback(err, response) {
   console.log(response)
 }</pre>
   </div>
+  <div class="tab-pane" id="csharp5">
+  <pre>
+  api.Get("/users.json");
+</pre>
+  </div> 
   <div class="tab-pane" id="response5">
     <pre>
 {
@@ -673,6 +685,7 @@ Parameter | Description |
   <li><a href="#python6" data-toggle='tab'>Python</a></li>
   <li><a href="#php6" data-toggle='tab'>PHP</a></li>
   <li><a href="#node6" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp6" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response6" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -700,6 +713,20 @@ function callback(err, response) {
   console.log(response)
 }</pre>
   </div>
+  <div class="tab-pane" id="csharp6">
+  <pre>
+Console.Write("User First Name: \n");
+string fname = Console.ReadLine();
+Console.Write("User Last Name: \n");
+string lname = Console.ReadLine();
+Console.Write("User email: \n");
+string email = Console.ReadLine();
+Console.Write("Password: \n");
+string pwd = Console.ReadLine();
+
+api.Post("/users.json", "firstname=" + fname + "&lastname=" + lname + "&password=" + pwd + "&email=" + email);
+</pre>
+  </div> 
   <div class="tab-pane" id="response6">
     <pre>
 {
@@ -758,6 +785,7 @@ Parameter | Description |
   <li><a href="#python7" data-toggle='tab'>Python</a></li>
   <li><a href="#php7" data-toggle='tab'>PHP</a></li>
   <li><a href="#node7" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp7" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response7" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -786,6 +814,14 @@ function callback(err, response) {
   console.log(response)
 }</pre>
   </div>
+  <div class="tab-pane" id="node7">
+  <pre>
+Console.Write("User ID: \n");
+string id = Console.ReadLine();
+
+api.Get("/users.json/" + id);
+</pre>
+  </div> 
   <div class="tab-pane" id="response7">
     <pre>
 {
@@ -854,6 +890,7 @@ Parameter | Description |
   <li><a href="#python8" data-toggle='tab'>Python</a></li>
   <li><a href="#php8" data-toggle='tab'>PHP</a></li>
   <li><a href="#node8" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp8" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response8" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -884,6 +921,18 @@ function callback(err, response) {
   console.log(response)
 }</pre>
   </div>
+  <div class="tab-pane" id="csharp8">
+  <pre>
+Console.Write("Enter user ID to edit: \n");
+int uid = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter property to edit: \n");
+string prop = Console.ReadLine();
+Console.Write("New value: \n");
+string val = Console.ReadLine();
+
+api.Put("/users.json/" + uid + "/", prop + "=" + val);
+</pre>
+  </div> 
   <div class="tab-pane" id="response8">
     <pre>
 {
@@ -931,6 +980,7 @@ Deletes a user specified by the {user_id} parameter
   <li><a href="#python9" data-toggle='tab'>Python</a></li>
   <li><a href="#php9" data-toggle='tab'>PHP</a></li>
   <li><a href="#node9" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp9" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response9" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -959,6 +1009,14 @@ function callback(err, response) {
   console.log(response)
 }</pre>
   </div>
+  <div class="tab-pane" id="csharp9">
+  <pre>
+Console.Write("User id to delete: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/users.json/" + id)
+</pre>
+  </div> 
   <div class="tab-pane" id="response9">
     <pre>
 {
