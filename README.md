@@ -258,6 +258,7 @@ Parameter | Description |
   <li><a href="#python2" data-toggle='tab'>Python</a></li>
   <li><a href="#php2" data-toggle='tab'>PHP</a></li>
   <li><a href="#node2" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp2" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response2" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -284,6 +285,11 @@ function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
 }</pre>
+  </div>
+  <div class="tab-pane" id="csharp2">
+  <pre>
+api.Put("/account.json/", "name=UserName");
+</pre>
   </div>
   <div class="tab-pane" id="response2">
     <pre>
