@@ -191,7 +191,7 @@ function callback(err, response) {
   </div>
     <div class="tab-pane" id="csharp1">
   <pre>
-  api.Get("/account.json/");
+  api.Get("/account.json");
 </pre>
   </div>
   <div class="tab-pane" id="response1">
