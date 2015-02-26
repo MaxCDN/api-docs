@@ -5380,6 +5380,7 @@ Get the upstream information for the specified {zone_id}.
   <li><a href="#python65" data-toggle='tab'>Python</a></li>
   <li><a href="#php65" data-toggle='tab'>PHP</a></li>
   <li><a href="#node65" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp65" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response65" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -5409,6 +5410,16 @@ var id = '96061'
 api.post('/zones/' + type + '/' + id + '/upstream.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp65">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+
+api.Get("/zones/" + type + "/" + zoneID + "/upstream.json");
+</pre>
   </div>
   <div class="tab-pane" id="response65">
     <pre>
@@ -5450,6 +5461,7 @@ Parameter | Description |
   <li><a href="#python66" data-toggle='tab'>Python</a></li>
   <li><a href="#php66" data-toggle='tab'>PHP</a></li>
   <li><a href="#node66" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp66" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response66" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -5482,6 +5494,16 @@ var id = '96061'
 api.post('/zones/' + type + '/' + id + '/upstream.json', { server_url: 'http://cdn.somedomain.com', server: 'http://cdn.somedomain.com', port: '80' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp66">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+
+api.Post("/zones/" + type + "/" + zoneID + "/upstream.json", "server_url=http://cdn.somedomain.com&server=http://cdn.somedomain.com&port=80");
+</pre>
   </div>
   <div class="tab-pane" id="response66">
     <pre>
@@ -5524,6 +5546,7 @@ Parameter | Description |
   <li><a href="#python67" data-toggle='tab'>Python</a></li>
   <li><a href="#php67" data-toggle='tab'>PHP</a></li>
   <li><a href="#node67" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp67" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response67" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -5557,6 +5580,18 @@ api.put('/zones/' + type + '/' + id + '/upstream.json', { upstream_id: '93013', 
   console.log('err', err, 'response', response)
 })</pre>
   </div>
+  <div class="tab-pane" id="csharp67">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+Console.Write("Upstream ID: \n");
+int upstreamID = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/zones/" + type + "/" + zoneID + "/upstream.json", "upstream_id=" + upstreamID + "&server_url=http://somedomain.com&port=80");
+</pre>
+  </div>
   <div class="tab-pane" id="response67">
     <pre>
 </pre>
@@ -5581,6 +5616,7 @@ Remove the Upstream Information for the specified {zone_id}.
   <li><a href="#python68" data-toggle='tab'>Python</a></li>
   <li><a href="#php68" data-toggle='tab'>PHP</a></li>
   <li><a href="#node68" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp68" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response68" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -5610,6 +5646,16 @@ var id = '96061'
 api.delete('/zones/' + type + '/' + id + '/upstream.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp68">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+
+api.Delete("/zones/" + type + "/" + zoneID + "/upstream.json");
+</pre>
   </div>
   <div class="tab-pane" id="response68">
     <pre>
