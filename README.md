@@ -3385,7 +3385,7 @@ api.put('/zones/push/' + id + '/disable.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
-  <div class="tab-pane" id="node34">
+  <div class="tab-pane" id="csharp34">
   <pre>
 Console.Write("Zone id to disable: \n");
 int id = Convert.ToInt32(Console.ReadLine());
