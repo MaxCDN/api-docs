@@ -6870,6 +6870,7 @@ api.Delete(&quot;/zones/vod/&quot; + zoneID + &quot;/customdomains.json/&quot; +
   <li><a href="#python61" data-toggle='tab'>Python</a></li>
   <li><a href="#php61" data-toggle='tab'>PHP</a></li>
   <li><a href="#node61" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp61" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response61" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -6899,6 +6900,16 @@ var type = &#39;pull&#39;
 api.get(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp61">
+  <pre>
+Console.Write(&quot;Zone ID: \n&quot;);
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write(&quot;Zone type: \n&quot;);
+string type = Console.ReadLine();
+
+api.Get(&quot;/zones/&quot; + type + &quot;/&quot; + zoneID + &quot;/ssl.json&quot;);
+</pre>
   </div>
   <div class="tab-pane" id="response61">
     <pre>
@@ -7030,6 +7041,7 @@ api.get(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, funct
   <li><a href="#python62" data-toggle='tab'>Python</a></li>
   <li><a href="#php62" data-toggle='tab'>PHP</a></li>
   <li><a href="#node62" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp62" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response62" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -7070,6 +7082,27 @@ var ssl_key = &quot;-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----
 api.post(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, { ssl_crt: ssl_crt, ssl_key: ssl_key }, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+    <div class="tab-pane" id="csharp62">
+  <pre>
+var cert = &quot;&quot;;
+var key = &quot;&quot;;
+Console.Write(&quot;Zone id: \n&quot;);
+int zoneId = Convert.ToInt32(Console.ReadLine());
+Console.Write(&quot;Zone type: \n&quot;);
+string type = Console.ReadLine();
+using (StreamReader sr = new StreamReader(&quot;cert.txt&quot;))
+{
+    cert = sr.ReadToEnd();<br>}
+using (StreamReader sr = new StreamReader(&quot;key.txt&quot;))
+{
+    key = sr.ReadToEnd();
+}
+var dat = &quot;&quot;;
+cert = &quot;-----BEGIN CERTIFICATE-----\n&quot; + cert + &quot;\n-----END CERTIFICATE-----\n&quot;;
+key = &quot;-----BEGIN RSA PRIVATE KEY-----\n&quot; + key + &quot;\n-----END RSA PRIVATE KEY-----\n&quot;;
+api.Post(&quot;/zones/&quot; + type + &quot;/&quot; + zoneId + &quot;/ssl.json&quot;, dat=&quot;ssl_crt=&quot; + cert + &quot;&amp;ssl_key=&quot; + key);
+</pre>
   </div>
   <div class="tab-pane" id="response62">
     <pre>
@@ -7192,6 +7225,7 @@ api.post(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, { ss
   <li><a href="#python63" data-toggle='tab'>Python</a></li>
   <li><a href="#php63" data-toggle='tab'>PHP</a></li>
   <li><a href="#node63" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp63" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response63" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -7234,6 +7268,28 @@ api.put(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, { ssl
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
   </div>
+    <div class="tab-pane" id="csharp63">
+  <pre>
+var cert = &quot;&quot;;
+var key = &quot;&quot;;
+Console.Write(&quot;Zone id: \n&quot;);
+int zoneId = Convert.ToInt32(Console.ReadLine());
+Console.Write(&quot;Zone type: \n&quot;);
+string type = Console.ReadLine();
+using (StreamReader sr = new StreamReader(&quot;cert.txt&quot;))
+{
+    cert = sr.ReadToEnd();<br>}
+using (StreamReader sr = new StreamReader(&quot;key.txt&quot;))
+{
+    key = sr.ReadToEnd();
+}
+var dat = &quot;&quot;;
+cert = &quot;-----BEGIN CERTIFICATE-----\n&quot; + cert + &quot;\n-----END CERTIFICATE-----\n&quot;;
+key = &quot;-----BEGIN RSA PRIVATE KEY-----\n&quot; + key + &quot;\n-----END RSA PRIVATE KEY-----\n&quot;;
+
+api.Put(&quot;/zones/&quot; + type + &quot;/&quot; + zoneId + &quot;/ssl.json&quot;, dat=&quot;ssl_crt=&quot; + cert + &quot;&amp;ssl_key=&quot; + key);
+</pre>
+  </div>
   <div class="tab-pane" id="response63">
     <pre>
 {
@@ -7271,6 +7327,7 @@ api.put(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, { ssl
   <li><a href="#python64" data-toggle='tab'>Python</a></li>
   <li><a href="#php64" data-toggle='tab'>PHP</a></li>
   <li><a href="#node64" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp64" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response64" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -7300,6 +7357,16 @@ var type = &#39;pull&#39;
 api.delete(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/ssl.json&#39;, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp64">
+  <pre>
+Console.Write(&quot;Zone ID: \n&quot;);
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write(&quot;Zone type: \n&quot;);
+string type = Console.ReadLine();
+
+api.Delete(&quot;/zones/&quot; + type + &quot;/&quot; + zoneID + &quot;/ssl.json&quot;);
+</pre>
   </div>
   <div class="tab-pane" id="response64">
     <pre>
