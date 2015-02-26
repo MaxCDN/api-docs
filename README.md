@@ -4922,6 +4922,7 @@ Get the SSL certificate for the specified {zone_type} and
   <li><a href="#python61" data-toggle='tab'>Python</a></li>
   <li><a href="#php61" data-toggle='tab'>PHP</a></li>
   <li><a href="#node61" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp61" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response61" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4951,6 +4952,16 @@ var type = 'pull'
 api.get('/zones/' + type + '/' + id + '/ssl.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp61">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+
+api.Get("/zones/" + type + "/" + zoneID + "/ssl.json");
+</pre>
   </div>
   <div class="tab-pane" id="response61">
     <pre>
@@ -5015,6 +5026,7 @@ Parameter | Description |
   <li><a href="#python62" data-toggle='tab'>Python</a></li>
   <li><a href="#php62" data-toggle='tab'>PHP</a></li>
   <li><a href="#node62" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp62" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response62" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -5055,6 +5067,28 @@ var ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END R
 api.post('/zones/' + type + '/' + id + '/ssl.json', { ssl_crt: ssl_crt, ssl_key: ssl_key }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+    <div class="tab-pane" id="csharp62">
+  <pre>
+var cert = "";
+var key = "";
+Console.Write("Zone id: \n");
+int zoneId = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+using (StreamReader sr = new StreamReader("cert.txt"))
+{
+	cert = sr.ReadToEnd();               
+}
+using (StreamReader sr = new StreamReader("key.txt"))
+{
+	key = sr.ReadToEnd();
+}
+var dat = "";
+cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
+key = "-----BEGIN RSA PRIVATE KEY-----\n" + key + "\n-----END RSA PRIVATE KEY-----\n";
+api.Post("/zones/" + type + "/" + zoneId + "/ssl.json", dat="ssl_crt=" + cert + "&ssl_key=" + key);
+</pre>
   </div>
   <div class="tab-pane" id="response62">
     <pre>
@@ -5117,6 +5151,7 @@ Parameter | Description |
   <li><a href="#python63" data-toggle='tab'>Python</a></li>
   <li><a href="#php63" data-toggle='tab'>PHP</a></li>
   <li><a href="#node63" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp63" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response63" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -5159,6 +5194,29 @@ api.put('/zones/' + type + '/' + id + '/ssl.json', { ssl_crt: ssl_crt, ssl_key: 
   console.log('err', err, 'response', response)
 })</pre>
   </div>
+    <div class="tab-pane" id="csharp63">
+  <pre>
+var cert = "";
+var key = "";
+Console.Write("Zone id: \n");
+int zoneId = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+using (StreamReader sr = new StreamReader("cert.txt"))
+{
+	cert = sr.ReadToEnd();               
+}
+using (StreamReader sr = new StreamReader("key.txt"))
+{
+	key = sr.ReadToEnd();
+}
+var dat = "";
+cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
+key = "-----BEGIN RSA PRIVATE KEY-----\n" + key + "\n-----END RSA PRIVATE KEY-----\n";
+
+api.Put("/zones/" + type + "/" + zoneId + "/ssl.json", dat="ssl_crt=" + cert + "&ssl_key=" + key);
+</pre>
+  </div>
   <div class="tab-pane" id="response63">
     <pre>
 {
@@ -5199,6 +5257,7 @@ Remove the SSL certificate for the specified {zone_type} and
   <li><a href="#python64" data-toggle='tab'>Python</a></li>
   <li><a href="#php64" data-toggle='tab'>PHP</a></li>
   <li><a href="#node64" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp64" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response64" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -5228,6 +5287,16 @@ var type = 'pull'
 api.delete('/zones/' + type + '/' + id + '/ssl.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp64">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+
+api.Delete("/zones/" + type + "/" + zoneID + "/ssl.json");
+</pre>
   </div>
   <div class="tab-pane" id="response64">
     <pre>
