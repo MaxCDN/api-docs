@@ -2150,6 +2150,7 @@ Parameter | Default Value | Validation | Description |
   <li><a href="#python21" data-toggle='tab'>Python</a></li>
   <li><a href="#php21" data-toggle='tab'>PHP</a></li>
   <li><a href="#node21" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp21" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response21" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -2231,6 +2232,41 @@ function callback(err, response) {
   console.log(response)
 }</pre>
   </div>
+  <div class="tab-pane" id="csharp21">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("What do you want to purge? (all/file)");
+string ptype = Console.ReadLine();
+switch (ptype){
+	case "all":
+	//Purge ALL
+	api.Delete("/zones/pull.json/" + zoneID + "/cache");
+	break;
+	case "file":
+	//Purge FILE
+	Console.Write("Enter File Path to Purge (relative path): \n");
+	string file = Console.ReadLine();
+	file = "file=" + file;
+	api.Purge("/zones/pull.json/" + zoneID + "/cache", file);
+	break;
+	case "fileS":
+	//Purge FILES
+	Console.Write("How Many? \n");
+	int loop = Convert.ToInt32(Console.ReadLine());
+	Console.Write("Enter File Paths to Purge (relative paths): \n");
+	string files = "";
+	for (int i = 0; i < loop; i++)
+	{
+		Console.Write(i + 1 + ": \n");
+		string File = Console.ReadLine();
+		files += "file[" + i + "]=" + File + "&";
+	}
+	api.Purge("/zones/pull.json/" + zoneID + "/cache", files);
+	break;
+}
+</pre>
+  </div>
   <div class="tab-pane" id="response21">
     <pre>
 {
@@ -2267,6 +2303,7 @@ Parameter | Description |
   <li><a href="#python22" data-toggle='tab'>Python</a></li>
   <li><a href="#php22" data-toggle='tab'>PHP</a></li>
   <li><a href="#node22" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp22" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response22" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -2292,6 +2329,14 @@ var id = '96061'
 api.get('/zones/pull/' + id + '/customdomains.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp22">
+  <pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+Console.Write(api.Get("/zones/pull/" + zoneID + "/customdomains.json"));
+</pre>
   </div>
   <div class="tab-pane" id="response22">
     <pre>
@@ -2346,6 +2391,7 @@ Parameter | Description |
   <li><a href="#python23" data-toggle='tab'>Python</a></li>
   <li><a href="#php23" data-toggle='tab'>PHP</a></li>
   <li><a href="#node23" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp23" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response23" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -2374,6 +2420,16 @@ var id = '96167'
 api.post('/zones/pull/' + id + '/customdomains.json', { custom_domain: 'cdn.somedomain3.com' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp23">
+  <pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+
+api.Post("/zones/pull/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat);
+</pre>
   </div>
   <div class="tab-pane" id="response23">
     <pre>
@@ -2417,6 +2473,7 @@ Parameter | Description |
   <li><a href="#python24" data-toggle='tab'>Python</a></li>
   <li><a href="#php24" data-toggle='tab'>PHP</a></li>
   <li><a href="#node24" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp24" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response24" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -2446,6 +2503,16 @@ var domainId = '79182'
 api.get('/zones/pull/' + id + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp24">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain Id: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Get"/zones/pull/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
   </div>
   <div class="tab-pane" id="response24">
     <pre>
@@ -2497,6 +2564,7 @@ Parameter | Description |
   <li><a href="#python25" data-toggle='tab'>Python</a></li>
   <li><a href="#php25" data-toggle='tab'>PHP</a></li>
   <li><a href="#node25" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp25" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response25" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -2529,6 +2597,18 @@ var domainId = '79182'
 api.put('/zones/pull/' + zoneId + '/customdomains.json/' + domainId, { custom_domain: 'cdn.somenewdomain.com' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp25">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+Console.Write("New Value for this custom domain: \n");
+string cdname = Console.ReadLine();
+
+api.Put("/zones/pull/" + zoneID + "/customdomains.json/" + domainId, "custom_domain=" + cdname);
+</pre>
   </div>
   <div class="tab-pane" id="response25">
     <pre>
@@ -2565,6 +2645,7 @@ Deletes a custom domain specified by the {zone_id} and
   <li><a href="#python26" data-toggle='tab'>Python</a></li>
   <li><a href="#php26" data-toggle='tab'>PHP</a></li>
   <li><a href="#node26" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp26" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response26" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -2594,6 +2675,16 @@ var domainId = '79182'
 api.delete('/zones/pull/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp26">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/zones/pull/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
   </div>
   <div class="tab-pane" id="response26">
     <pre>
