@@ -3429,6 +3429,7 @@ Parameter | Description |
   <li><a href="#python35" data-toggle='tab'>Python</a></li>
   <li><a href="#php35" data-toggle='tab'>PHP</a></li>
   <li><a href="#node35" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp35" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response35" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3454,6 +3455,14 @@ var id = '96061'
 api.get('/zones/push/' + id + '/customdomains.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp35">
+  <pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+Console.Write(api.Get("/zones/push/" + zoneID + "/customdomains.json"));
+</pre>
   </div>
   <div class="tab-pane" id="response35">
     <pre>
@@ -3507,6 +3516,7 @@ Parameter | Description |
   <li><a href="#python36" data-toggle='tab'>Python</a></li>
   <li><a href="#php36" data-toggle='tab'>PHP</a></li>
   <li><a href="#node36" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp36" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response36" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3535,6 +3545,16 @@ var id = '97181'
 api.post('/zones/push/' + id + '/customdomains.json', { custom_domain: 'cdn.somedomain2.net' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp36">
+  <pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+
+api.Post("/zones/push/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat);
+</pre>
   </div>
   <div class="tab-pane" id="response36">
     <pre>
@@ -3579,6 +3599,7 @@ Parameter | Description |
   <li><a href="#python37" data-toggle='tab'>Python</a></li>
   <li><a href="#php37" data-toggle='tab'>PHP</a></li>
   <li><a href="#node37" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp37" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response37" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3608,6 +3629,16 @@ var domainId = '79188'
 api.get('/zones/push/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp37">
+  <pre>  
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain Id: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Get"/zones/push/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
   </div>
   <div class="tab-pane" id="response37">
     <pre>
@@ -3657,6 +3688,7 @@ Parameter | Description |
   <li><a href="#python38" data-toggle='tab'>Python</a></li>
   <li><a href="#php38" data-toggle='tab'>PHP</a></li>
   <li><a href="#node38" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp38" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response38" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3690,6 +3722,18 @@ var domainId = '79188'
 api.put('/zones/push/' + zoneId + '/customdomains.json/' + domainId, { custom_domain: 'cdn.somenewdomain2.com' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp38">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+Console.Write("New Value for this custom domain: \n");
+string cdname = Console.ReadLine();
+
+api.Put("/zones/push/" + zoneID + "/customdomains.json/" + domainId, "custom_domain=" + cdname);
+</pre>
   </div>
   <div class="tab-pane" id="response38">
     <pre>
@@ -3726,6 +3770,7 @@ Deletes a custom domain specified by the {zone_id} and
   <li><a href="#python39" data-toggle='tab'>Python</a></li>
   <li><a href="#php39" data-toggle='tab'>PHP</a></li>
   <li><a href="#node39" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp39" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response39" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3755,6 +3800,16 @@ var domainId = '79188'
 api.delete('/zones/push/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp39">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/zones/push/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
   </div>
   <div class="tab-pane" id="response39">
     <pre>
