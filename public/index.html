@@ -7875,6 +7875,7 @@ the total usage on your account.</p>
   <li><a href="#python69" data-toggle='tab'>Python</a></li>
   <li><a href="#php69" data-toggle='tab'>PHP</a></li>
   <li><a href="#node69" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp69" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response69" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -7900,6 +7901,14 @@ var reportType = &#39;&#39; //Vaild input includes &#39;/daily&#39;, &#39;/hourl
 api.get(&#39;/reports/stats.json/&#39; + reportType, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp69">
+  <pre>
+Console.Write(&quot;Report type (/daily, /hourly, /monthly or empty string): \n&quot;);
+string reportType = Console.ReadLine();
+
+api.Get(&quot;/reports/stats.json&quot; + reportType);
+</pre>
   </div>
   <div class="tab-pane" id="response69">
     <pre>
@@ -8001,6 +8010,7 @@ api.get(&#39;/reports/stats.json/&#39; + reportType, function(err, response) {
   <li><a href="#python100" data-toggle='tab'>Python</a></li>
   <li><a href="#php100" data-toggle='tab'>PHP</a></li>
   <li><a href="#node100" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp100" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response100" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -8026,6 +8036,14 @@ var reportType = &#39;&#39; //Vaild input includes &#39;/daily&#39;, &#39;/hourl
 api.get(&#39;/reports/statsbyzone.json/&#39; + reportType, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp100">
+  <pre>
+Console.Write(&quot;Report type (/daily, /hourly, /monthly or empty string): \n&quot;);
+string reportType = Console.ReadLine();
+
+api.Get(&quot;/reports/statsbyzone.json&quot; + reportType);
+</pre>
   </div>
   <div class="tab-pane" id="response100">
     <pre>
@@ -8153,6 +8171,7 @@ the total usage for the zones.</p>
   <li><a href="#python70" data-toggle='tab'>Python</a></li>
   <li><a href="#php70" data-toggle='tab'>PHP</a></li>
   <li><a href="#node70" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp70" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response70" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -8182,6 +8201,16 @@ var reportType = &#39;&#39; //Vaild input includes &#39;/daily&#39;, &#39;/hourl
 api.get(&#39;/reports/&#39; + id + &#39;/stats.json/&#39; + reportType, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp70">
+  <pre>
+Console.Write(&quot;Zone ID: \n&quot;);
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write(&quot;Report type (/daily, /hourly, /monthly or empty string): \n&quot;);
+string reportType = Console.ReadLine();
+
+api.Get(&quot;/reports/&quot; + zoneID + &quot;/stats.json&quot; + reportType);
+</pre>
   </div>
   <div class="tab-pane" id="response70">
     <pre>
@@ -8247,6 +8276,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/stats.json/&#39; + reportType, function
   <li><a href="#python71" data-toggle='tab'>Python</a></li>
   <li><a href="#php71" data-toggle='tab'>PHP</a></li>
   <li><a href="#node71" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp71" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response71" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -8268,6 +8298,11 @@ $api-&gt;get(&#39;/reports/nodes.json&#39;);</pre>
 api.get(&#39;/reports/nodes.json&#39;, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp71">
+  <pre>
+api.Get(&quot;/reports/nodes.json&quot;);
+</pre>
   </div>
   <div class="tab-pane" id="response71">
     <pre>
@@ -8382,6 +8417,7 @@ api.get(&#39;/reports/nodes.json&#39;, function(err, response) {
   <li><a href="#python72" data-toggle='tab'>Python</a></li>
   <li><a href="#php72" data-toggle='tab'>PHP</a></li>
   <li><a href="#node72" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp72" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response72" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -8407,6 +8443,14 @@ var id = &#39;96061&#39;
 api.get(&#39;/reports/&#39; + id + &#39;/nodes.json&#39;, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp72">
+  <pre>
+Console.Write(&quot;Zone ID: \n&quot;);
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+api.Get(&quot;/reports/&quot; + id + &quot;/nodes.json&quot;);
+</pre>
   </div>
   <div class="tab-pane" id="response72">
     <pre>
@@ -8564,6 +8608,7 @@ the total usage broken up by node.</p>
   <li><a href="#python73" data-toggle='tab'>Python</a></li>
   <li><a href="#php73" data-toggle='tab'>PHP</a></li>
   <li><a href="#node73" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp73" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response73" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -8589,6 +8634,14 @@ var reportType = &#39;&#39; //Vaild input includes &#39;/daily&#39;, &#39;/hourl
 api.get(&#39;/reports/nodes.json/stats/&#39; + reportType, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp73">
+  <pre>
+Console.Write(&quot;Report type (/daily, /hourly, /monthly or empty string): \n&quot;);
+string reportType = Console.ReadLine();
+
+api.Get(&quot;/reports/nodes.json/stats&quot; + reportType);
+</pre>
   </div>
   <div class="tab-pane" id="response73">
     <pre>
@@ -8793,6 +8846,7 @@ the request will return the total usage broken up by node.</p>
   <li><a href="#python74" data-toggle='tab'>Python</a></li>
   <li><a href="#php74" data-toggle='tab'>PHP</a></li>
   <li><a href="#node74" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp74" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response74" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -8822,6 +8876,14 @@ var reportType = &#39;&#39; //Vaild input includes &#39;/daily&#39;, &#39;/hourl
 api.get(&#39;/reports/&#39; + id + &#39;/nodes.json/stats/&#39; + reportType, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp74">
+  <pre>
+Console.Write(&quot;Report type (/daily, /hourly, /monthly or empty string): \n&quot;);
+string reportType = Console.ReadLine();
+
+api.Get(&quot;/reports/&quot; + zoneID + &quot;/nodes.json/stats&quot; + reportType);
+</pre>
   </div>
   <div class="tab-pane" id="response74">
     <pre>
@@ -8881,6 +8943,7 @@ api.get(&#39;/reports/&#39; + id + &#39;/nodes.json/stats/&#39; + reportType, fu
   <li><a href="#python75" data-toggle='tab'>Python</a></li>
   <li><a href="#php75" data-toggle='tab'>PHP</a></li>
   <li><a href="#node75" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp75" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response75" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -8907,6 +8970,14 @@ api.get(&#39;/reports/nodes.json/&#39; + id, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
   </div>
+  <div class="tab-pane" id="csharp75">
+  <pre>
+Console.Write(&quot;Node ID: \n&quot;);
+int nodeID = Convert.ToInt32(Console.ReadLine());
+
+api.Get(&quot;/reports/nodes.json/&quot; + nodeID);
+</pre>
+  </div
   <div class="tab-pane" id="response75">
     <pre>
 {
@@ -8964,6 +9035,7 @@ api.get(&#39;/reports/nodes.json/&#39; + id, function(err, response) {
   <li><a href="#python76" data-toggle='tab'>Python</a></li>
   <li><a href="#php76" data-toggle='tab'>PHP</a></li>
   <li><a href="#node76" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp76" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response76" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -8993,6 +9065,16 @@ var nodeId = &#39;1&#39;
 api.get(&#39;/reports/&#39; + zoneId + &#39;/nodes.json/&#39; + nodeId, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp76">
+  <pre>
+Console.Write(&quot;Zone ID: \n&quot;);
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write(&quot;Node ID: \n&quot;);
+int nodeID = Convert.ToInt32(Console.ReadLine());
+
+api.Get(&quot;/reports/&quot; + zoneID + &quot;/nodes.json/&quot; + nodeID);
+</pre>
   </div>
   <div class="tab-pane" id="response76">
     <pre>
@@ -9091,6 +9173,7 @@ request will return the total usage for the node.</p>
   <li><a href="#python77" data-toggle='tab'>Python</a></li>
   <li><a href="#php77" data-toggle='tab'>PHP</a></li>
   <li><a href="#node77" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp77" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response77" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -9120,6 +9203,16 @@ var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourl
 api.get(&#39;/reports/nodes.json/&#39; + id + &#39;/stats/&#39; + reportType, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp77">
+  <pre>
+Console.Write(&quot;Node ID: \n&quot;);
+int nodeID = Convert.ToInt32(Console.ReadLine());
+Console.Write(&quot;Report type (/daily, /hourly, /monthly or empty string): \n&quot;);
+string reportType = Console.ReadLine();
+
+api.Get(&quot;/reports/nodes.json/&quot; + nodeID + &quot;/stats&quot; + reportType);
+</pre>
   </div>
   <div class="tab-pane" id="response77">
     <pre>
@@ -9219,6 +9312,7 @@ the request will return the total usage for the node.</p>
   <li><a href="#python78" data-toggle='tab'>Python</a></li>
   <li><a href="#php78" data-toggle='tab'>PHP</a></li>
   <li><a href="#node78" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp78" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response78" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -9252,6 +9346,18 @@ var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourl
 api.get(&#39;/reports/&#39; + zoneId + &#39;/nodes.json/&#39; + nodeId + &#39;/stats/&#39; + reportType, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp78">
+  <pre>
+Console.Write(&quot;Zone ID: \n&quot;);
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write(&quot;Node ID: \n&quot;);
+int nodeID = Convert.ToInt32(Console.ReadLine());
+Console.Write(&quot;Report type (/daily, /hourly, /monthly or empty string): \n&quot;);
+string reportType = Console.ReadLine();
+
+api.Get(&quot;/reports/&quot; + zoneID + &quot;/nodes.json/&quot; + nodeID + &quot;/stats&quot; + reportType);
+</pre>
   </div>
   <div class="tab-pane" id="response78">
     <pre>
@@ -9356,6 +9462,7 @@ grouped into daily statistics</p>
   <li><a href="#python79" data-toggle='tab'>Python</a></li>
   <li><a href="#php79" data-toggle='tab'>PHP</a></li>
   <li><a href="#node79" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp79" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response79" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -9377,6 +9484,11 @@ $api-&gt;get(&#39;/reports/popularfiles.json&#39;);</pre>
 api.get(&#39;/reports/popularfiles.json&#39;, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp79">
+  <pre>
+api.Get(&quot;/reports/popularfiles.json&quot;);
+</pre>
   </div>
   <div class="tab-pane" id="response79">
     <pre>
@@ -9481,6 +9593,7 @@ filtered by {zone_type} and grouped into daily statistics</p>
   <li><a href="#python80" data-toggle='tab'>Python</a></li>
   <li><a href="#php80" data-toggle='tab'>PHP</a></li>
   <li><a href="#node80" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp80" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response80" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -9506,6 +9619,14 @@ var type = &#39;pull&#39;
 api.get(&#39;/reports/&#39; + type + &#39;/popularfiles.json&#39;, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp80">
+  <pre>
+Console.Write(&quot;Zone type: \n&quot;);
+string type = Console.ReadLine();
+
+api.Get(&quot;/reports/&quot; + type + &quot;/popularfiles.json&quot;);
+</pre>
   </div>
   <div class="tab-pane" id="response80">
     <pre>
@@ -9595,6 +9716,7 @@ api.get(&#39;/reports/&#39; + type + &#39;/popularfiles.json&#39;, function(err,
   <li><a href="#python81" data-toggle='tab'>Python</a></li>
   <li><a href="#php81" data-toggle='tab'>PHP</a></li>
   <li><a href="#node81" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp81" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response81" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -9617,9 +9739,17 @@ $api-&gt;get(&#39;/reports/statuscodes.json/&#39;.$reportType);</pre>
   <div class="tab-pane" id="node81">
   <pre>
 var reportType = &#39;&#39; //Valid input includes &#39;/daily&#39;, &#39;/hourly&#39;, &#39;/monthly&#39; or &#39;&#39;
-api.get(&#39;/reports/statuscodes.json/&#39; + reportType, function(err, response) {
+api.get(&#39;/reports/statuscodes.json&#39; + reportType, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp81">
+  <pre>
+Console.Write(&quot;Report type (/daily, /hourly, /monthly or empty string): \n&quot;);
+string reportType = Console.ReadLine();
+
+api.Get(&quot;/reports/statuscodes.json&quot; + reportType);
+</pre>
   </div>
   <div class="tab-pane" id="response81">
     <pre>
@@ -9710,6 +9840,7 @@ api.get(&#39;/reports/statuscodes.json/&#39; + reportType, function(err, respons
   <li><a href="#python82" data-toggle='tab'>Python</a></li>
   <li><a href="#php82" data-toggle='tab'>PHP</a></li>
   <li><a href="#node82" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp82" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response82" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -9739,6 +9870,14 @@ var id = &#39;96061&#39;
 api.get(&#39;/reports/&#39; + id + &#39;/statuscodes.json/&#39; + reportType, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp82">
+  <pre>
+Console.Write(&quot;Zone ID: \n&quot;);
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+api.Get(&quot;/reports/&quot; + zoneID + &quot;/statuscodes.json&quot; + reportType);
+</pre>
   </div>
   <div class="tab-pane" id="response82">
     <pre>
