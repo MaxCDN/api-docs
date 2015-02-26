@@ -1014,7 +1014,7 @@ function callback(err, response) {
 Console.Write("User id to delete: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
-api.Delete("/users.json/" + id)
+api.Delete("/users.json/" + id);
 </pre>
   </div> 
   <div class="tab-pane" id="response9">
@@ -3850,6 +3850,7 @@ Parameter | Description |
   <li><a href="#python40" data-toggle='tab'>Python</a></li>
   <li><a href="#php40" data-toggle='tab'>PHP</a></li>
   <li><a href="#node40" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp40" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response40" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3871,6 +3872,11 @@ $api->get('/zones/vod.json');</pre>
 api.get('/zones/vod.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp40">
+  <pre>
+api.Get("/zones/vod.json");
+</pre>
   </div>
   <div class="tab-pane" id="response40">
     <pre>
@@ -3968,6 +3974,7 @@ Parameter | Description |
   <li><a href="#python41" data-toggle='tab'>Python</a></li>
   <li><a href="#php41" data-toggle='tab'>PHP</a></li>
   <li><a href="#node41" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp41" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response41" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3992,6 +3999,16 @@ $api->post('/zones/vod.json',$params);</pre>
 api.post('/zones/vod.json', { name: 'newVODZone3', password: 'password' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp41">
+  <pre>
+Console.Write("Zone Name: \n");
+string ZoneName = Console.ReadLine();
+Console.Write("Zone Name: \n");
+string password = Console.ReadLine();
+
+api.Post("/zones/vod.json", "name=" + ZoneName + "&password=" + password);
+</pre>
   </div>
   <div class="tab-pane" id="response41">
     <pre>
@@ -4046,6 +4063,7 @@ Parameter | Description |
   <li><a href="#python42" data-toggle='tab'>Python</a></li>
   <li><a href="#php42" data-toggle='tab'>PHP</a></li>
   <li><a href="#node42" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp42" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response42" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4067,6 +4085,11 @@ $api->get('/zones/vod.json/count');</pre>
 api.get('/zones/vod.json/count', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp42">
+  <pre>  
+api.Get("/zones/vod.json/count");
+</pre>
   </div>
   <div class="tab-pane" id="response42">
     <pre>
@@ -4108,6 +4131,7 @@ Parameter | Description |
   <li><a href="#python43" data-toggle='tab'>Python</a></li>
   <li><a href="#php43" data-toggle='tab'>PHP</a></li>
   <li><a href="#node43" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp43" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response43" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4133,6 +4157,14 @@ var id = '97183'
 api.get('/zones/vod.json/' + id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp43">
+  <pre>
+Console.Write("Zone id: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/zones/vod.json/" + id);
+</pre>
   </div>
   <div class="tab-pane" id="response43">
     <pre>
@@ -4202,6 +4234,7 @@ Parameter | Description |
   <li><a href="#python44" data-toggle='tab'>Python</a></li>
   <li><a href="#php44" data-toggle='tab'>PHP</a></li>
   <li><a href="#node44" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp44" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response44" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4230,6 +4263,18 @@ var id = '97183'
 api.put('/zones/vod.json/' + id, { label: 'Some other description' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp44">
+  <pre>
+Console.Write("Zone id to edit: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Property to edit/change (label...): \n");
+string prop = Console.ReadLine();
+Console.Write("New value: \n");
+string val = Console.ReadLine();
+
+api.Put("/zones/vod.json/" + zoneID, prop + "=" + val);
+</pre>
   </div>
   <div class="tab-pane" id="response44">
     <pre>
@@ -4278,6 +4323,7 @@ Deletes a VOD zone specified by the {zone_id} parameter
   <li><a href="#python45" data-toggle='tab'>Python</a></li>
   <li><a href="#php45" data-toggle='tab'>PHP</a></li>
   <li><a href="#node45" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp45" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response45" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4304,6 +4350,14 @@ api.delete('/zones/vod.json/' + id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
+  <div class="tab-pane" id="csharp45">
+  <pre>
+Console.Write("Zone id to delete: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/zones/vod.json/" + id);
+</pre>
+  </div>
   <div class="tab-pane" id="response45">
     <pre>
 {
@@ -4329,6 +4383,7 @@ Enables a VOD zone specified by the {zone_id} parameter
   <li><a href="#python46" data-toggle='tab'>Python</a></li>
   <li><a href="#php46" data-toggle='tab'>PHP</a></li>
   <li><a href="#node46" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp46" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response46" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4355,6 +4410,14 @@ api.put('/zones/vod/' + id + '/enable.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
+  <div class="tab-pane" id="csharp46">
+  <pre>
+Console.Write("Zone id to enable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/zones/vod/" + id + "/enable.json");
+</pre>
+  </div>
   <div class="tab-pane" id="response46">
     <pre>
 {
@@ -4380,6 +4443,7 @@ Disables a VOD zone specified by the {zone_id} parameter
   <li><a href="#python47" data-toggle='tab'>Python</a></li>
   <li><a href="#php47" data-toggle='tab'>PHP</a></li>
   <li><a href="#node47" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp47" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response47" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4405,6 +4469,14 @@ var id = '96187'
 api.put('/zones/vod/' + id + '/disable.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp47">
+  <pre>
+Console.Write("Zone id to disable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/zones/vod/" + id + "/disable.json");
+</pre>
   </div>
   <div class="tab-pane" id="response47">
     <pre>
@@ -4442,6 +4514,7 @@ Parameter | Description |
   <li><a href="#python48" data-toggle='tab'>Python</a></li>
   <li><a href="#php48" data-toggle='tab'>PHP</a></li>
   <li><a href="#node48" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp48" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response48" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4467,6 +4540,14 @@ var id = '97183'
 api.get('/zones/vod.json/' + id + '/customdomains.json, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp48">
+  <pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+Console.Write(api.Get("/zones/vod/" + zoneID + "/customdomains.json"));
+</pre>
   </div>
   <div class="tab-pane" id="response48">
     <pre>
@@ -4520,6 +4601,7 @@ Parameter | Description |
   <li><a href="#python49" data-toggle='tab'>Python</a></li>
   <li><a href="#php49" data-toggle='tab'>PHP</a></li>
   <li><a href="#node49" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp49" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response49" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4548,6 +4630,16 @@ var id = '97183'
 api.post('/zones/vod/' + id + '/customdomains.json', { custom_domain: 'cdn.somedomain2.com', type: 'vod-rtmp' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp49">
+  <pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+
+api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat);
+</pre>
   </div>
   <div class="tab-pane" id="response49">
     <pre>
@@ -4591,6 +4683,7 @@ Parameter | Description |
   <li><a href="#python50" data-toggle='tab'>Python</a></li>
   <li><a href="#php50" data-toggle='tab'>PHP</a></li>
   <li><a href="#node50" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp50" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response50" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4620,6 +4713,16 @@ var domainId = '79191'
 api.get('/zones/vod/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp50">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain Id: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Get"/zones/vod/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
   </div>
   <div class="tab-pane" id="response50">
     <pre>
@@ -4669,6 +4772,7 @@ Parameter | Description |
   <li><a href="#python51" data-toggle='tab'>Python</a></li>
   <li><a href="#php51" data-toggle='tab'>PHP</a></li>
   <li><a href="#node51" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp51" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response51" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4701,6 +4805,18 @@ var domainId = '79191'
 api.put('/zones/vod/' + zoneId + '/customdomains.json/' + domainId, { custom_domain: 'cdn.somenewdomain3.com' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp51">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+Console.Write("New Value for this custom domain: \n");
+string cdname = Console.ReadLine();
+
+api.Put("/zones/vod/" + zoneID + "/customdomains.json/" + domainId, "custom_domain=" + cdname);
+</pre>
   </div>
   <div class="tab-pane" id="response51">
     <pre>
@@ -4737,6 +4853,7 @@ Deletes a custom domain specified by the {zone_id} and
   <li><a href="#python52" data-toggle='tab'>Python</a></li>
   <li><a href="#php52" data-toggle='tab'>PHP</a></li>
   <li><a href="#node52" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp52" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response52" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -4766,6 +4883,16 @@ var domainId = '79191'
 api.delete('/zones/vod/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp52">
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/zones/vod/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
   </div>
   <div class="tab-pane" id="response52">
     <pre>
