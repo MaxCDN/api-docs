@@ -191,7 +191,7 @@ function callback(err, response) {
   </div>
     <div class="tab-pane" id="csharp1">
   <pre>
-  api.Get("/account.json");
+api.Get("/account.json");
 </pre>
   </div>
   <div class="tab-pane" id="response1">
@@ -474,7 +474,7 @@ function callback(err, response) {
   </div>
   <div class="tab-pane" id="csharp4">
   <pre>
-  api.Put("/account.json/address","street1=1234 Main Street");
+api.Put("/account.json/address","street1=1234 Main Street");
 </pre>
   </div> 
   <div class="tab-pane" id="response4">
@@ -561,7 +561,7 @@ function callback(err, response) {
   </div>
   <div class="tab-pane" id="csharp5">
   <pre>
-  api.Get("/users.json");
+api.Get("/users.json");
 </pre>
   </div> 
   <div class="tab-pane" id="response5">
@@ -1068,7 +1068,7 @@ api.get('/zones.json', function(err, response) {
   </div>
   <div class="tab-pane" id="csharp10">
   <pre>
-  api.Get("/zones/pull.json");
+api.Get("/zones/pull.json");
 </pre>
   </div>
   <div class="tab-pane" id="response10">
@@ -1153,7 +1153,7 @@ api.get('/zones.json/summary', function(err, response) {
   </div>
   <div class="tab-pane" id="csharp11">
   <pre>
-  api.Get("/zones.json/summary");
+api.Get("/zones.json/summary");
 </pre>
   </div>
   <div class="tab-pane" id="response11">
@@ -1221,7 +1221,7 @@ api.get('/zones.json/count', function(err, response) {
   </div>
   <div class="tab-pane" id="csharp12">
   <pre>
-  api.Get("/zones.json/count");
+api.Get("/zones.json/count");
 </pre>
   </div>
   <div class="tab-pane" id="response12">
@@ -1622,7 +1622,7 @@ api.get('/zones/pull.json/count', function(err, response) {
   </div>
   <div class="tab-pane" id="csharp15">
   <pre>
-  api.Get("/zones/pull.json/count");
+api.Get("/zones/pull.json/count");
 </pre>
   </div>
   <div class="tab-pane" id="response15">
@@ -2729,6 +2729,7 @@ Parameter | Description |
   <li><a href="#python27" data-toggle='tab'>Python</a></li>
   <li><a href="#php27" data-toggle='tab'>PHP</a></li>
   <li><a href="#node27" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp27" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response27" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -2750,6 +2751,11 @@ $api->get('/zones/push.json');</pre>
 api.get('/zones/push.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp27">
+  <pre>
+api.Get("/zones/push.json");
+</pre>
   </div>
   <div class="tab-pane" id="response27">
     <pre>
@@ -2858,6 +2864,7 @@ Parameter | Description |
   <li><a href="#python28" data-toggle='tab'>Python</a></li>
   <li><a href="#php28" data-toggle='tab'>PHP</a></li>
   <li><a href="#node28" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp28" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response28" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -2882,6 +2889,16 @@ $api->post('/zones/push.json', $params);</pre>
 api.post('/zones/push.json', { name: 'newPushZone', password: 'password' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp28">
+  <pre>
+Console.Write("Zone Name: \n");
+string ZoneName = Console.ReadLine();
+Console.Write("Zone Name: \n");
+string password = Console.ReadLine();
+
+api.Post("/zones/push.json", "name=" + ZoneName + "&password=" + password);
+</pre>
   </div>
   <div class="tab-pane" id="response28">
     <pre>
@@ -2938,6 +2955,7 @@ Parameter | Description |
   <li><a href="#python29" data-toggle='tab'>Python</a></li>
   <li><a href="#php29" data-toggle='tab'>PHP</a></li>
   <li><a href="#node29" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp29" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response29" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -2959,6 +2977,14 @@ $api->get('/zones/push.json/count');</pre>
 api.get('/zones/push.json/count', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp29">
+  <pre>
+Console.Write("Zone id: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/zones/push.json/" + id);
+</pre>
   </div>
   <div class="tab-pane" id="response29">
     <pre>
@@ -3005,6 +3031,7 @@ Parameter | Description |
   <li><a href="#python30" data-toggle='tab'>Python</a></li>
   <li><a href="#php30" data-toggle='tab'>PHP</a></li>
   <li><a href="#node30" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp30" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response30" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3030,6 +3057,18 @@ var id = '97182'
 api.get('/zones/push.json/' + id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp30">
+  <pre>
+Console.Write("Zone id to edit: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Property to edit/change (label/compression...): \n");
+string prop = Console.ReadLine();
+Console.Write("New value: \n");
+string val = Console.ReadLine();
+
+api.Put("/zones/push.json/" + zoneID, prop + "=" + val);
+</pre>
   </div>
   <div class="tab-pane" id="response30">
     <pre>
@@ -3107,6 +3146,7 @@ Parameter | Description |
   <li><a href="#python31" data-toggle='tab'>Python</a></li>
   <li><a href="#php31" data-toggle='tab'>PHP</a></li>
   <li><a href="#node31" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp31" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response31" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3132,9 +3172,21 @@ $api->put('/zones/push.json/'.$id, $params);</pre>
   <div class="tab-pane" id="node31">
   <pre>
 var id = '97182'
-api.get('/zones/push.json/' + id, { label: 'Some other description' }, function(err, response) {
+api.put('/zones/push.json/' + id, { label: 'Some other description' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp31">
+  <pre>
+Console.Write("Zone id to edit: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Property to edit/change (label/compression...): \n");
+string prop = Console.ReadLine();
+Console.Write("New value: \n");
+string val = Console.ReadLine();
+
+api.Put("/zones/push.json/" + zoneID, prop + "=" + val);
+</pre>
   </div>
   <div class="tab-pane" id="response31">
     <pre>
@@ -3185,6 +3237,7 @@ Deletes a push zone specified by the {zone_id} parameter
   <li><a href="#python32" data-toggle='tab'>Python</a></li>
   <li><a href="#php32" data-toggle='tab'>PHP</a></li>
   <li><a href="#node32" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp32" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response32" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3211,6 +3264,14 @@ api.delete('/zones/push.json/' + id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
+  <div class="tab-pane" id="csharp32">
+  <pre>
+Console.Write("Zone id to delete: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/zones/push.json/" + id);
+</pre>
+  </div>
   <div class="tab-pane" id="response32">
     <pre>
 {
@@ -3236,6 +3297,7 @@ Enables a push zone specified by the {zone_id} parameter
   <li><a href="#python33" data-toggle='tab'>Python</a></li>
   <li><a href="#php33" data-toggle='tab'>PHP</a></li>
   <li><a href="#node33" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp33" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response33" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3261,6 +3323,14 @@ var id = '97181'
 api.put('/zones/push/' + id + '/enable.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="csharp33">
+  <pre>
+Console.Write("Zone id to enable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/zones/push/" + id + "/enable.json");
+</pre>
   </div>
   <div class="tab-pane" id="response33">
     <pre>
@@ -3288,6 +3358,7 @@ Disables a push zone specified by the {zone_id} parameter
   <li><a href="#python34" data-toggle='tab'>Python</a></li>
   <li><a href="#php34" data-toggle='tab'>PHP</a></li>
   <li><a href="#node34" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp34" data-toggle='tab'>.NET/C#</a></li>
   <li><a href="#response34" data-toggle='tab'>Response</a></li>
 </ul>
 
@@ -3313,6 +3384,14 @@ var id = '97181'
 api.put('/zones/push/' + id + '/disable.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+  </div>
+  <div class="tab-pane" id="node34">
+  <pre>
+Console.Write("Zone id to disable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/zones/push/" + id + "/disable.json");
+</pre>
   </div>
   <div class="tab-pane" id="response34">
     <pre>
