@@ -373,6 +373,7 @@ function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
 }</pre>
+</div>
   <div class="tab-pane" id="csharp3">
   <pre>
 api.Get("/account.json/address");
