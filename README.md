@@ -6584,7 +6584,6 @@ api.Get("/reports/nodes.json/" + nodeID);
 }
 </pre>
   </div>
-</div>
 
 
 ## Get Node by Zone
@@ -9274,5 +9273,4 @@ api.Delete("/ssl.json/" + zoneId);
   "code":200
 }</pre>
   </div>
-</div>
 </div>
