@@ -7455,25 +7455,25 @@ api.Delete(&quot;/zones/&quot; + type + &quot;/&quot; + zoneID + &quot;/ssl.json
     <pre>
 type = &#39;pull&#39;
 id = &#39;96061&#39;
-api.post(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;)</pre>
+api.get(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;)</pre>
   </div>
   <div class="tab-pane" id="python65">
     <pre>
 type = &#39;pull&#39;
 id = &#39;96061&#39;
-api.post(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;)</pre>
+api.get(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;)</pre>
   </div>
   <div class="tab-pane" id="php65">
     <pre>
 $type = &#39;pull&#39;;
 $id = &#39;96061&#39;;
-$api-&gt;post(&#39;/zones/&#39;.$type.&#39;/&#39;.$id.&#39;/upstream.json&#39;);</pre>
+$api-&gt;get(&#39;/zones/&#39;.$type.&#39;/&#39;.$id.&#39;/upstream.json&#39;);</pre>
   </div>
   <div class="tab-pane" id="node65">
   <pre>
 var type = &#39;pull&#39;
 var id = &#39;96061&#39;
-api.post(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/upstream.json&#39;, function(err, response) {
+api.get(&#39;/zones/&#39; + type + &#39;/&#39; + id + &#39;/upstream.json&#39;, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
   </div>
@@ -7489,6 +7489,7 @@ api.Get(&quot;/zones/&quot; + type + &quot;/&quot; + zoneID + &quot;/upstream.js
   </div>
   <div class="tab-pane" id="response65">
     <pre>
+{u&#39;code&#39;: 200, u&#39;data&#39;: {u&#39;total&#39;: 1, u&#39;upstreams&#39;: [{u&#39;weight&#39;: u&#39;1&#39;, u&#39;id&#39;: u&#39;121&#39;, u&#39;bucket_id&#39;: u&#39;96061&#39;, u&#39;server&#39;: u&#39;<a href="http://cdn.somedomain.com">http://cdn.somedomain.com</a>&#39;, u&#39;backup&#39;: u&#39;0&#39;, u&#39;port&#39;: u&#39;80&#39;}]}}
 </pre>
   </div>
 </div>
@@ -7569,21 +7570,21 @@ api.Get(&quot;/zones/&quot; + type + &quot;/&quot; + zoneID + &quot;/upstream.js
 type = &#39;pull&#39;
 id = &#39;96061&#39;
 params = {&quot;server_url&quot;=&gt; &quot;http=&gt;//cdn.somedomain.com&quot;,&quot;server&quot;=&gt; &quot;http=&gt;//cdn.somedomain.com&quot;,&quot;port&quot;=&gt; &quot;80&quot;}
-api.post(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;)</pre>
+api.post(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;, params)</pre>
   </div>
   <div class="tab-pane" id="python66">
     <pre>
 type = &#39;pull&#39;
 id = &#39;96061&#39;
 params = {&quot;server_url&quot;: &quot;<a href="http://cdn.somedomain.com&quot;,&quot;server">http://cdn.somedomain.com&quot;,&quot;server</a>&quot;: &quot;<a href="http://cdn.somedomain.com&quot;,&quot;port">http://cdn.somedomain.com&quot;,&quot;port</a>&quot;: &quot;80&quot;}
-api.post(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;)</pre>
+api.post(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;, params)</pre>
   </div>
   <div class="tab-pane" id="php66">
     <pre>
 $type = &#39;pull&#39;;
 $id = &#39;96061&#39;;
 $params = array(&quot;server_url&quot;=&gt;&quot;<a href="http://cdn.somedomain.com&quot;,&quot;server&quot;=&gt;&quot;http://cdn.somedomain.com&quot;,&quot;port&quot;=&gt;&quot;80">http://cdn.somedomain.com&quot;,&quot;server&quot;=&gt;&quot;http://cdn.somedomain.com&quot;,&quot;port&quot;=&gt;&quot;80</a>&quot;);
-$api-&gt;post(&#39;/zones/&#39;.$type.&#39;/&#39;.$id.&#39;/upstream.json&#39;);</pre>
+$api-&gt;post(&#39;/zones/&#39;.$type.&#39;/&#39;.$id.&#39;/upstream.json&#39;, $params);</pre>
   </div>
   <div class="tab-pane" id="node66">
   <pre>
@@ -7691,21 +7692,21 @@ api.Post(&quot;/zones/&quot; + type + &quot;/&quot; + zoneID + &quot;/upstream.j
 type = &#39;pull&#39;
 id = &#39;96061&#39;
 params = {&quot;upstream_id&quot;=&gt; &quot;93013&quot;,&quot;server_url&quot;=&gt; &quot;http=&gt;//somedomain.com&quot;,&quot;port&quot;=&gt; &quot;80&quot;}
-api.put(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;)</pre>
+api.put(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;, params)</pre>
   </div>
   <div class="tab-pane" id="python67">
     <pre>
 type = &#39;pull&#39;
 id = &#39;96061&#39;
 params = {&quot;upstream_id&quot;: &quot;93013&quot;,&quot;server_url&quot;: &quot;<a href="http://somedomain.net&quot;,&quot;port">http://somedomain.net&quot;,&quot;port</a>&quot;: &quot;80&quot;}
-api.put(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;)</pre>
+api.put(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;, params)</pre>
   </div>
   <div class="tab-pane" id="php67">
     <pre>
 $type = &#39;pull&#39;;
 $id = &#39;96061&#39;;
 $params = array(&quot;upstream_id&quot;=&gt;&quot;93013&quot;,&quot;server_url&quot;=&gt;&quot;<a href="http://somedomain.net&quot;,&quot;port&quot;=&gt;&quot;80">http://somedomain.net&quot;,&quot;port&quot;=&gt;&quot;80</a>&quot;);
-$api-&gt;put(&#39;/zones/&#39;.$type.&#39;/&#39;.$id.&#39;/upstream.json&#39;);</pre>
+$api-&gt;put(&#39;/zones/&#39;.$type.&#39;/&#39;.$id.&#39;/upstream.json&#39;, $params);</pre>
   </div>
   <div class="tab-pane" id="node67">
   <pre>
@@ -10025,7 +10026,7 @@ api.Get(&quot;/reports/&quot; + zoneType + &quot;/statuscodes.json&quot; + repor
 </div>
 
 
-<h2 id="list-status-codes-by-zone-id">List Status Codes by Zone Id</h2>
+<h2 id="list-status-codes-by-zone-id-and-zone-type">List Status Codes by Zone Id and Zone Type</h2>
 <p>Gets HTTP status code response statistics for a specific
 {zone_type} and {zone_id}</p>
 <div class="heading">
@@ -12355,7 +12356,7 @@ api.post(&#39;/ssl.json&#39;,params )</pre>
   </div>
   <div class="tab-pane" id="python107">
     <pre>
-$params = array(&quot;ssl_crt&quot;=&gt;&quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,&quot;ssl_key&quot;=&gt;&quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,&quot;ssl_cabundle&quot;=&gt;&quot;-----BEGIN CERTIFICATE.....&quot;, &quot;name&quot;=&gt;&quot;Our </em>.example.com wildcard&quot;);
+params = array(&quot;ssl_crt&quot;=&gt;&quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,&quot;ssl_key&quot;=&gt;&quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,&quot;ssl_cabundle&quot;=&gt;&quot;-----BEGIN CERTIFICATE.....&quot;, &quot;name&quot;=&gt;&quot;Our </em>.example.com wildcard&quot;);
 api.post(&#39;/ssl.json&#39;,data=params )</pre>
   </div>
   <div class="tab-pane" id="php107">
