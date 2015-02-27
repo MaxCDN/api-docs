@@ -3817,7 +3817,7 @@ int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write(&quot;Custom Domain Id: \n&quot;);
 int domainId = Convert.ToInt32(Console.ReadLine());
 
-api.Get&quot;/zones/pull/&quot; + zoneID + &quot;/customdomains.json/&quot; + domainId);
+api.Get(&quot;/zones/pull/&quot; + zoneID + &quot;/customdomains.json/&quot; + domainId);
 </pre>
   </div>
   <div class="tab-pane" id="response24">
@@ -5295,7 +5295,8 @@ api.get(&#39;/zones/push/&#39; + zoneId + &#39;/customdomains.json/&#39; + domai
 })</pre>
   </div>
   <div class="tab-pane" id="csharp37">
-  <pre><br>Console.Write(&quot;Zone ID: \n&quot;);
+  <pre>
+Console.Write(&quot;Zone ID: \n&quot;);
 int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write(&quot;Custom Domain Id: \n&quot;);
 int domainId = Convert.ToInt32(Console.ReadLine());
@@ -5874,7 +5875,8 @@ api.get(&#39;/zones/vod.json/count&#39;, function(err, response) {
 })</pre>
   </div>
   <div class="tab-pane" id="csharp42">
-  <pre><br>api.Get(&quot;/zones/vod.json/count&quot;);
+  <pre>
+api.Get(&quot;/zones/vod.json/count&quot;);
 </pre>
   </div>
   <div class="tab-pane" id="response42">
@@ -7101,6 +7103,7 @@ using (StreamReader sr = new StreamReader(&quot;key.txt&quot;))
 var dat = &quot;&quot;;
 cert = &quot;-----BEGIN CERTIFICATE-----\n&quot; + cert + &quot;\n-----END CERTIFICATE-----\n&quot;;
 key = &quot;-----BEGIN RSA PRIVATE KEY-----\n&quot; + key + &quot;\n-----END RSA PRIVATE KEY-----\n&quot;;
+
 api.Post(&quot;/zones/&quot; + type + &quot;/&quot; + zoneId + &quot;/ssl.json&quot;, dat=&quot;ssl_crt=&quot; + cert + &quot;&amp;ssl_key=&quot; + key);
 </pre>
   </div>
@@ -10466,7 +10469,8 @@ api.get(&#39;/reports/&#39; + zoneType + &#39;/filetypes.json&#39; + reportType,
 })</pre>
   </div>
   <div class="tab-pane" id="csharp87">
-  <pre><br>Console.Write(&quot;Zone type: \n&quot;);
+  <pre>
+Console.Write(&quot;Zone type: \n&quot;);
 string zoneType = Console.ReadLine();
 Console.Write(&quot;Report type (/daily, /hourly, /monthly or empty string): \n&quot;);
 string reportType = Console.ReadLine();

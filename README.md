@@ -2511,7 +2511,7 @@ int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Custom Domain Id: \n");
 int domainId = Convert.ToInt32(Console.ReadLine());
 
-api.Get"/zones/pull/" + zoneID + "/customdomains.json/" + domainId);
+api.Get("/zones/pull/" + zoneID + "/customdomains.json/" + domainId);
 </pre>
   </div>
   <div class="tab-pane" id="response24">
@@ -3631,7 +3631,7 @@ api.get('/zones/push/' + zoneId + '/customdomains.json/' + domainId, function(er
 })</pre>
   </div>
   <div class="tab-pane" id="csharp37">
-  <pre>  
+  <pre>
 Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Custom Domain Id: \n");
@@ -4087,7 +4087,7 @@ api.get('/zones/vod.json/count', function(err, response) {
 })</pre>
   </div>
   <div class="tab-pane" id="csharp42">
-  <pre>  
+  <pre>
 api.Get("/zones/vod.json/count");
 </pre>
   </div>
@@ -5087,6 +5087,7 @@ using (StreamReader sr = new StreamReader("key.txt"))
 var dat = "";
 cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
 key = "-----BEGIN RSA PRIVATE KEY-----\n" + key + "\n-----END RSA PRIVATE KEY-----\n";
+
 api.Post("/zones/" + type + "/" + zoneId + "/ssl.json", dat="ssl_crt=" + cert + "&ssl_key=" + key);
 </pre>
   </div>
@@ -7666,7 +7667,7 @@ api.get('/reports/' + zoneType + '/filetypes.json' + reportType, function(err, r
 })</pre>
   </div>
   <div class="tab-pane" id="csharp87">
-  <pre>  
+  <pre>
 Console.Write("Zone type: \n");
 string zoneType = Console.ReadLine();
 Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
