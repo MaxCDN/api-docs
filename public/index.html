@@ -7573,7 +7573,7 @@ api.Get(&quot;/zones/&quot; + type + &quot;/&quot; + zoneID + &quot;/upstream.js
     <pre>
 type = &#39;pull&#39;
 id = &#39;96061&#39;
-params = {&quot;server_url&quot;=&gt; &quot;http=&gt;//cdn.somedomain.com&quot;,&quot;server&quot;=&gt; &quot;http=&gt;//cdn.somedomain.com&quot;,&quot;port&quot;=&gt; &quot;80&quot;}
+params = {&quot;server_url&quot;=&gt; &quot;<a href="http://cdn.somedomain.com&quot;,&quot;server&quot;=&gt;">http://cdn.somedomain.com&quot;,&quot;server&quot;=&gt;</a> &quot;<a href="http://cdn.somedomain.com&quot;,&quot;port&quot;=&gt;">http://cdn.somedomain.com&quot;,&quot;port&quot;=&gt;</a> &quot;80&quot;}
 api.post(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;, params)</pre>
   </div>
   <div class="tab-pane" id="python66">
@@ -7695,7 +7695,7 @@ api.Post(&quot;/zones/&quot; + type + &quot;/&quot; + zoneID + &quot;/upstream.j
     <pre>
 type = &#39;pull&#39;
 id = &#39;96061&#39;
-params = {&quot;upstream_id&quot;=&gt; &quot;93013&quot;,&quot;server_url&quot;=&gt; &quot;http=&gt;//somedomain.com&quot;,&quot;port&quot;=&gt; &quot;80&quot;}
+params = {&quot;upstream_id&quot;=&gt; &quot;93013&quot;,&quot;server_url&quot;=&gt; &quot;<a href="http://somedomain.com&quot;,&quot;port&quot;=&gt;">http://somedomain.com&quot;,&quot;port&quot;=&gt;</a> &quot;80&quot;}
 api.put(&#39;/zones/&#39;+type+&#39;/&#39;+id+&#39;/upstream.json&#39;, params)</pre>
   </div>
   <div class="tab-pane" id="python67">
@@ -12361,7 +12361,7 @@ api.post(&#39;/ssl.json&#39;,params )</pre>
   </div>
   <div class="tab-pane" id="python107">
     <pre>
-params = array(&quot;ssl_crt&quot;=&gt;&quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,&quot;ssl_key&quot;=&gt;&quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,&quot;ssl_cabundle&quot;=&gt;&quot;-----BEGIN CERTIFICATE.....&quot;, &quot;name&quot;=&gt;&quot;Our </em>.example.com wildcard&quot;);
+params = array(&quot;ssl_crt&quot;: &quot;-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----&quot;,&quot;ssl_key&quot;: &quot;-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----&quot;,&quot;ssl_cabundle&quot;: &quot;-----BEGIN CERTIFICATE.....&quot;, &quot;name&quot;: &quot;Our </em>.example.com wildcard&quot;);
 api.post(&#39;/ssl.json&#39;,data=params )</pre>
   </div>
   <div class="tab-pane" id="php107">

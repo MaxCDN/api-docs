@@ -5473,7 +5473,7 @@ Parameter | Description |
     <pre>
 type = 'pull'
 id = '96061'
-params = {"server_url"=> "http=>//cdn.somedomain.com","server"=> "http=>//cdn.somedomain.com","port"=> "80"}
+params = {"server_url"=> "http://cdn.somedomain.com","server"=> "http://cdn.somedomain.com","port"=> "80"}
 api.post('/zones/'+type+'/'+id+'/upstream.json', params)</pre>
   </div>
   <div class="tab-pane" id="python66">
@@ -5558,7 +5558,7 @@ Parameter | Description |
     <pre>
 type = 'pull'
 id = '96061'
-params = {"upstream_id"=> "93013","server_url"=> "http=>//somedomain.com","port"=> "80"}
+params = {"upstream_id"=> "93013","server_url"=> "http://somedomain.com","port"=> "80"}
 api.put('/zones/'+type+'/'+id+'/upstream.json', params)</pre>
   </div>
   <div class="tab-pane" id="python67">
@@ -8946,7 +8946,7 @@ api.post('/ssl.json',params )</pre>
   </div>
   <div class="tab-pane" id="python107">
     <pre>
-params = array("ssl_crt"=>"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key"=>"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our *.example.com wildcard");
+params = array("ssl_crt": "-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key": "-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle": "-----BEGIN CERTIFICATE.....", "name": "Our *.example.com wildcard");
 api.post('/ssl.json',data=params )</pre>
   </div>
   <div class="tab-pane" id="php107">
