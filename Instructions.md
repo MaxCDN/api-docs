@@ -26,6 +26,8 @@ make server
 4.) Build and deploy site.
 
 ```bash
+git checkout gh-pages
+git checkout master
 make
 git add .
 git commit -m 'I made some changes'
