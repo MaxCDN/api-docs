@@ -39,6 +39,7 @@
 
 
 ## Changelog
+  - **2015-03-06**  Added `ssl`, `ssl_sni`, and `geo_enabled` flags for Pull Zones
   - **2015-01-19**  Added account-level SSL
   - **2014-12-18**  Removed Live Zone API documentation (EOL)
   - **2014-12-09**  Added new <a href="#origin-shield-api">Origin Shield API</a> documentation
@@ -1280,6 +1281,9 @@ Parameter | Description |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
 `spdy` | Flag denoting if the zone has the SPDY protocol enabled |
+`ssl` | Read-only flag denoting if the zone has Dedicated IP SSL enabled |
+`ssl_sni` | Read-only flag denoting if the zone has SNI SSL enabled |
+`geo_enabled` | Read-only flag denoting if the zone has 'More Locations' enabled |
 
 ### Code Samples
 
@@ -1361,7 +1365,10 @@ api.Post("/zones/pull.json");
                 "url": "http://somedomain.net",
                 "use_stale": "0",
                 "valid_referers": null,
-                "spdy": 0
+                "spdy": 1,
+                "ssl": 1,
+                "ssl_sni": 0,
+                "geo_enabled": 1
             },
             <...>,
             {
@@ -1399,7 +1406,10 @@ api.Post("/zones/pull.json");
                 "url": "http://somedomain.net",
                 "use_stale": "0",
                 "valid_referers": null,
-                "spdy": 1
+                "spdy": 1,
+                "ssl": 0,
+                "ssl_sni": 1,
+                "geo_enabled": 0
             }
         ],
         "total": 3
@@ -1483,6 +1493,9 @@ Parameter | Description |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
 `spdy` | Flag denoting if the zone has the SPDY protocol enabled |
+`ssl` | Read-only flag denoting if the zone has Dedicated IP SSL enabled |
+`ssl_sni` | Read-only flag denoting if the zone has SNI SSL enabled |
+`geo_enabled` | Read-only flag denoting if the zone has 'More Locations' enabled |
 
 ### Code Samples
 
@@ -1568,7 +1581,10 @@ api.Post("/zones/pull.json", "url=" + url + "&name=" + ZoneName);
             "use_stale": 0,
             "x_forward_for": 0,
             "valid_referers": null,
-            "spdy": 1
+            "spdy": 1,
+            "ssl": 1,
+            "ssl_sni": 0,
+            "geo_enabled": 1
         }
     }
 }</pre>
@@ -1680,6 +1696,9 @@ Parameter | Description |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
 `spdy` | Flag denoting if the zone has the SPDY protocol enabled |
+`ssl` | Read-only flag denoting if the zone has Dedicated IP SSL enabled |
+`ssl_sni` | Read-only flag denoting if the zone has SNI SSL enabled |
+`geo_enabled` | Read-only flag denoting if the zone has 'More Locations' enabled |
 
 ### Code Samples
 
@@ -1764,7 +1783,10 @@ api.Get("/zones/pull.json/" + id);
             "use_stale": "0",
             "x_forward_for": "0",
             "valid_referers": null,
-            "spdy": 1
+            "spdy": 1,
+            "ssl": 1,
+            "ssl_sni": 0,
+            "geo_enabled": 1
         }
     }
 }</pre>
@@ -1845,7 +1867,9 @@ Parameter | Description |
 `inactive` | Flag denoting if the zone has been deleted |
 `creation_date` | Date Created |
 `spdy` | Flag denoting if the zone has the SPDY protocol enabled |
-
+`ssl` | Read-only flag denoting if the zone has Dedicated IP SSL enabled |
+`ssl_sni` | Read-only flag denoting if the zone has SNI SSL enabled |
+`geo_enabled` | Read-only flag denoting if the zone has 'More Locations' enabled |
 
 ### Code Samples
 
@@ -1937,7 +1961,10 @@ api.Put("/zones/pull.json/" + zoneID, prop + "=" + val);
             "use_stale": "0",
             "x_forward_for": "0",
             "valid_referers": null,
-            "spdy": 1
+            "spdy": 1,
+            "ssl": 1,
+            "ssl_sni": 0,
+            "geo_enabled": 1
         }
     }
 }</pre>

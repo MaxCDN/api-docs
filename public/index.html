@@ -42,6 +42,7 @@
 </ul>
 <h2 id="changelog">Changelog</h2>
 <ul>
+<li><strong>2015-03-06</strong>  Added <code>ssl</code>, <code>ssl_sni</code>, and <code>geo_enabled</code> flags for Pull Zones</li>
 <li><strong>2015-01-19</strong>  Added account-level SSL</li>
 <li><strong>2014-12-18</strong>  Removed Live Zone API documentation (EOL)</li>
 <li><strong>2014-12-09</strong>  Added new <a href="#origin-shield-api">Origin Shield API</a> documentation</li>
@@ -1840,6 +1841,21 @@ api.Get(&quot;/zones.json/count&quot;);
 <td>Flag denoting if the zone has the SPDY protocol enabled</td>
 <td></td>
 </tr>
+<tr>
+<td><code>ssl</code></td>
+<td>Read-only flag denoting if the zone has Dedicated IP SSL enabled</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl_sni</code></td>
+<td>Read-only flag denoting if the zone has SNI SSL enabled</td>
+<td></td>
+</tr>
+<tr>
+<td><code>geo_enabled</code></td>
+<td>Read-only flag denoting if the zone has &#39;More Locations&#39; enabled</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
@@ -1921,7 +1937,10 @@ api.Post(&quot;/zones/pull.json&quot;);
                 &quot;url&quot;: &quot;<a href="http://somedomain.net">http://somedomain.net</a>&quot;,
                 &quot;use_stale&quot;: &quot;0&quot;,
                 &quot;valid_referers&quot;: null,
-                &quot;spdy&quot;: 0
+                &quot;spdy&quot;: 1,
+                &quot;ssl&quot;: 1,
+                &quot;ssl_sni&quot;: 0,
+                &quot;geo_enabled&quot;: 1
             },
             &lt;...&gt;,
             {
@@ -1959,7 +1978,10 @@ api.Post(&quot;/zones/pull.json&quot;);
                 &quot;url&quot;: &quot;<a href="http://somedomain.net">http://somedomain.net</a>&quot;,
                 &quot;use_stale&quot;: &quot;0&quot;,
                 &quot;valid_referers&quot;: null,
-                &quot;spdy&quot;: 1
+                &quot;spdy&quot;: 1,
+                &quot;ssl&quot;: 0,
+                &quot;ssl_sni&quot;: 1,
+                &quot;geo_enabled&quot;: 0
             }
         ],
         &quot;total&quot;: 3
@@ -2325,6 +2347,21 @@ api.Post(&quot;/zones/pull.json&quot;);
 <td>Flag denoting if the zone has the SPDY protocol enabled</td>
 <td></td>
 </tr>
+<tr>
+<td><code>ssl</code></td>
+<td>Read-only flag denoting if the zone has Dedicated IP SSL enabled</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl_sni</code></td>
+<td>Read-only flag denoting if the zone has SNI SSL enabled</td>
+<td></td>
+</tr>
+<tr>
+<td><code>geo_enabled</code></td>
+<td>Read-only flag denoting if the zone has &#39;More Locations&#39; enabled</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
@@ -2410,7 +2447,10 @@ api.Post(&quot;/zones/pull.json&quot;, &quot;url=&quot; + url + &quot;&amp;name=
             &quot;use_stale&quot;: 0,
             &quot;x_forward_for&quot;: 0,
             &quot;valid_referers&quot;: null,
-            &quot;spdy&quot;: 1
+            &quot;spdy&quot;: 1,
+            &quot;ssl&quot;: 1,
+            &quot;ssl_sni&quot;: 0,
+            &quot;geo_enabled&quot;: 1
         }
     }
 }</pre>
@@ -2648,6 +2688,21 @@ api.Get(&quot;/zones/pull.json/count&quot;);
 <td>Flag denoting if the zone has the SPDY protocol enabled</td>
 <td></td>
 </tr>
+<tr>
+<td><code>ssl</code></td>
+<td>Read-only flag denoting if the zone has Dedicated IP SSL enabled</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl_sni</code></td>
+<td>Read-only flag denoting if the zone has SNI SSL enabled</td>
+<td></td>
+</tr>
+<tr>
+<td><code>geo_enabled</code></td>
+<td>Read-only flag denoting if the zone has &#39;More Locations&#39; enabled</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
@@ -2732,7 +2787,10 @@ api.Get(&quot;/zones/pull.json/&quot; + id);
             &quot;use_stale&quot;: &quot;0&quot;,
             &quot;x_forward_for&quot;: &quot;0&quot;,
             &quot;valid_referers&quot;: null,
-            &quot;spdy&quot;: 1
+            &quot;spdy&quot;: 1,
+            &quot;ssl&quot;: 1,
+            &quot;ssl_sni&quot;: 0,
+            &quot;geo_enabled&quot;: 1
         }
     }
 }</pre>
@@ -3089,6 +3147,21 @@ api.Get(&quot;/zones/pull.json/&quot; + id);
 <td>Flag denoting if the zone has the SPDY protocol enabled</td>
 <td></td>
 </tr>
+<tr>
+<td><code>ssl</code></td>
+<td>Read-only flag denoting if the zone has Dedicated IP SSL enabled</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ssl_sni</code></td>
+<td>Read-only flag denoting if the zone has SNI SSL enabled</td>
+<td></td>
+</tr>
+<tr>
+<td><code>geo_enabled</code></td>
+<td>Read-only flag denoting if the zone has &#39;More Locations&#39; enabled</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="code-samples">Code Samples</h3>
@@ -3180,7 +3253,10 @@ api.Put(&quot;/zones/pull.json/&quot; + zoneID, prop + &quot;=&quot; + val);
             &quot;use_stale&quot;: &quot;0&quot;,
             &quot;x_forward_for&quot;: &quot;0&quot;,
             &quot;valid_referers&quot;: null,
-            &quot;spdy&quot;: 1
+            &quot;spdy&quot;: 1,
+            &quot;ssl&quot;: 1,
+            &quot;ssl_sni&quot;: 0,
+            &quot;geo_enabled&quot;: 1
         }
     }
 }</pre>
