@@ -4665,8 +4665,10 @@ Console.Write("Zone Id: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Custom Domain: \n");
 string dat = Console.ReadLine();
+Console.Write("Type: (vod-rtmp, vod-pseudo, vod-direct, or vod-ftp)\n");
+string cdtype = Console.ReadLine();
 
-api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat);
+api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat + "&type=" + cdtype);
 </pre>
   </div>
   <div class="tab-pane" id="response49">
