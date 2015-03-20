@@ -4817,6 +4817,7 @@ api.Get(&quot;/zones/push.json/&quot; + id);
 <ul class="nav nav-tabs" id="myTab30">
   <li class="active"><a href="#ruby30" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python30" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl30" data-toggle='tab'>Perl</a></li>
   <li><a href="#php30" data-toggle='tab'>PHP</a></li>
   <li><a href="#node30" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp30" data-toggle='tab'>.NET/C#</a></li>
@@ -4833,6 +4834,11 @@ api.get(&#39;/zones/push.json/&#39;+id)</pre>
     <pre>
 id = &#39;96182&#39;
 api.get(&#39;/zones/push.json/&#39;+id)</pre>
+  </div>
+    <div class="tab-pane" id="perl30">
+    <pre>
+my $id = 55659;
+$api-&gt;get(&quot;/zones/push.json/&quot; . $id);</pre>
   </div>
   <div class="tab-pane" id="php30">
     <pre>
@@ -5016,6 +5022,7 @@ api.Put(&quot;/zones/push.json/&quot; + zoneID, prop + &quot;=&quot; + val);
 <ul class="nav nav-tabs" id="myTab31">
   <li class="active"><a href="#ruby31" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python31" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl31" data-toggle='tab'>Perl</a></li>
   <li><a href="#php31" data-toggle='tab'>PHP</a></li>
   <li><a href="#node31" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp31" data-toggle='tab'>.NET/C#</a></li>
@@ -5034,6 +5041,12 @@ api.put(&#39;/zones/push.json/&#39;+id,params)</pre>
 id = &#39;96182&#39;
 params = {&quot;label&quot;:&quot;Some other description&quot;}
 api.put(&#39;/zones/push.json/&#39;+id,params=params)</pre>
+  </div>
+    <div class="tab-pane" id="perl31">
+    <pre>
+my $id = 55659;
+my @params = (&#39;compress=0&#39;);
+$api-&gt;put(&quot;/zones/push.json/&quot; . $id, @params);</pre>
   </div>
   <div class="tab-pane" id="php31">
     <pre>
@@ -5104,6 +5117,7 @@ api.Put(&quot;/zones/push.json/&quot; + zoneID, prop + &quot;=&quot; + val);
 <ul class="nav nav-tabs" id="myTab32">
   <li class="active"><a href="#ruby32" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python32" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl32" data-toggle='tab'>Perl</a></li>
   <li><a href="#php32" data-toggle='tab'>PHP</a></li>
   <li><a href="#node32" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp32" data-toggle='tab'>.NET/C#</a></li>
@@ -5120,6 +5134,11 @@ api.delete(&#39;/zones/push.json/&#39;+id)</pre>
     <pre>
 id = &#39;96182&#39;
 api.delete(&#39;/zones/push.json/&#39;+id)</pre>
+  </div>
+    <div class="tab-pane" id="perl32">
+    <pre>
+my $id = 55659;
+$api-&gt;delete(&quot;/zones/push.json/&quot; . $id);</pre>
   </div>
   <div class="tab-pane" id="php32">
     <pre>
@@ -5161,6 +5180,7 @@ api.Delete(&quot;/zones/push.json/&quot; + id);
 <ul class="nav nav-tabs" id="myTab33">
   <li class="active"><a href="#ruby33" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python33" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl33" data-toggle='tab'>Perl</a></li>
   <li><a href="#php33" data-toggle='tab'>PHP</a></li>
   <li><a href="#node33" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp33" data-toggle='tab'>.NET/C#</a></li>
@@ -5177,6 +5197,11 @@ api.put(&#39;/zones/push/&#39;+id+&#39;/enable.json&#39;)</pre>
     <pre>
 id = &#39;96182&#39;
 api.put(&#39;/zones/push/&#39;+id+&#39;/enable.json&#39;)</pre>
+  </div>
+    <div class="tab-pane" id="perl33">
+    <pre>
+my $id = 55659;
+$api-&gt;put(&quot;/zones/push/&quot; . $id . &quot;/enable.json&quot;);</pre>
   </div>
   <div class="tab-pane" id="php33">
     <pre>
@@ -5219,6 +5244,7 @@ api.Put(&quot;/zones/push/&quot; + id + &quot;/enable.json&quot;);
 <ul class="nav nav-tabs" id="myTab34">
   <li class="active"><a href="#ruby34" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python34" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl34" data-toggle='tab'>Perl</a></li>
   <li><a href="#php34" data-toggle='tab'>PHP</a></li>
   <li><a href="#node34" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp34" data-toggle='tab'>.NET/C#</a></li>
@@ -5235,6 +5261,11 @@ api.put(&#39;/zones/push/&#39;+id+&#39;/disable.json&#39;)</pre>
     <pre>
 id = &#39;96182&#39;
 api.put(&#39;/zones/push/&#39;+id+&#39;/disable.json&#39;)</pre>
+  </div>
+    <div class="tab-pane" id="perl34">
+    <pre>
+my $id = 55659;
+$api-&gt;put(&quot;/zones/push/&quot; . $id . &quot;/disable.json&quot;);</pre>
   </div>
   <div class="tab-pane" id="php34">
     <pre>
@@ -5304,6 +5335,7 @@ api.Put(&quot;/zones/push/&quot; + id + &quot;/disable.json&quot;);
 <ul class="nav nav-tabs" id="myTab35">
   <li class="active"><a href="#ruby35" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python35" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl35" data-toggle='tab'>Perl</a></li>
   <li><a href="#php35" data-toggle='tab'>PHP</a></li>
   <li><a href="#node35" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp35" data-toggle='tab'>.NET/C#</a></li>
@@ -5320,6 +5352,11 @@ api.get(&#39;/zones/push/&#39;+id+&#39;/customdomains.json&#39;)</pre>
     <pre>
 id = &#39;96182&#39;
 api.get(&#39;/zones/push/&#39;+id+&#39;/customdomains.json&#39;)</pre>
+  </div>
+    <div class="tab-pane" id="perl35">
+    <pre>
+my $id = 134458;
+$api-&gt;get(&quot;/zones/push/&quot; . $id . &quot;/customdomains.json&quot;);</pre>
   </div>
   <div class="tab-pane" id="php35">
     <pre>

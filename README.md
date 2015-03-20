@@ -3242,6 +3242,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab30">
   <li class="active"><a href="#ruby30" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python30" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl30" data-toggle='tab'>Perl</a></li>
   <li><a href="#php30" data-toggle='tab'>PHP</a></li>
   <li><a href="#node30" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp30" data-toggle='tab'>.NET/C#</a></li>
@@ -3258,6 +3259,11 @@ api.get('/zones/push.json/'+id)</pre>
     <pre>
 id = '96182'
 api.get('/zones/push.json/'+id)</pre>
+  </div>
+    <div class="tab-pane" id="perl30">
+    <pre>
+my $id = 55659;
+$api->get("/zones/push.json/" . $id);</pre>
   </div>
   <div class="tab-pane" id="php30">
     <pre>
@@ -3357,6 +3363,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab31">
   <li class="active"><a href="#ruby31" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python31" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl31" data-toggle='tab'>Perl</a></li>
   <li><a href="#php31" data-toggle='tab'>PHP</a></li>
   <li><a href="#node31" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp31" data-toggle='tab'>.NET/C#</a></li>
@@ -3375,6 +3382,12 @@ api.put('/zones/push.json/'+id,params)</pre>
 id = '96182'
 params = {"label":"Some other description"}
 api.put('/zones/push.json/'+id,params=params)</pre>
+  </div>
+    <div class="tab-pane" id="perl31">
+    <pre>
+my $id = 55659;
+my @params = ('compress=0');
+$api->put("/zones/push.json/" . $id, @params);</pre>
   </div>
   <div class="tab-pane" id="php31">
     <pre>
@@ -3448,6 +3461,7 @@ Deletes a push zone specified by the {zone_id} parameter
 <ul class="nav nav-tabs" id="myTab32">
   <li class="active"><a href="#ruby32" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python32" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl32" data-toggle='tab'>Perl</a></li>
   <li><a href="#php32" data-toggle='tab'>PHP</a></li>
   <li><a href="#node32" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp32" data-toggle='tab'>.NET/C#</a></li>
@@ -3464,6 +3478,11 @@ api.delete('/zones/push.json/'+id)</pre>
     <pre>
 id = '96182'
 api.delete('/zones/push.json/'+id)</pre>
+  </div>
+    <div class="tab-pane" id="perl32">
+    <pre>
+my $id = 55659;
+$api->delete("/zones/push.json/" . $id);</pre>
   </div>
   <div class="tab-pane" id="php32">
     <pre>
@@ -3508,6 +3527,7 @@ Enables a push zone specified by the {zone_id} parameter
 <ul class="nav nav-tabs" id="myTab33">
   <li class="active"><a href="#ruby33" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python33" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl33" data-toggle='tab'>Perl</a></li>
   <li><a href="#php33" data-toggle='tab'>PHP</a></li>
   <li><a href="#node33" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp33" data-toggle='tab'>.NET/C#</a></li>
@@ -3524,6 +3544,11 @@ api.put('/zones/push/'+id+'/enable.json')</pre>
     <pre>
 id = '96182'
 api.put('/zones/push/'+id+'/enable.json')</pre>
+  </div>
+    <div class="tab-pane" id="perl33">
+    <pre>
+my $id = 55659;
+$api->put("/zones/push/" . $id . "/enable.json");</pre>
   </div>
   <div class="tab-pane" id="php33">
     <pre>
@@ -3569,6 +3594,7 @@ Disables a push zone specified by the {zone_id} parameter
 <ul class="nav nav-tabs" id="myTab34">
   <li class="active"><a href="#ruby34" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python34" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl34" data-toggle='tab'>Perl</a></li>
   <li><a href="#php34" data-toggle='tab'>PHP</a></li>
   <li><a href="#node34" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp34" data-toggle='tab'>.NET/C#</a></li>
@@ -3585,6 +3611,11 @@ api.put('/zones/push/'+id+'/disable.json')</pre>
     <pre>
 id = '96182'
 api.put('/zones/push/'+id+'/disable.json')</pre>
+  </div>
+    <div class="tab-pane" id="perl34">
+    <pre>
+my $id = 55659;
+$api->put("/zones/push/" . $id . "/disable.json");</pre>
   </div>
   <div class="tab-pane" id="php34">
     <pre>
@@ -3640,6 +3671,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab35">
   <li class="active"><a href="#ruby35" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python35" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl35" data-toggle='tab'>Perl</a></li>
   <li><a href="#php35" data-toggle='tab'>PHP</a></li>
   <li><a href="#node35" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp35" data-toggle='tab'>.NET/C#</a></li>
@@ -3656,6 +3688,11 @@ api.get('/zones/push/'+id+'/customdomains.json')</pre>
     <pre>
 id = '96182'
 api.get('/zones/push/'+id+'/customdomains.json')</pre>
+  </div>
+    <div class="tab-pane" id="perl35">
+    <pre>
+my $id = 134458;
+$api->get("/zones/push/" . $id . "/customdomains.json");</pre>
   </div>
   <div class="tab-pane" id="php35">
     <pre>
