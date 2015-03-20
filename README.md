@@ -841,7 +841,7 @@ api.get('/users.json/'+id)</pre>
   </div>
     <div class="tab-pane" id="perl7">
     <pre>
-y $id = 58309;
+my $id = 58309;
 my $data = $api->get("/users.json/58309");
 print $data->{'user'}{'lastname'};</pre>
   </div>
