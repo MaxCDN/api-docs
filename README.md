@@ -2222,6 +2222,7 @@ Disables a pull zone specified by the {zone_id} parameter
 <ul class="nav nav-tabs" id="myTab20">
   <li class="active"><a href="#ruby20" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python20" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl20" data-toggle='tab'>Perl</a></li>
   <li><a href="#php20" data-toggle='tab'>PHP</a></li>
   <li><a href="#node20" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp20" data-toggle='tab'>.NET/C#</a></li>
@@ -2238,6 +2239,11 @@ api.put('/zones/pull/'+id+'/disable.json')</pre>
     <pre>
 id = '97167'
 api.put('/zones/pull/'+id+'/disable.json')</pre>
+  </div>
+    <div class="tab-pane" id="perl20">
+    <pre>
+my $id = 134458;
+$api->put("/zones/pull/" . $id . "/disable.json");</pre>
   </div>
   <div class="tab-pane" id="php20">
     <pre>
@@ -2288,6 +2294,7 @@ Parameter | Default Value | Validation | Description |
 <ul class="nav nav-tabs" id="myTab21">
   <li class="active"><a href="#ruby21" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python21" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl21" data-toggle='tab'>Perl</a></li>
   <li><a href="#php21" data-toggle='tab'>PHP</a></li>
   <li><a href="#node21" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp21" data-toggle='tab'>.NET/C#</a></li>
@@ -2322,6 +2329,19 @@ api.purge(id,'/file1.txt')
 #Purge Files
 id = '97167'
 api.purge(id, ['/file1.txt','/file2.txt'])</pre>
+  </div>
+    <div class="tab-pane" id="perl21">
+  <pre>
+#Purge Zone
+$api->delete("/zones/pull.json/165013/cache");
+
+#Purge File
+my @params = ("%2Frankings%2Fhotlist%2Fi%2F500w%2F2.jpg");
+$api->delete("/zones/pull.json/165013/cache", @params);
+
+#Purge Files
+my @params = ("%2Frankings%2Fhotlist%2Fi%2F500w%2F2.jpg", "%2F_index%2Ff_mdcdb.html");
+$api->delete("/zones/pull.json/165013/cache", @params);</pre>
   </div>
   <div class="tab-pane" id="php21">
     <pre>
@@ -2441,6 +2461,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab22">
   <li class="active"><a href="#ruby22" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python22" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl22" data-toggle='tab'>Perl</a></li>
   <li><a href="#php22" data-toggle='tab'>PHP</a></li>
   <li><a href="#node22" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp22" data-toggle='tab'>.NET/C#</a></li>
@@ -2457,6 +2478,12 @@ api.get('/zones/pull/'+id+'/customdomains.json')</pre>
     <pre>
 id = '97167'
 api.get('/zones/pull/'+id+'/customdomains.json')</pre>
+  </div>
+    <div class="tab-pane" id="perl22">
+    <pre>
+my $id = 134458;
+$api->get("/zones/pull/" . $id . "/customdomains.json");
+</pre>
   </div>
   <div class="tab-pane" id="php22">
     <pre>
@@ -2529,6 +2556,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab23">
   <li class="active"><a href="#ruby23" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python23" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl23" data-toggle='tab'>Perl</a></li>
   <li><a href="#php23" data-toggle='tab'>PHP</a></li>
   <li><a href="#node23" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp23" data-toggle='tab'>.NET/C#</a></li>
@@ -2547,6 +2575,12 @@ api.post('/zones/pull/'+id+'/customdomains.json', params)</pre>
 id = '97167'
 params = {"custom_domain":"cdn.somedomain13.com"}
 api.post('/zones/pull/'+id+'/customdomains.json', params)</pre>
+  </div>
+    <div class="tab-pane" id="perl23">
+    <pre>
+my $id = 134458;
+my @params = {custom_domain => 'idabic.dom.net'};
+$api->post("/zones/pull/" . $id . "/customdomains.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php23">
     <pre>
