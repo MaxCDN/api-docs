@@ -7992,6 +7992,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab85">
   <li class="active"><a href="#ruby85" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python85" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl85" data-toggle='tab'>Perl</a></li>
   <li><a href="#php85" data-toggle='tab'>PHP</a></li>
   <li><a href="#node85" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp85" data-toggle='tab'>.NET/C#</a></li>
@@ -8008,6 +8009,11 @@ api.get('/reports/filetypes.json'+reportType)</pre>
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/filetypes.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="perl85">
+    <pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+$api->get("/reports/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php85">
     <pre>
@@ -8083,6 +8089,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab86">
   <li class="active"><a href="#ruby86" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python86" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl86" data-toggle='tab'>Perl</a></li>
   <li><a href="#php86" data-toggle='tab'>PHP</a></li>
   <li><a href="#node86" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp86" data-toggle='tab'>.NET/C#</a></li>
@@ -8101,6 +8108,12 @@ api.get('/reports/'+id+'/filetypes.json'+reportType)</pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 id = '96061'
 api.get('/reports/'+id+'/filetypes.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="perl86">
+    <pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $id = 96061;
+$api->get("/reports/" . $id . "/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php86">
     <pre>
@@ -8167,6 +8180,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab87">
   <li class="active"><a href="#ruby87" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python87" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl87" data-toggle='tab'>Perl</a></li>
   <li><a href="#php87" data-toggle='tab'>PHP</a></li>
   <li><a href="#node87" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp87" data-toggle='tab'>.NET/C#</a></li>
@@ -8185,6 +8199,12 @@ api.get('/reports/'+zoneType+'/filetypes.json'+reportType)</pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 api.get('/reports/'+zoneType+'/filetypes.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="perl87">
+    <pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $zoneType = "pull";
+$api->get("/reports/" . $zoneType . "/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php87">
     <pre>
@@ -8266,6 +8286,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab88">
   <li class="active"><a href="#ruby88" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python88" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl88" data-toggle='tab'>Perl</a></li>
   <li><a href="#php88" data-toggle='tab'>PHP</a></li>
   <li><a href="#node88" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp88" data-toggle='tab'>.NET/C#</a></li>
@@ -8286,6 +8307,13 @@ reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 id = '96061'
 api.get('/reports/'+zoneType+'/'+id+'/filetypes.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="perl88">
+    <pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $zoneType = "pull";
+my $id = 96061;
+$api->get("/reports/" . $zoneType . "/" . $id . "/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php88">
     <pre>
@@ -8373,6 +8401,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab89">
   <li class="active"><a href="#ruby89" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python89" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl89" data-toggle='tab'>Perl</a></li>
   <li><a href="#php89" data-toggle='tab'>PHP</a></li>
   <li><a href="#node89" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp89" data-toggle='tab'>.NET/C#</a></li>
@@ -8391,6 +8420,11 @@ api.get('/reports/'+zoneType+'/'+id+'/filetypes.json'+reportType)</pre>
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/filesizes.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="perl89">
+    <pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+$api->get("/reports/filesizes.json/" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php89">
     <pre>
@@ -8478,6 +8512,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab90">
   <li class="active"><a href="#ruby90" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python90" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl90" data-toggle='tab'>Perl</a></li>
   <li><a href="#php90" data-toggle='tab'>PHP</a></li>
   <li><a href="#node90" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp90" data-toggle='tab'>.NET/C#</a></li>
@@ -8496,6 +8531,12 @@ api.get('/reports/'+id+'/filesizes.json'+reportType)</pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 id = '96061'
 api.get('/reports/'+id+'/filesizes.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="perl90">
+    <pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $id = 96061;
+$api->get("/reports/" . $id . "/filesizes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php90">
     <pre>
@@ -8583,6 +8624,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab91">
   <li class="active"><a href="#ruby91" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python91" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl91" data-toggle='tab'>Perl</a></li>
   <li><a href="#php91" data-toggle='tab'>PHP</a></li>
   <li><a href="#node91" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp91" data-toggle='tab'>.NET/C#</a></li>
@@ -8601,6 +8643,12 @@ api.get('/reports/'+zoneType+'/filesizes.json'+reportType)</pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 api.get('/reports/'+zoneType+'/filesizes.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="perl91">
+    <pre>
+  reportType = ''; #Valid input includes '/daily', '/hourly', '/monthly' or ''
+  zoneType = 'pull';
+  api.get('/reports/'+zoneType+'/filesizes.json'+reportType);</pre>
   </div>
   <div class="tab-pane" id="php91">
     <pre>
@@ -8691,6 +8739,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab92">
   <li class="active"><a href="#ruby92" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python92" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl92" data-toggle='tab'>Perl</a></li>
   <li><a href="#php92" data-toggle='tab'>PHP</a></li>
   <li><a href="#node92" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp92" data-toggle='tab'>.NET/C#</a></li>
@@ -8711,6 +8760,13 @@ reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 id = '96061'
 api.get('/reports/'+zoneType+'/'+id+'/filesizes.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="perl92">
+    <pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $zoneType = "pull";
+my $id = 96061;
+$api->get("/reports/" . $zoneType . "/" . $id . "/filesizes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php92">
     <pre>
@@ -8799,6 +8855,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab93">
   <li class="active"><a href="#ruby93" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python93" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl93" data-toggle='tab'>Perl</a></li>
   <li><a href="#php93" data-toggle='tab'>PHP</a></li>
   <li><a href="#node93" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp93" data-toggle='tab'>.NET/C#</a></li>
@@ -8815,6 +8872,11 @@ api.get('/reports/statsbydir.json'+reportType)</pre>
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statsbydir.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="perl93">
+    <pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+$api->get("/reports/statsbydir.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php93">
     <pre>
@@ -8889,6 +8951,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab94">
   <li class="active"><a href="#ruby94" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python94" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl94" data-toggle='tab'>Perl</a></li>
   <li><a href="#php94" data-toggle='tab'>PHP</a></li>
   <li><a href="#node94" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp94" data-toggle='tab'>.NET/C#</a></li>
@@ -8907,6 +8970,13 @@ api.get('/reports/'+id+'/statsbydir.json'+reportType)</pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 id = '96061'
 api.get('/reports/'+id+'/statsbydir.json'+reportType)</pre>
+  </div>
+  <div class="tab-pane" id="perl94">
+    <pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $id = 96061;
+$api->get("/reports/" . $id . "/statsbydir.json" . $reportType);
+</pre>
   </div>
   <div class="tab-pane" id="php94">
     <pre>
@@ -9022,6 +9092,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab101">
   <li class="active"><a href="#ruby101" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python101" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl101" data-toggle='tab'>Perl</a></li>
   <li><a href="#php101" data-toggle='tab'>PHP</a></li>
   <li><a href="#node101" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp101" data-toggle='tab'>.NET/C#</a></li>
@@ -9037,6 +9108,10 @@ api.get('/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200')</p
     <pre>
 params = {"start":"2014-01-30", "end":"2014-01-31", "status":"200"}
 api.get('/v3/reporting/logs.json', data=params)</pre>
+  </div>
+  <div class="tab-pane" id="perl101">
+    <pre>
+$api->get("/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200");</pre>
   </div>
   <div class="tab-pane" id="php101">
     <pre>
@@ -9146,6 +9221,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab102">
   <li class="active"><a href="#ruby102" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python102" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl102" data-toggle='tab'>Perl</a></li>
   <li><a href="#php102" data-toggle='tab'>PHP</a></li>
   <li><a href="#node102" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp102" data-toggle='tab'>.NET/C#</a></li>
@@ -9164,6 +9240,12 @@ api.post('/zones/pull/'+id+'/zoneshields.json', params)</pre>
 id = '97167'
 params = {"location":"sjc"}
 api.post('/zones/pull/'+id+'/zoneshields.json', params)</pre>
+  </div>
+  <div class="tab-pane" id="perl102">
+    <pre>
+my $id = 123502;
+my @params = {location => 'sjc'};
+$api->post("/zones/pull/" . $id . "/zoneshields.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php102">
     <pre>
@@ -9232,6 +9314,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab103">
   <li class="active"><a href="#ruby103" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python103" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl103" data-toggle='tab'>Perl</a></li>
   <li><a href="#php103" data-toggle='tab'>PHP</a></li>
   <li><a href="#node103" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp103" data-toggle='tab'>.NET/C#</a></li>
@@ -9250,6 +9333,12 @@ api.put('/zones/pull/'+id+'/zoneshields.json', params)</pre>
 id = '97167'
 params = {"location":"ams"}
 api.put('/zones/pull/'+id+'/zoneshields.json', params)</pre>
+  </div>
+  <div class="tab-pane" id="perl103">
+    <pre>
+my $id = 123502;
+my @params = ('location=ams');
+$api->put("/zones/pull/" . $id . "/zoneshields.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php103">
     <pre>
@@ -9304,6 +9393,7 @@ Remove the active Origin Shield from your Pull Zone
 <ul class="nav nav-tabs" id="myTab104">
   <li class="active"><a href="#ruby104" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python104" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl104" data-toggle='tab'>Perl</a></li>
   <li><a href="#php104" data-toggle='tab'>PHP</a></li>
   <li><a href="#node104" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp104" data-toggle='tab'>.NET/C#</a></li>
@@ -9320,6 +9410,12 @@ api.delete('/zones/pull/'+id+'/zoneshields.json')</pre>
     <pre>
 id = '97167'
 api.delete('/zones/pull/'+id+'/zoneshields.json')</pre>
+  </div>
+  <div class="tab-pane" id="perl104">
+    <pre>
+my $id = 123502;
+$api->delete("/zones/pull/" . $id . "/zoneshields.json");
+</pre>
   </div>
   <div class="tab-pane" id="php104">
     <pre>
@@ -9371,6 +9467,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab106">
   <li class="active"><a href="#ruby106" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python106" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl106" data-toggle='tab'>Perl</a></li>
   <li><a href="#php106" data-toggle='tab'>PHP</a></li>
   <li><a href="#node106" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp106" data-toggle='tab'>.NET/C#</a></li>
@@ -9385,6 +9482,11 @@ api.get('/ssl.json')</pre>
   <div class="tab-pane" id="python106">
     <pre>
 api.get('/ssl.json')</pre>
+  </div>
+  <div class="tab-pane" id="perl106">
+    <pre>
+$api->get("/ssl.json");
+</pre>
   </div>
   <div class="tab-pane" id="php106">
     <pre>
@@ -9465,6 +9567,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab107">
   <li class="active"><a href="#ruby107" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python107" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl107" data-toggle='tab'>Perl</a></li>
   <li><a href="#php107" data-toggle='tab'>PHP</a></li>
   <li><a href="#node107" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp107" data-toggle='tab'>.NET/C#</a></li>
@@ -9481,6 +9584,12 @@ api.post('/ssl.json',params )</pre>
     <pre>
 params = array("ssl_crt": "-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key": "-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle": "-----BEGIN CERTIFICATE.....", "name": "Our *.example.com wildcard");
 api.post('/ssl.json',data=params )</pre>
+  </div>
+  <div class="tab-pane" id="perl107">
+  <pre>
+my @params = {ssl_crt => '-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----', ssl_key => '-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our .example.com wildcard');
+$api->post("/ssl.json", @params );
+  </pre>
   </div>
   <div class="tab-pane" id="php107">
     <pre>
@@ -9505,11 +9614,11 @@ Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 using (StreamReader sr = new StreamReader("cert.txt"))
 {
-	cert = sr.ReadToEnd();               
+cert = sr.ReadToEnd();               
 }
 using (StreamReader sr = new StreamReader("key.txt"))
 {
-	key = sr.ReadToEnd();
+key = sr.ReadToEnd();
 }
 var dat = "";
 cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
@@ -9569,6 +9678,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab108">
   <li class="active"><a href="#ruby108" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python108" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl108" data-toggle='tab'>Perl</a></li>
   <li><a href="#php108" data-toggle='tab'>PHP</a></li>
   <li><a href="#node108" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp108" data-toggle='tab'>.NET/C#</a></li>
@@ -9585,6 +9695,12 @@ api.get('/ssl.json/'+id)</pre>
     <pre>
 id = '1234'
 api.get('/ssl.json/'+id)</pre>
+  </div>
+  <div class="tab-pane" id="perl108">
+    <pre>
+my $id = 1234;
+$api->get("/ssl.json/" . $id);
+</pre>
   </div>
   <div class="tab-pane" id="php108">
     <pre>
@@ -9665,6 +9781,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab109">
   <li class="active"><a href="#ruby109" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python109" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl109" data-toggle='tab'>Perl</a></li>
   <li><a href="#php109" data-toggle='tab'>PHP</a></li>
   <li><a href="#node109" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp109" data-toggle='tab'>.NET/C#</a></li>
@@ -9682,6 +9799,13 @@ api.put('/ssl.json/'+id,params)
   <div class="tab-pane" id="python109">
     <pre>
 api.put('/ssl.json/'+id,params={ 'ssl_crt':"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----",'ssl_key':"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----",'ssl_cabundle':"-----BEGIN CERTIFICATE.....",'name':"Our new *.example.com wildcard" })</pre>
+  </div>
+  <div class="tab-pane" id="perl109">
+    <pre>
+my $id = 1234;
+my @params = ('ssl_crt=-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----', 'ssl_key=-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....', 'name=Our.example.com-wildcard');
+$api->put("/ssl.json/" . $id, @params);
+</pre>
   </div>
   <div class="tab-pane" id="php109">
     <pre>
@@ -9708,11 +9832,11 @@ Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 using (StreamReader sr = new StreamReader("cert.txt"))
 {
-	cert = sr.ReadToEnd();               
+cert = sr.ReadToEnd();               
 }
 using (StreamReader sr = new StreamReader("key.txt"))
 {
-	key = sr.ReadToEnd();
+key = sr.ReadToEnd();
 }
 
 var dat = "";
@@ -9762,6 +9886,7 @@ Deletes a certificate specified by the {ssl_id} parameter
 <ul class="nav nav-tabs" id="myTab110">
   <li class="active"><a href="#ruby110" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python110" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl110" data-toggle='tab'>Perl</a></li>
   <li><a href="#php110" data-toggle='tab'>PHP</a></li>
   <li><a href="#node110" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp110" data-toggle='tab'>.NET/C#</a></li>
@@ -9779,6 +9904,11 @@ api.delete('/ssl.json/'+id)</pre>
 id = '1234'
 api.delete('/ssl.json/'+id)</pre>
   </div>
+    <div class="tab-pane" id="perl110">
+      <pre>
+my $id = 1234;
+$api->delete("/ssl.json/" . $id);</pre>
+    </div>
   <div class="tab-pane" id="php110">
     <pre>
 $id = '1234';
