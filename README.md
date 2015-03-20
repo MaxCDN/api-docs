@@ -715,6 +715,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab6">
   <li class="active"><a href="#ruby6" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python6" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl6" data-toggle='tab'>Perl</a></li>
   <li><a href="#php6" data-toggle='tab'>PHP</a></li>
   <li><a href="#node6" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp6" data-toggle='tab'>.NET/C#</a></li>
@@ -731,6 +732,11 @@ api.post('/users.json',params )</pre>
     <pre>
 params={'email':'name43@domain.com','password':'password','firstname':'Given','lastname':'Family'}
 api.post('/users.json',data=params )</pre>
+  </div>
+    <div class="tab-pane" id="perl6">
+    <pre>
+my @params = {firstname => 'Perl', lastname => 'User', email => 'user@domain.com', password => 'testpwd'};
+$api->post("/users.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php6">
     <pre>
@@ -815,6 +821,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab7">
   <li class="active"><a href="#ruby7" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python7" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl7" data-toggle='tab'>Perl</a></li>
   <li><a href="#php7" data-toggle='tab'>PHP</a></li>
   <li><a href="#node7" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp7" data-toggle='tab'>.NET/C#</a></li>
@@ -831,6 +838,12 @@ api.get('/users.json/'+id)</pre>
     <pre>
 id = '33706'
 api.get('/users.json/'+id)</pre>
+  </div>
+    <div class="tab-pane" id="perl7">
+    <pre>
+y $id = 58309;
+my $data = $api->get("/users.json/58309");
+print $data->{'user'}{'lastname'};</pre>
   </div>
   <div class="tab-pane" id="php7">
     <pre>
@@ -920,6 +933,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab8">
   <li class="active"><a href="#ruby8" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python8" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl8" data-toggle='tab'>Perl</a></li>
   <li><a href="#php8" data-toggle='tab'>PHP</a></li>
   <li><a href="#node8" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp8" data-toggle='tab'>.NET/C#</a></li>
@@ -937,6 +951,12 @@ api.put('/users.json/'+id,params)
   <div class="tab-pane" id="python8">
     <pre>
 api.put('/users.json/'+id,params={'firstname': 'name'})</pre>
+  </div>
+    <div class="tab-pane" id="perl8">
+    <pre>
+my $id = 58309;
+my @params = ('lastname=Test');
+$api->put("/users.json/" . $id, @params);</pre>
   </div>
   <div class="tab-pane" id="php8">
     <pre>
@@ -1010,6 +1030,7 @@ Deletes a user specified by the {user_id} parameter
 <ul class="nav nav-tabs" id="myTab9">
   <li class="active"><a href="#ruby9" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python9" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl9" data-toggle='tab'>Perl</a></li>
   <li><a href="#php9" data-toggle='tab'>PHP</a></li>
   <li><a href="#node9" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp9" data-toggle='tab'>.NET/C#</a></li>
@@ -1026,6 +1047,11 @@ api.delete('/users.json/'+id)</pre>
     <pre>
 id = '33706'
 api.delete('/users.json/'+id)</pre>
+  </div>
+    <div class="tab-pane" id="perl9">
+    <pre>
+my $id = 58309;
+$api->delete("/users.json/" . $id);</pre>
   </div>
   <div class="tab-pane" id="php9">
     <pre>
@@ -1073,6 +1099,7 @@ Returns a list of all zones on the specified account
 <ul class="nav nav-tabs" id="myTab10">
   <li class="active"><a href="#ruby10" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python10" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl10" data-toggle='tab'>Perl</a></li>
   <li><a href="#php10" data-toggle='tab'>PHP</a></li>
   <li><a href="#node10" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp10" data-toggle='tab'>.NET/C#</a></li>
@@ -1087,6 +1114,10 @@ api.get('/zones.json')</pre>
   <div class="tab-pane" id="python10">
     <pre>
 api.get('/zones.json')</pre>
+  </div>
+    <div class="tab-pane" id="perl10">
+    <pre>
+$api->get("/zones.json");</pre>
   </div>
   <div class="tab-pane" id="php10">
     <pre>
@@ -1158,6 +1189,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab11">
   <li class="active"><a href="#ruby11" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python11" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl11" data-toggle='tab'>Perl</a></li>
   <li><a href="#php11" data-toggle='tab'>PHP</a></li>
   <li><a href="#node11" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp11" data-toggle='tab'>.NET/C#</a></li>
@@ -1172,6 +1204,10 @@ api.get('/zones.json/summary')</pre>
   <div class="tab-pane" id="python11">
     <pre>
 api.get('/zones.json/summary')</pre>
+  </div>
+    <div class="tab-pane" id="perl11">
+    <pre>
+$api->get("/zones.json/summary");</pre>
   </div>
   <div class="tab-pane" id="php11">
     <pre>
@@ -1226,6 +1262,7 @@ Parameter | Description |
 <ul class="nav nav-tabs" id="myTab12">
   <li class="active"><a href="#ruby12" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python12" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl12" data-toggle='tab'>Perl</a></li>
   <li><a href="#php12" data-toggle='tab'>PHP</a></li>
   <li><a href="#node12" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp12" data-toggle='tab'>.NET/C#</a></li>
@@ -1240,6 +1277,10 @@ api.get('/zones.json/count')</pre>
   <div class="tab-pane" id="python12">
     <pre>
 api.get('/zones.json/count')</pre>
+  </div>
+    <div class="tab-pane" id="perl12">
+    <pre>
+$api->get("/zones.json/count");</pre>
   </div>
   <div class="tab-pane" id="php12">
     <pre>
