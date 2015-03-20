@@ -208,6 +208,7 @@ On a conceptual level it works in the following way:</p>
 <ul class="nav nav-tabs" id="myTab1">
   <li class="active"><a href="#ruby1" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python1" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl1" data-toggle='tab'>Perl</a></li>
   <li><a href="#php1" data-toggle='tab'>PHP</a></li>
   <li><a href="#node1" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp1" data-toggle='tab'>.NET/C#</a></li>
@@ -221,6 +222,10 @@ api.get(&quot;/account.json&quot;)</pre>
   </div>
   <div class="tab-pane" id="python1">
     <pre>api.get(&quot;/account.json&quot;)</pre>
+  </div>
+    <div class="tab-pane" id="perl1">
+    <pre>my $data = $api-&gt;get(&quot;/account.json&quot;);
+print $data-&gt;{&#39;account&#39;}{&#39;name&#39;};</pre>
   </div>
   <div class="tab-pane" id="php1">
     <pre>
@@ -348,6 +353,7 @@ api.Get(&quot;/account.json&quot;);
 <ul class="nav nav-tabs" id="myTab2">
   <li class="active"><a href="#ruby2" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python2" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl2" data-toggle='tab'>Perl</a></li>
   <li><a href="#php2" data-toggle='tab'>PHP</a></li>
   <li><a href="#node2" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp2" data-toggle='tab'>.NET/C#</a></li>
@@ -364,6 +370,11 @@ api.put(&#39;/account.json&#39;,params)</pre>
     <pre>
 params={&quot;name&quot;: &quot;Monty&quot;}
 api.put(&#39;/account.json&#39;,params=params)</pre>
+  </div>
+    <div class="tab-pane" id="perl2">
+    <pre>
+my @params = (&#39;name=IDABIC&#39;);
+$api-&gt;put(&quot;/account.json&quot;, @params, 1);</pre>
   </div>
   <div class="tab-pane" id="php2">
     <pre>
@@ -477,6 +488,7 @@ api.Put(&quot;/account.json&quot;, &quot;name=UserName&quot;);
 <ul class="nav nav-tabs" id="myTab3">
   <li class="active"><a href="#ruby3" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python3" data-toggle='tab'>Python</a></li>
+    <li><a href="#perl3" data-toggle='tab'>Perl</a></li>
   <li><a href="#php3" data-toggle='tab'>PHP</a></li>
   <li><a href="#node3" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp3" data-toggle='tab'>.NET/C#</a></li>
@@ -491,6 +503,11 @@ api.get(&#39;/account.json/address&#39;)</pre>
   <div class="tab-pane" id="python3">
     <pre>
 api.get(&#39;/account.json/address&#39;)</pre>
+  </div>
+    <div class="tab-pane" id="perl3">
+    <pre>
+my $data = $api-&gt;get(&quot;/account.json/address&quot;);
+print $data-&gt;{&#39;address&#39;}{&#39;street1&#39;};</pre>
   </div>
   <div class="tab-pane" id="php3">
     <pre>
@@ -654,6 +671,7 @@ api.Get(&quot;/account.json/address&quot;);
 <ul class="nav nav-tabs" id="myTab4">
   <li class="active"><a href="#ruby4" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python4" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl4" data-toggle='tab'>Perl</a></li>
   <li><a href="#php4" data-toggle='tab'>PHP</a></li>
   <li><a href="#node4" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp4" data-toggle='tab'>.NET/C#</a></li>
@@ -670,6 +688,11 @@ api.put(&#39;/account.json/address&#39;,params)</pre>
     <pre>
 params = {&quot;street1&quot;: &quot;1234 Main Street&quot;, &quot;street2&quot;: &quot;apt 42&quot;, &quot;state&quot;: &quot;CA&quot;}
 api.put(&#39;/account.json/address&#39;,params=params)</pre>
+  </div>
+    <div class="tab-pane" id="perl4">
+    <pre>
+my @params = (&#39;street1=Main&#39;);
+$api-&gt;put(&quot;/account.json/address&quot;, @params, 1);</pre>
   </div>
   <div class="tab-pane" id="php4">
     <pre>
@@ -790,6 +813,7 @@ api.Put(&quot;/account.json/address&quot;, &quot;street1=1234 Main Street&quot;)
 <ul class="nav nav-tabs" id="myTab5">
   <li class="active"><a href="#ruby5" data-toggle='tab'>Ruby</a></li>
   <li><a href="#python5" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl5" data-toggle='tab'>Perl</a></li>
   <li><a href="#php5" data-toggle='tab'>PHP</a></li>
   <li><a href="#node5" data-toggle='tab'>Node</a></li>
   <li><a href="#csharp5" data-toggle='tab'>.NET/C#</a></li>
@@ -804,6 +828,11 @@ api.get(&#39;/users.json&#39;)</pre>
   <div class="tab-pane" id="python5">
     <pre>
 api.get(&#39;/users.json&#39;)</pre>
+  </div>
+    <div class="tab-pane" id="perl5">
+    <pre>
+my $data = $api-&gt;get(&quot;/users.json&quot;);
+print $data-&gt;{&#39;users&#39;}[0]{&#39;id&#39;};</pre>
   </div>
   <div class="tab-pane" id="php5">
     <pre>
