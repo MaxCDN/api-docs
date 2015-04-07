@@ -3428,6 +3428,135 @@ api.Delete(&quot;/zones/pull.json/&quot; + id);
 </div>
 
 
+<h2 id="enable-flex">Enable Flex</h2>
+<p>Enables additional locations on a pull zone specified by the {zone_id} parameter</p>
+<div class="heading">
+<div class="url POST"><span class="http_method">POST</span>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/flex.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/flex.json</a></span></div>
+</div>
+
+
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab19-1">
+  <li class="active"><a href="#ruby19-1" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python19-1" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl19-1" data-toggle='tab'>Perl</a></li>
+  <li><a href="#php19-1" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node19-1" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp19-1" data-toggle='tab'>.NET/C#</a></li>
+  <li><a href="#response19-1" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby19-1">
+    <pre>
+id = &#39;97167&#39;
+api.post(&#39;/zones/pull/&#39;+id+&#39;/flex.json&#39;)</pre>
+  </div>
+  <div class="tab-pane" id="python19-1">
+    <pre>
+id = &#39;97167&#39;
+api.post(&#39;/zones/pull/&#39;+id+&#39;/flex.json&#39;)</pre>
+  </div>
+    <div class="tab-pane" id="perl19-1">
+    <pre>
+my $id = 134458;
+$api-&gt;post(&quot;/zones/pull/&quot; . $id . &quot;/flex.json&quot;);</pre>
+  </div>
+  <div class="tab-pane" id="php19-1">
+    <pre>
+$id = &#39;97167&#39;;
+$api-&gt;post(&#39;/zones/pull/&#39;.$id.&#39;/flex.json&#39;);</pre>
+  </div>
+  <div class="tab-pane" id="node19-1">
+  <pre>
+var id = &#39;97167&#39;
+api.post(&#39;/zones/pull/&#39; + id + &#39;/flex.json&#39;, function(err, response) {
+  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
+})</pre>
+  </div>
+  <div class="tab-pane" id="csharp19-1">
+  <pre>
+Console.Write(&quot;Zone id to enable: \n&quot;);
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Post(&quot;/zones/pull/&quot; + id + &quot;/flex.json&quot;);
+</pre>
+  </div>
+  <div class="tab-pane" id="response19-1">
+    <pre>
+{
+  &quot;code&quot;:200
+}
+</pre>
+  </div>
+</div>
+
+
+<h2 id="disable-flex">Disable Flex</h2>
+<p>Disables additional locations on a pull zone specified by the {zone_id} parameter</p>
+<div class="heading">
+<div class="url DELETE"><span class="http_method">DELETE</span>
+<span class="path"> <a href="https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/flex.json">https://rws.maxcdn.com/{companyalias}/zones/pull/{zone_id}/flex.json</a></span></div>
+</div>
+
+
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab20-1">
+  <li class="active"><a href="#ruby20-1" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python20-1" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl20-1" data-toggle='tab'>Perl</a></li>
+  <li><a href="#php20-1" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node20-1" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp20-1" data-toggle='tab'>.NET/C#</a></li>
+  <li><a href="#response20-1" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby20-1">
+    <pre>
+id = &#39;97167&#39;
+api.delete(&#39;/zones/pull/&#39;+id+&#39;/flex.json&#39;)</pre>
+  </div>
+  <div class="tab-pane" id="python20-1">
+    <pre>
+id = &#39;97167&#39;
+api.delete(&#39;/zones/pull/&#39;+id+&#39;/flex.json&#39;)</pre>
+  </div>
+    <div class="tab-pane" id="perl20-1">
+    <pre>
+my $id = 134458;
+$api-&gt;delete(&quot;/zones/pull/&quot; . $id . &quot;/flex.json&quot;);</pre>
+  </div>
+  <div class="tab-pane" id="php20-1">
+    <pre>
+$id = &#39;97167&#39;;
+$api-&gt;delete(&#39;/zones/pull&#39;.$id.&#39;flex.json);</pre>
+  </div>
+  <div class="tab-pane" id="node20-1">
+  <pre>
+var id = &#39;97167&#39;
+api.delete(&#39;/zones/pull&#39; + id + &#39;flex.json&#39;, function(err, response) {
+  console.log(&#39;err&#39;, err, &#39;response&#39;, response)
+})</pre>
+  </div>
+  <div class="tab-pane" id="csharp20-1">
+  <pre>
+Console.Write(&quot;Zone id to disable: \n&quot;);
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Delete(&quot;/zones/pull/&quot; + id + &quot;/flex.json&quot;);
+</pre>
+  </div>
+  <div class="tab-pane" id="response20-1">
+    <pre>
+{
+  &quot;code&quot;:200
+}</pre>
+  </div>
+</div>
+
+
 <h2 id="enable-pull-zone">Enable Pull Zone</h2>
 <p>Enables a pull zone specified by the {zone_id} parameter</p>
 <div class="heading">
