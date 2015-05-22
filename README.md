@@ -9341,7 +9341,7 @@ Enable an Origin Shield on your Pull Zone
 
 Parameter | Description |
 --- | --- | ---
-`location` | Possible values: sjc, vir, ams |
+`location` | Possible values: sjc for San Jose, vir for Virginia |
 
 ### Response Parameters
 
@@ -9434,7 +9434,7 @@ Update the active Origin Shield for your Pull Zone
 
 Parameter | Description |
 --- | --- | ---
-`location` | Possible values: sjc, vir, ams |
+`location` | Possible values: sjc for San Jose, vir for Virginia |
 
 ### Response Parameters
 
@@ -9460,31 +9460,31 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby103">
     <pre>
 id = '97167'
-params = {"location"=>"ams"}
+params = {"location"=>"sjc"}
 api.put('/zones/pull/'+id+'/zoneshields.json', params)</pre>
   </div>
   <div class="tab-pane" id="python103">
     <pre>
 id = '97167'
-params = {"location":"ams"}
+params = {"location":"sjc"}
 api.put('/zones/pull/'+id+'/zoneshields.json', params)</pre>
   </div>
   <div class="tab-pane" id="perl103">
     <pre>
 my $id = 123502;
-my @params = ('location=ams');
+my @params = ('location=sjc');
 $api->put("/zones/pull/" . $id . "/zoneshields.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php103">
     <pre>
 $id = '97167';
-$params = array("location"=>"ams");
+$params = array("location"=>"sjc");
 $api->put('/zones/pull/'.$id.'/zoneshields.json', $params)</pre>
   </div>
   <div class="tab-pane" id="node103">
     <pre>
 var id = '96167'
-api.put('/zones/pull/' + id + '/zoneshields.json', { location: 'ams' }, function(err, response) {
+api.put('/zones/pull/' + id + '/zoneshields.json', { location: 'sjc' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -9493,7 +9493,7 @@ api.put('/zones/pull/' + id + '/zoneshields.json', { location: 'ams' }, function
 Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
-api.Put("/zones/pull/" + zoneID + "/zoneshields.json", "location=ams");
+api.Put("/zones/pull/" + zoneID + "/zoneshields.json", "location=sjc");
 </pre>
   </div>
   <div class="tab-pane" id="response103">
@@ -9504,7 +9504,7 @@ api.Put("/zones/pull/" + zoneID + "/zoneshields.json", "location=ams");
       {
         "id": 26,
         "zone_id": "97167",
-        "reporting_code": "ams",
+        "reporting_code": "sjc",
       },
     ]
   },

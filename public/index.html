@@ -12714,7 +12714,7 @@ api.Get(&quot;/v3/reporting/logs.json?start=2014-01-30&amp;end=2014-01-31&amp;st
 <tbody>
 <tr>
 <td><code>location</code></td>
-<td>Possible values: sjc, vir, ams</td>
+<td>Possible values: sjc for San Jose, vir for Virginia</td>
 <td></td>
 </tr>
 </tbody>
@@ -12832,7 +12832,7 @@ api.Post(&quot;/zones/pull/&quot; + zoneID + &quot;/zoneshields.json&quot;, &quo
 <tbody>
 <tr>
 <td><code>location</code></td>
-<td>Possible values: sjc, vir, ams</td>
+<td>Possible values: sjc for San Jose, vir for Virginia</td>
 <td></td>
 </tr>
 </tbody>
@@ -12878,31 +12878,31 @@ api.Post(&quot;/zones/pull/&quot; + zoneID + &quot;/zoneshields.json&quot;, &quo
   <div class="tab-pane active" id="ruby103">
     <pre>
 id = &#39;97167&#39;
-params = {&quot;location&quot;=&gt;&quot;ams&quot;}
+params = {&quot;location&quot;=&gt;&quot;sjc&quot;}
 api.put(&#39;/zones/pull/&#39;+id+&#39;/zoneshields.json&#39;, params)</pre>
   </div>
   <div class="tab-pane" id="python103">
     <pre>
 id = &#39;97167&#39;
-params = {&quot;location&quot;:&quot;ams&quot;}
+params = {&quot;location&quot;:&quot;sjc&quot;}
 api.put(&#39;/zones/pull/&#39;+id+&#39;/zoneshields.json&#39;, params)</pre>
   </div>
   <div class="tab-pane" id="perl103">
     <pre>
 my $id = 123502;
-my @params = (&#39;location=ams&#39;);
+my @params = (&#39;location=sjc&#39;);
 $api-&gt;put(&quot;/zones/pull/&quot; . $id . &quot;/zoneshields.json&quot;, @params);</pre>
   </div>
   <div class="tab-pane" id="php103">
     <pre>
 $id = &#39;97167&#39;;
-$params = array(&quot;location&quot;=&gt;&quot;ams&quot;);
+$params = array(&quot;location&quot;=&gt;&quot;sjc&quot;);
 $api-&gt;put(&#39;/zones/pull/&#39;.$id.&#39;/zoneshields.json&#39;, $params)</pre>
   </div>
   <div class="tab-pane" id="node103">
     <pre>
 var id = &#39;96167&#39;
-api.put(&#39;/zones/pull/&#39; + id + &#39;/zoneshields.json&#39;, { location: &#39;ams&#39; }, function(err, response) {
+api.put(&#39;/zones/pull/&#39; + id + &#39;/zoneshields.json&#39;, { location: &#39;sjc&#39; }, function(err, response) {
   console.log(&#39;err&#39;, err, &#39;response&#39;, response)
 })</pre>
   </div>
@@ -12911,7 +12911,7 @@ api.put(&#39;/zones/pull/&#39; + id + &#39;/zoneshields.json&#39;, { location: &
 Console.Write(&quot;Zone ID: \n&quot;);
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
-api.Put(&quot;/zones/pull/&quot; + zoneID + &quot;/zoneshields.json&quot;, &quot;location=ams&quot;);
+api.Put(&quot;/zones/pull/&quot; + zoneID + &quot;/zoneshields.json&quot;, &quot;location=sjc&quot;);
 </pre>
   </div>
   <div class="tab-pane" id="response103">
@@ -12922,7 +12922,7 @@ api.Put(&quot;/zones/pull/&quot; + zoneID + &quot;/zoneshields.json&quot;, &quot
       {
         &quot;id&quot;: 26,
         &quot;zone_id&quot;: &quot;97167&quot;,
-        &quot;reporting_code&quot;: &quot;ams&quot;,
+        &quot;reporting_code&quot;: &quot;sjc&quot;,
       },
     ]
   },
