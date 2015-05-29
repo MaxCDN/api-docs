@@ -24,6 +24,7 @@
 * Integrate with our RESTful API using a language wrapper:
  * [Node](https://github.com/maxcdn/node-maxcdn)
  * [Ruby](https://github.com/maxcdn/ruby-maxcdn)
+ * [Perl](https://github.com/maxcdn/perl-maxcdn)
  * [Python](https://github.com/maxcdn/python-maxcdn)
  * [PHP](https://github.com/MaxCDN/php-maxcdn)
  * [.NET](https://github.com/MaxCDN/dotnet-maxcdn)
