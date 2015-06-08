@@ -284,7 +284,7 @@ api.put('/account.json',params=params)</pre>
     <div class="tab-pane" id="perl2">
     <pre>
 my @params = ('name=IDABIC');
-$api->put("/account.json", @params, 1);</pre>
+$api->put("/account.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php2">
     <pre>
@@ -483,7 +483,7 @@ api.put('/account.json/address',params=params)</pre>
     <div class="tab-pane" id="perl4">
     <pre>
 my @params = ('street1=Main');
-$api->put("/account.json/address", @params, 1);</pre>
+$api->put("/account.json/address", @params);</pre>
   </div>
   <div class="tab-pane" id="php4">
     <pre>
