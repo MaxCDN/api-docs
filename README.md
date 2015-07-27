@@ -1520,7 +1520,7 @@ Parameter | Default Value | Validation | Description |
 `cache_valid` | 1d | length: 1-30 chars; must be a number followed by one of s, m, h, d, M, or Y | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
 `ignore_setcookie_header` | 0 | only 0 or 1 accepted | Ignore any cookies set by the origin in order to make the content consistently cacheable |
 `ignore_cache_control` | 0 | only 0 or 1 accepted | Ignore any max age values set by the origin and use the CDN set value instead |
-`use_stale` | 0 | only 0 or 1 accepted | Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down |
+`use_stale` | 0 | List of status codes separated with space - empty character - (?use_stale=500 502 503 504 403 404) are accepted as a valid request. 0 or 1 are accepted by legacy but, these are not valid parameters any more. To disable use_stale you can pass 0 (as a part of the legacy) or empty string "".| Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down |
 `proxy_cache_lock` | 0 | only 0 or 1 accepted | When multiple requests for an uncached file are received, they will wait until the first response is received rather than sending each request back to the origin |
 `label` | - | length: 1-255 chars | Something that describes your zone |
 `valid_referers` | - | length: 1-100 chars | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |
@@ -1911,7 +1911,7 @@ Parameter | Default Value | Validation | Description |
 `cache_valid` | - | length: 1-30 chars; must be a number followed by one of s, m, h, d, M, or Y | Ignore the origin Cache-Control Header and set every request to have a Max-Age of 1d, 7d, 1M or 12M |
 `ignore_setcookie_header` | 0 | only 0 or 1 accepted | Ignore any cookies set by the origin in order to make the content consistently cacheable |
 `ignore_cache_control` | 0 | only 0 or 1 accepted | Ignore any max age values set by the origin and use the CDN set value instead |
-`use_stale` | 0 | only 0 or 1 accepted | Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down |
+`use_stale` | 0 | List of status codes separated with space - empty character - (?use_stale=500 502 503 504 403 404) are accepted as a valid request. 0 or 1 are accepted by legacy but, these are not valid parameters any more. To disable use_stale you can pass 0 (as a part of the legacy) or empty string "". | Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down |
 `proxy_cache_lock` | 0 | only 0 or 1 accepted | When multiple requests for an uncached file are received, they will wait until the first response is received rather than sending each request back to the origin |
 `label` | - | length: 1-255 chars | Something that describes your zone |
 `valid_referers` | - | length: 1-100 chars | List of domains for http referrer protection (separated by space), only the domains in the list will be treated as valid referrers |

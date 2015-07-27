@@ -2172,7 +2172,7 @@ api.Post(&quot;/zones/pull.json&quot;);
 <tr>
 <td><code>use_stale</code></td>
 <td>0</td>
-<td>only 0 or 1 accepted</td>
+<td>List of status codes separated with space - empty character - (?use_stale=500 502 503 504 403 404) are accepted as a valid request. 0 or 1 are accepted by legacy but, these are not valid parameters any more. To disable use_stale you can pass 0 (as a part of the legacy) or empty string &quot;&quot;.</td>
 <td>Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down</td>
 <td></td>
 </tr>
@@ -2989,7 +2989,7 @@ api.Get(&quot;/zones/pull.json/&quot; + id);
 <tr>
 <td><code>use_stale</code></td>
 <td>0</td>
-<td>only 0 or 1 accepted</td>
+<td>List of status codes separated with space - empty character - (?use_stale=500 502 503 504 403 404) are accepted as a valid request. 0 or 1 are accepted by legacy but, these are not valid parameters any more. To disable use_stale you can pass 0 (as a part of the legacy) or empty string &quot;&quot;.</td>
 <td>Serve expired content while fetching new content. This will also cause the CDN to serve expired content in cases where the origin is down</td>
 <td></td>
 </tr>
