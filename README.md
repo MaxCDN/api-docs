@@ -40,6 +40,7 @@
 
 
 ## Changelog
+  - **2015-07-27**  Updated validation for `use_stale`
   - **2015-03-06**  Added `ssl`, `ssl_sni`, and `geo_enabled` flags for Pull Zones
   - **2015-01-19**  Added account-level SSL
   - **2014-12-18**  Removed Live Zone API documentation (EOL)
