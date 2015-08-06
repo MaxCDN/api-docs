@@ -5519,7 +5519,6 @@ Parameter | Description |
 --- | --- | ---
 `id` | The SSL Certificate ID. |
 `ssl_crt` | The SSL certificate. |
-`ssl_key` | The SSL Private Key. |
 `ssl_cabundle` | The CA Bundle for the certificate. |
 `domain` | The domain applicable to this certificate. |
 `date_expiration` | The date of expiration for the certificate. |
@@ -5655,7 +5654,6 @@ Parameter | Description |
 --- | --- | ---
 `id` | The SSL Certificate ID. |
 `ssl_crt` | The SSL certificate. |
-`ssl_key` | The SSL Private Key. |
 `ssl_cabundle` | The CA Bundle for the certificate. |
 `domain` | The domain applicable to this certificate. |
 `date_expiration` | The date of expiration for the certificate. |
