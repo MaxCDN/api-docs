@@ -5478,7 +5478,6 @@ api.Get("/zones/" + type + "/" + zoneID + "/ssl.json");
       "id":1459,
       "ssl_id":1234
       "ssl_crt":"-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n",
-      "ssl_key":"-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----",
       "ssl_cabundle":null,
       "date_expiration":"2014-01-24",
       "anycast_ip_id":null,
@@ -5614,7 +5613,6 @@ api.Post("/zones/" + type + "/" + zoneId + "/ssl.json", dat="ssl_crt=" + cert + 
     "ssl":{
       "id":1459,
       "ssl_crt":"-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n",
-      "ssl_key":"-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----",
       "ssl_cabundle":null,
       "date_expiration":"2014-01-24",
       "anycast_ip_id":null,
@@ -5748,7 +5746,6 @@ api.Put("/zones/" + type + "/" + zoneId + "/ssl.json", dat="ssl_crt=" + cert + "
     "ssl":{
       "id":1459,
       "ssl_crt":"-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n",
-      "ssl_key":"-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----",
       "ssl_cabundle":null,
       "date_expiration":"2014-01-24",
       "anycast_ip_id":null,
