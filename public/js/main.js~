@@ -99,7 +99,6 @@ $('a').click(function(ev) {
         if (target.toString().indexOf('#ruby') ==-1 &&
                 target.toString().indexOf('#python') ==-1 &&
                 target.toString().indexOf('#php') ==-1 &&
-                target.toString().indexOf('#perl') ==-1 &&
                 target.toString().indexOf('#node') ==-1 &&
                 target.toString().indexOf('#csharp') ==-1 &&
                 target.toString().indexOf('#response') ==-1 ) {
