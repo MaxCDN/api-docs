@@ -40,6 +40,7 @@
 
 
 ## Changelog
+  - **2015-09-10**  Updated docs for reseller api
   - **2015-07-27**  Updated validation for `use_stale`
   - **2015-03-06**  Added `ssl`, `ssl_sni`, and `geo_enabled` flags for Pull Zones
   - **2015-01-19**  Added account-level SSL
@@ -177,17 +178,28 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby1">
     <pre>
 api.get("/account.json")</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get("/clients/{id}/account.json")</pre>
   </div>
   <div class="tab-pane" id="python1">
     <pre>api.get("/account.json")</pre>
+<h3>Reseller API</h3>
+<pre>api.get("/clients/{id}/account.json")</pre>
   </div>
     <div class="tab-pane" id="perl1">
     <pre>my $data = $api->get("/account.json");
+print $data->{'account'}{'name'};</pre>
+<h3>Reseller API</h3>
+<pre>my $data = $api->get("/clients/{id}/account.json");
 print $data->{'account'}{'name'};</pre>
   </div>
   <div class="tab-pane" id="php1">
     <pre>
 $api->get('/account.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/account.json');</pre>
   </div>
   <div class="tab-pane" id="node1">
   <pre>
@@ -196,10 +208,21 @@ function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
 }</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/account.json', callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
   </div>
     <div class="tab-pane" id="csharp1">
   <pre>
 api.Get("/account.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/account.json");
 </pre>
   </div>
   <div class="tab-pane" id="response1">
@@ -276,21 +299,37 @@ Parameter | Description |
     <pre>
 params={"name"=> "UserName"}
 api.put('/account.json',params)</pre>
+<h3>Reseller API</h3>
+<pre>
+params={"name"=> "UserName"}
+api.put('/clients/{id}/account.json',params)</pre>
   </div>
   <div class="tab-pane" id="python2">
     <pre>
 params={"name": "Monty"}
 api.put('/account.json',params=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+params={"name": "Monty"}
+api.put('/clients/{id}/account.json',params=params)</pre>
   </div>
     <div class="tab-pane" id="perl2">
     <pre>
 my @params = ('name=IDABIC');
 $api->put("/account.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my @params = ('name=IDABIC');
+$api->put("/clients/{id}/account.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php2">
     <pre>
 $params = array("name"=>"newName");
 $api->put('/account.json',$params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$params = array("name"=>"newName");
+$api->put('/clients/{id}/account.json',$params);</pre>
   </div>
   <div class="tab-pane" id="node2">
   <pre>
@@ -299,10 +338,21 @@ function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
 }</pre>
+<h3>Reseller API</h3>
+<pre>
+api.put('/clients/{id}/account.json', { name: 'newName' }, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
   </div>
   <div class="tab-pane" id="csharp2">
   <pre>
 api.Put("/account.json", "name=UserName");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Put("/clients/{id}/account.json", "name=UserName");
 </pre>
   </div>
   <div class="tab-pane" id="response2">
@@ -372,19 +422,32 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby3">
     <pre>
 api.get('/account.json/address')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/account.json/address')</pre>
   </div>
   <div class="tab-pane" id="python3">
     <pre>
 api.get('/account.json/address')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/account.json/address')</pre>
   </div>
     <div class="tab-pane" id="perl3">
     <pre>
 my $data = $api->get("/account.json/address");
 print $data->{'address'}{'street1'};</pre>
+<h3>Reseller API</h3>
+<pre>
+my $data = $api->get("/clients/{id}/account.json/address");
+print $data->{'address'}{'street1'};</pre>
   </div>
   <div class="tab-pane" id="php3">
     <pre>
 $api->get('/account.json/address')</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/account.json/address')</pre>
   </div>
   <div class="tab-pane" id="node3">
   <pre>
@@ -393,10 +456,21 @@ function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
 }</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/account.json/address', callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
 </div>
   <div class="tab-pane" id="csharp3">
   <pre>
 api.Get("/account.json/address");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/account.json/address");
 </pre>
 </div>
   <div class="tab-pane" id="response3">
@@ -475,21 +549,37 @@ Parameter | Description |
     <pre>
 params = {"street1"=> "1234 Main Street", "street2"=> "apt 42", "state"=> "CA"}
 api.put('/account.json/address',params)</pre>
+<h3>Reseller API</h3>
+<pre>
+params = {"street1"=> "1234 Main Street", "street2"=> "apt 42", "state"=> "CA"}
+api.put('/clients/{id}/account.json/address',params)</pre>
   </div>
   <div class="tab-pane" id="python4">
     <pre>
 params = {"street1": "1234 Main Street", "street2": "apt 42", "state": "CA"}
 api.put('/account.json/address',params=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+params = {"street1": "1234 Main Street", "street2": "apt 42", "state": "CA"}
+api.put('/clients/{id}/account.json/address',params=params)</pre>
   </div>
     <div class="tab-pane" id="perl4">
     <pre>
 my @params = ('street1=Main');
 $api->put("/account.json/address", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my @params = ('street1=Main');
+$api->put("/clients/{id}/account.json/address", @params);</pre>
   </div>
   <div class="tab-pane" id="php4">
     <pre>
 $params = array("street1"=>"123 Main Street", "street2"=>"apt 42", "state"=>"CA");
 $api->put('/account.json/address',$params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$params = array("street1"=>"123 Main Street", "street2"=>"apt 42", "state"=>"CA");
+$api->put('/clients/{id}/account.json/address',$params);</pre>
   </div>
   <div class="tab-pane" id="node4">
   <pre>
@@ -498,10 +588,21 @@ function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
 }</pre>
+<h3>Reseller API</h3>
+<pre>
+api.put('/clients/{id}/account.json/address', { street1: '123 Main Street', street2: 'apt 42', state: 'CA' }, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
   </div>
   <div class="tab-pane" id="csharp4">
   <pre>
 api.Put("/account.json/address", "street1=1234 Main Street");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Put("/clients/{id}/account.json/address", "street1=1234 Main Street");
 </pre>
   </div> 
   <div class="tab-pane" id="response4">
@@ -570,19 +671,32 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby5">
     <pre>
 api.get('/users.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/users.json')</pre>
   </div>
   <div class="tab-pane" id="python5">
     <pre>
 api.get('/users.json')</pre>
+<h3>Reseller API</h3>
+    <pre>
+api.get('/clients/{id}/users.json')</pre>
   </div>
     <div class="tab-pane" id="perl5">
     <pre>
 my $data = $api->get("/users.json");
 print $data->{'users'}[0]{'id'};</pre>
+<h3>Reseller API</h3>
+<pre>
+my $data = $api->get("/clients/{id}/users.json");
+print $data->{'users'}[0]{'id'};</pre>
   </div>
   <div class="tab-pane" id="php5">
     <pre>
 $api->get('/users.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/users.json');</pre>
   </div>
   <div class="tab-pane" id="node5">
   <pre>
@@ -591,10 +705,21 @@ function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
 }</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/users.json', callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
   </div>
   <div class="tab-pane" id="csharp5">
   <pre>
 api.Get("/users.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/users.json");
 </pre>
   </div> 
   <div class="tab-pane" id="response5">
@@ -728,25 +853,48 @@ Parameter | Description |
     <pre>
 params={"email"=>"name44@domain.com","password"=>"password","firstname"=>"Given","lastname"=>"Family"}
 api.post('/users.json',params )</pre>
+<h3>Reseller API</h3>
+<pre>
+params={"email"=>"name44@domain.com","password"=>"password","firstname"=>"Given","lastname"=>"Family"}
+api.post('/clients/{id}/users.json',params )</pre>
   </div>
   <div class="tab-pane" id="python6">
     <pre>
 params={'email':'name43@domain.com','password':'password','firstname':'Given','lastname':'Family'}
 api.post('/users.json',data=params )</pre>
+<h3>Reseller API</h3>
+<pre>
+params={'email':'name43@domain.com','password':'password','firstname':'Given','lastname':'Family'}
+api.post('/clients/{id}/users.json',data=params )</pre>
   </div>
     <div class="tab-pane" id="perl6">
     <pre>
 my @params = {firstname => 'Perl', lastname => 'User', email => 'user@domain.com', password => 'testpwd'};
 $api->post("/users.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my @params = {firstname => 'Perl', lastname => 'User', email => 'user@domain.com', password => 'testpwd'};
+$api->post("/clients/{id}/users.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php6">
     <pre>
 $params = array("email"=>"name@domain.com","password"=>"password","firstname"=>"Given","lastname"=>"Family");
 $api->post('/users.json',$params );</pre>
+<h3>Reseller API</h3>
+<pre>
+$params = array("email"=>"name@domain.com","password"=>"password","firstname"=>"Given","lastname"=>"Family");
+$api->post('/clients/{id}/users.json',$params );</pre>
   </div>
   <div class="tab-pane" id="node6">
   <pre>
 api.post('/users.json', { email: 'name@domain.com', password: 'password', firstname: 'Given', lastname: 'Family' }, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+<h3>Reseller API</h3>
+<pre>
+api.post('/clients/{id}/users.json', { email: 'name@domain.com', password: 'password', firstname: 'Given', lastname: 'Family' }, callback)
 function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
@@ -764,6 +912,19 @@ Console.Write("Password: \n");
 string pwd = Console.ReadLine();
 
 api.Post("/users.json", "firstname=" + fname + "&lastname=" + lname + "&password=" + pwd + "&email=" + email);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("User First Name: \n");
+string fname = Console.ReadLine();
+Console.Write("User Last Name: \n");
+string lname = Console.ReadLine();
+Console.Write("User email: \n");
+string email = Console.ReadLine();
+Console.Write("Password: \n");
+string pwd = Console.ReadLine();
+
+api.Post("/clients/{id}/users.json", "firstname=" + fname + "&lastname=" + lname + "&password=" + pwd + "&email=" + email);
 </pre>
   </div> 
   <div class="tab-pane" id="response6">
@@ -834,27 +995,53 @@ Parameter | Description |
     <pre>
 id = '33706'
 api.get('/users.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '33706'
+api.get('/clients/{id}/users.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="python7">
     <pre>
 id = '33706'
 api.get('/users.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '33706'
+api.get('/clients/{id}/users.json/' + id)</pre>
   </div>
     <div class="tab-pane" id="perl7">
     <pre>
 my $id = 58309;
 my $data = $api->get("/users.json/58309");
 print $data->{'user'}{'lastname'};</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 58309;
+my $data = $api->get("/clients/{id}/users.json/58309");
+print $data->{'user'}{'lastname'};</pre>
   </div>
   <div class="tab-pane" id="php7">
     <pre>
 $id = '33941';
 $api->get('/users.json/'.$id);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 58309;
+my $data = $api->get("/clients/{id}/users.json/58309");
+print $data->{'user'}{'lastname'};</pre>
   </div>
   <div class="tab-pane" id="node7">
   <pre>
 var id = '33941'
 api.get('/users.json/' + id, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '33941'
+api.get('/clients/{id}/users.json/' + id, callback)
 function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
@@ -866,6 +1053,13 @@ Console.Write("User ID: \n");
 string id = Console.ReadLine();
 
 api.Get("/users.json/" + id);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("User ID: \n");
+string id = Console.ReadLine();
+
+api.Get("/clients/{id}/users.json/" + id);
 </pre>
   </div> 
   <div class="tab-pane" id="response7">
@@ -948,27 +1142,54 @@ id = '33706'
 params={'firstname'=> 'name'}
 api.put('/users.json/'+id,params)
 </pre>
+<h3>Reseller API</h3>
+<pre>
+id = '33706'
+params={'firstname'=> 'name'}
+api.put('/clients/{id}/users.json/' + id,params)
+</pre>
   </div>
   <div class="tab-pane" id="python8">
     <pre>
 api.put('/users.json/'+id,params={'firstname': 'name'})</pre>
+<h3>Reseller API</h3>
+<pre>
+api.put('/clients/{id}/users.json/'+id,params={'firstname': 'name'})</pre>
   </div>
     <div class="tab-pane" id="perl8">
     <pre>
 my $id = 58309;
 my @params = ('lastname=Test');
 $api->put("/users.json/" . $id, @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 58309;
+my @params = ('lastname=Test');
+$api->put("/clients/{id}/users.json/" . $id, @params);</pre>
   </div>
   <div class="tab-pane" id="php8">
     <pre>
 $id = '33941';
 $params =  array("firstname"=>"Billy");
 $api->put('/users.json/'.$id,$params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '33941';
+$params =  array("firstname"=>"Billy");
+$api->put('/clients/{id}/users.json/'.$id,$params);</pre>
 </div>
   <div class="tab-pane" id="node8">
   <pre>
 var id = '33941'
 api.put('/users.json/' + id, { firstname: 'Billy' }, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '33941'
+api.put('/clients/{id}/users.json/' + id, { firstname: 'Billy' }, callback)
 function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
@@ -984,6 +1205,17 @@ Console.Write("New value: \n");
 string val = Console.ReadLine();
 
 api.Put("/users.json/" + uid + "/", prop + "=" + val);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Enter user ID to edit: \n");
+int uid = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter property to edit: \n");
+string prop = Console.ReadLine();
+Console.Write("New value: \n");
+string val = Console.ReadLine();
+
+api.Put("/clients/{id}/users.json/" + uid + "/", prop + "=" + val);
 </pre>
   </div> 
   <div class="tab-pane" id="response8">
@@ -1043,26 +1275,50 @@ Deletes a user specified by the {user_id} parameter
     <pre>
 id = '33706'
 api.delete('/users.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '33706'
+api.delete('/clients/{id}/users.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="python9">
     <pre>
 id = '33706'
 api.delete('/users.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '33706'
+api.delete('/clients/{id}/users.json/'+id)</pre>
   </div>
     <div class="tab-pane" id="perl9">
     <pre>
 my $id = 58309;
 $api->delete("/users.json/" . $id);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 58309;
+$api->delete("/clients/{id}/users.json/" . $id);</pre>
   </div>
   <div class="tab-pane" id="php9">
     <pre>
 $id = '33715';
 $api->delete('/users.json/'.$id);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '33715';
+$api->delete('/clients/{id}/users.json/'.$id);</pre>
   </div>
   <div class="tab-pane" id="node9">
   <pre>
 var id = '33715'
 api.delete('/users.json/' + id, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '33715'
+api.delete('/clients/{id}/users.json/' + id, callback)
 function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
@@ -1074,6 +1330,13 @@ Console.Write("User id to delete: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/users.json/" + id);
+</pre>
+
+<pre>
+Console.Write("User id to delete: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+<h3>Reseller API</h3>
+api.Delete("/clients/{id}/users.json/" + id);
 </pre>
   </div> 
   <div class="tab-pane" id="response9">
@@ -1111,28 +1374,49 @@ Returns a list of all zones on the specified account
   <div class="tab-pane active" id="ruby10">
     <pre>
 api.get('/zones.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones.json')</pre>
   </div>
   <div class="tab-pane" id="python10">
     <pre>
 api.get('/zones.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones.json')</pre>
   </div>
     <div class="tab-pane" id="perl10">
     <pre>
 $api->get("/zones.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/zones.json");</pre>
   </div>
   <div class="tab-pane" id="php10">
     <pre>
 $api->get('/zones.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/zones.json');</pre>
   </div>
   <div class="tab-pane" id="node10">
   <pre>
 api.get('/zones.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
   </div>
   <div class="tab-pane" id="csharp10">
   <pre>
 api.Get("/zones/pull.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/zones/pull.json");
 </pre>
   </div>
   <div class="tab-pane" id="response10">
@@ -1201,28 +1485,49 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby11">
     <pre>
 api.get('/zones.json/summary')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones.json/summary')</pre>
   </div>
   <div class="tab-pane" id="python11">
     <pre>
 api.get('/zones.json/summary')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones.json/summary')</pre>
   </div>
     <div class="tab-pane" id="perl11">
     <pre>
 $api->get("/zones.json/summary");</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/zones.json/summary");</pre>
   </div>
   <div class="tab-pane" id="php11">
     <pre>
 $api->get('/zones.json/summary');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/zones.json/summary');</pre>
   </div>
   <div class="tab-pane" id="node11">
   <pre>
 api.get('/zones.json/summary', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones.json/summary', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
   </div>
   <div class="tab-pane" id="csharp11">
   <pre>
 api.Get("/zones.json/summary");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/zones.json/summary");
 </pre>
   </div>
   <div class="tab-pane" id="response11">
@@ -1274,28 +1579,49 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby12">
     <pre>
 api.get('/zones.json/count')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones.json/count')</pre>
   </div>
   <div class="tab-pane" id="python12">
     <pre>
 api.get('/zones.json/count')</pre>
+<h3>Reseller API</h3>
+    <pre>
+api.get('/clients/{id}/zones.json/count')</pre>
   </div>
     <div class="tab-pane" id="perl12">
     <pre>
 $api->get("/zones.json/count");</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/zones.json/count");</pre>
   </div>
   <div class="tab-pane" id="php12">
     <pre>
 $api->get('/zones.json/count');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/zones.json/count');</pre>
   </div>
   <div class="tab-pane" id="node12">
   <pre>
 api.get('/zones.json/count', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones.json/count', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
   </div>
   <div class="tab-pane" id="csharp12">
   <pre>
 api.Get("/zones.json/count");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/zones.json/count");
 </pre>
   </div>
   <div class="tab-pane" id="response12">
@@ -1373,28 +1699,49 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby13">
     <pre>
 api.get('/zones/pull.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/pull.json')</pre>
   </div>
   <div class="tab-pane" id="python13">
     <pre>
 api.get('/zones/pull.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/pull.json')</pre>
   </div>
     <div class="tab-pane" id="perl13">
     <pre>
 $api->get("/zones/pull.json")</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/zones/pull.json")</pre>
   </div>
   <div class="tab-pane" id="php13">
     <pre>
 $api->get('/zones/pull.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/zones/pull.json');</pre>
   </div>
   <div class="tab-pane" id="node13">
   <pre>
 api.get('/zones/pull.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/pull.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
   </div>
   <div class="tab-pane" id="csharp13">
   <pre>
 api.Post("/zones/pull.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Post("/clients/{id}/zones/pull.json");
 </pre>
   </div>
   <div class="tab-pane" id="response13">
@@ -1591,25 +1938,46 @@ Parameter | Description |
     <pre>
 params = {"name"=>"newPullZone6","url"=>"http://somedomain.com"}
 api.post('/zones/pull.json',params)</pre>
+<h3>Reseller API</h3>
+<pre>
+params = {"name"=>"newPullZone6","url"=>"http://somedomain.com"}
+api.post('/clients/{id}/zones/pull.json',params)</pre>
   </div>
   <div class="tab-pane" id="python14">
     <pre>
 params = {"name":"newPullZone5","url":"http://somedomain.net"}
 api.post('/zones/pull.json',data=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+params = {"name":"newPullZone5","url":"http://somedomain.net"}
+api.post('/clients/{id}/zones/pull.json',data=params)</pre>
   </div>
     <div class="tab-pane" id="perl14">
     <pre>
 my @params = {name => 'perltest5', url => 'http://www.domain.com'};
 $api->post("/zones/pull.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my @params = {name => 'perltest5', url => 'http://www.domain.com'};
+$api->post("/clients/{id}/zones/pull.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php14">
     <pre>
 $params =  array("name"=>"newPullZone2","url"=>"http://somedomain.net");
 $api->post('/zones/pull.json',$params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$params =  array("name"=>"newPullZone2","url"=>"http://somedomain.net");
+$api->post('/clients/{id}/zones/pull.json',$params);</pre>
   </div>
   <div class="tab-pane" id="node14">
   <pre>
 api.post('/zones/pull.json', { name: 'newPullZone2', url: 'http://somedomain.net' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+api.post('/clients/{id}/zones/pull.json', { name: 'newPullZone2', url: 'http://somedomain.net' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -1621,6 +1989,15 @@ Console.Write("Origin URL (starting with http://): \n");
 string url = Console.ReadLine();
 
 api.Post("/zones/pull.json", "url=" + url + "&name=" + ZoneName);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone Name: \n");
+string ZoneName = Console.ReadLine();
+Console.Write("Origin URL (starting with http://): \n");
+string url = Console.ReadLine();
+
+api.Post("/clients/{id}/zones/pull.json", "url=" + url + "&name=" + ZoneName);
 </pre>
   </div>
   <div class="tab-pane" id="response14">
@@ -1706,28 +2083,49 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby15">
     <pre>
 api.get('/zones/pull.json/count')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/pull.json/count')</pre>
   </div>
   <div class="tab-pane" id="python15">
     <pre>
 api.get('/zones/pull.json/count')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/pull.json/count')</pre>
   </div>
     <div class="tab-pane" id="perl15">
     <pre>
 $api->get("/zones/pull.json/count")</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/zones/pull.json/count")</pre>
   </div>
   <div class="tab-pane" id="php15">
     <pre>
 $api->get('/zones/pull.json/count');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/zones/pull.json/count');</pre>
   </div>
   <div class="tab-pane" id="node15">
   <pre>
 api.get('/zones/pull.json/count', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/pull.json/count', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
   </div>
   <div class="tab-pane" id="csharp15">
   <pre>
 api.Get("/zones/pull.json/count");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/zones/pull.json/count");
 </pre>
   </div>
   <div class="tab-pane" id="response15">
@@ -1805,26 +2203,48 @@ Parameter | Description |
     <pre>
 id = '97167'
 api.get('/zones/pull.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.get('/clients/{id}/zones/pull.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="python16">
     <pre>
 id = '97167'
 api.get('/zones/pull.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.get('/clients/{id}/zones/pull.json/'+id)</pre>
   </div>
     <div class="tab-pane" id="perl16">
     <pre>
 my $id = 96076;
 $api->get("/zones/pull.json/" . $id);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 96076;
+$api->get("/clients/{id}/zones/pull.json/" . $id);</pre>
   </div>
   <div class="tab-pane" id="php16">
     <pre>
 $id = '96076';
 $api->get('/zones/pull.json/'.$id);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96076';
+$api->get('/clients/{id}/zones/pull.json/'.$id);</pre>
   </div>
   <div class="tab-pane" id="node16">
   <pre>
 var id = '96076'
 api.get('/zones/pull.json' + id, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96076'
+api.get('/clients/{id}/zones/pull.json' + id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -1834,6 +2254,13 @@ Console.Write("Zone id: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Get("/zones/pull.json/" + id);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/clients/{id}/zones/pull.json/" + id);
 </pre>
   </div>
   <div class="tab-pane" id="response16">
@@ -1983,29 +2410,55 @@ Parameter | Description |
 id = '97167'
 params = {"label"=>"Some other description"}
 api.put('/zones/pull.json/'+id,params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+params = {"label"=>"Some other description"}
+api.put('/clients/{id}/zones/pull.json/'+id,params)</pre>
   </div>
   <div class="tab-pane" id="python17">
     <pre>
 id = '97167'
 params = {"label":"Some other description"}
 api.put('/zones/pull.json/'+id,params=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+params = {"label":"Some other description"}
+api.put('/clients/{id}/zones/pull.json/'+id,params=params)</pre>
   </div>
     <div class="tab-pane" id="perl17">
     <pre>
 my $id = 236828;
 my @params = ('compress=0');
 $api->put("/zones/pull.json/" . $id, @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 236828;
+my @params = ('compress=0');
+$api->put("/clients/{id}/zones/pull.json/" . $id, @params);</pre>
   </div>
   <div class="tab-pane" id="php17">
     <pre>
 $id = '96167';
 $params = array("label"=>"Some other description");
 $api->put('/zones/pull.json/'.$id, $params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96167';
+$params = array("label"=>"Some other description");
+$api->put('/clients/{id}/zones/pull.json/'.$id, $params);</pre>
   </div>
   <div class="tab-pane" id="node17">
   <pre>
 var id = '96167'
 api.put('/zones/pull.json' + id, { label: 'Some other description' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96167'
+api.put('/clients/{id}/zones/pull.json' + id, { label: 'Some other description' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -2019,6 +2472,17 @@ Console.Write("New value: \n");
 string val = Console.ReadLine();
 
 api.Put("/zones/pull.json/" + zoneID, prop + "=" + val);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to edit: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Property to edit/change (url/compression...): \n");
+string prop = Console.ReadLine();
+Console.Write("New value: \n");
+string val = Console.ReadLine();
+
+api.Put("/clients/{id}/zones/pull.json/" + zoneID, prop + "=" + val);
 </pre>
   </div>
   <div class="tab-pane" id="response17">
@@ -2100,26 +2564,48 @@ Enables additional locations on a pull zone specified by the {zone_id} parameter
     <pre>
 id = '97167'
 api.post('/zones/pull/'+id+'/flex.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.post('/clients/{id}/zones/pull/'+id+'/flex.json')</pre>
   </div>
   <div class="tab-pane" id="python17-1">
     <pre>
 id = '97167'
 api.post('/zones/pull/'+id+'/flex.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.post('/clients/{id}/zones/pull/'+id+'/flex.json')</pre>
   </div>
     <div class="tab-pane" id="perl17-1">
     <pre>
 my $id = 134458;
 $api->post("/zones/pull/" . $id . "/flex.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 134458;
+$api->post("/clients/{id}/zones/pull/" . $id . "/flex.json");</pre>
   </div>
   <div class="tab-pane" id="php17-1">
     <pre>
 $id = '97167';
 $api->post('/zones/pull/'.$id.'/flex.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97167';
+$api->post('/clients/{id}/zones/pull/'.$id.'/flex.json');</pre>
   </div>
   <div class="tab-pane" id="node17-1">
   <pre>
 var id = '97167'
 api.post('/zones/pull/' + id + '/flex.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97167'
+api.post('/clients/{id}/zones/pull/' + id + '/flex.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -2129,6 +2615,13 @@ Console.Write("Zone id to enable: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Post("/zones/pull/" + id + "/flex.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to enable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Post("/clients/{id}/zones/pull/" + id + "/flex.json");
 </pre>
   </div>
   <div class="tab-pane" id="response17-1">
@@ -2168,26 +2661,48 @@ Disables additional locations on a pull zone specified by the {zone_id} paramete
     <pre>
 id = '97167'
 api.delete('/zones/pull/'+id+'/flex.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.delete('/clients/{id}/zones/pull/'+id+'/flex.json')</pre>
   </div>
   <div class="tab-pane" id="python17-2">
     <pre>
 id = '97167'
 api.delete('/zones/pull/'+id+'/flex.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.delete('/clients/{id}/zones/pull/'+id+'/flex.json')</pre>
   </div>
     <div class="tab-pane" id="perl17-2">
     <pre>
 my $id = 134458;
 $api->delete("/zones/pull/" . $id . "/flex.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 134458;
+$api->delete("/clients/{id}/zones/pull/" . $id . "/flex.json");</pre>
   </div>
   <div class="tab-pane" id="php17-2">
     <pre>
 $id = '97167';
 $api->delete('/zones/pull'.$id.'flex.json);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97167';
+$api->delete('/clients/{id}/zones/pull'.$id.'flex.json);</pre>
   </div>
   <div class="tab-pane" id="node17-2">
   <pre>
 var id = '97167'
 api.delete('/zones/pull' + id + 'flex.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97167'
+api.delete('/clients/{id}/zones/pull' + id + 'flex.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -2197,6 +2712,13 @@ Console.Write("Zone id to disable: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/zones/pull/" + id + "/flex.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to disable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/clients/{id}/zones/pull/" + id + "/flex.json");
 </pre>
   </div>
   <div class="tab-pane" id="response17-2">
@@ -2235,26 +2757,48 @@ Deletes a pull zone specified by the {zone_id} parameter
     <pre>
 id = '97167'
 api.delete('/zones/pull.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.delete('/clients/{id}/zones/pull.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="python18">
     <pre>
 id = '97167'
 api.delete('/zones/pull.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.delete('/clients/{id}/zones/pull.json/'+id)</pre>
   </div>
     <div class="tab-pane" id="perl18">
     <pre>
 my $id = 236828;
 $api->delete("/zones/pull.json/" . $id);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 236828;
+$api->delete("/clients/{id}/zones/pull.json/" . $id);</pre>
   </div>
   <div class="tab-pane" id="php18">
     <pre>
 $id = '97167';
 $api->delete('/zones/pull.json/'.$id);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97167';
+$api->delete('/clients/{id}/zones/pull.json/'.$id);</pre>
   </div>
   <div class="tab-pane" id="node18">
   <pre>
 var id = '97167'
 api.delete('/zones/pull.json' + id, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97167'
+api.delete('/clients/{id}/zones/pull.json' + id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -2264,6 +2808,13 @@ Console.Write("Zone id to delete: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/zones/pull.json/" + id);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to delete: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/clients/{id}/zones/pull.json/" + id);
 </pre>
   </div>
   <div class="tab-pane" id="response18">
@@ -2302,26 +2853,48 @@ Enables a pull zone specified by the {zone_id} parameter
     <pre>
 id = '97167'
 api.put('/zones/pull/'+id+'/enable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.put('/clients/{id}/zones/pull/'+id+'/enable.json')</pre>
   </div>
   <div class="tab-pane" id="python19">
     <pre>
 id = '97167'
 api.put('/zones/pull/'+id+'/enable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.put('/clients/{id}/zones/pull/'+id+'/enable.json')</pre>
   </div>
     <div class="tab-pane" id="perl19">
     <pre>
 my $id = 134458;
 $api->put("/zones/pull/" . $id . "/enable.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 134458;
+$api->put("/clients/{id}/zones/pull/" . $id . "/enable.json");</pre>
   </div>
   <div class="tab-pane" id="php19">
     <pre>
 $id = '97167';
 $api->put('/zones/pull/'.$id.'/enable.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97167';
+$api->put('/clients/{id}/zones/pull/'.$id.'/enable.json');</pre>
   </div>
   <div class="tab-pane" id="node19">
   <pre>
 var id = '97167'
 api.put('/zones/pull/' + id + '/enable.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97167'
+api.put('/clients/{id}/zones/pull/' + id + '/enable.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -2331,6 +2904,13 @@ Console.Write("Zone id to enable: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Put("/zones/pull/" + id + "/enable.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to enable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/clients/{id}/zones/pull/" + id + "/enable.json");
 </pre>
   </div>
   <div class="tab-pane" id="response19">
@@ -2370,26 +2950,48 @@ Disables a pull zone specified by the {zone_id} parameter
     <pre>
 id = '97167'
 api.put('/zones/pull/'+id+'/disable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.put('/clients/{id}/zones/pull/'+id+'/disable.json')</pre>
   </div>
   <div class="tab-pane" id="python20">
     <pre>
 id = '97167'
 api.put('/zones/pull/'+id+'/disable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.put('/clients/{id}/zones/pull/'+id+'/disable.json')</pre>
   </div>
     <div class="tab-pane" id="perl20">
     <pre>
 my $id = 134458;
 $api->put("/zones/pull/" . $id . "/disable.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 134458;
+$api->put("/clients/{id}/zones/pull/" . $id . "/disable.json");</pre>
   </div>
   <div class="tab-pane" id="php20">
     <pre>
 $id = '97167';
 $api->put('/zones/pull'.$id.'disable.json);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97167';
+$api->put('/clients/{id}/zones/pull'.$id.'disable.json);</pre>
   </div>
   <div class="tab-pane" id="node20">
   <pre>
 var id = '97167'
 api.put('/zones/pull' + id + 'disable.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97167'
+api.put('/clients/{id}/zones/pull' + id + 'disable.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -2399,6 +3001,13 @@ Console.Write("Zone id to disable: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Put("/zones/pull/" + id + "/disable.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to disable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/clients/{id}/zones/pull/" + id + "/disable.json");
 </pre>
   </div>
   <div class="tab-pane" id="response20">
@@ -2451,6 +3060,19 @@ api.purge(id,'/file1.txt')
 #Purge Files
 id = '97167'
 api.purge(id, ['/file1.txt','/file2.txt'])</pre>
+<h3>Reseller API</h3>
+<pre>
+#Purge Zone
+id = '97167'
+api.purge('/clients/{id}/zones/pull.json/165013/cache')
+
+#Purge File
+id = '97167'
+api.purge('/clients/{id}/zones/pull.json/165013/cache','/file1.txt')
+
+#Purge Files
+id = '97167'
+api.purge('/clients/{id}/zones/pull.json/165013/cache', ['/file1.txt','/file2.txt'])</pre>
   </div>
   <div class="tab-pane" id="python21">
   <pre>
@@ -2465,6 +3087,19 @@ api.purge(id,'/file1.txt')
 #Purge Files
 id = '97167'
 api.purge(id, ['/file1.txt','/file2.txt'])</pre>
+<h3>Reseller API</h3>
+<pre>
+#Purge Zone
+id = '97167'
+api.purge('/clients/{id}/zones/pull.json/165013/cache')
+
+#Purge File
+id = '97167'
+api.purge('/clients/{id}/zones/pull.json/165013/cache','/file1.txt')
+
+#Purge Files
+id = '97167'
+api.purge('/clients/{id}/zones/pull.json/165013/cache', ['/file1.txt','/file2.txt'])</pre>
   </div>
     <div class="tab-pane" id="perl21">
   <pre>
@@ -2478,6 +3113,18 @@ $api->delete("/zones/pull.json/165013/cache", @params);
 #Purge Files
 my @params = ("%2Frankings%2Fhotlist%2Fi%2F500w%2F2.jpg", "%2F_index%2Ff_mdcdb.html");
 $api->delete("/zones/pull.json/165013/cache", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+#Purge Zone
+$api->delete("/clients/{id}/zones/pull.json/165013/cache");
+
+#Purge File
+my @params = ("%2Frankings%2Fhotlist%2Fi%2F500w%2F2.jpg");
+$api->delete("/clients/{id}/zones/pull.json/165013/cache", @params);
+
+#Purge Files
+my @params = ("%2Frankings%2Fhotlist%2Fi%2F500w%2F2.jpg", "%2F_index%2Ff_mdcdb.html");
+$api->delete("/clients/{id}/zones/pull.json/165013/cache", @params);</pre>
   </div>
   <div class="tab-pane" id="php21">
     <pre>
@@ -2499,6 +3146,26 @@ $params = array(
     )
 );
 $api->delete('/zones/pull.json/'.$id.'/cache',$params);</pre>
+<h3>Reseller API</h3>
+<pre>
+//Purge Zone
+$id = '97792';
+$api->delete('/clients/{id}/zones/pull.json/'.$id.'/cache');
+
+//Purge File
+$id = '97792';
+$params = array('file'=>'/index.html');
+$api->delete('/clients/{id}/zones/pull.json/'.$id.'/cache',$params);
+
+//Purge Files
+$id = '97792';
+$params = array(
+    'files' => array(
+        '/file1.txt',
+        '/file2.txt'
+    )
+);
+$api->delete('/clients/{id}/zones/pull.json/'.$id.'/cache',$params);</pre>
   </div>
   <div class="tab-pane" id="node21">
   <pre>
@@ -2523,6 +3190,33 @@ function callback(err, response) {
 var id = '96167'
 var files = [ '/file1.txt', '/file2.txt' ]
 api.delete('/zones/pull.json/' + id + '/cache', files, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+<h3>Reseller API</h3>
+<pre>
+// Purge Zone
+var id = '96167'
+api.delete('/clients/{id}/zones/pull.json/' + id + '/cache', callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}
+
+// Purge File
+var id = '96167'
+var file = '/file1.txt'
+api.delete('/clients/{id}/zones/pull.json/' + id + '/cache', file, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}
+
+// Purge File
+var id = '96167'
+var files = [ '/file1.txt', '/file2.txt' ]
+api.delete('/clients/{id}/zones/pull.json/' + id + '/cache', files, callback)
 function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
@@ -2559,6 +3253,40 @@ switch (ptype){
 		files += "file[" + i + "]=" + File + "&";
 	}
 	api.Purge("/zones/pull.json/" + zoneID + "/cache", files);
+	break;
+}
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("What do you want to purge? (all/file)");
+string ptype = Console.ReadLine();
+switch (ptype){
+	case "all":
+	//Purge ALL
+	api.Delete("/clients/{id}/zones/pull.json/" + zoneID + "/cache");
+	break;
+	case "file":
+	//Purge FILE
+	Console.Write("Enter File Path to Purge (relative path): \n");
+	string file = Console.ReadLine();
+	file = "file=" + file;
+	api.Purge("/clients/{id}/zones/pull.json/" + zoneID + "/cache", file);
+	break;
+	case "fileS":
+	//Purge FILES
+	Console.Write("How Many? \n");
+	int loop = Convert.ToInt32(Console.ReadLine());
+	Console.Write("Enter File Paths to Purge (relative paths): \n");
+	string files = "";
+	for (int i = 0; i < loop; i++)
+	{
+		Console.Write(i + 1 + ": \n");
+		string File = Console.ReadLine();
+		files += "file[" + i + "]=" + File + "&";
+	}
+	api.Purge("/clients/{id}/zones/pull.json/" + zoneID + "/cache", files);
 	break;
 }
 </pre>
@@ -2609,27 +3337,50 @@ Parameter | Description |
     <pre>
 id = '97167'
 api.get('/zones/pull/'+id+'/customdomains.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.get('/clients/{id}/zones/pull/'+id+'/customdomains.json')</pre>
   </div>
   <div class="tab-pane" id="python22">
     <pre>
 id = '97167'
 api.get('/zones/pull/'+id+'/customdomains.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.get('/clients/{id}/zones/pull/'+id+'/customdomains.json')</pre>
   </div>
     <div class="tab-pane" id="perl22">
     <pre>
 my $id = 134458;
 $api->get("/zones/pull/" . $id . "/customdomains.json");
 </pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 134458;
+$api->get("/clients/{id}/zones/pull/" . $id . "/customdomains.json");
+</pre>
   </div>
   <div class="tab-pane" id="php22">
     <pre>
 $id = '96061';
 $api->get('/zones/pull/'.$id.'/customdomains.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96061';
+$api->get('/clients/{id}/zones/pull/'.$id.'/customdomains.json');</pre>
   </div>
   <div class="tab-pane" id="node22">
   <pre>
 var id = '96061'
 api.get('/zones/pull/' + id + '/customdomains.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96061'
+api.get('/clients/{id}/zones/pull/' + id + '/customdomains.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -2639,6 +3390,13 @@ Console.Write("Zone Id: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
 Console.Write(api.Get("/zones/pull/" + zoneID + "/customdomains.json"));
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+Console.Write(api.Get("/clients/{id}/zones/pull/" + zoneID + "/customdomains.json"));
 </pre>
   </div>
   <div class="tab-pane" id="response22">
@@ -2705,29 +3463,55 @@ Parameter | Description |
 id = '97167'
 params = {"custom_domain"=>"cdn.somedomain14.com"}
 api.post('/zones/pull/'+id+'/customdomains.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+params = {"custom_domain"=>"cdn.somedomain14.com"}
+api.post('/clients/{id}/zones/pull/'+id+'/customdomains.json', params)</pre>
   </div>
   <div class="tab-pane" id="python23">
     <pre>
 id = '97167'
 params = {"custom_domain":"cdn.somedomain13.com"}
 api.post('/zones/pull/'+id+'/customdomains.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+params = {"custom_domain":"cdn.somedomain13.com"}
+api.post('/clients/{id}/zones/pull/'+id+'/customdomains.json', params)</pre>
   </div>
     <div class="tab-pane" id="perl23">
     <pre>
 my $id = 134458;
 my @params = {custom_domain => 'idabic.dom.net'};
 $api->post("/zones/pull/" . $id . "/customdomains.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 134458;
+my @params = {custom_domain => 'idabic.dom.net'};
+$api->post("/clients/{id}/zones/pull/" . $id . "/customdomains.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php23">
     <pre>
 $id = '97167';
 $params = array("custom_domain"=>"cdn.somedomain3.com");
 $api->post('/zones/pull/'.$id.'/customdomains.json', $params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97167';
+$params = array("custom_domain"=>"cdn.somedomain3.com");
+$api->post('/clients/{id}/zones/pull/'.$id.'/customdomains.json', $params);</pre>
   </div>
   <div class="tab-pane" id="node23">
   <pre>
 var id = '96167'
 api.post('/zones/pull/' + id + '/customdomains.json', { custom_domain: 'cdn.somedomain3.com' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96167'
+api.post('/clients/{id}/zones/pull/' + id + '/customdomains.json', { custom_domain: 'cdn.somedomain3.com' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -2739,6 +3523,15 @@ Console.Write("Custom Domain: \n");
 string dat = Console.ReadLine();
 
 api.Post("/zones/pull/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+
+api.Post("/clients/{id}/zones/pull/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat);
 </pre>
   </div>
   <div class="tab-pane" id="response23">
@@ -2794,12 +3587,22 @@ Parameter | Description |
 zoneId = '97167'
 domainId = '79182'
 api.get('/zones/pull/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97167'
+domainId = '79182'
+api.get('/clients/{id}/zones/pull/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
   <div class="tab-pane" id="python24">
     <pre>
 zoneId = '97167'
 domainId = '79182'
 api.get('/zones/pull/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97167'
+domainId = '79182'
+api.get('/clients/{id}/zones/pull/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
     <div class="tab-pane" id="perl24">
     <pre>
@@ -2807,18 +3610,36 @@ my $zid = 134458;
 my $cid = 113070;
 my $data = $api->get("/zones/pull/" . $zid . "/customdomains.json/" . $cid);
 print $data->{'customdomain'}{'custom_domain'};</pre>
+<h3>Reseller API</h3>
+<pre>
+my $zid = 134458;
+my $cid = 113070;
+my $data = $api->get("/clients/{id}/zones/pull/" . $zid . "/customdomains.json/" . $cid);
+print $data->{'customdomain'}{'custom_domain'};</pre>
   </div>
   <div class="tab-pane" id="php24">
     <pre>
 $zoneId = '97167';
 $domainId = '79182';
 $api->get('/zones/pull/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
+<h3>Reseller API</h3>
+<pre>
+$zoneId = '97167';
+$domainId = '79182';
+$api->get('/clients/{id}/zones/pull/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
   </div>
   <div class="tab-pane" id="node24">
   <pre>
 var id = '97167'
 var domainId = '79182'
 api.get('/zones/pull/' + id + '/customdomains.json/' + domainId, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97167'
+var domainId = '79182'
+api.get('/clients/{id}/zones/pull/' + id + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -2830,6 +3651,15 @@ Console.Write("Custom Domain Id: \n");
 int domainId = Convert.ToInt32(Console.ReadLine());
 
 api.Get("/zones/pull/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain Id: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/clients/{id}/zones/pull/" + zoneID + "/customdomains.json/" + domainId);
 </pre>
   </div>
   <div class="tab-pane" id="response24">
@@ -2894,6 +3724,12 @@ zoneId = '97167'
 domainId = '79182'
 params = {"custom_domain"=>"cdn.somenewdomain41.com"}
 api.put('/zones/pull/'+zoneId+'/customdomains.json/'+domainId,params)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97167'
+domainId = '79182'
+params = {"custom_domain"=>"cdn.somenewdomain41.com"}
+api.put('/clients/{id}/zones/pull/'+zoneId+'/customdomains.json/'+domainId,params)</pre>
   </div>
   <div class="tab-pane" id="python25">
     <pre>
@@ -2901,6 +3737,12 @@ zoneId = '97167'
 domainId = '79182'
 params = {"custom_domain":"cdn.somenewdomain41.com"}
 api.put('/zones/pull/'+zoneId+'/customdomains.json/'+domainId,params=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97167'
+domainId = '79182'
+params = {"custom_domain":"cdn.somenewdomain41.com"}
+api.put('/clients/{id}/zones/pull/'+zoneId+'/customdomains.json/'+domainId,params=params)</pre>
   </div>
     <div class="tab-pane" id="perl25">
     <pre>
@@ -2908,6 +3750,12 @@ my $zid = 134458;
 my $cid = 173075;
 my @params = ('custom_domain=idabic.domain.net');
 $api->put("/zones/pull/" . $zid . "/customdomains.json/" . $cid, @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $zid = 134458;
+my $cid = 173075;
+my @params = ('custom_domain=idabic.domain.net');
+$api->put("/clients/{id}/zones/pull/" . $zid . "/customdomains.json/" . $cid, @params);</pre>
   </div>
   <div class="tab-pane" id="php25">
     <pre>
@@ -2915,12 +3763,25 @@ $zoneId = '97167';
 $domainId = '79182';
 $params = array("custom_domain"=>"cdn.somenewdomain.com");
 $api->put('/zones/pull/'.$zoneId.'/customdomains.json/'.$domainId, $params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$zoneId = '97167';
+$domainId = '79182';
+$params = array("custom_domain"=>"cdn.somenewdomain.com");
+$api->put('/clients/{id}/zones/pull/'.$zoneId.'/customdomains.json/'.$domainId, $params);</pre>
   </div>
   <div class="tab-pane" id="node25">
   <pre>
 var zoneId = '97167'
 var domainId = '79182'
 api.put('/zones/pull/' + zoneId + '/customdomains.json/' + domainId, { custom_domain: 'cdn.somenewdomain.com' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var zoneId = '97167'
+var domainId = '79182'
+api.put('/clients/{id}/zones/pull/' + zoneId + '/customdomains.json/' + domainId, { custom_domain: 'cdn.somenewdomain.com' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -2934,6 +3795,17 @@ Console.Write("New Value for this custom domain: \n");
 string cdname = Console.ReadLine();
 
 api.Put("/zones/pull/" + zoneID + "/customdomains.json/" + domainId, "custom_domain=" + cdname);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+Console.Write("New Value for this custom domain: \n");
+string cdname = Console.ReadLine();
+
+api.Put("/clients/{id}/zones/pull/" + zoneID + "/customdomains.json/" + domainId, "custom_domain=" + cdname);
 </pre>
   </div>
   <div class="tab-pane" id="response25">
@@ -2982,30 +3854,57 @@ Deletes a custom domain specified by the {zone_id} and
 zoneId = '97167'
 domainId = '79182'
 api.delete('/zones/pull/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97167'
+domainId = '79182'
+api.delete('/clients/{id}/zones/pull/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
   <div class="tab-pane" id="python26">
     <pre>
 zoneId = '97167'
 domainId = '79182'
 api.delete('/zones/pull/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97167'
+domainId = '79182'
+api.delete('/clients/{id}/zones/pull/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
     <div class="tab-pane" id="perl26">
     <pre>
 my $zid = 134458;
 my $cid = 173075;
 $api->delete("/zones/pull/" . $zid . "/customdomains.json/" . $cid);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $zid = 134458;
+my $cid = 173075;
+$api->delete("/clients/{id}/zones/pull/" . $zid . "/customdomains.json/" . $cid);</pre>
   </div>
   <div class="tab-pane" id="php26">
     <pre>
 $zoneId = '97167';
 $domainId = '79182';
 $api->delete('/zones/pull/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
+<h3>Reseller API</h3>
+<pre>
+$zoneId = '97167';
+$domainId = '79182';
+$api->delete('/clients/{id}/zones/pull/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
   </div>
   <div class="tab-pane" id="node26">
   <pre>
 var zoneId = '97167'
 var domainId = '79182'
 api.delete('/zones/pull/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var zoneId = '97167'
+var domainId = '79182'
+api.delete('/clients/{id}/zones/pull/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -3017,6 +3916,15 @@ Console.Write("Custom Doamin Id to Edit: \n");
 int domainId = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/zones/pull/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/clients/{id}/zones/pull/" + zoneID + "/customdomains.json/" + domainId);
 </pre>
   </div>
   <div class="tab-pane" id="response26">
@@ -3071,28 +3979,49 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby27">
     <pre>
 api.get('/zones/push.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/push.json')</pre>
   </div>
   <div class="tab-pane" id="python27">
     <pre>
 api.get('/zones/push.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/push.json')</pre>
   </div>
     <div class="tab-pane" id="perl27">
     <pre>
 $api->get("/zones/push.json")</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/zones/push.json")</pre>
   </div>
   <div class="tab-pane" id="php27">
     <pre>
 $api->get('/zones/push.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/zones/push.json');</pre>
   </div>
   <div class="tab-pane" id="node27">
   <pre>
 api.get('/zones/push.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/push.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
   </div>
   <div class="tab-pane" id="csharp27">
   <pre>
 api.Get("/zones/push.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/zones/push.json");
 </pre>
   </div>
   <div class="tab-pane" id="response27">
@@ -3212,25 +4141,46 @@ Parameter | Description |
     <pre>
 params = {"name"=>"newPushZone99","password"=>"password"}
 api.post('/zones/push.json',params)</pre>
+<h3>Reseller API</h3>
+<pre>
+params = {"name"=>"newPushZone99","password"=>"password"}
+api.post('/clients/{id}/zones/push.json',params)</pre>
   </div>
   <div class="tab-pane" id="python28">
     <pre>
 params = {"name":"newPushZone6","password":"password"}
 api.post('/zones/push.json',data=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+params = {"name":"newPushZone6","password":"password"}
+api.post('/clients/{id}/zones/push.json',data=params)</pre>
   </div>
     <div class="tab-pane" id="perl28">
     <pre>
 my @params = {name => 'perltestpush', password => 'password'};
 $api->post("/zones/push.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my @params = {name => 'perltestpush', password => 'password'};
+$api->post("/clients/{id}/zones/push.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php28">
     <pre>
 $params = array("name"=>"newPushZone","password"=>"password");
 $api->post('/zones/push.json', $params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$params = array("name"=>"newPushZone","password"=>"password");
+$api->post('/clients/{id}/zones/push.json', $params);</pre>
   </div>
   <div class="tab-pane" id="node28">
   <pre>
 api.post('/zones/push.json', { name: 'newPushZone', password: 'password' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+api.post('/clients/{id}/zones/push.json', { name: 'newPushZone', password: 'password' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -3242,6 +4192,15 @@ Console.Write("Zone Name: \n");
 string password = Console.ReadLine();
 
 api.Post("/zones/push.json", "name=" + ZoneName + "&password=" + password);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone Name: \n");
+string ZoneName = Console.ReadLine();
+Console.Write("Zone Name: \n");
+string password = Console.ReadLine();
+
+api.Post("/clients/{id}/zones/push.json", "name=" + ZoneName + "&password=" + password);
 </pre>
   </div>
   <div class="tab-pane" id="response28">
@@ -3308,22 +4267,39 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby29">
     <pre>
 api.get('/zones/push.json/count')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/push.json/count')</pre>
   </div>
   <div class="tab-pane" id="python29">
     <pre>
 api.get('/zones/push.json/count')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/push.json/count')</pre>
   </div>
     <div class="tab-pane" id="perl29">
     <pre>
 $api->get("/zones/push.json/count");</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/zones/push.json/count");</pre>
   </div>
   <div class="tab-pane" id="php29">
     <pre>
 $api->get('/zones/push.json/count');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/zones/push.json/count');</pre>
   </div>
   <div class="tab-pane" id="node29">
   <pre>
 api.get('/zones/push.json/count', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/push.json/count', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -3333,6 +4309,13 @@ Console.Write("Zone id: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Get("/zones/push.json/" + id);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/clients/{id}/zones/push.json/" + id);
 </pre>
   </div>
   <div class="tab-pane" id="response29">
@@ -3390,26 +4373,48 @@ Parameter | Description |
     <pre>
 id = '97793'
 api.get('/zones/push.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97793'
+api.get('/clients/{id}/zones/push.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="python30">
     <pre>
 id = '96182'
 api.get('/zones/push.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96182'
+api.get('/clients/{id}/zones/push.json/'+id)</pre>
   </div>
     <div class="tab-pane" id="perl30">
     <pre>
 my $id = 55659;
 $api->get("/zones/push.json/" . $id);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 55659;
+$api->get("/clients/{id}/zones/push.json/" . $id);</pre>
   </div>
   <div class="tab-pane" id="php30">
     <pre>
 $id = '97181';
 $api->get('/zones/push.json/'.$id);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97181';
+$api->get('/clients/{id}/zones/push.json/'.$id);</pre>
   </div>
   <div class="tab-pane" id="node30">
   <pre>
 var id = '97182'
 api.get('/zones/push.json/' + id, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97182'
+api.get('/clients/{id}/zones/push.json/' + id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -3423,6 +4428,17 @@ Console.Write("New value: \n");
 string val = Console.ReadLine();
 
 api.Put("/zones/push.json/" + zoneID, prop + "=" + val);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to edit: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Property to edit/change (label/compression...): \n");
+string prop = Console.ReadLine();
+Console.Write("New value: \n");
+string val = Console.ReadLine();
+
+api.Put("/clients/{id}/zones/push.json/" + zoneID, prop + "=" + val);
 </pre>
   </div>
   <div class="tab-pane" id="response30">
@@ -3512,29 +4528,55 @@ Parameter | Description |
 id = '97793'
 params = {"label"=>"Some other description"}
 api.put('/zones/push.json/'+id,params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97793'
+params = {"label"=>"Some other description"}
+api.put('/clients/{id}/zones/push.json/'+id,params)</pre>
   </div>
   <div class="tab-pane" id="python31">
     <pre>
 id = '96182'
 params = {"label":"Some other description"}
 api.put('/zones/push.json/'+id,params=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96182'
+params = {"label":"Some other description"}
+api.put('/clients/{id}/zones/push.json/'+id,params=params)</pre>
   </div>
     <div class="tab-pane" id="perl31">
     <pre>
 my $id = 55659;
 my @params = ('compress=0');
 $api->put("/zones/push.json/" . $id, @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 55659;
+my @params = ('compress=0');
+$api->put("/clients/{id}/zones/push.json/" . $id, @params);</pre>
   </div>
   <div class="tab-pane" id="php31">
     <pre>
 $id = '97181';
 $params = array("label"=>"Some other description");
 $api->put('/zones/push.json/'.$id, $params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97181';
+$params = array("label"=>"Some other description");
+$api->put('/clients/{id}/zones/push.json/'.$id, $params);</pre>
   </div>
   <div class="tab-pane" id="node31">
   <pre>
 var id = '97182'
 api.put('/zones/push.json/' + id, { label: 'Some other description' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97182'
+api.put('/clients/{id}/zones/push.json/' + id, { label: 'Some other description' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -3548,6 +4590,17 @@ Console.Write("New value: \n");
 string val = Console.ReadLine();
 
 api.Put("/zones/push.json/" + zoneID, prop + "=" + val);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to edit: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Property to edit/change (label/compression...): \n");
+string prop = Console.ReadLine();
+Console.Write("New value: \n");
+string val = Console.ReadLine();
+
+api.Put("/clients/{id}/zones/push.json/" + zoneID, prop + "=" + val);
 </pre>
   </div>
   <div class="tab-pane" id="response31">
@@ -3609,11 +4662,19 @@ Deletes a push zone specified by the {zone_id} parameter
     <pre>
 id = '97793'
 api.delete('/zones/push.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97793'
+api.delete('/clients/{id}/zones/push.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="python32">
     <pre>
 id = '96182'
 api.delete('/zones/push.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96182'
+api.delete('/clients/{id}/zones/push.json/'+id)</pre>
   </div>
     <div class="tab-pane" id="perl32">
     <pre>
@@ -3624,11 +4685,21 @@ $api->delete("/zones/push.json/" . $id);</pre>
     <pre>
 $id = '97181';
 $api->delete('/zones/push.json/'.$id);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97181';
+$api->delete('/clients/{id}/zones/push.json/'.$id);</pre>
   </div>
   <div class="tab-pane" id="node32">
   <pre>
 var id = '97181'
 api.delete('/zones/push.json/' + id, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97181'
+api.delete('/clients/{id}/zones/push.json/' + id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -3638,6 +4709,13 @@ Console.Write("Zone id to delete: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/zones/push.json/" + id);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to delete: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/clients/{id}/zones/push.json/" + id);
 </pre>
   </div>
   <div class="tab-pane" id="response32">
@@ -3675,26 +4753,48 @@ Enables a push zone specified by the {zone_id} parameter
     <pre>
 id = '97793'
 api.put('/zones/push/'+id+'/enable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97793'
+api.put('/clients/{id}/zones/push/'+id+'/enable.json')</pre>
   </div>
   <div class="tab-pane" id="python33">
     <pre>
 id = '96182'
 api.put('/zones/push/'+id+'/enable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96182'
+api.put('/clients/{id}/zones/push/'+id+'/enable.json')</pre>
   </div>
     <div class="tab-pane" id="perl33">
     <pre>
 my $id = 55659;
 $api->put("/zones/push/" . $id . "/enable.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 55659;
+$api->put("/clients/{id}/zones/push/" . $id . "/enable.json");</pre>
   </div>
   <div class="tab-pane" id="php33">
     <pre>
 $id = '97181';
 $api->put('/zones/push/'.$id.'/enable.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97181';
+$api->put('/clients/{id}/zones/push/'.$id.'/enable.json');</pre>
   </div>
   <div class="tab-pane" id="node33">
   <pre>
 var id = '97181'
 api.put('/zones/push/' + id + '/enable.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97181'
+api.put('/clients/{id}/zones/push/' + id + '/enable.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -3704,6 +4804,13 @@ Console.Write("Zone id to enable: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Put("/zones/push/" + id + "/enable.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to enable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/clients/{id}/zones/push/" + id + "/enable.json");
 </pre>
   </div>
   <div class="tab-pane" id="response33">
@@ -3742,26 +4849,48 @@ Disables a push zone specified by the {zone_id} parameter
     <pre>
 id = '97793'
 api.put('/zones/push/'+id+'/disable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97793'
+api.put('/clients/{id}/zones/push/'+id+'/disable.json')</pre>
   </div>
   <div class="tab-pane" id="python34">
     <pre>
 id = '96182'
 api.put('/zones/push/'+id+'/disable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96182'
+api.put('/clients/{id}/zones/push/'+id+'/disable.json')</pre>
   </div>
     <div class="tab-pane" id="perl34">
     <pre>
 my $id = 55659;
 $api->put("/zones/push/" . $id . "/disable.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 55659;
+$api->put("/clients/{id}/zones/push/" . $id . "/disable.json");</pre>
   </div>
   <div class="tab-pane" id="php34">
     <pre>
 $id = '97181';
 $api->put('/zones/push/'.$id.'/disable.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97181';
+$api->put('/clients/{id}/zones/push/'.$id.'/disable.json');</pre>
   </div>
   <div class="tab-pane" id="node34">
   <pre>
 var id = '97181'
 api.put('/zones/push/' + id + '/disable.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97181'
+api.put('/clients/{id}/zones/push/' + id + '/disable.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -3771,6 +4900,13 @@ Console.Write("Zone id to disable: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Put("/zones/push/" + id + "/disable.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to disable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/clients/{id}/zones/push/" + id + "/disable.json");
 </pre>
   </div>
   <div class="tab-pane" id="response34">
@@ -3819,26 +4955,48 @@ Parameter | Description |
     <pre>
 id = '97793'
 api.get('/zones/push/'+id+'/customdomains.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97793'
+api.get('/clients/{id}/zones/push/'+id+'/customdomains.json')</pre>
   </div>
   <div class="tab-pane" id="python35">
     <pre>
 id = '96182'
 api.get('/zones/push/'+id+'/customdomains.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96182'
+api.get('/clients/{id}/zones/push/'+id+'/customdomains.json')</pre>
   </div>
     <div class="tab-pane" id="perl35">
     <pre>
 my $id = 134458;
 $api->get("/zones/push/" . $id . "/customdomains.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 134458;
+$api->get("/clients/{id}/zones/push/" . $id . "/customdomains.json");</pre>
   </div>
   <div class="tab-pane" id="php35">
     <pre>
 $id = '96061';
 $api->get('/zones/push/'.$id.'/customdomains.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96061';
+$api->get('/clients/{id}/zones/push/'.$id.'/customdomains.json');</pre>
   </div>
   <div class="tab-pane" id="node35">
   <pre>
 var id = '96061'
 api.get('/zones/push/' + id + '/customdomains.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96061'
+api.get('/clients/{id}/zones/push/' + id + '/customdomains.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -3848,6 +5006,13 @@ Console.Write("Zone Id: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
 Console.Write(api.Get("/zones/push/" + zoneID + "/customdomains.json"));
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+Console.Write(api.Get("/clients/{id}/zones/push/" + zoneID + "/customdomains.json"));
 </pre>
   </div>
   <div class="tab-pane" id="response35">
@@ -3913,29 +5078,55 @@ Parameter | Description |
 id = '97793'
 params = {"custom_domain"=>"cdn.somedomain19.com"}
 api.post('/zones/push/'+id+'/customdomains.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97793'
+params = {"custom_domain"=>"cdn.somedomain19.com"}
+api.post('/clients/{id}/zones/push/'+id+'/customdomains.json', params)</pre>
   </div>
   <div class="tab-pane" id="python36">
     <pre>
 id = '96182'
 params = {"custom_domain":"cdn.somedomain15.com"}
 api.post('/zones/push/'+id+'/customdomains.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96182'
+params = {"custom_domain":"cdn.somedomain15.com"}
+api.post('/clients/{id}/zones/push/'+id+'/customdomains.json', params)</pre>
   </div>
     <div class="tab-pane" id="perl36">
     <pre>
 my $id = 55659;
 my @params = {custom_domain => 'idabic2.dom.net'};
 $api->post("/zones/push/" . $id . "/customdomains.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 55659;
+my @params = {custom_domain => 'idabic2.dom.net'};
+$api->post("/clients/{id}/zones/push/" . $id . "/customdomains.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php36">
     <pre>
 $id = '97181';
 $params = array("custom_domain"=>"cdn.somedomain2.net");
 $api->post('/zones/push/'.$id.'/customdomains.json', $params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97181';
+$params = array("custom_domain"=>"cdn.somedomain2.net");
+$api->post('/clients/{id}/zones/push/'.$id.'/customdomains.json', $params);</pre>
   </div>
   <div class="tab-pane" id="node36">
   <pre>
 var id = '97181'
 api.post('/zones/push/' + id + '/customdomains.json', { custom_domain: 'cdn.somedomain2.net' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97181'
+api.post('/clients/{id}/zones/push/' + id + '/customdomains.json', { custom_domain: 'cdn.somedomain2.net' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -3947,6 +5138,15 @@ Console.Write("Custom Domain: \n");
 string dat = Console.ReadLine();
 
 api.Post("/zones/push/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+
+api.Post("/clients/{id}/zones/push/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat);
 </pre>
   </div>
   <div class="tab-pane" id="response36">
@@ -4003,30 +5203,57 @@ Parameter | Description |
 zoneId = '97793'
 domainId = '79747'
 api.get('/zones/push/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97793'
+domainId = '79747'
+api.get('/clients/{id}/zones/push/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
   <div class="tab-pane" id="python37">
     <pre>
 zoneId = '96182'
 domainId = '79320'
 api.get('/zones/push/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '96182'
+domainId = '79320'
+api.get('/clients/{id}/zones/push/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
     <div class="tab-pane" id="perl37">
     <pre>
 my $zid = 55659;
 my $cid = 122211;
 $api->get("/zones/push/" . $zid . "/customdomains.json/" . $cid);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $zid = 55659;
+my $cid = 122211;
+$api->get("/clients/{id}/zones/push/" . $zid . "/customdomains.json/" . $cid);</pre>
   </div>
   <div class="tab-pane" id="php37">
     <pre>
 $zoneId = '97181';
 $domainId = '79188';
 $api->get('/zones/push/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
+<h3>Reseller API</h3>
+<pre>
+$zoneId = '97181';
+$domainId = '79188';
+$api->get('/clients/{id}/zones/push/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
   </div>
   <div class="tab-pane" id="node37">
   <pre>
 var zoneId = '97181'
 var domainId = '79188'
 api.get('/zones/push/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var zoneId = '97181'
+var domainId = '79188'
+api.get('/clients/{id}/zones/push/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -4037,7 +5264,16 @@ int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Custom Domain Id: \n");
 int domainId = Convert.ToInt32(Console.ReadLine());
 
-api.Get"/zones/push/" + zoneID + "/customdomains.json/" + domainId);
+api.Get("/zones/push/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain Id: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/clients/{id}/zones/push/" + zoneID + "/customdomains.json/" + domainId);
 </pre>
   </div>
   <div class="tab-pane" id="response37">
@@ -4100,6 +5336,12 @@ zoneId = '97793'
 domainId = '79747'
 params = {"custom_domain"=>"cdn.somenewdomain41.com"}
 api.put('/zones/push/'+zoneId+'/customdomains.json/'+domainId,params)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97793'
+domainId = '79747'
+params = {"custom_domain"=>"cdn.somenewdomain41.com"}
+api.put('/clients/{id}/zones/push/'+zoneId+'/customdomains.json/'+domainId,params)</pre>
   </div>
   <div class="tab-pane" id="python38">
     <pre>
@@ -4107,6 +5349,12 @@ zoneId = '96182'
 domainId = '79320'
 params = {"custom_domain":"cdn.somenewdomain40.com"}
 api.put('/zones/push/'+zoneId+'/customdomains.json/'+domainId,params=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '96182'
+domainId = '79320'
+params = {"custom_domain":"cdn.somenewdomain40.com"}
+api.put('/clients/{id}/zones/push/'+zoneId+'/customdomains.json/'+domainId,params=params)</pre>
   </div>
     <div class="tab-pane" id="perl38">
     <pre>
@@ -4114,6 +5362,12 @@ my $zid = 55659;
 my $cid = 122211;
 my @params = ('custom_domain=idabic.domain.net');
 $api->put("/zones/push/" . $zid . "/customdomains.json/" . $cid, @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $zid = 55659;
+my $cid = 122211;
+my @params = ('custom_domain=idabic.domain.net');
+$api->put("/clients/{id}/zones/push/" . $zid . "/customdomains.json/" . $cid, @params);</pre>
   </div>
   <div class="tab-pane" id="php38">
     <pre>
@@ -4122,12 +5376,26 @@ $domainId = '79188';
 $params = array("custom_domain"=>"cdn.somenewdomain2.com");
 $api->put('/zones/push/'.$zoneId.'/customdomains.json/'.$domainId, $params);
 </pre>
+<h3>Reseller API</h3>
+<pre>
+$zoneId = '97181';
+$domainId = '79188';
+$params = array("custom_domain"=>"cdn.somenewdomain2.com");
+$api->put('/clients/{id}/zones/push/'.$zoneId.'/customdomains.json/'.$domainId, $params);
+</pre>
   </div>
   <div class="tab-pane" id="node38">
   <pre>
 var zoneId = '97181'
 var domainId = '79188'
 api.put('/zones/push/' + zoneId + '/customdomains.json/' + domainId, { custom_domain: 'cdn.somenewdomain2.com' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var zoneId = '97181'
+var domainId = '79188'
+api.put('/clients/{id}/zones/push/' + zoneId + '/customdomains.json/' + domainId, { custom_domain: 'cdn.somenewdomain2.com' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -4141,6 +5409,17 @@ Console.Write("New Value for this custom domain: \n");
 string cdname = Console.ReadLine();
 
 api.Put("/zones/push/" + zoneID + "/customdomains.json/" + domainId, "custom_domain=" + cdname);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+Console.Write("New Value for this custom domain: \n");
+string cdname = Console.ReadLine();
+
+api.Put("/clients/{id}/zones/push/" + zoneID + "/customdomains.json/" + domainId, "custom_domain=" + cdname);
 </pre>
   </div>
   <div class="tab-pane" id="response38">
@@ -4189,30 +5468,57 @@ Deletes a custom domain specified by the {zone_id} and
 zoneId = '97793'
 domainId = '79747'
 api.delete('/zones/push/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97793'
+domainId = '79747'
+api.delete('/clients/{id}/zones/push/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
   <div class="tab-pane" id="python39">
     <pre>
 zoneId = '96182'
 domainId = '79320'
 api.delete('/zones/push/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '96182'
+domainId = '79320'
+api.delete('/clients/{id}/zones/push/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
     <div class="tab-pane" id="perl39">
     <pre>
 my $zid = 55659;
 my $cid = 122211;
 $api->delete("/zones/push/" . $zid . "/customdomains.json/" . $cid);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $zid = 55659;
+my $cid = 122211;
+$api->delete("/clients/{id}/zones/push/" . $zid . "/customdomains.json/" . $cid);</pre>
   </div>
   <div class="tab-pane" id="php39">
     <pre>
 $zoneId = '97181';
 $domainId = '79188';
 $api->delete('/zones/push/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
+<h3>Reseller API</h3>
+<pre>
+$zoneId = '97181';
+$domainId = '79188';
+$api->delete('/clients/{id}/zones/push/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
   </div>
   <div class="tab-pane" id="node39">
   <pre>
 var zoneId = '97181'
 var domainId = '79188'
 api.delete('/zones/push/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var zoneId = '97181'
+var domainId = '79188'
+api.delete('/clients/{id}/zones/push/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -4224,6 +5530,15 @@ Console.Write("Custom Doamin Id to Edit: \n");
 int domainId = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/zones/push/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/clients/{id}/zones/push/" + zoneID + "/customdomains.json/" + domainId);
 </pre>
   </div>
   <div class="tab-pane" id="response39">
@@ -4274,28 +5589,49 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby40">
     <pre>
 api.get('/zones/vod.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/vod.json')</pre>
   </div>
   <div class="tab-pane" id="python40">
     <pre>
 api.get('/zones/vod.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/vod.json')</pre>
   </div>
     <div class="tab-pane" id="perl40">
     <pre>
 $api->get("/zones/vod.json")</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/zones/vod.json")</pre>
   </div>
   <div class="tab-pane" id="php40">
     <pre>
 $api->get('/zones/vod.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/zones/vod.json');</pre>
   </div>
   <div class="tab-pane" id="node40">
   <pre>
 api.get('/zones/vod.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/vod.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
   </div>
   <div class="tab-pane" id="csharp40">
   <pre>
 api.Get("/zones/vod.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/zones/vod.json");
 </pre>
   </div>
   <div class="tab-pane" id="response40">
@@ -4404,25 +5740,46 @@ Parameter | Description |
     <pre>
 params = {"name"=>"newVodZone99","password"=>"password"}
 api.post('/zones/vod.json',params)</pre>
+<h3>Reseller API</h3>
+<pre>
+params = {"name"=>"newVodZone99","password"=>"password"}
+api.post('/clients/{id}/zones/vod.json',params)</pre>
   </div>
   <div class="tab-pane" id="python41">
     <pre>
 params = {"name":"newvodZone7","password":"password"}
 api.post('/zones/vod.json',data=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+params = {"name":"newvodZone7","password":"password"}
+api.post('/clients/{id}/zones/vod.json',data=params)</pre>
   </div>
     <div class="tab-pane" id="perl41">
     <pre>
 my @params = {name => 'perltest5', password => 'password'};
 $api->post("/zones/vod.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my @params = {name => 'perltest5', password => 'password'};
+$api->post("/clients/{id}/zones/vod.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php41">
     <pre>
 $params = array("name"=>"newVODZone3","password"=>"password");
 $api->post('/zones/vod.json',$params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$params = array("name"=>"newVODZone3","password"=>"password");
+$api->post('/clients/{id}/zones/vod.json',$params);</pre>
   </div>
   <div class="tab-pane" id="node41">
   <pre>
 api.post('/zones/vod.json', { name: 'newVODZone3', password: 'password' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+api.post('/clients/{id}/zones/vod.json', { name: 'newVODZone3', password: 'password' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -4434,6 +5791,15 @@ Console.Write("Zone Name: \n");
 string password = Console.ReadLine();
 
 api.Post("/zones/vod.json", "name=" + ZoneName + "&password=" + password);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone Name: \n");
+string ZoneName = Console.ReadLine();
+Console.Write("Zone Name: \n");
+string password = Console.ReadLine();
+
+api.Post("/clients/{id}/zones/vod.json", "name=" + ZoneName + "&password=" + password);
 </pre>
   </div>
   <div class="tab-pane" id="response41">
@@ -4498,28 +5864,49 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby42">
     <pre>
 api.get('/zones/vod.json/count')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/vod.json/count')</pre>
   </div>
   <div class="tab-pane" id="python42">
     <pre>
 api.get('/zones/vod.json/count')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/vod.json/count')</pre>
   </div>
     <div class="tab-pane" id="perl42">
     <pre>
 $api->get("/zones/vod.json/count")</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/zones/vod.json/count")</pre>
   </div>
   <div class="tab-pane" id="php42">
     <pre>
 $api->get('/zones/vod.json/count');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/zones/vod.json/count');</pre>
   </div>
   <div class="tab-pane" id="node42">
   <pre>
 api.get('/zones/vod.json/count', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/zones/vod.json/count', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
   </div>
   <div class="tab-pane" id="csharp42">
   <pre>
 api.Get("/zones/vod.json/count");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/zones/vod.json/count");
 </pre>
   </div>
   <div class="tab-pane" id="response42">
@@ -4572,26 +5959,48 @@ Parameter | Description |
     <pre>
 id = '97794'
 api.get('/zones/vod.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97794'
+api.get('/clients/{id}/zones/vod.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="python43">
     <pre>
 id = '96187'
 api.get('/zones/vod.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96187'
+api.get('/clients/{id}/zones/vod.json/'+id)</pre>
   </div>
     <div class="tab-pane" id="perl43">
     <pre>
 my $id = 75477;
 $api->get("/zones/vod.json/" . $id);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 75477;
+$api->get("/clients/{id}/zones/vod.json/" . $id);</pre>
   </div>
   <div class="tab-pane" id="php43">
     <pre>
 $id = '97183';
 $api->get('/zones/vod.json/'.$id);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97183';
+$api->get('/clients/{id}/zones/vod.json/'.$id);</pre>
   </div>
   <div class="tab-pane" id="node43">
   <pre>
 var id = '97183'
 api.get('/zones/vod.json/' + id, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97183'
+api.get('/clients/{id}/zones/vod.json/' + id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -4601,6 +6010,13 @@ Console.Write("Zone id: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Get("/zones/vod.json/" + id);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/clients/{id}/zones/vod.json/" + id);
 </pre>
   </div>
   <div class="tab-pane" id="response43">
@@ -4682,29 +6098,55 @@ Parameter | Description |
 id = '97794'
 params = {"label"=>"Some other description"}
 api.put('/zones/vod.json/'+id,params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97794'
+params = {"label"=>"Some other description"}
+api.put('/clients/{id}/zones/vod.json/'+id,params)</pre>
   </div>
   <div class="tab-pane" id="python44">
     <pre>
 id = '96187'
 params = {"label":"Some other description"}
 api.put('/zones/vod.json/'+id,params=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96187'
+params = {"label":"Some other description"}
+api.put('/clients/{id}/zones/vod.json/'+id,params=params)</pre>
   </div>
     <div class="tab-pane" id="perl44">
     <pre>
 my $id = 75477;
 my @params = ('compress=0');
 $api->put("/zones/vod.json/" . $id, @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 75477;
+my @params = ('compress=0');
+$api->put("/clients/{id}/zones/vod.json/" . $id, @params);</pre>
   </div>
   <div class="tab-pane" id="php44">
     <pre>
 $id = '97183';
 $params =  array("label"=>"Some other description");
 $api->put('/zones/vod.json/'.$id,$params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97183';
+$params =  array("label"=>"Some other description");
+$api->put('/clients/{id}/zones/vod.json/'.$id,$params);</pre>
   </div>
   <div class="tab-pane" id="node44">
   <pre>
 var id = '97183'
 api.put('/zones/vod.json/' + id, { label: 'Some other description' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97183'
+api.put('/clients/{id}/zones/vod.json/' + id, { label: 'Some other description' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -4718,6 +6160,17 @@ Console.Write("New value: \n");
 string val = Console.ReadLine();
 
 api.Put("/zones/vod.json/" + zoneID, prop + "=" + val);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to edit: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Property to edit/change (label...): \n");
+string prop = Console.ReadLine();
+Console.Write("New value: \n");
+string val = Console.ReadLine();
+
+api.Put("/clients/{id}/zones/vod.json/" + zoneID, prop + "=" + val);
 </pre>
   </div>
   <div class="tab-pane" id="response44">
@@ -4777,6 +6230,10 @@ Deletes a VOD zone specified by the {zone_id} parameter
     <pre>
 id = '97794'
 api.delete('/zones/vod.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97794'
+api.delete('/clients/{id}/zones/vod.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="python45">
     <pre>
@@ -4787,16 +6244,30 @@ api.delete('/zones/vod.json/'+id)</pre>
     <pre>
 my $id = 75477;
 $api->delete("/zones/vod.json/" . $id);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 75477;
+$api->delete("/clients/{id}/zones/vod.json/" . $id);</pre>
   </div>
   <div class="tab-pane" id="php45">
     <pre>
 $id = '97183';
 $api->delete('/zones/vod.json/'.$id);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97183';
+$api->delete('/clients/{id}/zones/vod.json/'.$id);</pre>
   </div>
   <div class="tab-pane" id="node45">
   <pre>
 var id = '97183'
 api.delete('/zones/vod.json/' + id, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97183'
+api.delete('/clients/{id}/zones/vod.json/' + id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -4806,6 +6277,13 @@ Console.Write("Zone id to delete: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/zones/vod.json/" + id);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to delete: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/clients/{id}/zones/vod.json/" + id);
 </pre>
   </div>
   <div class="tab-pane" id="response45">
@@ -4843,26 +6321,48 @@ Enables a VOD zone specified by the {zone_id} parameter
     <pre>
 id = '97794'
 api.put('/zones/vod/'+id+'/enable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97794'
+api.put('/clients/{id}/zones/vod/'+id+'/enable.json')</pre>
   </div>
   <div class="tab-pane" id="python46">
     <pre>
 id = '96187'
 api.put('/zones/vod/'+id+'/enable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96187'
+api.put('/clients/{id}/zones/vod/'+id+'/enable.json')</pre>
   </div>
     <div class="tab-pane" id="perl46">
     <pre>
 my $id = 75477;
 $api->put("/zones/vod/" . $id . "/enable.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 75477;
+$api->put("/clients/{id}/zones/vod/" . $id . "/enable.json");</pre>
   </div>
   <div class="tab-pane" id="php46">
     <pre>
 $id = '96187';
 $api->put('/zones/vod/'.$id.'/enable.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96187';
+$api->put('/clients/{id}/zones/vod/'.$id.'/enable.json');</pre>
   </div>
   <div class="tab-pane" id="node46">
   <pre>
 var id = '96187'
 api.put('/zones/vod/' + id + '/enable.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96187'
+api.put('/clients/{id}/zones/vod/' + id + '/enable.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -4872,6 +6372,13 @@ Console.Write("Zone id to enable: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Put("/zones/vod/" + id + "/enable.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to enable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/clients/{id}/zones/vod/" + id + "/enable.json");
 </pre>
   </div>
   <div class="tab-pane" id="response46">
@@ -4909,26 +6416,48 @@ Disables a VOD zone specified by the {zone_id} parameter
     <pre>
 id = '97794'
 api.put('/zones/vod/'+id+'/disable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97794'
+api.put('/clients/{id}/zones/vod/'+id+'/disable.json')</pre>
   </div>
   <div class="tab-pane" id="python47">
     <pre>
 id = '96187'
 api.put('/zones/vod/'+id+'/disable.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96187'
+api.put('/clients/{id}/zones/vod/'+id+'/disable.json')</pre>
   </div>
     <div class="tab-pane" id="perl47">
     <pre>
 my $id = 75477;
 $api->put("/zones/vod/" . $id . "/disable.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 75477;
+$api->put("/clients/{id}/zones/vod/" . $id . "/disable.json");</pre>
   </div>
   <div class="tab-pane" id="php47">
     <pre>
 $id = '96187';
 $api->put('/zones/vod/'.$id.'/disable.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96187';
+$api->put('/clients/{id}/zones/vod/'.$id.'/disable.json');</pre>
   </div>
   <div class="tab-pane" id="node47">
   <pre>
 var id = '96187'
 api.put('/zones/vod/' + id + '/disable.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96187'
+api.put('/clients/{id}/zones/vod/' + id + '/disable.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -4938,6 +6467,13 @@ Console.Write("Zone id to disable: \n");
 int id = Convert.ToInt32(Console.ReadLine());
 
 api.Put("/zones/vod/" + id + "/disable.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone id to disable: \n");
+int id = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/clients/{id}/zones/vod/" + id + "/disable.json");
 </pre>
   </div>
   <div class="tab-pane" id="response47">
@@ -4986,26 +6522,48 @@ Parameter | Description |
     <pre>
 id = '97794'
 api.get('/zones/vod/'+id+'/customdomains.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97794'
+api.get('/clients/{id}/zones/vod/'+id+'/customdomains.json')</pre>
   </div>
   <div class="tab-pane" id="python48">
     <pre>
 id = '96187'
 api.get('/zones/vod/'+id+'/customdomains.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96187'
+api.get('/clients/{id}/zones/vod/'+id+'/customdomains.json')</pre>
   </div>
     <div class="tab-pane" id="perl48">
     <pre>
 my $id = 75477;
 $api->get("/zones/vod/" . $id . "/customdomains.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 75477;
+$api->get("/clients/{id}/zones/vod/" . $id . "/customdomains.json");</pre>
   </div>
   <div class="tab-pane" id="php48">
     <pre>
 $id = '97183';
 $api->get('/zones/vod/'.$id.'/customdomains.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97183';
+$api->get('/clients/{id}/zones/vod/'.$id.'/customdomains.json');</pre>
   </div>
   <div class="tab-pane" id="node48">
   <pre>
 var id = '97183'
 api.get('/zones/vod.json/' + id + '/customdomains.json, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97183'
+api.get('/clients/{id}/zones/vod.json/' + id + '/customdomains.json, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -5015,6 +6573,13 @@ Console.Write("Zone Id: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
 Console.Write(api.Get("/zones/vod/" + zoneID + "/customdomains.json"));
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+Console.Write(api.Get("/clients/{id}/zones/vod/" + zoneID + "/customdomains.json"));
 </pre>
   </div>
   <div class="tab-pane" id="response48">
@@ -5080,29 +6645,55 @@ Parameter | Description |
 id = '97794'
 params = {"custom_domain"=>"cdn.somedomain39.com","type"=>"vod-rtmp"}
 api.post('/zones/vod/'+id+'/customdomains.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97794'
+params = {"custom_domain"=>"cdn.somedomain39.com","type"=>"vod-rtmp"}
+api.post('/clients/{id}/zones/vod/'+id+'/customdomains.json', params)</pre>
   </div>
   <div class="tab-pane" id="python49">
     <pre>
 id = '96187'
 params = {"custom_domain":"cdn.somedomain16.com","type":"vod-rtmp"}
 api.post('/zones/vod/'+id+'/customdomains.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96187'
+params = {"custom_domain":"cdn.somedomain16.com","type":"vod-rtmp"}
+api.post('/clients/{id}/zones/vod/'+id+'/customdomains.json', params)</pre>
   </div>
     <div class="tab-pane" id="perl49">
     <pre>
 my $id = 75477;
 my @params = {custom_domain => 'idabic3.dom.net', type => 'vod-rtmp'};
 $api->post("/zones/vod/" . $id . "/customdomains.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 75477;
+my @params = {custom_domain => 'idabic3.dom.net', type => 'vod-rtmp'};
+$api->post("/clients/{id}/zones/vod/" . $id . "/customdomains.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php49">
     <pre>
 $id = '97183';
 $params = array("custom_domain"=>"cdn.somedomain2.com","type"=>"vod-rtmp");
 $api->post('/zones/vod/'.$id.'/customdomains.json', $params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97183';
+$params = array("custom_domain"=>"cdn.somedomain2.com","type"=>"vod-rtmp");
+$api->post('/clients/{id}/zones/vod/'.$id.'/customdomains.json', $params);</pre>
   </div>
   <div class="tab-pane" id="node49">
   <pre>
 var id = '97183'
 api.post('/zones/vod/' + id + '/customdomains.json', { custom_domain: 'cdn.somedomain2.com', type: 'vod-rtmp' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '97183'
+api.post('/clients/{id}/zones/vod/' + id + '/customdomains.json', { custom_domain: 'cdn.somedomain2.com', type: 'vod-rtmp' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -5116,6 +6707,91 @@ Console.Write("Type: (vod-rtmp, vod-pseudo, vod-direct, or vod-ftp)\n");
 string cdtype = Console.ReadLine();
 
 api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat + "&type=" + cdtype);
+</pre>
+
+<pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+Console.Write("Type: (vod-rtmp, vod-pseudo, vod-direct, or vod-ftp)\n");
+string cdtype = Console.ReadLine();
+
+api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat + "&type=" + cdtype);
+</pre><pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+Console.Write("Type: (vod-rtmp, vod-pseudo, vod-direct, or vod-ftp)\n");
+string cdtype = Console.ReadLine();
+
+api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat + "&type=" + cdtype);
+</pre><pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+Console.Write("Type: (vod-rtmp, vod-pseudo, vod-direct, or vod-ftp)\n");
+string cdtype = Console.ReadLine();
+
+api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat + "&type=" + cdtype);
+</pre><pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+Console.Write("Type: (vod-rtmp, vod-pseudo, vod-direct, or vod-ftp)\n");
+string cdtype = Console.ReadLine();
+
+api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat + "&type=" + cdtype);
+</pre><pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+Console.Write("Type: (vod-rtmp, vod-pseudo, vod-direct, or vod-ftp)\n");
+string cdtype = Console.ReadLine();
+
+api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat + "&type=" + cdtype);
+</pre><pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+Console.Write("Type: (vod-rtmp, vod-pseudo, vod-direct, or vod-ftp)\n");
+string cdtype = Console.ReadLine();
+
+api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat + "&type=" + cdtype);
+</pre><pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+Console.Write("Type: (vod-rtmp, vod-pseudo, vod-direct, or vod-ftp)\n");
+string cdtype = Console.ReadLine();
+
+api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat + "&type=" + cdtype);
+</pre><pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+Console.Write("Type: (vod-rtmp, vod-pseudo, vod-direct, or vod-ftp)\n");
+string cdtype = Console.ReadLine();
+
+api.Post("/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat + "&type=" + cdtype);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone Id: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain: \n");
+string dat = Console.ReadLine();
+Console.Write("Type: (vod-rtmp, vod-pseudo, vod-direct, or vod-ftp)\n");
+string cdtype = Console.ReadLine();
+
+api.Post("/clients/{id}/zones/vod/" + zoneID + "/customdomains.json", dat="custom_domain=" + dat + "&type=" + cdtype);
 </pre>
   </div>
   <div class="tab-pane" id="response49">
@@ -5171,30 +6847,57 @@ Parameter | Description |
 zoneId = '97794'
 domainId = '79748'
 api.get('/zones/vod/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97794'
+domainId = '79748'
+api.get('/clients/{id}/zones/vod/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
   <div class="tab-pane" id="python50">
     <pre>
 zoneId = '96187'
 domainId = '79321'
 api.get('/zones/vod/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '96187'
+domainId = '79321'
+api.get('/clients/{id}/zones/vod/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
     <div class="tab-pane" id="perl50">
     <pre>
 my $zid = 75477;
 my $cid = 173088;
 my $data = $api->get("/zones/vod/" . $zid . "/customdomains.json/" . $cid);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $zid = 75477;
+my $cid = 173088;
+my $data = $api->get("/clients/{id}/zones/vod/" . $zid . "/customdomains.json/" . $cid);</pre>
   </div>
   <div class="tab-pane" id="php50">
     <pre>
 $zoneId = '97183';
 $domainId = '79191';
 $api->get('/zones/vod/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
+<h3>Reseller API</h3>
+<pre>
+$zoneId = '97183';
+$domainId = '79191';
+$api->get('/clients/{id}/zones/vod/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
   </div>
   <div class="tab-pane" id="node50">
   <pre>
 var zoneId = '97183'
 var domainId = '79191'
 api.get('/zones/vod/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var zoneId = '97183'
+var domainId = '79191'
+api.get('/clients/{id}/zones/vod/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -5206,6 +6909,15 @@ Console.Write("Custom Domain Id: \n");
 int domainId = Convert.ToInt32(Console.ReadLine());
 
 api.Get"/zones/vod/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Domain Id: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/clients/{id}/zones/vod/" + zoneID + "/customdomains.json/" + domainId);
 </pre>
   </div>
   <div class="tab-pane" id="response50">
@@ -5268,6 +6980,12 @@ zoneId = '97794'
 domainId = '79748'
 params = {"custom_domain"=>"cdn.somenewdomain49.com"}
 api.put('/zones/vod/'+zoneId+'/customdomains.json/'+domainId,params)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97794'
+domainId = '79748'
+params = {"custom_domain"=>"cdn.somenewdomain49.com"}
+api.put('/clients/{id}/zones/vod/'+zoneId+'/customdomains.json/'+domainId,params)</pre>
   </div>
   <div class="tab-pane" id="python51">
     <pre>
@@ -5275,6 +6993,12 @@ zoneId = '96187'
 domainId = '79321'
 params = {"custom_domain":"cdn.somenewdomain401.com"}
 api.put('/zones/vod/'+zoneId+'/customdomains.json/'+domainId,params=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '96187'
+domainId = '79321'
+params = {"custom_domain":"cdn.somenewdomain401.com"}
+api.put('/clients/{id}/zones/vod/'+zoneId+'/customdomains.json/'+domainId,params=params)</pre>
   </div>
     <div class="tab-pane" id="perl51">
     <pre>
@@ -5289,12 +7013,25 @@ $zoneId = '97183';
 $domainId = '79191';
 $params = array("custom_domain"=>"cdn.somenewdomain3.com");
 $api->put('/zones/vod/'.$zoneId.'/customdomains.json/'.$domainId, $params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$zoneId = '97183';
+$domainId = '79191';
+$params = array("custom_domain"=>"cdn.somenewdomain3.com");
+$api->put('/clients/{id}/zones/vod/'.$zoneId.'/customdomains.json/'.$domainId, $params);</pre>
   </div>
   <div class="tab-pane" id="node51">
   <pre>
 var zoneId = '97183'
 var domainId = '79191'
 api.put('/zones/vod/' + zoneId + '/customdomains.json/' + domainId, { custom_domain: 'cdn.somenewdomain3.com' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var zoneId = '97183'
+var domainId = '79191'
+api.put('/clients/{id}/zones/vod/' + zoneId + '/customdomains.json/' + domainId, { custom_domain: 'cdn.somenewdomain3.com' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -5308,6 +7045,17 @@ Console.Write("New Value for this custom domain: \n");
 string cdname = Console.ReadLine();
 
 api.Put("/zones/vod/" + zoneID + "/customdomains.json/" + domainId, "custom_domain=" + cdname);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+Console.Write("New Value for this custom domain: \n");
+string cdname = Console.ReadLine();
+
+api.Put("/clients/{id}/zones/vod/" + zoneID + "/customdomains.json/" + domainId, "custom_domain=" + cdname);
 </pre>
   </div>
   <div class="tab-pane" id="response51">
@@ -5356,30 +7104,57 @@ Deletes a custom domain specified by the {zone_id} and
 zoneId = '97794'
 domainId = '79748'
 api.delete('/zones/vod/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '97794'
+domainId = '79748'
+api.delete('/clients/{id}/zones/vod/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
   <div class="tab-pane" id="python52">
     <pre>
 zoneId = '96187'
 domainId = '79321'
 api.delete('/zones/vod/'+zoneId+'/customdomains.json/'+domainId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '96187'
+domainId = '79321'
+api.delete('/clients/{id}/zones/vod/'+zoneId+'/customdomains.json/'+domainId)</pre>
   </div>
     <div class="tab-pane" id="perl52">
     <pre>
 my $zid = 75477;
 my $cid = 173088;
 $api->delete("/zones/vod/" . $zid . "/customdomains.json/" . $cid);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $zid = 75477;
+my $cid = 173088;
+$api->delete("/clients/{id}/zones/vod/" . $zid . "/customdomains.json/" . $cid);</pre>
   </div>
   <div class="tab-pane" id="php52">
     <pre>
 $zoneId = '97183';
 $domainId = '79191';
 $api->delete('/zones/vod/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
+<h3>Reseller API</h3>
+<pre>
+$zoneId = '97183';
+$domainId = '79191';
+$api->delete('/clients/{id}/zones/vod/'.$zoneId.'/customdomains.json/'.$domainId);</pre>
   </div>
   <div class="tab-pane" id="node52">
   <pre>
 var zoneId = '97183'
 var domainId = '79191'
 api.delete('/zones/vod/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var zoneId = '97183'
+var domainId = '79191'
+api.delete('/clients/{id}/zones/vod/' + zoneId + '/customdomains.json/' + domainId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -5391,6 +7166,15 @@ Console.Write("Custom Doamin Id to Edit: \n");
 int domainId = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/zones/vod/" + zoneID + "/customdomains.json/" + domainId);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Custom Doamin Id to Edit: \n");
+int domainId = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/clients/{id}/zones/vod/" + zoneID + "/customdomains.json/" + domainId);
 </pre>
   </div>
   <div class="tab-pane" id="response52">
@@ -5432,30 +7216,57 @@ Get the SSL certificate for the specified {zone_type} and
 id = '96061'
 type = 'pull'
 api.get('/zones/'+type+'/'+id+'/ssl.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+type = 'pull'
+api.get('/clients/{id}/zones/'+type+'/'+id+'/ssl.json')</pre>
   </div>
   <div class="tab-pane" id="python61">
     <pre>
 id = '96061'
 type = 'pull'
 api.get('/zones/'+type+'/'+id+'/ssl.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+type = 'pull'
+api.get('/clients/{id}/zones/'+type+'/'+id+'/ssl.json')</pre>
   </div>
     <div class="tab-pane" id="perl61">
     <pre>
 my $id = 236828;
 my $type = "pull";
 $api->get("/zones/" . $type . "/" . $id . "/ssl.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 236828;
+my $type = "pull";
+$api->get("/clients/{id}/zones/" . $type . "/" . $id . "/ssl.json");</pre>
   </div>
   <div class="tab-pane" id="php61">
     <pre>
 $id = '96061';
 $type = 'pull';
 $api->get('/zones/'.$type.'/'.$id.'/ssl.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96061';
+$type = 'pull';
+$api->get('/clients/{id}/zones/'.$type.'/'.$id.'/ssl.json');</pre>
   </div>
   <div class="tab-pane" id="node61">
   <pre>
 var id = '96061'
 var type = 'pull'
 api.get('/zones/' + type + '/' + id + '/ssl.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96061'
+var type = 'pull'
+api.get('/clients/{id}/zones/' + type + '/' + id + '/ssl.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -5467,6 +7278,15 @@ Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 
 api.Get("/zones/" + type + "/" + zoneID + "/ssl.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+
+api.Get("/clients/{id}/zones/" + type + "/" + zoneID + "/ssl.json");
 </pre>
   </div>
   <div class="tab-pane" id="response61">
@@ -5544,6 +7364,14 @@ ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END C
 ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
 params = {"ssl_crt"=> ssl_crt,"ssl_key"=> ssl_key}
 api.post('/zones/'+type+'/'+id+'/ssl.json',params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+type = 'pull'
+ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n"
+ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
+params = {"ssl_crt"=> ssl_crt,"ssl_key"=> ssl_key}
+api.post('/clients/{id}/zones/'+type+'/'+id+'/ssl.json',params)</pre>
   </div>
   <div class="tab-pane" id="python62">
     <pre>
@@ -5553,6 +7381,14 @@ ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END C
 ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
 params = {"ssl_crt": ssl_crt,"ssl_key": ssl_key}
 api.post('/zones/'+type+'/'+id+'/ssl.json',params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+type = 'pull'
+ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n"
+ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
+params = {"ssl_crt": ssl_crt,"ssl_key": ssl_key}
+api.post('/clients/{id}/zones/'+type+'/'+id+'/ssl.json',params)</pre>
   </div>
     <div class="tab-pane" id="perl62">
     <pre>
@@ -5562,6 +7398,14 @@ my $ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----E
 my $ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----";
 my @params = {ssl_crt => $ssl_crt, ssl_key => $ssl_key};
 $api->post("/zones/" . $type . "/" . $id . "/ssl.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 236828;
+my $type = 'pull';
+my $ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n";
+my $ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----";
+my @params = {ssl_crt => $ssl_crt, ssl_key => $ssl_key};
+$api->post("/clients/{id}/zones/" . $type . "/" . $id . "/ssl.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php62">
     <pre>
@@ -5571,6 +7415,14 @@ $ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END 
 $ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----";
 $params = array("ssl_crt"=>$ssl_crt,"ssl_key"=>$ssl_key);
 $api->post('/zones/'.$type.'/'.$id.'/ssl.json',$params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96061';
+$type = 'pull';
+$ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n";
+$ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----";
+$params = array("ssl_crt"=>$ssl_crt,"ssl_key"=>$ssl_key);
+$api->post('/clients/{id}/zones/'.$type.'/'.$id.'/ssl.json',$params);</pre>
   </div>
   <div class="tab-pane" id="node62">
   <pre>
@@ -5579,6 +7431,15 @@ var type = 'pull'
 var ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n"
 var ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
 api.post('/zones/' + type + '/' + id + '/ssl.json', { ssl_crt: ssl_crt, ssl_key: ssl_key }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96061'
+var type = 'pull'
+var ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n"
+var ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
+api.post('/clients/{id}/zones/' + type + '/' + id + '/ssl.json', { ssl_crt: ssl_crt, ssl_key: ssl_key }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -5603,6 +7464,28 @@ cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
 key = "-----BEGIN RSA PRIVATE KEY-----\n" + key + "\n-----END RSA PRIVATE KEY-----\n";
 
 api.Post("/zones/" + type + "/" + zoneId + "/ssl.json", dat="ssl_crt=" + cert + "&ssl_key=" + key);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+var cert = "";
+var key = "";
+Console.Write("Zone id: \n");
+int zoneId = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+using (StreamReader sr = new StreamReader("cert.txt"))
+{
+	cert = sr.ReadToEnd();               
+}
+using (StreamReader sr = new StreamReader("key.txt"))
+{
+	key = sr.ReadToEnd();
+}
+var dat = "";
+cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
+key = "-----BEGIN RSA PRIVATE KEY-----\n" + key + "\n-----END RSA PRIVATE KEY-----\n";
+
+api.Post("/clients/{id}/zones/" + type + "/" + zoneId + "/ssl.json", dat="ssl_crt=" + cert + "&ssl_key=" + key);
 </pre>
   </div>
   <div class="tab-pane" id="response62">
@@ -5678,6 +7561,14 @@ ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END C
 ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
 params = {"ssl_crt"=> ssl_crt,"ssl_key"=> ssl_key}
 api.put('/zones/'+type+'/'+id+'/ssl.json',params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+type = 'pull'
+ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n"
+ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
+params = {"ssl_crt"=> ssl_crt,"ssl_key"=> ssl_key}
+api.put('/clients/{id}/zones/'+type+'/'+id+'/ssl.json',params)</pre>
   </div>
   <div class="tab-pane" id="python63">
     <pre>
@@ -5687,6 +7578,14 @@ ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END C
 ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
 params = {"ssl_crt": ssl_crt,"ssl_key": ssl_key}
 api.put('/zones/'+type+'/'+id+'/ssl.json',params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+type = 'pull'
+ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n"
+ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
+params = {"ssl_crt": ssl_crt,"ssl_key": ssl_key}
+api.put('/clients/{id}/zones/'+type+'/'+id+'/ssl.json',params)</pre>
   </div>
     <div class="tab-pane" id="perl63">
     <pre>
@@ -5694,6 +7593,12 @@ my $id = 236828;
 my $type = "pull";
 my @params = ('ssl_crt=-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n', 'ssl_key=-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----');
 $api->put("/zones/" . $type . "/" . $id . "/ssl.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 236828;
+my $type = "pull";
+my @params = ('ssl_crt=-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n', 'ssl_key=-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----');
+$api->put("/clients/{id}/zones/" . $type . "/" . $id . "/ssl.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php63">
     <pre>
@@ -5704,6 +7609,15 @@ $ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA 
 $ssl_key = "
 $params = array("ssl_crt"=>$ssl_crt,"ssl_key"=>$ssl_key);
 $api->put('/zones/'.$type.'/'.$id.'/ssl.json',$params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96061';
+$type = 'pull';
+$ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n";
+$ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----";
+$ssl_key = "
+$params = array("ssl_crt"=>$ssl_crt,"ssl_key"=>$ssl_key);
+$api->put('/clients/{id}/zones/'.$type.'/'.$id.'/ssl.json',$params);</pre>
   </div>
   <div class="tab-pane" id="node63">
   <pre>
@@ -5712,6 +7626,15 @@ var type = 'pull'
 var ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n"
 var ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
 api.put('/zones/' + type + '/' + id + '/ssl.json', { ssl_crt: ssl_crt, ssl_key: ssl_key }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96061'
+var type = 'pull'
+var ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n"
+var ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----"
+api.put('/clients/{id}/zones/' + type + '/' + id + '/ssl.json', { ssl_crt: ssl_crt, ssl_key: ssl_key }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -5736,6 +7659,28 @@ cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
 key = "-----BEGIN RSA PRIVATE KEY-----\n" + key + "\n-----END RSA PRIVATE KEY-----\n";
 
 api.Put("/zones/" + type + "/" + zoneId + "/ssl.json", dat="ssl_crt=" + cert + "&ssl_key=" + key);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+var cert = "";
+var key = "";
+Console.Write("Zone id: \n");
+int zoneId = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+using (StreamReader sr = new StreamReader("cert.txt"))
+{
+	cert = sr.ReadToEnd();               
+}
+using (StreamReader sr = new StreamReader("key.txt"))
+{
+	key = sr.ReadToEnd();
+}
+var dat = "";
+cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
+key = "-----BEGIN RSA PRIVATE KEY-----\n" + key + "\n-----END RSA PRIVATE KEY-----\n";
+
+api.Put("/clients/{id}/zones/" + type + "/" + zoneId + "/ssl.json", dat="ssl_crt=" + cert + "&ssl_key=" + key);
 </pre>
   </div>
   <div class="tab-pane" id="response63">
@@ -5788,30 +7733,57 @@ Remove the SSL certificate for the specified {zone_type} and
 id = '96061'
 type = 'pull'
 api.delete('/zones/'+type+'/'+id+'/ssl.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+type = 'pull'
+api.delete('/clients/{id}/zones/'+type+'/'+id+'/ssl.json')</pre>
   </div>
   <div class="tab-pane" id="python64">
     <pre>
 id = '96061'
 type = 'pull'
 api.delete('/zones/'+type+'/'+id+'/ssl.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+type = 'pull'
+api.delete('/clients/{id}/zones/'+type+'/'+id+'/ssl.json')</pre>
   </div>
     <div class="tab-pane" id="perl64">
     <pre>
 my $id = 236828;
 my $type = "pull";
 $api->delete("/zones/" . $type . "/" . $id . "/ssl.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 236828;
+my $type = "pull";
+$api->delete("/clients/{id}/zones/" . $type . "/" . $id . "/ssl.json");</pre>
   </div>
   <div class="tab-pane" id="php64">
     <pre>
 $id = '96061';
 $type = 'pull';
 $api->delete('/zones/'.$type.'/'.$id.'/ssl.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96061';
+$type = 'pull';
+$api->delete('/clients/{id}/zones/'.$type.'/'.$id.'/ssl.json');</pre>
   </div>
   <div class="tab-pane" id="node64">
   <pre>
 var id = '96061'
 var type = 'pull'
 api.delete('/zones/' + type + '/' + id + '/ssl.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96061'
+var type = 'pull'
+api.delete('/clients/{id}/zones/' + type + '/' + id + '/ssl.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -5823,6 +7795,15 @@ Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 
 api.Delete("/zones/" + type + "/" + zoneID + "/ssl.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+
+api.Delete("/clients/{id}/zones/" + type + "/" + zoneID + "/ssl.json");
 </pre>
   </div>
   <div class="tab-pane" id="response64">
@@ -5918,30 +7899,57 @@ Get the upstream information for the specified {zone_id}.
 type = 'pull'
 id = '96061'
 api.get('/zones/'+type+'/'+id+'/upstream.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+type = 'pull'
+id = '96061'
+api.get('/clients/{id}/zones/'+type+'/'+id+'/upstream.json')</pre>
   </div>
   <div class="tab-pane" id="python65">
     <pre>
 type = 'pull'
 id = '96061'
 api.get('/zones/'+type+'/'+id+'/upstream.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+type = 'pull'
+id = '96061'
+api.get('/clients/{id}/zones/'+type+'/'+id+'/upstream.json')</pre>
   </div>
     <div class="tab-pane" id="perl65">
     <pre>
 my $id = 236828;
 my $type = "pull";
 $api->get("/zones/" . $type . "/" . $id . "/upstream.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 236828;
+my $type = "pull";
+$api->get("/clients/{id}/zones/" . $type . "/" . $id . "/upstream.json");</pre>
   </div>
   <div class="tab-pane" id="php65">
     <pre>
 $type = 'pull';
 $id = '96061';
 $api->get('/zones/'.$type.'/'.$id.'/upstream.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$type = 'pull';
+$id = '96061';
+$api->get('/clients/{id}/zones/'.$type.'/'.$id.'/upstream.json');</pre>
   </div>
   <div class="tab-pane" id="node65">
   <pre>
 var type = 'pull'
 var id = '96061'
 api.get('/zones/' + type + '/' + id + '/upstream.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var type = 'pull'
+var id = '96061'
+api.get('/clients/{id}/zones/' + type + '/' + id + '/upstream.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -5953,6 +7961,15 @@ Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 
 api.Get("/zones/" + type + "/" + zoneID + "/upstream.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+
+api.Get("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json");
 </pre>
   </div>
   <div class="tab-pane" id="response65">
@@ -6008,6 +8025,12 @@ type = 'pull'
 id = '96061'
 params = {"server_url"=> "http://cdn.somedomain.com","server"=> "http://cdn.somedomain.com","port"=> "80"}
 api.post('/zones/'+type+'/'+id+'/upstream.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+type = 'pull'
+id = '96061'
+params = {"server_url"=> "http://cdn.somedomain.com","server"=> "http://cdn.somedomain.com","port"=> "80"}
+api.post('/clients/{id}/zones/'+type+'/'+id+'/upstream.json', params)</pre>
   </div>
   <div class="tab-pane" id="python66">
     <pre>
@@ -6015,6 +8038,12 @@ type = 'pull'
 id = '96061'
 params = {"server_url": "http://cdn.somedomain.com","server": "http://cdn.somedomain.com","port": "80"}
 api.post('/zones/'+type+'/'+id+'/upstream.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+type = 'pull'
+id = '96061'
+params = {"server_url": "http://cdn.somedomain.com","server": "http://cdn.somedomain.com","port": "80"}
+api.post('/clients/{id}/zones/'+type+'/'+id+'/upstream.json', params)</pre>
   </div>
     <div class="tab-pane" id="perl66">
     <pre>
@@ -6022,6 +8051,12 @@ my $id = 96061;
 my $type = "pull";
 my @params = {server_url => 'http://cdn.somedomain.com', server => 'http://cdn.somedomain.com', port => '80'};
 $api->post("/zones/" . $type . "/" . $id . "/upstream.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 96061;
+my $type = "pull";
+my @params = {server_url => 'http://cdn.somedomain.com', server => 'http://cdn.somedomain.com', port => '80'};
+$api->post("/clients/{id}/zones/" . $type . "/" . $id . "/upstream.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php66">
     <pre>
@@ -6029,12 +8064,25 @@ $type = 'pull';
 $id = '96061';
 $params = array("server_url"=>"http://cdn.somedomain.com","server"=>"http://cdn.somedomain.com","port"=>"80");
 $api->post('/zones/'.$type.'/'.$id.'/upstream.json', $params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$type = 'pull';
+$id = '96061';
+$params = array("server_url"=>"http://cdn.somedomain.com","server"=>"http://cdn.somedomain.com","port"=>"80");
+$api->post('/clients/{id}/zones/'.$type.'/'.$id.'/upstream.json', $params);</pre>
   </div>
   <div class="tab-pane" id="node66">
   <pre>
 var type = 'pull'
 var id = '96061'
 api.post('/zones/' + type + '/' + id + '/upstream.json', { server_url: 'http://cdn.somedomain.com', server: 'http://cdn.somedomain.com', port: '80' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var type = 'pull'
+var id = '96061'
+api.post('/clients/{id}/zones/' + type + '/' + id + '/upstream.json', { server_url: 'http://cdn.somedomain.com', server: 'http://cdn.somedomain.com', port: '80' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -6046,6 +8094,15 @@ Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 
 api.Post("/zones/" + type + "/" + zoneID + "/upstream.json", "server_url=http://cdn.somedomain.com&server=http://cdn.somedomain.com&port=80");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+
+api.Post("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json", "server_url=http://cdn.somedomain.com&server=http://cdn.somedomain.com&port=80");
 </pre>
   </div>
   <div class="tab-pane" id="response66">
@@ -6101,6 +8158,12 @@ type = 'pull'
 id = '96061'
 params = {"upstream_id"=> "93013","server_url"=> "http://somedomain.com","port"=> "80"}
 api.put('/zones/'+type+'/'+id+'/upstream.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+type = 'pull'
+id = '96061'
+params = {"upstream_id"=> "93013","server_url"=> "http://somedomain.com","port"=> "80"}
+api.put('/clients/{id}/zones/'+type+'/'+id+'/upstream.json', params)</pre>
   </div>
   <div class="tab-pane" id="python67">
     <pre>
@@ -6108,6 +8171,12 @@ type = 'pull'
 id = '96061'
 params = {"upstream_id": "93013","server_url": "http://somedomain.net","port": "80"}
 api.put('/zones/'+type+'/'+id+'/upstream.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+type = 'pull'
+id = '96061'
+params = {"upstream_id": "93013","server_url": "http://somedomain.net","port": "80"}
+api.put('/clients/{id}/zones/'+type+'/'+id+'/upstream.json', params)</pre>
   </div>
     <div class="tab-pane" id="perl67">
     <pre>
@@ -6130,6 +8199,13 @@ var id = '96061'
 api.put('/zones/' + type + '/' + id + '/upstream.json', { upstream_id: '93013', server_url: 'http://somedomain.net', port: '80' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+<h3>Reseller API</h3>
+<pre>
+var type = 'pull'
+var id = '96061'
+api.put('/clients/{id}/zones/' + type + '/' + id + '/upstream.json', { upstream_id: '93013', server_url: 'http://somedomain.net', port: '80' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
   </div>
   <div class="tab-pane" id="csharp67">
   <pre>
@@ -6141,6 +8217,17 @@ Console.Write("Upstream ID: \n");
 int upstreamID = Convert.ToInt32(Console.ReadLine());
 
 api.Put("/zones/" + type + "/" + zoneID + "/upstream.json", "upstream_id=" + upstreamID + "&server_url=http://somedomain.com&port=80");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+Console.Write("Upstream ID: \n");
+int upstreamID = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json", "upstream_id=" + upstreamID + "&server_url=http://somedomain.com&port=80");
 </pre>
   </div>
   <div class="tab-pane" id="response67">
@@ -6178,30 +8265,57 @@ Remove the Upstream Information for the specified {zone_id}.
 type = 'pull'
 id = '96061'
 api.delete('/zones/'+type+'/'+id+'/upstream.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+type = 'pull'
+id = '96061'
+api.delete('/clients/{id}/zones/'+type+'/'+id+'/upstream.json')</pre>
   </div>
   <div class="tab-pane" id="python68">
     <pre>
 type = 'pull'
 id = '96061'
 api.delete('/zones/'+type+'/'+id+'/upstream.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+type = 'pull'
+id = '96061'
+api.delete('/clients/{id}/zones/'+type+'/'+id+'/upstream.json')</pre>
   </div>
     <div class="tab-pane" id="perl68">
     <pre>
 my $id = 96061;
 my $type = "pull";
 $api->delete("/zones/" . $type . "/" . $id . "/upstream.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 96061;
+my $type = "pull";
+$api->delete("/clients/{id}/zones/" . $type . "/" . $id . "/upstream.json");</pre>
   </div>
   <div class="tab-pane" id="php68">
     <pre>
 $type = 'pull';
 $id = '96061';
 $api->delete('/zones/'.$type.'/'.$id.'/upstream.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$type = 'pull';
+$id = '96061';
+$api->delete('/clients/{id}/zones/'.$type.'/'.$id.'/upstream.json');</pre>
   </div>
   <div class="tab-pane" id="node68">
   <pre>
 var type = 'pull'
 var id = '96061'
 api.delete('/zones/' + type + '/' + id + '/upstream.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var type = 'pull'
+var id = '96061'
+api.delete('/clients/{id}/zones/' + type + '/' + id + '/upstream.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -6213,6 +8327,15 @@ Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 
 api.Delete("/zones/" + type + "/" + zoneID + "/upstream.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+
+api.Delete("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json");
 </pre>
   </div>
   <div class="tab-pane" id="response68">
@@ -6270,26 +8393,48 @@ Parameter | Description |
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/stats.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/stats.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python69">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/stats.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/stats.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl69">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/stats.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+$api->get("/clients/{id}/reports/stats.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php69">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/stats.json/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/clients/{id}/reports/stats.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node69">
   <pre>
 var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/stats.json/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/stats.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -6299,6 +8444,13 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/stats.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/stats.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response69">
@@ -6365,26 +8517,48 @@ Parameter | Description |
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statsbyzone.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/statsbyzone.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python100">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statsbyzone.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/statsbyzone.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl100">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/statsbyzone.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+$api->get("/clients/{id}/reports/statsbyzone.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php100">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/statsbyzone.json/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/clients/{id}/reports/statsbyzone.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node100">
   <pre>
 var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statsbyzone.json/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/statsbyzone.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -6394,6 +8568,13 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/statsbyzone.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/statsbyzone.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response100">
@@ -6493,30 +8674,57 @@ Parameter | Description |
 id = '96061'
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/'+id+'/stats.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/'+id+'/stats.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python70">
     <pre>
 id = '96061'
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/'+id+'/stats.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/'+id+'/stats.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl70">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/stats.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $id = 96061;
+$api->get("/clients/{id}/reports/" . $id . "/stats.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php70">
     <pre>
 $id = '96061';
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/'.$id.'/stats.json/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96061';
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/clients/{id}/reports/'.$id.'/stats.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node70">
   <pre>
 var id = '96061'
 var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/' + id + '/stats.json/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96061'
+var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/' + id + '/stats.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -6528,6 +8736,15 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneID + "/stats.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneID + "/stats.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response70">
@@ -6589,28 +8806,49 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby71">
     <pre>
 api.get('/reports/nodes.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/reports/nodes.json')</pre>
   </div>
   <div class="tab-pane" id="python71">
     <pre>
 api.get('/reports/nodes.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/reports/nodes.json')</pre>
   </div>
     <div class="tab-pane" id="perl71">
     <pre>
 $api->get("/reports/nodes.json")</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/reports/nodes.json")</pre>
   </div>
   <div class="tab-pane" id="php71">
     <pre>
 $api->get('/reports/nodes.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/reports/nodes.json');</pre>
   </div>
   <div class="tab-pane" id="node71">
   <pre>
 api.get('/reports/nodes.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/reports/nodes.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
   </div>
   <div class="tab-pane" id="csharp71">
   <pre>
 api.Get("/reports/nodes.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/reports/nodes.json");
 </pre>
   </div>
   <div class="tab-pane" id="response71">
@@ -6721,26 +8959,48 @@ Parameter | Description |
     <pre>
 id = '96061'
 api.get('/reports/'+id+'/nodes.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+api.get('/clients/{id}/reports/'+id+'/nodes.json')</pre>
   </div>
   <div class="tab-pane" id="python72">
     <pre>
 id = '96061'
 api.get('/reports/'+id+'/nodes.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+api.get('/clients/{id}/reports/'+id+'/nodes.json')</pre>
   </div>
     <div class="tab-pane" id="perl72">
     <pre>
 my $id = 96061;
 $api->get("/reports/" . $id . "/nodes.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 96061;
+$api->get("/clients/{id}/reports/" . $id . "/nodes.json");</pre>
   </div>
   <div class="tab-pane" id="php72">
     <pre>
 $id = '96061';
 $api->get('/reports/'.$id.'/nodes.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96061';
+$api->get('/clients/{id}/reports/'.$id.'/nodes.json');</pre>
   </div>
   <div class="tab-pane" id="node72">
   <pre>
 var id = '96061'
 api.get('/reports/' + id + '/nodes.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96061'
+api.get('/clients/{id}/reports/' + id + '/nodes.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -6750,6 +9010,13 @@ Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
 api.Get("/reports/" + id + "/nodes.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/clients/{id}/reports/" + id + "/nodes.json");
 </pre>
   </div>
   <div class="tab-pane" id="response72">
@@ -6864,26 +9131,48 @@ Parameter | Description |
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/nodes.json/stats'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/nodes.json/stats'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python73">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/nodes.json/stats'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/nodes.json/stats'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl73">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/nodes.json/stats" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+$api->get("/clients/{id}/reports/nodes.json/stats" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php73">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/nodes.json/stats/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/clients/{id}/reports/nodes.json/stats/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node73">
   <pre>
 var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/nodes.json/stats/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/nodes.json/stats/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -6893,6 +9182,13 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/nodes.json/stats" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/nodes.json/stats" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response73">
@@ -7055,30 +9351,57 @@ Parameter | Description |
 id = '96061'
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/'+id+'/nodes.json/stats'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/'+id+'/nodes.json/stats'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python74">
     <pre>
 id = '96061'
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/'+id+'/nodes.json/stats'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '96061'
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/'+id+'/nodes.json/stats'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl74">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/nodes.json/stats" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $id = 96061;
+$api->get("/clients/{id}/reports/" . $id . "/nodes.json/stats" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php74">
     <pre>
 $id = '96061';
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/'.$id.'/nodes.json/stats/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '96061';
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/clients/{id}/reports/'.$id.'/nodes.json/stats/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node74">
   <pre>
 var id = '96061'
 var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/' + id + '/nodes.json/stats/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96061'
+var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/' + id + '/nodes.json/stats/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -7088,6 +9411,13 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneID + "/nodes.json/stats" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneID + "/nodes.json/stats" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response74">
@@ -7143,26 +9473,48 @@ Parameter | Description |
     <pre>
 id = '1'
 api.get('/reports/nodes.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '1'
+api.get('/clients/{id}/reports/nodes.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="python75">
     <pre>
 id = '1'
 api.get('/reports/nodes.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '1'
+api.get('/clients/{id}/reports/nodes.json/'+id)</pre>
   </div>
     <div class="tab-pane" id="perl75">
     <pre>
 my $id = 1;
 $api->get("/reports/nodes.json/" . $id);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 1;
+$api->get("/clients/{id}/reports/nodes.json/" . $id);</pre>
   </div>
   <div class="tab-pane" id="php75">
     <pre>
 $id = '1';
 $api->get('/reports/nodes.json/'.$id);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '1';
+$api->get('/clients/{id}/reports/nodes.json/'.$id);</pre>
   </div>
   <div class="tab-pane" id="node75">
   <pre>
 var id = '1'
 api.get('/reports/nodes.json/' + id, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '1'
+api.get('/clients/{id}/reports/nodes.json/' + id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -7172,6 +9524,13 @@ Console.Write("Node ID: \n");
 int nodeID = Convert.ToInt32(Console.ReadLine());
 
 api.Get("/reports/nodes.json/" + nodeID);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Node ID: \n");
+int nodeID = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/clients/{id}/reports/nodes.json/" + nodeID);
 </pre>
   </div
   <div class="tab-pane" id="response75">
@@ -7226,30 +9585,57 @@ Parameter | Description |
 zoneId = '96061'
 nodeId = '1'
 api.get('/reports/'+zoneId+'/nodes.json/'+nodeId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '96061'
+nodeId = '1'
+api.get('/clients/{id}/reports/'+zoneId+'/nodes.json/'+nodeId)</pre>
   </div>
   <div class="tab-pane" id="python76">
     <pre>
 zoneId = '96061'
 nodeId = '1'
 api.get('/reports/'+zoneId+'/nodes.json/'+nodeId)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId = '96061'
+nodeId = '1'
+api.get('/clients/{id}/reports/'+zoneId+'/nodes.json/'+nodeId)</pre>
   </div>
     <div class="tab-pane" id="perl76">
     <pre>
 my $zoneId = 96061;
 my $nodeId = 1;
 $api->get("/reports/" . $zoneId . "/nodes.json/" . $nodeId);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $zoneId = 96061;
+my $nodeId = 1;
+$api->get("/clients/{id}/reports/" . $zoneId . "/nodes.json/" . $nodeId);</pre>
   </div>
   <div class="tab-pane" id="php76">
     <pre>
 $zoneId = '96061';
 $nodeId = '1';
 $api->get('/reports/'.$zoneId.'/nodes.json/'.$nodeId);</pre>
+<h3>Reseller API</h3>
+<pre>
+$zoneId = '96061';
+$nodeId = '1';
+$api->get('/clients/{id}/reports/'.$zoneId.'/nodes.json/'.$nodeId);</pre>
   </div>
   <div class="tab-pane" id="node76">
   <pre>
 var zoneId = '96061'
 var nodeId = '1'
 api.get('/reports/' + zoneId + '/nodes.json/' + nodeId, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var zoneId = '96061'
+var nodeId = '1'
+api.get('/clients/{id}/reports/' + zoneId + '/nodes.json/' + nodeId, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -7261,6 +9647,15 @@ Console.Write("Node ID: \n");
 int nodeID = Convert.ToInt32(Console.ReadLine());
 
 api.Get("/reports/" + zoneID + "/nodes.json/" + nodeID);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Node ID: \n");
+int nodeID = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/clients/{id}/reports/" + zoneID + "/nodes.json/" + nodeID);
 </pre>
   </div>
   <div class="tab-pane" id="response76">
@@ -7329,30 +9724,57 @@ Parameter | Description |
 id = '1'
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/nodes.json/'+id+'/stats'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '1'
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/nodes.json/'+id+'/stats'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python77">
     <pre>
 id = '1'
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/nodes.json/'+id+'/stats'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '1'
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/nodes.json/'+id+'/stats'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl77">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $id = 1;
 $api->get("/reports/nodes.json/" . $id . "/stats" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $id = 1;
+$api->get("/clients/{id}/reports/nodes.json/" . $id . "/stats" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php77">
     <pre>
 $id = '1';
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/nodes.json/'.$id.'/stats/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '1';
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/clients/{id}/reports/nodes.json/'.$id.'/stats/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node77">
   <pre>
 var id = '1'
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/nodes.json/' + id + '/stats/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '1'
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/nodes.json/' + id + '/stats/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -7364,6 +9786,15 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/nodes.json/" + nodeID + "/stats" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Node ID: \n");
+int nodeID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/nodes.json/" + nodeID + "/stats" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response77">
@@ -7436,6 +9867,12 @@ zoneId='96061'
 nodeId='1'
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/'+zoneId+'/nodes.json/'+nodeId+'/stats'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId='96061'
+nodeId='1'
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/'+zoneId+'/nodes.json/'+nodeId+'/stats'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python78">
     <pre>
@@ -7443,6 +9880,12 @@ zoneId='96061'
 nodeId='1'
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/'+zoneId+'/nodes.json/'+nodeId+'/stats'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+zoneId='96061'
+nodeId='1'
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/'+zoneId+'/nodes.json/'+nodeId+'/stats'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl78">
     <pre>
@@ -7450,6 +9893,12 @@ my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $zoneId = 96061;
 my $nodeId = 1;
 $api->get("/reports/" . $zoneId . "/nodes.json/" . $nodeId . "/stats" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $zoneId = 96061;
+my $nodeId = 1;
+$api->get("/clients/{id}/reports/" . $zoneId . "/nodes.json/" . $nodeId . "/stats" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php78">
     <pre>
@@ -7457,6 +9906,12 @@ $zoneId='96061';
 $nodeId='1';
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/'.$zoneId.'/nodes.json/'.$nodeId.'/stats/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$zoneId='96061';
+$nodeId='1';
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/clients/{id}/reports/'.$zoneId.'/nodes.json/'.$nodeId.'/stats/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node78">
   <pre>
@@ -7464,6 +9919,14 @@ var zoneId = '96061'
 var nodeId = '1'
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/' + zoneId + '/nodes.json/' + nodeId + '/stats/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var zoneId = '96061'
+var nodeId = '1'
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/' + zoneId + '/nodes.json/' + nodeId + '/stats/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -7477,6 +9940,17 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneID + "/nodes.json/" + nodeID + "/stats" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Node ID: \n");
+int nodeID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneID + "/nodes.json/" + nodeID + "/stats" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response78">
@@ -7546,28 +10020,49 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby79">
     <pre>
 api.get('/reports/popularfiles.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/reports/popularfiles.json')</pre>
   </div>
   <div class="tab-pane" id="python79">
     <pre>
 api.get('/reports/popularfiles.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/reports/popularfiles.json')</pre>
   </div>
     <div class="tab-pane" id="perl79">
     <pre>
 $api->get("/reports/popularfiles.json")</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/reports/popularfiles.json")</pre>
   </div>
   <div class="tab-pane" id="php79">
     <pre>
 $api->get('/reports/popularfiles.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/reports/popularfiles.json');</pre>
   </div>
   <div class="tab-pane" id="node79">
   <pre>
 api.get('/reports/popularfiles.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/reports/popularfiles.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
   </div>
   <div class="tab-pane" id="csharp79">
   <pre>
 api.Get("/reports/popularfiles.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/reports/popularfiles.json");
 </pre>
   </div>
   <div class="tab-pane" id="response79">
@@ -7639,26 +10134,48 @@ Parameter | Description |
     <pre>
 type='pull'
 api.get('/reports/'+type+'/popularfiles.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+type='pull'
+api.get('/clients/{id}/reports/'+type+'/popularfiles.json')</pre>
   </div>
   <div class="tab-pane" id="python80">
     <pre>
 type='pull'
 api.get('/reports/'+type+'/popularfiles.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+type='pull'
+api.get('/clients/{id}/reports/'+type+'/popularfiles.json')</pre>
   </div>
     <div class="tab-pane" id="perl80">
     <pre>
 my $type = "pull";
 $api->get("/reports/" . $type . "/popularfiles.json");</pre>
+<h3>Reseller API</h3>
+<pre>
+my $type = "pull";
+$api->get("/clients/{id}/reports/" . $type . "/popularfiles.json");</pre>
   </div>
   <div class="tab-pane" id="php80">
     <pre>
 $type='pull';
 $api->get('/reports/'.$type.'/popularfiles.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$type='pull';
+$api->get('/clients/{id}/reports/'.$type.'/popularfiles.json');</pre>
   </div>
   <div class="tab-pane" id="node80">
   <pre>
 var type = 'pull'
 api.get('/reports/' + type + '/popularfiles.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var type = 'pull'
+api.get('/clients/{id}/reports/' + type + '/popularfiles.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -7668,6 +10185,13 @@ Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 	
 api.Get("/reports/" + type + "/popularfiles.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+	
+api.Get("/clients/{id}/reports/" + type + "/popularfiles.json");
 </pre>
   </div>
   <div class="tab-pane" id="response80">
@@ -7735,26 +10259,48 @@ Parameter | Description |
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statuscodes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/statuscodes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python81">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statuscodes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/statuscodes.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl81">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/statuscodes.json/" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+$api->get("/clients/{id}/reports/statuscodes.json/" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php81">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/statuscodes.json/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/clients/{id}/reports/statuscodes.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node81">
   <pre>
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statuscodes.json' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/statuscodes.json' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -7764,6 +10310,13 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/statuscodes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/statuscodes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response81">
@@ -7832,30 +10385,57 @@ Parameter | Description |
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 id = '96061'
 api.get('/reports/'+id+'/statuscodes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+id = '96061'
+api.get('/clients/{id}/reports/'+id+'/statuscodes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python82">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 id = '96061'
 api.get('/reports/'+id+'/statuscodes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+id = '96061'
+api.get('/clients/{id}/reports/'+id+'/statuscodes.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl82">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/statuscodes.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $id = 96061;
+$api->get("/clients/{id}/reports/" . $id . "/statuscodes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php82">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/reports/'.$id.'/statuscodes.json/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$id = '96061';
+$api->get('/clients/{id}/reports/'.$id.'/statuscodes.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node82">
   <pre>
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 var id = '96061'
 api.get('/reports/' + id + '/statuscodes.json/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+var id = '96061'
+api.get('/clients/{id}/reports/' + id + '/statuscodes.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -7865,6 +10445,13 @@ Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
 api.Get("/reports/" + zoneID + "/statuscodes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/clients/{id}/reports/" + zoneID + "/statuscodes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response82">
@@ -7927,30 +10514,57 @@ Parameter | Description |
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 api.get('/reports/'+zoneType+'/statuscodes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+api.get('/clients/{id}/reports/'+zoneType+'/statuscodes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python83">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 api.get('/reports/'+zoneType+'/statuscodes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+api.get('/clients/{id}/reports/'+zoneType+'/statuscodes.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl83">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 $api->get("/reports/" . $zoneType . "/statuscodes.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $zoneType = "pull";
+$api->get("/clients/{id}/reports/" . $zoneType . "/statuscodes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php83">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $api->get('/reports/'.$zoneType.'/statuscodes.json/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$zoneType = 'pull';
+$api->get('/clients/{id}/reports/'.$zoneType.'/statuscodes.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node83">
   <pre>
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 var zoneType = 'pull'
 api.get('/reports/' + zoneType + '/statuscodes.json/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+var zoneType = 'pull'
+api.get('/clients/{id}/reports/' + zoneType + '/statuscodes.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -7962,6 +10576,15 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneType + "/statuscodes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone type: \n");
+string zoneType = Console.ReadLine();
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneType + "/statuscodes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response83">
@@ -8033,6 +10656,12 @@ reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 id = '96061'
 api.get('/reports/'+zoneType+'/'+id+'/statuscodes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+id = '96061'
+api.get('/clients/{id}/reports/'+zoneType+'/'+id+'/statuscodes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python84">
     <pre>
@@ -8040,6 +10669,12 @@ reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 id = '96061'
 api.get('/reports/'+zoneType+'/'+id+'/statuscodes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+id = '96061'
+api.get('/clients/{id}/reports/'+zoneType+'/'+id+'/statuscodes.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl84">
     <pre>
@@ -8047,6 +10682,12 @@ my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 my $zoneType = "pull";
 $api->get("/reports/" . $zoneType . "/" . $id . "/statuscodes.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $id = 96061;
+my $zoneType = "pull";
+$api->get("/clients/{id}/reports/" . $zoneType . "/" . $id . "/statuscodes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php84">
     <pre>
@@ -8054,6 +10695,12 @@ $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $id = '96061';
 $api->get('/reports/'.$zoneType.'/'.$id.'/statuscodes.json/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$zoneType = 'pull';
+$id = '96061';
+$api->get('/clients/{id}/reports/'.$zoneType.'/'.$id.'/statuscodes.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node84">
   <pre>
@@ -8061,6 +10708,14 @@ var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 var zoneType = 'pull'
 var id = '96061'
 api.get('/reports/' + zoneType + '/' + id + '/statuscodes.json/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+var zoneType = 'pull'
+var id = '96061'
+api.get('/clients/{id}/reports/' + zoneType + '/' + id + '/statuscodes.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8074,6 +10729,17 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneType + "/" + zoneID + "/statuscodes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string zoneType = Console.ReadLine();
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneType + "/" + zoneID + "/statuscodes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response84">
@@ -8135,26 +10801,48 @@ Parameter | Description |
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/filetypes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python85">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/filetypes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl85">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/filetypes.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+$api->get("/clients/{id}/reports/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php85">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/filetypes.json'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/clients/{id}/reports/filetypes.json'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node85">
   <pre>
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/filetypes.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/filetypes.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8164,6 +10852,13 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/filetypes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/filetypes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response85">
@@ -8233,30 +10928,57 @@ Parameter | Description |
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 id = '96061'
 api.get('/reports/'+id+'/filetypes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+id = '96061'
+api.get('/clients/{id}/reports/'+id+'/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python86">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 id = '96061'
 api.get('/reports/'+id+'/filetypes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+id = '96061'
+api.get('/clients/{id}/reports/'+id+'/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl86">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/filetypes.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $id = 96061;
+$api->get("/clients/{id}/reports/" . $id . "/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php86">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/reports/'.$id.'/filetypes.json/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$id = '96061';
+$api->get('/clients/{id}/reports/'.$id.'/filetypes.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node86">
   <pre>
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 var id = '96061'
 api.get('/reports/' + id + '/filetypes.json/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+var id = '96061'
+api.get('/clients/{id}/reports/' + id + '/filetypes.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8268,6 +10990,15 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneID + "/filetypes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneID + "/filetypes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response86">
@@ -8324,30 +11055,57 @@ Parameter | Description |
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 api.get('/reports/'+zoneType+'/filetypes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+api.get('/clients/{id}/reports/'+zoneType+'/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python87">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 api.get('/reports/'+zoneType+'/filetypes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+api.get('/clients/{id}/reports/'+zoneType+'/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl87">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 $api->get("/reports/" . $zoneType . "/filetypes.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $zoneType = "pull";
+$api->get("/clients/{id}/reports/" . $zoneType . "/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php87">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $api->get('/reports/'.$zoneType.'/filetypes.json'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$zoneType = 'pull';
+$api->get('/clients/{id}/reports/'.$zoneType.'/filetypes.json'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node87">
   <pre>
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 var zoneType = 'pull'
 api.get('/reports/' + zoneType + '/filetypes.json' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+var zoneType = 'pull'
+api.get('/clients/{id}/reports/' + zoneType + '/filetypes.json' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8359,6 +11117,15 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneType + "/filetypes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone type: \n");
+string zoneType = Console.ReadLine();
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneType + "/filetypes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response87">
@@ -8431,6 +11198,12 @@ reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 id = '96061'
 api.get('/reports/'+zoneType+'/'+id+'/filetypes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+id = '96061'
+api.get('/clients/{id}/reports/'+zoneType+'/'+id+'/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python88">
     <pre>
@@ -8438,6 +11211,12 @@ reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 id = '96061'
 api.get('/reports/'+zoneType+'/'+id+'/filetypes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+id = '96061'
+api.get('/clients/{id}/reports/'+zoneType+'/'+id+'/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl88">
     <pre>
@@ -8445,6 +11224,12 @@ my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 my $id = 96061;
 $api->get("/reports/" . $zoneType . "/" . $id . "/filetypes.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $zoneType = "pull";
+my $id = 96061;
+$api->get("/clients/{id}/reports/" . $zoneType . "/" . $id . "/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php88">
     <pre>
@@ -8452,6 +11237,12 @@ $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $id = '96061';
 $api->get('/reports/'.$zoneType.'/'.$id.'/filetypes.json/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$zoneType = 'pull';
+$id = '96061';
+$api->get('/clients/{id}/reports/'.$zoneType.'/'.$id.'/filetypes.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node88">
   <pre>
@@ -8459,6 +11250,14 @@ var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 var zoneType = 'pull'
 var id = '96061'
 api.get('/reports/' + zoneType + '/' + id + '/filetypes.json/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+var zoneType = 'pull'
+var id = '96061'
+api.get('/clients/{id}/reports/' + zoneType + '/' + id + '/filetypes.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8472,6 +11271,17 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneType + "/" + zoneID + "/filetypes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string zoneType = Console.ReadLine();
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneType + "/" + zoneID + "/filetypes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response88">
@@ -8546,26 +11356,50 @@ reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 id = '96061'
 api.get('/reports/'+zoneType+'/'+id+'/filetypes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+id = '96061'
+api.get('/clients/{id}/reports/'+zoneType+'/'+id+'/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python89">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/filesizes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/filesizes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl89">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/filesizes.json/" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+$api->get("/clients/{id}/reports/filesizes.json/" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php89">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/filesizes.json/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/clients/{id}/reports/filesizes.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node89">
   <pre>
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/filesizes.json/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/filesizes.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8579,6 +11413,17 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneType + "/" + zoneID + "/filesizes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string zoneType = Console.ReadLine();
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneType + "/" + zoneID + "/filesizes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response89">
@@ -8656,30 +11501,57 @@ Parameter | Description |
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 id = '96061'
 api.get('/reports/'+id+'/filesizes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+id = '96061'
+api.get('/clients/{id}/reports/'+id+'/filesizes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python90">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 id = '96061'
 api.get('/reports/'+id+'/filesizes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+id = '96061'
+api.get('/clients/{id}/reports/'+id+'/filesizes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl90">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/filesizes.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $id = 96061;
+$api->get("/clients/{id}/reports/" . $id . "/filesizes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php90">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/reports/'.$id.'/filesizes.json'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$id = '96061';
+$api->get('/clients/{id}/reports/'.$id.'/filesizes.json'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node90">
   <pre>
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 var id = '96061'
 api.get('/reports/' + id + '/filesizes.json' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+var id = '96061'
+api.get('/clients/{id}/reports/' + id + '/filesizes.json' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8691,6 +11563,15 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneType + "/filesizes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone type: \n");
+string zoneType = Console.ReadLine();
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneType + "/filesizes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response90">
@@ -8768,30 +11649,57 @@ Parameter | Description |
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 api.get('/reports/'+zoneType+'/filesizes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+api.get('/clients/{id}/reports/'+zoneType+'/filesizes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python91">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 api.get('/reports/'+zoneType+'/filesizes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+api.get('/clients/{id}/reports/'+zoneType+'/filesizes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl91">
     <pre>
   reportType = ''; #Valid input includes '/daily', '/hourly', '/monthly' or ''
   zoneType = 'pull';
   api.get('/reports/'+zoneType+'/filesizes.json'+reportType);</pre>
+<h3>Reseller API</h3>
+  <pre>
+  reportType = ''; #Valid input includes '/daily', '/hourly', '/monthly' or ''
+  zoneType = 'pull';
+  api.get('/clients/{id}/reports/'+zoneType+'/filesizes.json'+reportType);</pre>
   </div>
   <div class="tab-pane" id="php91">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $api->get('/reports/'.$zoneType.'/filesizes.json'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$zoneType = 'pull';
+$api->get('/clients/{id}/reports/'.$zoneType.'/filesizes.json'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node91">
   <pre>
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 var zoneType = 'pull'
 api.get('/reports/' + zoneType + '/filesizes.json' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+var zoneType = 'pull'
+api.get('/clients/{id}/reports/' + zoneType + '/filesizes.json' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8805,6 +11713,17 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneType + "/" + zoneID + "/filesizes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string zoneType = Console.ReadLine();
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneType + "/" + zoneID + "/filesizes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response91">
@@ -8884,6 +11803,12 @@ reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 id = '96061'
 api.get('/reports/'+zoneType+'/'+id+'/filesizes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+id = '96061'
+api.get('/clients/{id}/reports/'+zoneType+'/'+id+'/filesizes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python92">
     <pre>
@@ -8891,6 +11816,12 @@ reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 zoneType = 'pull'
 id = '96061'
 api.get('/reports/'+zoneType+'/'+id+'/filesizes.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+zoneType = 'pull'
+id = '96061'
+api.get('/clients/{id}/reports/'+zoneType+'/'+id+'/filesizes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl92">
     <pre>
@@ -8898,6 +11829,12 @@ my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 my $id = 96061;
 $api->get("/reports/" . $zoneType . "/" . $id . "/filesizes.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $zoneType = "pull";
+my $id = 96061;
+$api->get("/clients/{id}/reports/" . $zoneType . "/" . $id . "/filesizes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php92">
     <pre>
@@ -8905,6 +11842,12 @@ $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $id = '96061';
 $api->get('/reports/'.$zoneType.'/'.$id.'/filesizes.json/'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$zoneType = 'pull';
+$id = '96061';
+$api->get('/clients/{id}/reports/'.$zoneType.'/'.$id.'/filesizes.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node92">
   <pre>
@@ -8912,6 +11855,14 @@ var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 var zoneType = 'pull'
 var id = '96061'
 api.get('/reports/' + zoneType + '/' + id + '/filesizes.json/' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+var zoneType = 'pull'
+var id = '96061'
+api.get('/clients/{id}/reports/' + zoneType + '/' + id + '/filesizes.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8925,6 +11876,17 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneType + "/" + zoneID + "/filesizes.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+  <pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string zoneType = Console.ReadLine();
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneType + "/" + zoneID + "/filesizes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response92">
@@ -8998,26 +11960,48 @@ Parameter | Description |
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statsbydir.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/statsbydir.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python93">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statsbydir.json'+reportType)</pre>
+<h3>Reseller API</h3>
+ <pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/statsbydir.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl93">
     <pre>
 my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/statsbydir.json" . $reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+$api->get("/clients/{id}/reports/statsbydir.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php93">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/statsbydir.json'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$api->get('/clients/{id}/reports/statsbydir.json'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node93">
   <pre>
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statsbydir.json' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/statsbydir.json' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -9027,6 +12011,13 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/statsbydir.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/statsbydir.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response93">
@@ -9095,12 +12086,22 @@ Parameter | Description |
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 id = '96061'
 api.get('/reports/'+id+'/statsbydir.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+id = '96061'
+api.get('/clients/{id}/reports/'+id+'/statsbydir.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="python94">
     <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
 id = '96061'
 api.get('/reports/'+id+'/statsbydir.json'+reportType)</pre>
+<h3>Reseller API</h3>
+<pre>
+reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+id = '96061'
+api.get('/clients/{id}/reports/'+id+'/statsbydir.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl94">
     <pre>
@@ -9108,18 +12109,36 @@ my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/statsbydir.json" . $reportType);
 </pre>
+<h3>Reseller API</h3>
+<pre>
+my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $id = 96061;
+$api->get("/clients/{id}/reports/" . $id . "/statsbydir.json" . $reportType);
+</pre>
   </div>
   <div class="tab-pane" id="php94">
     <pre>
 $reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/reports/'.$id.'/statsbydir.json'.$reportType);</pre>
+<h3>Reseller API</h3>
+<pre>
+$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$id = '96061';
+$api->get('/clients/{id}/reports/'.$id.'/statsbydir.json'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node94">
   <pre>
 var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 var id = '96061'
 api.get('/reports/' + id + '/' + '/statsbydir.json' + reportType, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
+var id = '96061'
+api.get('/clients/{id}/reports/' + id + '/' + '/statsbydir.json' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -9131,6 +12150,15 @@ Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
 
 api.Get("/reports/" + zoneID + "/statsbydir.json" + reportType);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+string reportType = Console.ReadLine();
+
+api.Get("/clients/{id}/reports/" + zoneID + "/statsbydir.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response94">
@@ -9234,30 +12262,53 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby101">
     <pre>
 api.get('/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200')</pre>
   </div>
   <div class="tab-pane" id="python101">
     <pre>
 params = {"start":"2014-01-30", "end":"2014-01-31", "status":"200"}
 api.get('/v3/reporting/logs.json', data=params)</pre>
+<h3>Reseller API</h3>
+<pre>
+params = {"start":"2014-01-30", "end":"2014-01-31", "status":"200"}
+api.get('/clients/{id}/v3/reporting/logs.json', data=params)</pre>
   </div>
   <div class="tab-pane" id="perl101">
     <pre>
 $api->get("/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200");</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200");</pre>
   </div>
   <div class="tab-pane" id="php101">
     <pre>
 $params = array("start"=>"2014-01-30", "end"=>"2014-01-31", "status"=>"200")
 $api->get('/v3/reporting/logs.json', $params)</pre>
+<h3>Reseller API</h3>
+<pre>
+$params = array("start"=>"2014-01-30", "end"=>"2014-01-31", "status"=>"200")
+$api->get('/clients/{id}/v3/reporting/logs.json', $params)</pre>
   </div>
   <div class="tab-pane" id="node101">
     <pre>
-api.get('v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200', function(err, response) {
+api.get('/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200', function(err, response) {
+  console.log(response);
+});</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200', function(err, response) {
   console.log(response);
 });</pre>
   </div>
   <div class="tab-pane" id="csharp101">
     <pre>
 api.Get("/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/v3/reporting/logs.json?start=2014-01-30&end=2014-01-31&status=200");
 </pre>
   </div>
   <div class="tab-pane" id="response101">
@@ -9365,29 +12416,55 @@ Parameter | Description |
 id = '97167'
 params = {"location"=>"sjc"}
 api.post('/zones/pull/'+id+'/zoneshields.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+params = {"location"=>"sjc"}
+api.post('/clients/{id}/zones/pull/'+id+'/zoneshields.json', params)</pre>
   </div>
   <div class="tab-pane" id="python102">
     <pre>
 id = '97167'
 params = {"location":"sjc"}
 api.post('/zones/pull/'+id+'/zoneshields.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+params = {"location":"sjc"}
+api.post('/clients/{id}/zones/pull/'+id+'/zoneshields.json', params)</pre>
   </div>
   <div class="tab-pane" id="perl102">
     <pre>
 my $id = 123502;
 my @params = {location => 'sjc'};
 $api->post("/zones/pull/" . $id . "/zoneshields.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 123502;
+my @params = {location => 'sjc'};
+$api->post("/clients/{id}/zones/pull/" . $id . "/zoneshields.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php102">
     <pre>
 $id = '97167';
 $params = array("location"=>"sjc");
 $api->post('/zones/pull/'.$id.'/zoneshields.json', $params)</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97167';
+$params = array("location"=>"sjc");
+$api->post('/clients/{id}/zones/pull/'.$id.'/zoneshields.json', $params)</pre>
   </div>
   <div class="tab-pane" id="node102">
     <pre>
 var id = '96167'
 api.post('/zones/pull/' + id + '/zoneshields.json', { location: 'sjc' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96167'
+api.post('/clients/{id}/zones/pull/' + id + '/zoneshields.json', { location: 'sjc' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -9397,6 +12474,13 @@ Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
 api.Post("/zones/pull/" + zoneID + "/zoneshields.json", "location=sjc");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+api.Post("/clients/{id}/zones/pull/" + zoneID + "/zoneshields.json", "location=sjc");
 </pre>
   </div>
   <div class="tab-pane" id="response102">
@@ -9458,29 +12542,55 @@ Parameter | Description |
 id = '97167'
 params = {"location"=>"sjc"}
 api.put('/zones/pull/'+id+'/zoneshields.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+params = {"location"=>"sjc"}
+api.put('/clients/{id}/zones/pull/'+id+'/zoneshields.json', params)</pre>
   </div>
   <div class="tab-pane" id="python103">
     <pre>
 id = '97167'
 params = {"location":"sjc"}
 api.put('/zones/pull/'+id+'/zoneshields.json', params)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+params = {"location":"sjc"}
+api.put('/clients/{id}/zones/pull/'+id+'/zoneshields.json', params)</pre>
   </div>
   <div class="tab-pane" id="perl103">
     <pre>
 my $id = 123502;
 my @params = ('location=sjc');
 $api->put("/zones/pull/" . $id . "/zoneshields.json", @params);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 123502;
+my @params = ('location=sjc');
+$api->put("/clients/{id}/zones/pull/" . $id . "/zoneshields.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php103">
     <pre>
 $id = '97167';
 $params = array("location"=>"sjc");
 $api->put('/zones/pull/'.$id.'/zoneshields.json', $params)</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97167';
+$params = array("location"=>"sjc");
+$api->put('/clients/{id}/zones/pull/'.$id.'/zoneshields.json', $params)</pre>
   </div>
   <div class="tab-pane" id="node103">
     <pre>
 var id = '96167'
 api.put('/zones/pull/' + id + '/zoneshields.json', { location: 'sjc' }, function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96167'
+api.put('/clients/{id}/zones/pull/' + id + '/zoneshields.json', { location: 'sjc' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -9490,6 +12600,13 @@ Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
 api.Put("/zones/pull/" + zoneID + "/zoneshields.json", "location=sjc");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+api.Put("/clients/{id}/zones/pull/" + zoneID + "/zoneshields.json", "location=sjc");
 </pre>
   </div>
   <div class="tab-pane" id="response103">
@@ -9536,27 +12653,50 @@ Remove the active Origin Shield from your Pull Zone
     <pre>
 id = '97167'
 api.delete('/zones/pull/'+id+'/zoneshields.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.delete('/clients/{id}/zones/pull/'+id+'/zoneshields.json')</pre>
   </div>
   <div class="tab-pane" id="python104">
     <pre>
 id = '97167'
 api.delete('/zones/pull/'+id+'/zoneshields.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '97167'
+api.delete('/clients/{id}/zones/pull/'+id+'/zoneshields.json')</pre>
   </div>
   <div class="tab-pane" id="perl104">
     <pre>
 my $id = 123502;
 $api->delete("/zones/pull/" . $id . "/zoneshields.json");
 </pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 123502;
+$api->delete("/clients/{id}/zones/pull/" . $id . "/zoneshields.json");
+</pre>
   </div>
   <div class="tab-pane" id="php104">
     <pre>
 $id = '97167';
 $api->delete('/zones/pull/'.$id.'/zoneshields.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '97167';
+$api->delete('/clients/{id}/zones/pull/'.$id.'/zoneshields.json')</pre>
   </div>
   <div class="tab-pane" id="node104">
     <pre>
 var id = '96167'
 api.delete('/zones/pull/' + id + '/zoneshields.json', function(err, response) {
+  console.log('err', err, 'response', response)
+})</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '96167'
+api.delete('/clients/{id}/zones/pull/' + id + '/zoneshields.json', function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -9566,6 +12706,13 @@ Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/zones/pull/" + zoneID + "/zoneshields.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/clients/{id}/zones/pull/" + zoneID + "/zoneshields.json");
 </pre>
   </div>
   <div class="tab-pane" id="response104">
@@ -9609,19 +12756,32 @@ Parameter | Description |
   <div class="tab-pane active" id="ruby106">
     <pre>
 api.get('/ssl.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/ssl.json')</pre>
   </div>
   <div class="tab-pane" id="python106">
     <pre>
 api.get('/ssl.json')</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/ssl.json')</pre>
   </div>
   <div class="tab-pane" id="perl106">
     <pre>
 $api->get("/ssl.json");
 </pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get("/clients/{id}/ssl.json");
+</pre>
   </div>
   <div class="tab-pane" id="php106">
     <pre>
 $api->get('/ssl.json');</pre>
+<h3>Reseller API</h3>
+<pre>
+$api->get('/clients/{id}/ssl.json');</pre>
   </div>
   <div class="tab-pane" id="node106">
   <pre>
@@ -9630,10 +12790,21 @@ function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
 }</pre>
+<h3>Reseller API</h3>
+<pre>
+api.get('/clients/{id}/ssl.json', callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
   </div>
   <div class="tab-pane" id="csharp106">
   <pre>
 api.Get("/ssl.json");
+</pre>
+<h3>Reseller API</h3>
+<pre>
+api.Get("/clients/{id}/ssl.json");
 </pre>
   </div>
   <div class="tab-pane" id="response106">
@@ -9710,26 +12881,50 @@ Parameter | Description |
     <pre>
 params={"ssl_crt"=>"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key"=>"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our *.example.com wildcard"}
 api.post('/ssl.json',params )</pre>
+<h3>Reseller API</h3>
+<pre>
+params={"ssl_crt"=>"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key"=>"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our *.example.com wildcard"}
+api.post('/clients/{id}/ssl.json',params )</pre>
   </div>
   <div class="tab-pane" id="python107">
     <pre>
 params = array("ssl_crt": "-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key": "-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle": "-----BEGIN CERTIFICATE.....", "name": "Our *.example.com wildcard");
 api.post('/ssl.json',data=params )</pre>
+<h3>Reseller API</h3>
+<pre>
+params = array("ssl_crt": "-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key": "-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle": "-----BEGIN CERTIFICATE.....", "name": "Our *.example.com wildcard");
+api.post('/clients/{id}/ssl.json',data=params )</pre>
   </div>
   <div class="tab-pane" id="perl107">
   <pre>
 my @params = {ssl_crt => '-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----', ssl_key => '-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our .example.com wildcard');
 $api->post("/ssl.json", @params );
   </pre>
+  <h3>Reseller API</h3>
+  <pre>
+my @params = {ssl_crt => '-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----', ssl_key => '-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our .example.com wildcard');
+$api->post("/clients/{id}/ssl.json", @params );
+  </pre>
   </div>
   <div class="tab-pane" id="php107">
     <pre>
 $params = array("ssl_crt"=>"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key"=>"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our *.example.com wildcard");
 $api->post('/ssl.json',$params );</pre>
+<h3>Reseller API</h3>
+<pre>
+$params = array("ssl_crt"=>"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key"=>"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our *.example.com wildcard");
+$api->post('/clients/{id}/ssl.json',$params );</pre>
   </div>
   <div class="tab-pane" id="node107">
   <pre>
 api.post('/ssl.json', { ssl_crt:"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----",ssl_key:"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----",ssl_cabundle:"-----BEGIN CERTIFICATE.....",name:"Our *.example.com wildcard" }, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+<h3>Reseller API</h3>
+<pre>
+api.post('/clients/{id}/ssl.json', { ssl_crt:"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----",ssl_key:"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----",ssl_cabundle:"-----BEGIN CERTIFICATE.....",name:"Our *.example.com wildcard" }, callback)
 function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
@@ -9756,6 +12951,28 @@ cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
 key = "-----BEGIN RSA PRIVATE KEY-----\n" + key + "\n-----END RSA PRIVATE KEY-----\n";
 
 api.Post("/ssl.json", dat="ssl_crt=" + cert + "&ssl_key=" + key);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+var cert = "";
+var key = "";
+Console.Write("Zone id: \n");
+int zoneId = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+using (StreamReader sr = new StreamReader("cert.txt"))
+{
+cert = sr.ReadToEnd();               
+}
+using (StreamReader sr = new StreamReader("key.txt"))
+{
+key = sr.ReadToEnd();
+}
+var dat = "";
+cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
+key = "-----BEGIN RSA PRIVATE KEY-----\n" + key + "\n-----END RSA PRIVATE KEY-----\n";
+
+api.Post("/clients/{id}/ssl.json", dat="ssl_crt=" + cert + "&ssl_key=" + key);
 </pre>
   </div>
   <div class="tab-pane" id="response107">
@@ -9821,27 +13038,52 @@ Parameter | Description |
     <pre>
 id = '1234'
 api.get('/ssl.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '1234'
+api.get('/clients/{id}/ssl.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="python108">
     <pre>
 id = '1234'
 api.get('/ssl.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '1234'
+api.get('/clients/{id}/ssl.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="perl108">
     <pre>
 my $id = 1234;
 $api->get("/ssl.json/" . $id);
 </pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 1234;
+$api->get("/clients/{id}/ssl.json/" . $id);
+</pre>
   </div>
   <div class="tab-pane" id="php108">
     <pre>
 $id = '1234';
 $api->get('/ssl.json/'.$id);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '1234';
+$api->get('/clients/{id}/ssl.json/'.$id);</pre>
   </div>
   <div class="tab-pane" id="node108">
   <pre>
 var id = '1234'
 api.get('/ssl.json/' + id, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '1234'
+api.get('/clients/{id}/ssl.json/' + id, callback)
 function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
@@ -9853,6 +13095,13 @@ Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
 api.Get("/ssl.json/" + zoneID);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
+
+api.Get("/clients/{id}/ssl.json/" + zoneID);
 </pre>
   </div>
   <div class="tab-pane" id="response108">
@@ -9926,10 +13175,19 @@ id = '1234'
 params={"ssl_crt"=>"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key"=>"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our *.example.com wildcard"}
 api.put('/ssl.json/'+id,params)
 </pre>
+<h3>Reseller API</h3>
+<pre>
+id = '1234'
+params={"ssl_crt"=>"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key"=>"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our *.example.com wildcard"}
+api.put('/clients/{id}/ssl.json/'+id,params)
+</pre>
   </div>
   <div class="tab-pane" id="python109">
     <pre>
 api.put('/ssl.json/'+id,params={ 'ssl_crt':"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----",'ssl_key':"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----",'ssl_cabundle':"-----BEGIN CERTIFICATE.....",'name':"Our new *.example.com wildcard" })</pre>
+<h3>Reseller API</h3>
+<pre>
+api.put('/clients/{id}/ssl.json/'+id,params={ 'ssl_crt':"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----",'ssl_key':"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----",'ssl_cabundle':"-----BEGIN CERTIFICATE.....",'name':"Our new *.example.com wildcard" })</pre>
   </div>
   <div class="tab-pane" id="perl109">
     <pre>
@@ -9937,17 +13195,36 @@ my $id = 1234;
 my @params = ('ssl_crt=-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----', 'ssl_key=-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....', 'name=Our.example.com-wildcard');
 $api->put("/ssl.json/" . $id, @params);
 </pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 1234;
+my @params = ('ssl_crt=-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----', 'ssl_key=-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....', 'name=Our.example.com-wildcard');
+$api->put("/clients/{id}/ssl.json/" . $id, @params);
+</pre>
   </div>
   <div class="tab-pane" id="php109">
     <pre>
 $id = '1234';
 $params = array("ssl_crt"=>"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key"=>"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our *.example.com wildcard");
 $api->put('/ssl.json/'.$id,$params);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '1234';
+$params = array("ssl_crt"=>"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----","ssl_key"=>"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----","ssl_cabundle"=>"-----BEGIN CERTIFICATE.....", "name"=>"Our *.example.com wildcard");
+$api->put('/clients/{id}/ssl.json/'.$id,$params);</pre>
 </div>
   <div class="tab-pane" id="node109">
   <pre>
 var id = '1234'
 api.put('/ssl.json/' + id, { ssl_crt:"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----",ssl_key:"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----",ssl_cabundle:"-----BEGIN CERTIFICATE.....",name:"Our *.example.com wildcard" }, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '1234'
+api.put('/clients/{id}/ssl.json/' + id, { ssl_crt:"-----BEGIN CERTIFICATE-----\n{ you certificate info }\n-----END CERTIFICATE-----",ssl_key:"-----BEGIN RSA PRIVATE KEY-----\n{ your private key info}\n-----END RSA PRIVATE KEY-----",ssl_cabundle:"-----BEGIN CERTIFICATE.....",name:"Our *.example.com wildcard" }, callback)
 function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
@@ -9975,6 +13252,29 @@ cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
 key = "-----BEGIN RSA PRIVATE KEY-----\n" + key + "\n-----END RSA PRIVATE KEY-----\n";
 
 api.Put("/ssl.json/" + zoneID, dat="ssl_crt=" + cert + "&ssl_key=" + key);
+</pre>
+<h3>Reseller API</h3>
+<pre>
+var cert = "";
+var key = "";
+Console.Write("Zone id: \n");
+int zoneId = Convert.ToInt32(Console.ReadLine());
+Console.Write("Zone type: \n");
+string type = Console.ReadLine();
+using (StreamReader sr = new StreamReader("cert.txt"))
+{
+cert = sr.ReadToEnd();               
+}
+using (StreamReader sr = new StreamReader("key.txt"))
+{
+key = sr.ReadToEnd();
+}
+
+var dat = "";
+cert = "-----BEGIN CERTIFICATE-----\n" + cert + "\n-----END CERTIFICATE-----\n";
+key = "-----BEGIN RSA PRIVATE KEY-----\n" + key + "\n-----END RSA PRIVATE KEY-----\n";
+
+api.Put("/clients/{id}/ssl.json/" + zoneID, dat="ssl_crt=" + cert + "&ssl_key=" + key);
 </pre>
   </div>
   <div class="tab-pane" id="response109">
@@ -10029,26 +13329,50 @@ Deletes a certificate specified by the {ssl_id} parameter
     <pre>
 id = '1234'
 api.delete('/ssl.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '1234'
+api.delete('/clients/{id}/ssl.json/'+id)</pre>
   </div>
   <div class="tab-pane" id="python110">
     <pre>
 id = '1234'
 api.delete('/ssl.json/'+id)</pre>
+<h3>Reseller API</h3>
+<pre>
+id = '1234'
+api.delete('/clients/{id}/ssl.json/'+id)</pre>
   </div>
     <div class="tab-pane" id="perl110">
       <pre>
 my $id = 1234;
 $api->delete("/ssl.json/" . $id);</pre>
+<h3>Reseller API</h3>
+<pre>
+my $id = 1234;
+$api->delete("/clients/{id}/ssl.json/" . $id);</pre>
     </div>
   <div class="tab-pane" id="php110">
     <pre>
 $id = '1234';
 $api->delete('/ssl.json/'.$id);</pre>
+<h3>Reseller API</h3>
+<pre>
+$id = '1234';
+$api->delete('/clients/{id}/ssl.json/'.$id);</pre>
   </div>
   <div class="tab-pane" id="node110">
   <pre>
 var id = '1234'
 api.delete('/ssl.json/' + id, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+<h3>Reseller API</h3>
+<pre>
+var id = '1234'
+api.delete('/clients/{id}/ssl.json/' + id, callback)
 function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
@@ -10061,6 +13385,13 @@ int zoneId = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/ssl.json/" + zoneId);
 </pre>
+<h2>Reseller API</h2>
+<pre>
+Console.Write("Zone id: \n");
+int zoneId = Convert.ToInt32(Console.ReadLine());
+
+api.Delete("/clients/{id}/ssl.json/" + zoneId);
+</pre>
   </div>
   <div class="tab-pane" id="response110">
     <pre>
@@ -10069,3 +13400,605 @@ api.Delete("/ssl.json/" + zoneId);
 }</pre>
   </div>
 </div>
+
+<h2>Clients API - Resellers Specific</h2>
+
+## Create Client
+
+Creates a new client on the specified account
+
+<div class="heading">
+<div class="url POST"><span class="http_method">POST</span>
+<span class="path">https://rws.maxcdn.com/{companyalias}/clients.json</span></div>
+</div>
+
+### Accepted Request Parameters
+<table>
+<th>Parameter</th><th>Default Value</th><th>Validation</th><th>Description</th>
+
+<tr> 
+	<td>companyname</td> 
+	<td> - </td> 
+	<td><span class="label important">required</span><br />length: 1-255 chars</td> 
+	<td>Company Name</td> 
+</tr>
+<tr> 
+	<td>companyalias</td> 
+	<td> - </td> 
+	<td><span class="label important">required</span><br />length: 1-45 chars</td> 
+	<td>Company Alias</td> 
+</tr>
+<tr> 
+	<td>group_id</td> 
+	<td> - </td> 
+	<td><span class="label important">required</span><br /> length: 1-11 chars</td> 
+	<td>Group ID Number</td> 
+</tr>
+<tr> 
+	<td>package_id</td> 
+	<td> - </td> 
+	<td><span class="label important">required</span><br /> length: 1-11 chars</td> 
+	<td>Package ID Number (Contact your sales representative to determine your Package ID Number)</td>
+</tr>
+<tr> 
+	<td>account_owner</td> 
+	<td> - </td> 
+	<td><span class="label important">required</span><br /> A JSON Encoded Array including 'email', 'firstname', 'lastname', 'password', 'phone', 'order_status (active)</td> 
+	<td>
+		Account Owner Information:
+		<br/>
+		<br/>
+		<ul>
+			<li>'email' - Account Owner's Email</li>
+			<li>'firstname' - Account Owner's First Name</li>
+			<li>'lastname' - Account Owner's Last Name</li>
+			<li>'password' - Account's Password</li>
+			<li>'phone' - Account Owner's Phone Number</li>
+			<li>'order_status' - Status of the Account (hard coded to 'active')</li>
+		</ul>
+
+	</td> 
+</tr>
+<tr> 
+	<td>address</td> 
+	<td> - </td> 
+	<td><span class="label important">required</span><br /> A JSON Encoded Array including street1, street2 (not required), City, State, ZIP / Postal Code, Country</td> 
+	<td>Account Owner Address</td> 
+</tr>
+<tr> 
+	<td>paymentmethod</td> 
+	<td>'mailin'</td> 
+	<td><span class="label important">required</span><br /></td> 
+	<td>Payment Method "Hard code this to Mail-In Payment"</td> 
+</tr>
+<tr> 
+	<td>generateinvoice</td> 
+	<td>'0'</td> 
+	<td><span class="label important">required</span><br /></td> 
+	<td>Hard Code this to not generate an invoice with the parameter '0'</td> 
+</tr>
+<tr> 
+	<td>order_status</td> 
+	<td>'active'</td> 
+	<td><span class="label important">required</span><br /></td> 
+	<td>Hard Code this to active with 'Active'</td> 
+</tr>
+
+</table>
+
+### Response Parameters
+
+Parameter | Description |
+--- | --- | ---
+`email` | Email Address |
+`firstname` | First Name |
+`lastname` | Last Name |
+`phone` | Phone Number |
+`companyname` | Name of the Company |
+`companyalias` | Alias of the Company |
+`group_id` | Group ID Number |
+`address1` | Address, first line |
+`city` | City |
+`state` | State |
+`postcode` | City Post/ZIP Code |
+`country` | Country |
+`password` | Password |
+`active` | Whether or not the client is active |
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab1">
+  <li class="active"><a href="#ruby205" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python205" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl205" data-toggle='tab'>Perl</a></li>
+  <li><a href="#php205" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node205" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp205" data-toggle='tab'>.NET/C#</a></li>
+  <li><a href="#response205" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby205">
+    <pre>
+account_owner={
+            "firstname"=>"First Name",
+            "lastname"=>"Last Name",
+            "email"=>"E-Mail",
+            "phone"=>"1234567890", 
+            "password"=>"password", 
+            "order_status"=>"Active"
+        }
+        
+        address={
+            "street1"=>"Street One",
+            "street2"=>"Not Required",
+            "city"=>"City Name",
+            "state"=>"State", 
+            "zip"=>"ZIP / Postal Code", 
+            "country"=>"US (or country name)"
+        }
+        
+        params={
+            "companyname"=>"Company Name",
+            "companyalias"=>"Company Alias",
+            "group_id"=>"Group ID",
+            "package_id"=>"x", 
+            "account_owner"=>JSON.encode(account_owner), 
+            "address"=>JSON.encode(address),
+            "paymentmethod"=>"mailin"
+        }
+        
+        api.post('/clients.json',params)</pre>
+  </div>
+  <div class="tab-pane" id="python205">
+    <pre>account_owner = {
+            'firstname':'First Name',
+            'lastname':'Last Name',
+            'email':'E-Mail',
+            'phone':'1234567890', 
+            'password':'password', 
+            'order_status':'Active'
+        }
+        
+        address = {
+            'street1':'Street One',
+            'street2':'Not Required',
+            'city':'City Name',
+            'state':'State', 
+            'zip':'ZIP / Postal Code', 
+            'country':'US (or country name)'
+        }
+        
+        params = {
+            'companyname":'Company Name',
+            'companyalias':'Company Alias',
+            'group_id':'Group ID',
+            'package_id':'x', 
+            'account_owner':json.dumps(account_owner), 
+            'address':json.dumps(address),
+            'paymentmethod':'mailin
+        }
+        
+        api.post('/clients.json',data=params)</pre>
+  </div>
+    <div class="tab-pane" id="perl205">
+    <pre>my @account_owner = {
+            "firstname"=>"First Name",
+            "lastname"=>"Last Name",
+            "email"=>"E-Mail",
+            "phone"=>"1234567890", 
+            "password"=>"password", 
+            "order_status"=>"Active"
+        }
+        
+        my @address = {
+            "street1"=>"Street One",
+            "street2"=>"Not Required",
+            "city"=>"City Name",
+            "state"=>"State", 
+            "zip"=>"ZIP / Postal Code", 
+            "country"=>"US (or country name)"
+        }
+        
+        my @params = {
+            "companyname"=>"Company Name",
+            "companyalias"=>"Company Alias",
+            "group_id"=>"Group ID",
+            "package_id"=>"x", 
+            "account_owner"=>encode_json(\@account_owner), 
+            "address"=>encode_json(\@address),
+            "paymentmethod"=>"mailin"
+        }
+    
+    my $data = $api->post("/clients.json", @params);</pre>
+  </div>
+  <div class="tab-pane" id="php205">
+    <pre>
+$account_owner = array(
+            'firstname' => 'john',
+            'lastname'  => 'doe',
+            'email'     => 'johndoe@gmail.com',
+            'phone'     => '555-555-5555',
+            'password'  => 'testpass',
+            'order_status'    => active
+        );
+        
+        
+        $address = array(
+            'street1' => '123 Fake St.',
+            'city'    => 'Los Angeles',
+            'state'   => 'California',
+            'zip'     => '90000',
+            'country' => 'US'
+        );
+        
+        $params = array(
+            'name'          => 'New Account Name',
+            'companyalias'         => 'newaccountalias',
+            'group_id'      => 27,
+            'package_id'    => x,
+            'account_owner' => json_encode($account_owner),
+            'address'       => json_encode($address)
+            'paymentmethod' => mailin
+        );
+        
+        $response = $api->post("/clients.json", $params);</pre>
+  </div>
+  <div class="tab-pane" id="node205">
+  <pre>
+var account_owner = [ 
+        firstname:'First Name',
+        lastname:'Last Name',
+        email:'E-Mail',
+        phone:'1234567890', 
+        password:'password', 
+        order_status:'active'
+    ];
+    
+    var address = [ 
+        street1: '123 Fake St.',
+        city: 'Los Angeles',
+        state: 'California',
+        zip: '90000',
+        country: 'US'
+    ];
+    
+    var params = [ 
+        name => 'New Account Name',
+        companyalias => 'newaccountalias',
+        group_id => 27,
+        package_id => x,
+        account_owner => json_encode(account_owner),
+        address => json_encode(address),
+        paymentmethod => mailin
+    ];
+    
+    api.post('/clients.json' + params, callback)
+    function callback(err, response) {
+      if (err) return console.log(err)
+      console.log(response)
+    }</pre>
+  </div>
+    <div class="tab-pane" id="csharp205">
+  <pre>var account_owner = [ 
+        firstname:'First Name',
+        lastname:'Last Name',
+        email:'E-Mail',
+        phone:'1234567890', 
+        password:'password', 
+        order_status:'active'
+    ];
+    var jsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            string account_owner = jsonSerializer.Serialize(account_owner);
+    var address = [ 
+        street1: '123 Fake St.',
+        city: 'Los Angeles',
+        state: 'California',
+        zip: '90000',
+        country: 'US'
+    ];
+    var jsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            string address = jsonSerializer.Serialize(address);
+    var params = [ 
+        name => 'New Account Name',
+        companyalias => 'newaccountalias',
+        group_id => 27,
+        package_id => x,
+        account_owner => account_owner,
+        address => address,
+        paymentmethod => mailin
+    ];
+
+api.Post("/clients.json", params);
+</pre>
+  </div>
+  <div class="tab-pane" id="response205">
+    <pre>
+{
+            "code": 201,
+            "data": {
+                "Client": {
+                    "group_id": null,
+                    "company_id": "Company Name",
+                    "company_alias": "Company Alias"
+                    "date_created": "2013-05-23 18:22:11",
+                    "status": "Active",
+                    "date_last_login": null,
+                    "date_updated": null,
+                    "default_company_id": "19538",
+                    "email": "name@domain.com",
+                    "firstname": "Given",
+                    "ip_last_login": null,
+                    "isdisabled": 0,
+                    "lastname": "Family",
+                    "phone": null,
+                    "timezone": "America/Los_Angeles"
+                }
+            }
+        }</pre>
+  </div>
+</div>
+
+<div id="reseller-create-user"></div>
+
+## Get Client Bandwidth
+
+Gets client bandwidth information
+
+<div class="heading">
+<div class="url GET"><span class="http_method">GET</span>
+<span class="path">https://rws.maxcdn.com/{companyalias}/clients/{id}/bandwidth.json</span></div>
+</div>
+
+### Response Parameters
+
+Parameter | Description |
+--- | --- | ---
+`valid_until` | Date bandwidth expires |
+`credit` | Bandwidth Credit |
+`still_valid` | Extended Bandwidth Life Validation |
+`base` | Base Bandwidth Ammount |
+`expiration` | Bandwidth Expiration |
+`purchased` | Date Bandwidth Was Purchased |
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab1">
+  <li class="active"><a href="#ruby200" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python200" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl200" data-toggle='tab'>Perl</a></li>
+  <li><a href="#php200" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node200" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp200" data-toggle='tab'>.NET/C#</a></li>
+  <li><a href="#response200" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby200">
+    <pre>
+api.get("/clients/{id}/bandwidth.json")</pre>
+  </div>
+  <div class="tab-pane" id="python200">
+    <pre>api.get("/clients/{id}/bandwidth.json")</pre>
+  </div>
+    <div class="tab-pane" id="perl200">
+    <pre>my $data = $api->get("/clients/{id}/bandwidth.json");</pre>
+  </div>
+  <div class="tab-pane" id="php200">
+    <pre>
+$api->get('/clients/{id}/bandwidth.json');</pre>
+  </div>
+  <div class="tab-pane" id="node200">
+  <pre>
+api.get('/clients/{id}/bandwidth.json', callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+    <div class="tab-pane" id="csharp200">
+  <pre>
+api.Get("/clients/{id}/bandwidth.json");
+</pre>
+  </div>
+  <div class="tab-pane" id="response200">
+    <pre>
+{
+    "code": 200,
+    "data": {
+        "account": {total": "1", 
+        "summary": [{
+            "valid_until": "Jun 07, 2011", 
+            "credit": "10", 
+            "still_valid": false, 
+            "base": 1000, 
+            "expiration": false, 
+            "purchased": "Jun 07, 2010", "debit": 11107173020
+            }]
+        }
+    }
+}</pre>
+  </div>
+</div>
+
+## Get Storage Data
+
+Gets relevant storage data
+
+<div class="heading">
+<div class="url GET"><span class="http_method">GET</span>
+<span class="path">https://rws.maxcdn.com/{companyalias}/clients/{id}/storage.json</span></div>
+</div>
+
+### Response Parameters
+
+Parameter | Description |
+--- | --- | ---
+`zone_id` | Zone ID |
+`storage` | Amount of Storage Used |
+`storage_id ` | Storage ID |
+`zone_type` | Type of Zone |
+`zone_name` | Name of Zone |
+`last_updated` | Date Last Updated |
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab1">
+  <li class="active"><a href="#ruby201" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python201" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl201" data-toggle='tab'>Perl</a></li>
+  <li><a href="#php201" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node201" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp201" data-toggle='tab'>.NET/C#</a></li>
+  <li><a href="#response201" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby201">
+    <pre>
+api.get("/clients/{id}/storage.json")</pre>
+  </div>
+  <div class="tab-pane" id="python201">
+    <pre>api.get("/clients/{id}/storage.json")</pre>
+  </div>
+    <div class="tab-pane" id="perl201">
+    <pre>my $data = $api->get("/clients/{id}/storage.json");</pre>
+  </div>
+  <div class="tab-pane" id="php201">
+    <pre>
+api->get('/clients/{id}/storage.json');</pre>
+  </div>
+  <div class="tab-pane" id="node201">
+  <pre>
+api.get('/clients/{id}/storage.json', callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+    <div class="tab-pane" id="csharp201">
+  <pre>
+api.Get("/clients/{id}/storage.json");
+</pre>
+  </div>
+  <div class="tab-pane" id="response201">
+    <pre>
+{
+    "code": 200, "data": {
+        "stats": [
+        {
+            "last_updated": "2014-11-13 18:39:19", 
+            "zone_id": "{zoneid}", 
+            "storage_used": "1234", 
+            "storage_id": "1", 
+            "zone_type": "1", 
+            "zone_name": "zonename"}, 
+        {
+            "last_updated": "2014-11-13 16:00:50", 
+            "zone_id": "zoneid", 
+            "storage_used": "5678", 
+            "storage_id": "2", 
+            "zone_type": "2", 
+            "zone_name": "zonename2"
+        }, 
+        {
+            "last_updated": "2014-11-13 16:00:08", 
+            "zone_id": "zoneid", 
+            "storage_used": "9012", 
+            "storage_id": "3", 
+            "zone_type": "3", 
+            "zone_name": "zonename3"
+        }, 
+        {
+            "last_updated": "2014-11-13 18:39:19", 
+            "zone_id": "zoneid", 
+            "storage_used": "3456", 
+            "storage_id": "4", 
+            "zone_type": "4", 
+            "zone_name": "zonename4"
+        }, 
+        {
+            "last_updated": "2014-11-13 16:00:50", 
+            "zone_id": "zoneid", 
+            "storage_used": "7890", 
+            "storage_id": "5", 
+            "zone_type": "5", 
+            "zone_name": "zonename"}
+        ], 
+    "page_size": "50", 
+    "pages": 1, 
+    "current_page_size": 1, 
+    "total": "1", 
+    "page": 1
+    }
+}</pre>
+  </div>
+</div>
+
+## Get Storage Used
+
+Gets the amount of storage that has currently been used.
+
+<div class="heading">
+<div class="url GET"><span class="http_method">GET</span>
+<span class="path">https://rws.maxcdn.com/{companyalias}/clients/{id}/storage/used.json</span></div>
+</div>
+
+### Response Parameters
+
+Parameter | Description |
+--- | --- | ---
+`storage` | Storage Amount |
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab1">
+  <li class="active"><a href="#ruby202" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python202" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl202" data-toggle='tab'>Perl</a></li>
+  <li><a href="#php202" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node202" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp202" data-toggle='tab'>.NET/C#</a></li>
+  <li><a href="#response202" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby202">
+    <pre>
+api.get("/clients/{id}/storage/used.json")</pre>
+  </div>
+  <div class="tab-pane" id="python202">
+    <pre>api.get("/clients/{id}/storage/used.json")</pre>
+  </div>
+    <div class="tab-pane" id="perl202">
+    <pre>my $data = $api->get("/clients/{id}/storage/used.json");</pre>
+  </div>
+  <div class="tab-pane" id="php202">
+    <pre>
+api->get('/clients/{id}/storage/used.json');</pre>
+  </div>
+  <div class="tab-pane" id="node202">
+  <pre>
+api.get('/clients/{id}/storage/used.json', callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+    <div class="tab-pane" id="csharp202">
+  <pre>
+api.Get("/clients/{id}/storage/used.json");
+</pre>
+  </div>
+  <div class="tab-pane" id="response202">
+    <pre>
+{
+"code": 200, 
+"data": {
+    "storage": "1535815680"
+    }
+}</pre>
+  </div>
+</div>
+
+<div id="reseller-account-api"></div>
