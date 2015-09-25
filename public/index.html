@@ -5703,7 +5703,7 @@ api.post(&#39;/clients/{id}/zones/push.json&#39;, { name: &#39;newPushZone&#39;,
   <pre>
 Console.Write(&quot;Zone Name: \n&quot;);
 string ZoneName = Console.ReadLine();
-Console.Write(&quot;Zone Name: \n&quot;);
+Console.Write(&quot;Password: \n&quot;);
 string password = Console.ReadLine();
 
 api.Post(&quot;/zones/push.json&quot;, &quot;name=&quot; + ZoneName + &quot;&amp;password=&quot; + password);
@@ -5712,7 +5712,7 @@ api.Post(&quot;/zones/push.json&quot;, &quot;name=&quot; + ZoneName + &quot;&amp
 <pre>
 Console.Write(&quot;Zone Name: \n&quot;);
 string ZoneName = Console.ReadLine();
-Console.Write(&quot;Zone Name: \n&quot;);
+Console.Write(&quot;Password: \n&quot;);
 string password = Console.ReadLine();
 
 api.Post(&quot;/clients/{id}/zones/push.json&quot;, &quot;name=&quot; + ZoneName + &quot;&amp;password=&quot; + password);
@@ -5988,26 +5988,15 @@ api.get(&#39;/clients/{id}/zones/push.json/&#39; + id, function(err, response) {
 })</pre>
   </div>
   <div class="tab-pane" id="csharp30">
-  <pre>
-Console.Write(&quot;Zone id to edit: \n&quot;);
+  <pre>Console.Write(&quot;Zone id: \n&quot;);
 int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write(&quot;Property to edit/change (label/compression...): \n&quot;);
-string prop = Console.ReadLine();
-Console.Write(&quot;New value: \n&quot;);
-string val = Console.ReadLine();
-
-api.Put(&quot;/zones/push.json/&quot; + zoneID, prop + &quot;=&quot; + val);
+api.Get(&quot;/zones/push.json/&quot; + zoneID);
 </pre>
 <h3>Reseller API</h3>
 <pre>
-Console.Write(&quot;Zone id to edit: \n&quot;);
+Console.Write(&quot;Zone id: \n&quot;);
 int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write(&quot;Property to edit/change (label/compression...): \n&quot;);
-string prop = Console.ReadLine();
-Console.Write(&quot;New value: \n&quot;);
-string val = Console.ReadLine();
-
-api.Put(&quot;/clients/{id}/zones/push.json/&quot; + zoneID, prop + &quot;=&quot; + val);
+api.Get(&quot;/clients/{id}/zones/push.json/&quot; + zoneID);
 </pre>
   </div>
   <div class="tab-pane" id="response30">
@@ -9168,7 +9157,7 @@ api.Delete(&quot;/zones/vod/&quot; + zoneID + &quot;/customdomains.json/&quot; +
 <pre>
 Console.Write(&quot;Zone ID: \n&quot;);
 int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write(&quot;Custom Doamin Id to Edit: \n&quot;);
+Console.Write(&quot;Custom Domain Id to Edit: \n&quot;);
 int domainId = Convert.ToInt32(Console.ReadLine());
 
 api.Delete(&quot;/clients/{id}/zones/vod/&quot; + zoneID + &quot;/customdomains.json/&quot; + domainId);

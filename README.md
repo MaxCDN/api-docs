@@ -4188,7 +4188,7 @@ api.post('/clients/{id}/zones/push.json', { name: 'newPushZone', password: 'pass
   <pre>
 Console.Write("Zone Name: \n");
 string ZoneName = Console.ReadLine();
-Console.Write("Zone Name: \n");
+Console.Write("Password: \n");
 string password = Console.ReadLine();
 
 api.Post("/zones/push.json", "name=" + ZoneName + "&password=" + password);
@@ -4197,7 +4197,7 @@ api.Post("/zones/push.json", "name=" + ZoneName + "&password=" + password);
 <pre>
 Console.Write("Zone Name: \n");
 string ZoneName = Console.ReadLine();
-Console.Write("Zone Name: \n");
+Console.Write("Password: \n");
 string password = Console.ReadLine();
 
 api.Post("/clients/{id}/zones/push.json", "name=" + ZoneName + "&password=" + password);
@@ -4419,26 +4419,15 @@ api.get('/clients/{id}/zones/push.json/' + id, function(err, response) {
 })</pre>
   </div>
   <div class="tab-pane" id="csharp30">
-  <pre>
-Console.Write("Zone id to edit: \n");
+  <pre>Console.Write("Zone id: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write("Property to edit/change (label/compression...): \n");
-string prop = Console.ReadLine();
-Console.Write("New value: \n");
-string val = Console.ReadLine();
-
-api.Put("/zones/push.json/" + zoneID, prop + "=" + val);
+api.Get("/zones/push.json/" + zoneID);
 </pre>
 <h3>Reseller API</h3>
 <pre>
-Console.Write("Zone id to edit: \n");
+Console.Write("Zone id: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write("Property to edit/change (label/compression...): \n");
-string prop = Console.ReadLine();
-Console.Write("New value: \n");
-string val = Console.ReadLine();
-
-api.Put("/clients/{id}/zones/push.json/" + zoneID, prop + "=" + val);
+api.Get("/clients/{id}/zones/push.json/" + zoneID);
 </pre>
   </div>
   <div class="tab-pane" id="response30">
@@ -7171,7 +7160,7 @@ api.Delete("/zones/vod/" + zoneID + "/customdomains.json/" + domainId);
 <pre>
 Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write("Custom Doamin Id to Edit: \n");
+Console.Write("Custom Domain Id to Edit: \n");
 int domainId = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/clients/{id}/zones/vod/" + zoneID + "/customdomains.json/" + domainId);
