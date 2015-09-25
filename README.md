@@ -10428,13 +10428,16 @@ api.get('/clients/{id}/reports/' + id + '/statuscodes.json/' + reportType, funct
   </div>
   <div class="tab-pane" id="csharp82">
   <pre>
+Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n"); 
+string reportType = Console.ReadLine();
 Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
 api.Get("/reports/" + zoneID + "/statuscodes.json" + reportType);
 </pre>
 <h3>Reseller API</h3>
-<pre>
+<pre>Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n"); 
+string reportType = Console.ReadLine();
 Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
@@ -11338,11 +11341,8 @@ Parameter | Description |
 
 <div class="tab-content">
   <div class="tab-pane active" id="ruby89">
-    <pre>
-reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
-zoneType = 'pull'
-id = '96061'
-api.get('/reports/'+zoneType+'/'+id+'/filetypes.json'+reportType)</pre>
+    <pre>reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
+api.get('/clients/{id}/reports/filesizes.json' + reportType)</pre>
 <h3>Reseller API</h3>
 <pre>
 reportType = '' #Valid input includes '/daily', '/hourly', '/monthly' or ''
@@ -11391,26 +11391,16 @@ api.get('/clients/{id}/reports/filesizes.json/' + reportType, function(err, resp
 })</pre>
   </div>
   <div class="tab-pane" id="csharp89">
-  <pre>
-Console.Write("Zone ID: \n");
-int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write("Zone type: \n");
-string zoneType = Console.ReadLine();
-Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+  <pre>Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
-
-api.Get("/reports/" + zoneType + "/" + zoneID + "/filesizes.json" + reportType);
+     
+api.Get("/reports/filesizes.json/" + reportType);
 </pre>
 <h3>Reseller API</h3>
-<pre>
-Console.Write("Zone ID: \n");
-int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write("Zone type: \n");
-string zoneType = Console.ReadLine();
-Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
+<pre>Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
-
-api.Get("/clients/{id}/reports/" + zoneType + "/" + zoneID + "/filesizes.json" + reportType);
+     
+api.Get("/clients/{id}/reports/filesizes.json/" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response89">
@@ -11543,22 +11533,20 @@ api.get('/clients/{id}/reports/' + id + '/filesizes.json' + reportType, function
 })</pre>
   </div>
   <div class="tab-pane" id="csharp90">
-  <pre>
-Console.Write("Zone type: \n");
-string zoneType = Console.ReadLine();
+  <pre>Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
-
-api.Get("/reports/" + zoneType + "/filesizes.json" + reportType);
+     
+api.Get("/reports/" + zoneID + "/filesizes.json" + reportType);
 </pre>
 <h3>Reseller API</h3>
-<pre>
-Console.Write("Zone type: \n");
-string zoneType = Console.ReadLine();
+<pre>Console.Write("Zone ID: \n");
+int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
-
-api.Get("/clients/{id}/reports/" + zoneType + "/filesizes.json" + reportType);
+     
+api.Get("/clients/{id}/reports/" + zoneID + "/filesizes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response90">
@@ -11657,12 +11645,12 @@ api.get('/clients/{id}/reports/'+zoneType+'/filesizes.json'+reportType)</pre>
     <pre>
   reportType = ''; #Valid input includes '/daily', '/hourly', '/monthly' or ''
   zoneType = 'pull';
-  api.get('/reports/'+zoneType+'/filesizes.json'+reportType);</pre>
+  api.get('/reports/' . $zoneType + '/filesizes.json'+reportType);</pre>
 <h3>Reseller API</h3>
   <pre>
   reportType = ''; #Valid input includes '/daily', '/hourly', '/monthly' or ''
   zoneType = 'pull';
-  api.get('/clients/{id}/reports/'+zoneType+'/filesizes.json'+reportType);</pre>
+  api.get('/clients/{id}/reports/' . $zoneType . '/filesizes.json'+reportType);</pre>
   </div>
   <div class="tab-pane" id="php91">
     <pre>
@@ -11691,26 +11679,20 @@ api.get('/clients/{id}/reports/' + zoneType + '/filesizes.json' + reportType, fu
 })</pre>
   </div>
   <div class="tab-pane" id="csharp91">
-  <pre>
-Console.Write("Zone ID: \n");
-int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write("Zone type: \n");
+  <pre>Console.Write("Zone type: \n");
 string zoneType = Console.ReadLine();
 Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
-
-api.Get("/reports/" + zoneType + "/" + zoneID + "/filesizes.json" + reportType);
+     
+api.Get("/reports/" + zoneType + "/filesizes.json" + reportType);
 </pre>
 <h3>Reseller API</h3>
-<pre>
-Console.Write("Zone ID: \n");
-int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write("Zone type: \n");
+<pre>Console.Write("Zone type: \n");
 string zoneType = Console.ReadLine();
 Console.Write("Report type (/daily, /hourly, /monthly or empty string): \n");
 string reportType = Console.ReadLine();
-
-api.Get("/clients/{id}/reports/" + zoneType + "/" + zoneID + "/filesizes.json" + reportType);
+     
+api.Get("/clients/{id}/reports/" + zoneType + "/filesizes.json" + reportType);
 </pre>
   </div>
   <div class="tab-pane" id="response91">
