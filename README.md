@@ -5776,7 +5776,7 @@ api.post('/clients/{id}/zones/vod.json', { name: 'newVODZone3', password: 'passw
   <pre>
 Console.Write("Zone Name: \n");
 string ZoneName = Console.ReadLine();
-Console.Write("Zone Name: \n");
+Console.Write("Password: \n");
 string password = Console.ReadLine();
 
 api.Post("/zones/vod.json", "name=" + ZoneName + "&password=" + password);
@@ -5785,7 +5785,7 @@ api.Post("/zones/vod.json", "name=" + ZoneName + "&password=" + password);
 <pre>
 Console.Write("Zone Name: \n");
 string ZoneName = Console.ReadLine();
-Console.Write("Zone Name: \n");
+Console.Write("Password: \n");
 string password = Console.ReadLine();
 
 api.Post("/clients/{id}/zones/vod.json", "name=" + ZoneName + "&password=" + password);
@@ -7151,7 +7151,7 @@ api.delete('/clients/{id}/zones/vod/' + zoneId + '/customdomains.json/' + domain
   <pre>
 Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write("Custom Doamin Id to Edit: \n");
+Console.Write("Custom Domain Id to Edit: \n");
 int domainId = Convert.ToInt32(Console.ReadLine());
 
 api.Delete("/zones/vod/" + zoneID + "/customdomains.json/" + domainId);
@@ -7595,7 +7595,6 @@ $id = '96061';
 $type = 'pull';
 $ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n";
 $ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----";
-$ssl_key = "
 $params = array("ssl_crt"=>$ssl_crt,"ssl_key"=>$ssl_key);
 $api->put('/zones/'.$type.'/'.$id.'/ssl.json',$params);</pre>
 <h3>Reseller API</h3>
@@ -7604,7 +7603,6 @@ $id = '96061';
 $type = 'pull';
 $ssl_crt = "-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n";
 $ssl_key = "-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----";
-$ssl_key = "
 $params = array("ssl_crt"=>$ssl_crt,"ssl_key"=>$ssl_key);
 $api->put('/clients/{id}/zones/'.$type.'/'.$id.'/ssl.json',$params);</pre>
   </div>
@@ -8998,14 +8996,14 @@ api.get('/clients/{id}/reports/' + id + '/nodes.json', function(err, response) {
 Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
-api.Get("/reports/" + id + "/nodes.json");
+api.Get("/reports/" + zoneID + "/nodes.json");
 </pre>
 <h3>Reseller API</h3>
 <pre>
 Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
-api.Get("/clients/{id}/reports/" + id + "/nodes.json");
+api.Get("/clients/{id}/reports/" + zoneID + "/nodes.json");
 </pre>
   </div>
   <div class="tab-pane" id="response72">

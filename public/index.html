@@ -7600,7 +7600,7 @@ api.post(&#39;/clients/{id}/zones/vod.json&#39;, { name: &#39;newVODZone3&#39;, 
   <pre>
 Console.Write(&quot;Zone Name: \n&quot;);
 string ZoneName = Console.ReadLine();
-Console.Write(&quot;Zone Name: \n&quot;);
+Console.Write(&quot;Password: \n&quot;);
 string password = Console.ReadLine();
 
 api.Post(&quot;/zones/vod.json&quot;, &quot;name=&quot; + ZoneName + &quot;&amp;password=&quot; + password);
@@ -7609,7 +7609,7 @@ api.Post(&quot;/zones/vod.json&quot;, &quot;name=&quot; + ZoneName + &quot;&amp;
 <pre>
 Console.Write(&quot;Zone Name: \n&quot;);
 string ZoneName = Console.ReadLine();
-Console.Write(&quot;Zone Name: \n&quot;);
+Console.Write(&quot;Password: \n&quot;);
 string password = Console.ReadLine();
 
 api.Post(&quot;/clients/{id}/zones/vod.json&quot;, &quot;name=&quot; + ZoneName + &quot;&amp;password=&quot; + password);
@@ -9148,7 +9148,7 @@ api.delete(&#39;/clients/{id}/zones/vod/&#39; + zoneId + &#39;/customdomains.jso
   <pre>
 Console.Write(&quot;Zone ID: \n&quot;);
 int zoneID = Convert.ToInt32(Console.ReadLine());
-Console.Write(&quot;Custom Doamin Id to Edit: \n&quot;);
+Console.Write(&quot;Custom Domain Id to Edit: \n&quot;);
 int domainId = Convert.ToInt32(Console.ReadLine());
 
 api.Delete(&quot;/zones/vod/&quot; + zoneID + &quot;/customdomains.json/&quot; + domainId);
@@ -9705,7 +9705,6 @@ $id = &#39;96061&#39;;
 $type = &#39;pull&#39;;
 $ssl_crt = &quot;-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n&quot;;
 $ssl_key = &quot;-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----&quot;;
-$ssl_key = &quot;
 $params = array(&quot;ssl_crt&quot;=&gt;$ssl_crt,&quot;ssl_key&quot;=&gt;$ssl_key);
 $api-&gt;put(&#39;/zones/&#39;.$type.&#39;/&#39;.$id.&#39;/ssl.json&#39;,$params);</pre>
 <h3>Reseller API</h3>
@@ -9714,7 +9713,6 @@ $id = &#39;96061&#39;;
 $type = &#39;pull&#39;;
 $ssl_crt = &quot;-----BEGIN CERTIFICATE-----\n{ ... your certificate ... }\n-----END CERTIFICATE-----\n&quot;;
 $ssl_key = &quot;-----BEGIN RSA PRIVATE KEY-----\n{ ... your key ... }\n-----END RSA PRIVATE KEY-----&quot;;
-$ssl_key = &quot;
 $params = array(&quot;ssl_crt&quot;=&gt;$ssl_crt,&quot;ssl_key&quot;=&gt;$ssl_key);
 $api-&gt;put(&#39;/clients/{id}/zones/&#39;.$type.&#39;/&#39;.$id.&#39;/ssl.json&#39;,$params);</pre>
   </div>
@@ -11321,14 +11319,14 @@ api.get(&#39;/clients/{id}/reports/&#39; + id + &#39;/nodes.json&#39;, function(
 Console.Write(&quot;Zone ID: \n&quot;);
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
-api.Get(&quot;/reports/&quot; + id + &quot;/nodes.json&quot;);
+api.Get(&quot;/reports/&quot; + zoneID + &quot;/nodes.json&quot;);
 </pre>
 <h3>Reseller API</h3>
 <pre>
 Console.Write(&quot;Zone ID: \n&quot;);
 int zoneID = Convert.ToInt32(Console.ReadLine());
 
-api.Get(&quot;/clients/{id}/reports/&quot; + id + &quot;/nodes.json&quot;);
+api.Get(&quot;/clients/{id}/reports/&quot; + zoneID + &quot;/nodes.json&quot;);
 </pre>
   </div>
   <div class="tab-pane" id="response72">
