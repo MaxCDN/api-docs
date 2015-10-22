@@ -8143,54 +8143,74 @@ Parameter | Description |
     <pre>
 type = 'pull'
 id = '96061'
+upstream_id = '123'
 params = {"upstream_id"=> "93013","server_url"=> "http://somedomain.com","port"=> "80"}
-api.put('/zones/'+type+'/'+id+'/upstream.json', params)</pre>
+api.put('/zones/'+type+'/'+id+'/upstream.json/'+upstream_id, params)</pre>
 <h3>Reseller API</h3>
 <pre>
 type = 'pull'
 id = '96061'
+upstream_id = '123'
 params = {"upstream_id"=> "93013","server_url"=> "http://somedomain.com","port"=> "80"}
-api.put('/clients/{id}/zones/'+type+'/'+id+'/upstream.json', params)</pre>
+api.put('/clients/{id}/zones/'+type+'/'+id+'/upstream.json/'+upstream_id, params)</pre>
   </div>
   <div class="tab-pane" id="python67">
     <pre>
 type = 'pull'
 id = '96061'
+upstream_id = '123'
 params = {"upstream_id": "93013","server_url": "http://somedomain.net","port": "80"}
-api.put('/zones/'+type+'/'+id+'/upstream.json', params)</pre>
+api.put('/zones/'+type+'/'+id+'/upstream.json/'+upstream_id, params)</pre>
 <h3>Reseller API</h3>
 <pre>
 type = 'pull'
 id = '96061'
+upstream_id = '123'
 params = {"upstream_id": "93013","server_url": "http://somedomain.net","port": "80"}
-api.put('/clients/{id}/zones/'+type+'/'+id+'/upstream.json', params)</pre>
+api.put('/clients/{id}/zones/'+type+'/'+id+'/upstream.json/'+upstream_id, params)</pre>
   </div>
     <div class="tab-pane" id="perl67">
     <pre>
 my $id = 96061;
 my $type = "pull";
+my $upstream_id = "123";
 my @params = ('upstream_id=93013', 'server_url=http://somedomain.net', 'port=80');
-$api->put("/zones/" . $type . "/" . $id . "/upstream.json", @params);</pre>
+$api->put("/zones/" . $type . "/" . $id . "/upstream.json/" . $upstream_id, @params);</pre>
+<h3>Reseller API</h3>
+<pre>my $id = 96061;
+my $type = "pull";
+my $upstream_id = "123";
+my @params = ('upstream_id=93013', 'server_url=http://somedomain.net', 'port=80');
+$api->put("/clients/{id}/zones/" . $type . "/" . $id . "/upstream.json/" . $upstream_id, @params);</pre>
   </div>
   <div class="tab-pane" id="php67">
     <pre>
 $type = 'pull';
 $id = '96061';
+$upstream_id = '123';
 $params = array("upstream_id"=>"93013","server_url"=>"http://somedomain.net","port"=>"80");
-$api->put('/zones/'.$type.'/'.$id.'/upstream.json', $params);</pre>
+$api->put('/zones/' . $type . '/' . $id . '/upstream.json/' . $upstream_id, $params);</pre>
+<h3>Reseller API</h3>
+<pre>$type = 'pull';
+$id = '96061';
+$upstream_id = '123';
+$params = array("upstream_id"=>"93013","server_url"=>"http://somedomain.net","port"=>"80");
+$api->put('/clients/{id}/zones/' . $type . '/' . $id . '/upstream.json/' . $upstream_id, $params);</pre>
   </div>
   <div class="tab-pane" id="node67">
   <pre>
 var type = 'pull'
 var id = '96061'
-api.put('/zones/' + type + '/' + id + '/upstream.json', { upstream_id: '93013', server_url: 'http://somedomain.net', port: '80' }, function(err, response) {
+var upstream_id = '123'
+api.put('/zones/' + type + '/' + id + '/upstream.json/' + upstream_id, { upstream_id: '93013', server_url: 'http://somedomain.net', port: '80' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
 <h3>Reseller API</h3>
 <pre>
 var type = 'pull'
 var id = '96061'
-api.put('/clients/{id}/zones/' + type + '/' + id + '/upstream.json', { upstream_id: '93013', server_url: 'http://somedomain.net', port: '80' }, function(err, response) {
+var upstream_id = '123'
+api.put('/clients/{id}/zones/' + type + '/' + id + '/upstream.json/' + upstream_id, { upstream_id: '93013', server_url: 'http://somedomain.net', port: '80' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8202,8 +8222,10 @@ Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 Console.Write("Upstream ID: \n");
 int upstreamID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Upstream ID: \n");
+int upstream_id = Convert.ToInt32(Console.ReadLine());
 
-api.Put("/zones/" + type + "/" + zoneID + "/upstream.json", "upstream_id=" + upstreamID + "&server_url=http://somedomain.com&port=80");
+api.Put("/zones/" + type + "/" + zoneID + "/upstream.json/" + upstream_id, "upstream_id=" + upstreamID + "&server_url=http://somedomain.com&port=80");
 </pre>
 <h3>Reseller API</h3>
 <pre>
@@ -8213,8 +8235,10 @@ Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 Console.Write("Upstream ID: \n");
 int upstreamID = Convert.ToInt32(Console.ReadLine());
+Console.Write("Upstream ID: \n");
+int upstream_id = Convert.ToInt32(Console.ReadLine());
 
-api.Put("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json", "upstream_id=" + upstreamID + "&server_url=http://somedomain.com&port=80");
+api.Put("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json/" + upstream_id, "upstream_id=" + upstreamID + "&server_url=http://somedomain.com&port=80");
 </pre>
   </div>
   <div class="tab-pane" id="response67">
@@ -8251,58 +8275,68 @@ Remove the Upstream Information for the specified {zone_id}.
     <pre>
 type = 'pull'
 id = '96061'
-api.delete('/zones/'+type+'/'+id+'/upstream.json')</pre>
+upstream_id = '123'
+api.delete('/zones/'+type+'/'+id+'/upstream.json/'+upstream_id)</pre>
 <h3>Reseller API</h3>
 <pre>
 type = 'pull'
 id = '96061'
-api.delete('/clients/{id}/zones/'+type+'/'+id+'/upstream.json')</pre>
+upstream_id = '123'
+api.delete('/clients/{id}/zones/'+type+'/'+id+'/upstream.json/'+upstream_id)</pre>
   </div>
   <div class="tab-pane" id="python68">
     <pre>
 type = 'pull'
 id = '96061'
-api.delete('/zones/'+type+'/'+id+'/upstream.json')</pre>
+upstream_id = '123'
+api.delete('/zones/'+type+'/'+id+'/upstream.json/'+upstream_id)</pre>
 <h3>Reseller API</h3>
 <pre>
 type = 'pull'
 id = '96061'
-api.delete('/clients/{id}/zones/'+type+'/'+id+'/upstream.json')</pre>
+upstream_id = '123'
+api.delete('/clients/{id}/zones/'+type+'/'+id+'/upstream.json/'+upstream_id)</pre>
   </div>
     <div class="tab-pane" id="perl68">
     <pre>
 my $id = 96061;
 my $type = "pull";
-$api->delete("/zones/" . $type . "/" . $id . "/upstream.json");</pre>
+my $upstream_id = "123";
+$api->delete("/zones/" . $type . "/" . $id . "/upstream.json/" . $upstream_id);</pre>
 <h3>Reseller API</h3>
 <pre>
 my $id = 96061;
 my $type = "pull";
-$api->delete("/clients/{id}/zones/" . $type . "/" . $id . "/upstream.json");</pre>
+my $upstream_id = "123";
+$api->delete("/clients/{id}/zones/" . $type . "/" . $id . "/upstream.json/" . $upstream_id);</pre>
   </div>
   <div class="tab-pane" id="php68">
     <pre>
 $type = 'pull';
 $id = '96061';
-$api->delete('/zones/'.$type.'/'.$id.'/upstream.json');</pre>
+$upstream_id = '123';
+$api->delete('/zones/' . $type . '/' . $id . '/upstream.json/' . $upstream_id);</pre>
 <h3>Reseller API</h3>
 <pre>
 $type = 'pull';
 $id = '96061';
-$api->delete('/clients/{id}/zones/'.$type.'/'.$id.'/upstream.json');</pre>
+$upstream_id = '123';
+$api->delete('/clients/{id}/zones/' . $type . '/' . $id . '/upstream.json/' . $upstream_id);</pre>
   </div>
   <div class="tab-pane" id="node68">
   <pre>
 var type = 'pull'
 var id = '96061'
-api.delete('/zones/' + type + '/' + id + '/upstream.json', function(err, response) {
+var upstream_id = '123'
+api.delete('/zones/' + type + '/' + id + '/upstream.json/' + upstream_id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
 <h3>Reseller API</h3>
 <pre>
 var type = 'pull'
 var id = '96061'
-api.delete('/clients/{id}/zones/' + type + '/' + id + '/upstream.json', function(err, response) {
+var upstream_id = '123'
+api.delete('/clients/{id}/zones/' + type + '/' + id + '/upstream.json/' + upstream_id, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8312,8 +8346,10 @@ Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Zone type: \n");
 string type = Console.ReadLine();
+Console.Write("Upstream ID: \n");
+int upstream_id = Convert.ToInt32(Console.ReadLine());
 
-api.Delete("/zones/" + type + "/" + zoneID + "/upstream.json");
+api.Delete("/zones/" + type + "/" + zoneID + "/upstream.json/" + upstream_id);
 </pre>
 <h3>Reseller API</h3>
 <pre>
@@ -8321,8 +8357,10 @@ Console.Write("Zone ID: \n");
 int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Zone type: \n");
 string type = Console.ReadLine();
+Console.Write("Upstream ID: \n");
+int upstream_id = Convert.ToInt32(Console.ReadLine());
 
-api.Delete("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json");
+api.Delete("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json/" + upstream_id);
 </pre>
   </div>
   <div class="tab-pane" id="response68">
