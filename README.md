@@ -13410,6 +13410,104 @@ api.Delete("/clients/{id}/ssl.json/" + zoneId);
 
 <h2>Clients API - Resellers Specific</h2>
 
+## List Clients
+
+Returns a list of all users on the specified account
+
+<div class="heading">
+<div class="url GET"><span class="http_method">GET</span>
+<span class="path">https://rws.maxcdn.com/{companyalias}/clients.json</span></div>
+</div>
+
+### Response Parameters
+
+Parameter | Description |
+--- | --- | ---
+`email` | Email Address |
+`firstname` | First Name |
+`lastname` | Last Name |
+`phone` | Phone Number |
+`companyname` | Name of the Company |
+`companyalias` | Alias of the Company |
+`group_id` | Group ID Number |
+`address1` | Address, first line |
+`city` | City |
+`state` | State |
+`postcode` | City Post/ZIP Code |
+`country` | Country |
+`password` | Password |
+`active` | Whether or not the client is active |
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab5">
+  <li class="active"><a href="#ruby205-0" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python205-0" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl205-0" data-toggle='tab'>Perl</a></li>
+  <li><a href="#php205-0" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node205-0" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp205-0" data-toggle='tab'>.NET/C#</a></li>
+  <li><a href="#response205-0" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby205-0">
+<pre>
+api.get('/clients.json')</pre>
+  </div>
+  <div class="tab-pane" id="python205-0">
+    <pre>
+api.get('/clients.json')</pre>
+  </div>
+    <div class="tab-pane" id="perl205-0">
+<pre>
+my $data = $api->get("/clients.json");
+print $data->{'users'}[0]{'id'};</pre>
+  </div>
+  <div class="tab-pane" id="php205-0">
+<pre>
+$api->get('/clients.json');</pre>
+  </div>
+  <div class="tab-pane" id="node205-0">
+<pre>
+api.get('/clients.json', callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="csharp205-0">
+<pre>
+api.Get("/clients.json");
+</pre>
+  </div> 
+  <div class="tab-pane" id="response205-0">
+    <pre>
+{
+            "code": 201,
+            "data": {
+                "Client": {
+                    "group_id": null,
+                    "company_id": "Company Name",
+                    "company_alias": "Company Alias"
+                    "date_created": "2013-05-23 18:22:11",
+                    "status": "Active",
+                    "date_last_login": null,
+                    "date_updated": null,
+                    "default_company_id": "19538",
+                    "email": "name@domain.com",
+                    "firstname": "Given",
+                    "ip_last_login": null,
+                    "isdisabled": 0,
+                    "lastname": "Family",
+                    "phone": null,
+                    "timezone": "America/Los_Angeles"
+                }
+            }
+        }</pre>
+  </div>
+</div>
+
 ## Create Client
 
 Creates a new client on the specified account

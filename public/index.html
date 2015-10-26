@@ -16901,6 +16901,163 @@ api.Delete(&quot;/clients/{id}/ssl.json/&quot; + zoneId);
 
 <h2>Clients API - Resellers Specific</h2>
 
+<h2 id="list-clients">List Clients</h2>
+<p>Returns a list of all users on the specified account</p>
+<div class="heading">
+<div class="url GET"><span class="http_method">GET</span>
+<span class="path"><a href="https://rws.maxcdn.com/{companyalias}/clients.json">https://rws.maxcdn.com/{companyalias}/clients.json</a></span></div>
+</div>
+
+<h3 id="response-parameters">Response Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>Email Address</td>
+<td></td>
+</tr>
+<tr>
+<td><code>firstname</code></td>
+<td>First Name</td>
+<td></td>
+</tr>
+<tr>
+<td><code>lastname</code></td>
+<td>Last Name</td>
+<td></td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>Phone Number</td>
+<td></td>
+</tr>
+<tr>
+<td><code>companyname</code></td>
+<td>Name of the Company</td>
+<td></td>
+</tr>
+<tr>
+<td><code>companyalias</code></td>
+<td>Alias of the Company</td>
+<td></td>
+</tr>
+<tr>
+<td><code>group_id</code></td>
+<td>Group ID Number</td>
+<td></td>
+</tr>
+<tr>
+<td><code>address1</code></td>
+<td>Address, first line</td>
+<td></td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>City</td>
+<td></td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td>State</td>
+<td></td>
+</tr>
+<tr>
+<td><code>postcode</code></td>
+<td>City Post/ZIP Code</td>
+<td></td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td>Country</td>
+<td></td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password</td>
+<td></td>
+</tr>
+<tr>
+<td><code>active</code></td>
+<td>Whether or not the client is active</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab5">
+  <li class="active"><a href="#ruby205-0" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python205-0" data-toggle='tab'>Python</a></li>
+  <li><a href="#perl205-0" data-toggle='tab'>Perl</a></li>
+  <li><a href="#php205-0" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node205-0" data-toggle='tab'>Node</a></li>
+  <li><a href="#csharp205-0" data-toggle='tab'>.NET/C#</a></li>
+  <li><a href="#response205-0" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby205-0">
+<pre>
+api.get(&#39;/clients.json&#39;)</pre>
+  </div>
+  <div class="tab-pane" id="python205-0">
+    <pre>
+api.get(&#39;/clients.json&#39;)</pre>
+  </div>
+    <div class="tab-pane" id="perl205-0">
+<pre>
+my $data = $api-&gt;get(&quot;/clients.json&quot;);
+print $data-&gt;{&#39;users&#39;}[0]{&#39;id&#39;};</pre>
+  </div>
+  <div class="tab-pane" id="php205-0">
+<pre>
+$api-&gt;get(&#39;/clients.json&#39;);</pre>
+  </div>
+  <div class="tab-pane" id="node205-0">
+<pre>
+api.get(&#39;/clients.json&#39;, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="csharp205-0">
+<pre>
+api.Get(&quot;/clients.json&quot;);
+</pre>
+  </div> 
+  <div class="tab-pane" id="response205-0">
+    <pre>
+{
+            &quot;code&quot;: 201,
+            &quot;data&quot;: {
+                &quot;Client&quot;: {
+                    &quot;group_id&quot;: null,
+                    &quot;company_id&quot;: &quot;Company Name&quot;,
+                    &quot;company_alias&quot;: &quot;Company Alias&quot;
+                    &quot;date_created&quot;: &quot;2013-05-23 18:22:11&quot;,
+                    &quot;status&quot;: &quot;Active&quot;,
+                    &quot;date_last_login&quot;: null,
+                    &quot;date_updated&quot;: null,
+                    &quot;default_company_id&quot;: &quot;19538&quot;,
+                    &quot;email&quot;: &quot;name@domain.com&quot;,
+                    &quot;firstname&quot;: &quot;Given&quot;,
+                    &quot;ip_last_login&quot;: null,
+                    &quot;isdisabled&quot;: 0,
+                    &quot;lastname&quot;: &quot;Family&quot;,
+                    &quot;phone&quot;: null,
+                    &quot;timezone&quot;: &quot;America/Los_Angeles&quot;
+                }
+            }
+        }</pre>
+  </div>
+</div>
+
 <h2 id="create-client">Create Client</h2>
 <p>Creates a new client on the specified account</p>
 <div class="heading">
