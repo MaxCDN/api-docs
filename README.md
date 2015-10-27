@@ -13427,7 +13427,7 @@ Parameter | Description |
 `firstname` | First Name |
 `lastname` | Last Name |
 `phone` | Phone Number |
-`companyname` | Name of the Company |
+`name` | Name of the Company |
 `companyalias` | Alias of the Company |
 `group_id` | Group ID Number |
 `address1` | Address, first line |
@@ -13522,7 +13522,7 @@ Creates a new client on the specified account
 <th>Parameter</th><th>Default Value</th><th>Validation</th><th>Description</th>
 
 <tr> 
-	<td>companyname</td> 
+	<td>name</td> 
 	<td> - </td> 
 	<td><span class="label important">required</span><br />length: 1-255 chars</td> 
 	<td>Company Name</td> 
@@ -13599,7 +13599,7 @@ Parameter | Description |
 `firstname` | First Name |
 `lastname` | Last Name |
 `phone` | Phone Number |
-`companyname` | Name of the Company |
+`name` | Name of the Company |
 `companyalias` | Alias of the Company |
 `group_id` | Group ID Number |
 `address1` | Address, first line |
@@ -13644,7 +13644,7 @@ account_owner={
         }
         
         params={
-            "companyname"=>"Company Name",
+            "name"=>"Company Name",
             "companyalias"=>"Company Alias",
             "group_id"=>"Group ID",
             "package_id"=>"x", 
@@ -13675,7 +13675,7 @@ account_owner={
         }
         
         params = {
-            'companyname":'Company Name',
+            'name":'Company Name',
             'companyalias':'Company Alias',
             'group_id':'Group ID',
             'package_id':'x', 
@@ -13706,7 +13706,7 @@ account_owner={
         }
         
         my @params = {
-            "companyname"=>"Company Name",
+            "name"=>"Company Name",
             "companyalias"=>"Company Alias",
             "group_id"=>"Group ID",
             "package_id"=>"x", 
