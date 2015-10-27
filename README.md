@@ -13818,29 +13818,43 @@ api.Post("/clients.json", params);
 </pre>
   </div>
   <div class="tab-pane" id="response205">
-    <pre>
-{
-            "code": 201,
-            "data": {
-                "Client": {
-                    "group_id": null,
-                    "company_id": "Company Name",
-                    "company_alias": "Company Alias"
-                    "date_created": "2013-05-23 18:22:11",
-                    "status": "Active",
-                    "date_last_login": null,
-                    "date_updated": null,
-                    "default_company_id": "19538",
-                    "email": "name@domain.com",
-                    "firstname": "Given",
-                    "ip_last_login": null,
-                    "isdisabled": 0,
-                    "lastname": "Family",
-                    "phone": null,
-                    "timezone": "America/Los_Angeles"
-                }
-            }
-        }</pre>
+    <pre>{"code"=>201,
+ "data"=>
+  {"account"=>
+    {"id"=>50353,
+     "name"=>"maxsupporttest5",
+     "address_id"=>49941,
+     "alias"=>"maxsupporttest5",
+     "date_created"=>"2015-10-27 18:23:39",
+     "date_updated"=>nil,
+     "brand_id"=>"38",
+     "whmcs_client_id"=>57820,
+     "package_id"=>"310",
+     "parent_id"=>"5032",
+     "status"=>2,
+     "notify_bw"=>0,
+     "storage_quota"=>"107374182400",
+     "ssl_credits"=>-1,
+     "flex_credits"=>0,
+     "enable_wwwcname"=>0,
+     "enable_starcname"=>0,
+     "enable_rules"=>0,
+     "enable_devtools"=>0,
+     "query_strings"=>2,
+     "zone_credits"=>-1,
+     "secure_token_pull_credits"=>0,
+     "rawlog_export_credits"=>0,
+     "zoneshield_credits"=>0,
+     "edgerules_credits"=>0,
+     "default_pull_zone_ip_id"=>"10951",
+     "default_push_zone_ip_id"=>"11280",
+     "default_storage_ip_id"=>"11312",
+     "default_vod_storage_ip_id"=>"10985",
+     "default_vod_rtmp_ip_id"=>"10986",
+     "default_vod_direct_ip_id"=>"10986",
+     "default_vod_pseudo_ip_id"=>"10987",
+     "maintain_scheme"=>0,
+     "v2_provisioning"=>0}}}</pre>
   </div>
 </div>
 
