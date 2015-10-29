@@ -13528,7 +13528,7 @@ Creates a new client on the specified account
 	<td>Company Name</td> 
 </tr>
 <tr> 
-	<td>companyalias</td> 
+	<td>alias</td> 
 	<td> - </td> 
 	<td><span class="label important">required</span><br />length: 1-45 chars</td> 
 	<td>Company Alias</td> 
@@ -13600,7 +13600,7 @@ Parameter | Description |
 `lastname` | Last Name |
 `phone` | Phone Number |
 `name` | Name of the Company |
-`companyalias` | Alias of the Company |
+`alias` | Alias of the Company |
 `group_id` | Group ID Number |
 `address1` | Address, first line |
 `city` | City |
@@ -13645,7 +13645,7 @@ account_owner={
         
         params={
             "name"=>"Company Name",
-            "companyalias"=>"Company Alias",
+            "alias"=>"Company Alias",
             "group_id"=>"Group ID",
             "package_id"=>"x", 
             "account_owner"=>JSON.encode(account_owner), 
@@ -13676,12 +13676,12 @@ account_owner={
         
         params = {
             'name":'Company Name',
-            'companyalias':'Company Alias',
+            'alias':'Company Alias',
             'group_id':'Group ID',
             'package_id':'x', 
             'account_owner':json.dumps(account_owner), 
             'address':json.dumps(address),
-            'paymentmethod':'mailin
+            'paymentmethod':'mailin'
         }
         
         api.post('/clients.json',data=params)</pre>
@@ -13707,7 +13707,7 @@ account_owner={
         
         my @params = {
             "name"=>"Company Name",
-            "companyalias"=>"Company Alias",
+            "alias"=>"Company Alias",
             "group_id"=>"Group ID",
             "package_id"=>"x", 
             "account_owner"=>encode_json(\@account_owner), 
@@ -13725,7 +13725,7 @@ $account_owner = array(
             'email'     => 'johndoe@gmail.com',
             'phone'     => '555-555-5555',
             'password'  => 'testpass',
-            'order_status'    => active
+            'order_status'    => 'active'
         );
         
         
@@ -13740,11 +13740,11 @@ $account_owner = array(
         $params = array(
             'name'          => 'New Account Name',
             'companyalias'         => 'newaccountalias',
-            'group_id'      => 27,
-            'package_id'    => x,
+            'group_id'      => '27',
+            'package_id'    => 'x',
             'account_owner' => json_encode($account_owner),
             'address'       => json_encode($address)
-            'paymentmethod' => mailin
+            'paymentmethod' => 'mailin'
         );
         
         $response = $api->post("/clients.json", $params);</pre>
@@ -13771,11 +13771,11 @@ var account_owner = [
     var params = [ 
         name => 'New Account Name',
         companyalias => 'newaccountalias',
-        group_id => 27,
-        package_id => x,
+        group_id => '27',
+        package_id => 'x',
         account_owner => json_encode(account_owner),
         address => json_encode(address),
-        paymentmethod => mailin
+        paymentmethod => 'mailin'
     ];
     
     api.post('/clients.json' + params, callback)
@@ -13807,11 +13807,11 @@ var account_owner = [
     var params = [ 
         name => 'New Account Name',
         companyalias => 'newaccountalias',
-        group_id => 27,
-        package_id => x,
+        group_id => '27',
+        package_id => 'x',
         account_owner => account_owner,
         address => address,
-        paymentmethod => mailin
+        paymentmethod => 'mailin'
     ];
 
 api.Post("/clients.json", params);
