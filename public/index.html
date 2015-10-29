@@ -17076,7 +17076,7 @@ api.Get(&quot;/clients.json&quot;);
     <td>Company Name</td> 
 </tr>
 <tr> 
-    <td>companyalias</td> 
+    <td>alias</td> 
     <td> - </td> 
     <td><span class="label important">required</span><br />length: 1-45 chars</td> 
     <td>Company Alias</td> 
@@ -17174,7 +17174,7 @@ api.Get(&quot;/clients.json&quot;);
 <td></td>
 </tr>
 <tr>
-<td><code>companyalias</code></td>
+<td><code>alias</code></td>
 <td>Alias of the Company</td>
 <td></td>
 </tr>
@@ -17254,7 +17254,7 @@ account_owner={
 
         params={
             &quot;name&quot;=&gt;&quot;Company Name&quot;,
-            &quot;companyalias&quot;=&gt;&quot;Company Alias&quot;,
+            &quot;alias&quot;=&gt;&quot;Company Alias&quot;,
             &quot;group_id&quot;=&gt;&quot;Group ID&quot;,
             &quot;package_id&quot;=&gt;&quot;x&quot;, 
             &quot;account_owner&quot;=&gt;JSON.encode(account_owner), 
@@ -17285,12 +17285,12 @@ account_owner={
 
         params = {
             &#39;name&quot;:&#39;Company Name&#39;,
-            &#39;companyalias&#39;:&#39;Company Alias&#39;,
+            &#39;alias&#39;:&#39;Company Alias&#39;,
             &#39;group_id&#39;:&#39;Group ID&#39;,
             &#39;package_id&#39;:&#39;x&#39;, 
             &#39;account_owner&#39;:json.dumps(account_owner), 
             &#39;address&#39;:json.dumps(address),
-            &#39;paymentmethod&#39;:&#39;mailin
+            &#39;paymentmethod&#39;:&#39;mailin&#39;
         }
 
         api.post(&#39;/clients.json&#39;,data=params)</pre>
@@ -17316,7 +17316,7 @@ account_owner={
 
         my @params = {
             &quot;name&quot;=&gt;&quot;Company Name&quot;,
-            &quot;companyalias&quot;=&gt;&quot;Company Alias&quot;,
+            &quot;alias&quot;=&gt;&quot;Company Alias&quot;,
             &quot;group_id&quot;=&gt;&quot;Group ID&quot;,
             &quot;package_id&quot;=&gt;&quot;x&quot;, 
             &quot;account_owner&quot;=&gt;encode_json(\@account_owner), 
@@ -17334,7 +17334,7 @@ $account_owner = array(
             &#39;email&#39;     =&gt; &#39;johndoe@gmail.com&#39;,
             &#39;phone&#39;     =&gt; &#39;555-555-5555&#39;,
             &#39;password&#39;  =&gt; &#39;testpass&#39;,
-            &#39;order_status&#39;    =&gt; active
+            &#39;order_status&#39;    =&gt; &#39;active&#39;
         );
 
 
@@ -17349,11 +17349,11 @@ $account_owner = array(
         $params = array(
             &#39;name&#39;          =&gt; &#39;New Account Name&#39;,
             &#39;companyalias&#39;         =&gt; &#39;newaccountalias&#39;,
-            &#39;group_id&#39;      =&gt; 27,
-            &#39;package_id&#39;    =&gt; x,
+            &#39;group_id&#39;      =&gt; &#39;27&#39;,
+            &#39;package_id&#39;    =&gt; &#39;x&#39;,
             &#39;account_owner&#39; =&gt; json_encode($account_owner),
             &#39;address&#39;       =&gt; json_encode($address)
-            &#39;paymentmethod&#39; =&gt; mailin
+            &#39;paymentmethod&#39; =&gt; &#39;mailin&#39;
         );
 
         $response = $api-&gt;post(&quot;/clients.json&quot;, $params);</pre>
@@ -17380,11 +17380,11 @@ var account_owner = [
     var params = [ 
         name =&gt; &#39;New Account Name&#39;,
         companyalias =&gt; &#39;newaccountalias&#39;,
-        group_id =&gt; 27,
-        package_id =&gt; x,
+        group_id =&gt; &#39;27&#39;,
+        package_id =&gt; &#39;x&#39;,
         account_owner =&gt; json_encode(account_owner),
         address =&gt; json_encode(address),
-        paymentmethod =&gt; mailin
+        paymentmethod =&gt; &#39;mailin&#39;
     ];
 
     api.post(&#39;/clients.json&#39; + params, callback)
@@ -17416,11 +17416,11 @@ var account_owner = [
     var params = [ 
         name =&gt; &#39;New Account Name&#39;,
         companyalias =&gt; &#39;newaccountalias&#39;,
-        group_id =&gt; 27,
-        package_id =&gt; x,
+        group_id =&gt; &#39;27&#39;,
+        package_id =&gt; &#39;x&#39;,
         account_owner =&gt; account_owner,
         address =&gt; address,
-        paymentmethod =&gt; mailin
+        paymentmethod =&gt; &#39;mailin&#39;
     ];
 
 api.Post(&quot;/clients.json&quot;, params);
