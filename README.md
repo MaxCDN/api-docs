@@ -10027,7 +10027,7 @@ Parameter | Description |
 `hit` | The number of times the file was requested |
 `size` | The amount of bytes transferred for the given file |
 `vhost` | The CDN URL for the corresponding zone |
-`timestamp` | The amount of bytes transferred |
+`timestamp` | UTC timestamp of the request |
 
 ### Code Samples
 
@@ -10138,7 +10138,7 @@ Parameter | Description |
 `hit` | The number of times the file was requested |
 `size` | The amount of bytes transferred for the given file |
 `vhost` | The CDN URL for the corresponding zone |
-`timestamp` | The amount of bytes transferred |
+`timestamp` | UTC timestamp of the request |
 
 
 
