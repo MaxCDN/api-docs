@@ -7980,7 +7980,7 @@ Create and enable Upstream for a specific {zone_id}.
 
 Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
-`server_url` | - | <span class="label important">required</span><br /> | The server URL or IP to provide the streaming resources
+`server` | - | <span class="label important">required</span><br /> | The server URL or IP to provide the streaming resources
 `port` | - | <span class="label important">required</span><br /> | The port where server is to be called
 
 
@@ -7990,7 +7990,7 @@ Parameter | Description |
 --- | --- | ---
 `id` | The Upstream ID.
 `bucket_id` | The bucket_id it belongs to
-`server_url` | The server URL or IP
+`server` | The server URL or IP
 `port` | The port it uses to call the server
 
 ### Code Samples
@@ -8010,66 +8010,66 @@ Parameter | Description |
     <pre>
 type = 'pull'
 id = '96061'
-params = {"server_url"=> "http://cdn.somedomain.com","server"=> "http://cdn.somedomain.com","port"=> "80"}
+params = {"server"=> "http://cdn.somedomain.com","server"=> "http://cdn.somedomain.com","port"=> "80"}
 api.post('/zones/'+type+'/'+id+'/upstream.json', params)</pre>
 <h3>Reseller API</h3>
 <pre>
 type = 'pull'
 id = '96061'
-params = {"server_url"=> "http://cdn.somedomain.com","server"=> "http://cdn.somedomain.com","port"=> "80"}
+params = {"server"=> "http://cdn.somedomain.com","server"=> "http://cdn.somedomain.com","port"=> "80"}
 api.post('/clients/{id}/zones/'+type+'/'+id+'/upstream.json', params)</pre>
   </div>
   <div class="tab-pane" id="python66">
     <pre>
 type = 'pull'
 id = '96061'
-params = {"server_url": "http://cdn.somedomain.com","server": "http://cdn.somedomain.com","port": "80"}
+params = {"server": "http://cdn.somedomain.com","server": "http://cdn.somedomain.com","port": "80"}
 api.post('/zones/'+type+'/'+id+'/upstream.json', params)</pre>
 <h3>Reseller API</h3>
 <pre>
 type = 'pull'
 id = '96061'
-params = {"server_url": "http://cdn.somedomain.com","server": "http://cdn.somedomain.com","port": "80"}
+params = {"server": "http://cdn.somedomain.com","server": "http://cdn.somedomain.com","port": "80"}
 api.post('/clients/{id}/zones/'+type+'/'+id+'/upstream.json', params)</pre>
   </div>
     <div class="tab-pane" id="perl66">
     <pre>
 my $id = 96061;
 my $type = "pull";
-my @params = {server_url => 'http://cdn.somedomain.com', server => 'http://cdn.somedomain.com', port => '80'};
+my @params = {server => 'http://cdn.somedomain.com', server => 'http://cdn.somedomain.com', port => '80'};
 $api->post("/zones/" . $type . "/" . $id . "/upstream.json", @params);</pre>
 <h3>Reseller API</h3>
 <pre>
 my $id = 96061;
 my $type = "pull";
-my @params = {server_url => 'http://cdn.somedomain.com', server => 'http://cdn.somedomain.com', port => '80'};
+my @params = {server => 'http://cdn.somedomain.com', server => 'http://cdn.somedomain.com', port => '80'};
 $api->post("/clients/{id}/zones/" . $type . "/" . $id . "/upstream.json", @params);</pre>
   </div>
   <div class="tab-pane" id="php66">
     <pre>
 $type = 'pull';
 $id = '96061';
-$params = array("server_url"=>"http://cdn.somedomain.com","server"=>"http://cdn.somedomain.com","port"=>"80");
+$params = array("server"=>"http://cdn.somedomain.com","server"=>"http://cdn.somedomain.com","port"=>"80");
 $api->post('/zones/'.$type.'/'.$id.'/upstream.json', $params);</pre>
 <h3>Reseller API</h3>
 <pre>
 $type = 'pull';
 $id = '96061';
-$params = array("server_url"=>"http://cdn.somedomain.com","server"=>"http://cdn.somedomain.com","port"=>"80");
+$params = array("server"=>"http://cdn.somedomain.com","server"=>"http://cdn.somedomain.com","port"=>"80");
 $api->post('/clients/{id}/zones/'.$type.'/'.$id.'/upstream.json', $params);</pre>
   </div>
   <div class="tab-pane" id="node66">
   <pre>
 var type = 'pull'
 var id = '96061'
-api.post('/zones/' + type + '/' + id + '/upstream.json', { server_url: 'http://cdn.somedomain.com', server: 'http://cdn.somedomain.com', port: '80' }, function(err, response) {
+api.post('/zones/' + type + '/' + id + '/upstream.json', { server: 'http://cdn.somedomain.com', server: 'http://cdn.somedomain.com', port: '80' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
 <h3>Reseller API</h3>
 <pre>
 var type = 'pull'
 var id = '96061'
-api.post('/clients/{id}/zones/' + type + '/' + id + '/upstream.json', { server_url: 'http://cdn.somedomain.com', server: 'http://cdn.somedomain.com', port: '80' }, function(err, response) {
+api.post('/clients/{id}/zones/' + type + '/' + id + '/upstream.json', { server: 'http://cdn.somedomain.com', server: 'http://cdn.somedomain.com', port: '80' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8080,7 +8080,7 @@ int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 
-api.Post("/zones/" + type + "/" + zoneID + "/upstream.json", "server_url=http://cdn.somedomain.com&server=http://cdn.somedomain.com&port=80");
+api.Post("/zones/" + type + "/" + zoneID + "/upstream.json", "server=http://cdn.somedomain.com&server=http://cdn.somedomain.com&port=80");
 </pre>
 <h3>Reseller API</h3>
 <pre>
@@ -8089,7 +8089,7 @@ int zoneID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Zone type: \n");
 string type = Console.ReadLine();
 
-api.Post("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json", "server_url=http://cdn.somedomain.com&server=http://cdn.somedomain.com&port=80");
+api.Post("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json", "server=http://cdn.somedomain.com&server=http://cdn.somedomain.com&port=80");
 </pre>
   </div>
   <div class="tab-pane" id="response66">
@@ -8113,7 +8113,7 @@ Update the Upstream information for the specified {zone_id}.
 Parameter | Default Value | Validation | Description |
 --- | --- | --- | --- | ---
 `upstream_id` | - | <span class="label important">required</span><br /> | The Upstream Information you're modifying
-`server_url` | - | <span class="label important">required</span><br /> | The server URL or IP
+`server` | - | <span class="label important">required</span><br /> | The server URL or IP
 `port` | - | <span class="label important">required</span><br /> | The port used to call the server
 
 
@@ -8123,7 +8123,7 @@ Parameter | Description |
 --- | --- | ---
 `id` | The Upstream ID.
 `bucket_id` | The bucket_id it belongs to
-`server_url` | The server URL or IP
+`server` | The server URL or IP
 `port` | The port it uses to call the server
 
 ### Code Samples
@@ -8144,14 +8144,14 @@ Parameter | Description |
 type = 'pull'
 id = '96061'
 upstream_id = '123'
-params = {"upstream_id"=> "93013","server_url"=> "http://somedomain.com","port"=> "80"}
+params = {"upstream_id"=> "93013","server"=> "http://somedomain.com","port"=> "80"}
 api.put('/zones/'+type+'/'+id+'/upstream.json/'+upstream_id, params)</pre>
 <h3>Reseller API</h3>
 <pre>
 type = 'pull'
 id = '96061'
 upstream_id = '123'
-params = {"upstream_id"=> "93013","server_url"=> "http://somedomain.com","port"=> "80"}
+params = {"upstream_id"=> "93013","server"=> "http://somedomain.com","port"=> "80"}
 api.put('/clients/{id}/zones/'+type+'/'+id+'/upstream.json/'+upstream_id, params)</pre>
   </div>
   <div class="tab-pane" id="python67">
@@ -8159,14 +8159,14 @@ api.put('/clients/{id}/zones/'+type+'/'+id+'/upstream.json/'+upstream_id, params
 type = 'pull'
 id = '96061'
 upstream_id = '123'
-params = {"upstream_id": "93013","server_url": "http://somedomain.net","port": "80"}
+params = {"upstream_id": "93013","server": "http://somedomain.net","port": "80"}
 api.put('/zones/'+type+'/'+id+'/upstream.json/'+upstream_id, params)</pre>
 <h3>Reseller API</h3>
 <pre>
 type = 'pull'
 id = '96061'
 upstream_id = '123'
-params = {"upstream_id": "93013","server_url": "http://somedomain.net","port": "80"}
+params = {"upstream_id": "93013","server": "http://somedomain.net","port": "80"}
 api.put('/clients/{id}/zones/'+type+'/'+id+'/upstream.json/'+upstream_id, params)</pre>
   </div>
     <div class="tab-pane" id="perl67">
@@ -8174,13 +8174,13 @@ api.put('/clients/{id}/zones/'+type+'/'+id+'/upstream.json/'+upstream_id, params
 my $id = 96061;
 my $type = "pull";
 my $upstream_id = "123";
-my @params = ('upstream_id=93013', 'server_url=http://somedomain.net', 'port=80');
+my @params = ('upstream_id=93013', 'server=http://somedomain.net', 'port=80');
 $api->put("/zones/" . $type . "/" . $id . "/upstream.json/" . $upstream_id, @params);</pre>
 <h3>Reseller API</h3>
 <pre>my $id = 96061;
 my $type = "pull";
 my $upstream_id = "123";
-my @params = ('upstream_id=93013', 'server_url=http://somedomain.net', 'port=80');
+my @params = ('upstream_id=93013', 'server=http://somedomain.net', 'port=80');
 $api->put("/clients/{id}/zones/" . $type . "/" . $id . "/upstream.json/" . $upstream_id, @params);</pre>
   </div>
   <div class="tab-pane" id="php67">
@@ -8188,13 +8188,13 @@ $api->put("/clients/{id}/zones/" . $type . "/" . $id . "/upstream.json/" . $upst
 $type = 'pull';
 $id = '96061';
 $upstream_id = '123';
-$params = array("upstream_id"=>"93013","server_url"=>"http://somedomain.net","port"=>"80");
+$params = array("upstream_id"=>"93013","server"=>"http://somedomain.net","port"=>"80");
 $api->put('/zones/' . $type . '/' . $id . '/upstream.json/' . $upstream_id, $params);</pre>
 <h3>Reseller API</h3>
 <pre>$type = 'pull';
 $id = '96061';
 $upstream_id = '123';
-$params = array("upstream_id"=>"93013","server_url"=>"http://somedomain.net","port"=>"80");
+$params = array("upstream_id"=>"93013","server"=>"http://somedomain.net","port"=>"80");
 $api->put('/clients/{id}/zones/' . $type . '/' . $id . '/upstream.json/' . $upstream_id, $params);</pre>
   </div>
   <div class="tab-pane" id="node67">
@@ -8202,7 +8202,7 @@ $api->put('/clients/{id}/zones/' . $type . '/' . $id . '/upstream.json/' . $upst
 var type = 'pull'
 var id = '96061'
 var upstream_id = '123'
-api.put('/zones/' + type + '/' + id + '/upstream.json/' + upstream_id, { upstream_id: '93013', server_url: 'http://somedomain.net', port: '80' }, function(err, response) {
+api.put('/zones/' + type + '/' + id + '/upstream.json/' + upstream_id, { upstream_id: '93013', server: 'http://somedomain.net', port: '80' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
 <h3>Reseller API</h3>
@@ -8210,7 +8210,7 @@ api.put('/zones/' + type + '/' + id + '/upstream.json/' + upstream_id, { upstrea
 var type = 'pull'
 var id = '96061'
 var upstream_id = '123'
-api.put('/clients/{id}/zones/' + type + '/' + id + '/upstream.json/' + upstream_id, { upstream_id: '93013', server_url: 'http://somedomain.net', port: '80' }, function(err, response) {
+api.put('/clients/{id}/zones/' + type + '/' + id + '/upstream.json/' + upstream_id, { upstream_id: '93013', server: 'http://somedomain.net', port: '80' }, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
   </div>
@@ -8225,7 +8225,7 @@ int upstreamID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Upstream ID: \n");
 int upstream_id = Convert.ToInt32(Console.ReadLine());
 
-api.Put("/zones/" + type + "/" + zoneID + "/upstream.json/" + upstream_id, "upstream_id=" + upstreamID + "&server_url=http://somedomain.com&port=80");
+api.Put("/zones/" + type + "/" + zoneID + "/upstream.json/" + upstream_id, "upstream_id=" + upstreamID + "&server=http://somedomain.com&port=80");
 </pre>
 <h3>Reseller API</h3>
 <pre>
@@ -8238,7 +8238,7 @@ int upstreamID = Convert.ToInt32(Console.ReadLine());
 Console.Write("Upstream ID: \n");
 int upstream_id = Convert.ToInt32(Console.ReadLine());
 
-api.Put("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json/" + upstream_id, "upstream_id=" + upstreamID + "&server_url=http://somedomain.com&port=80");
+api.Put("/clients/{id}/zones/" + type + "/" + zoneID + "/upstream.json/" + upstream_id, "upstream_id=" + upstreamID + "&server=http://somedomain.com&port=80");
 </pre>
   </div>
   <div class="tab-pane" id="response67">
