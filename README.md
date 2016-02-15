@@ -8434,31 +8434,31 @@ api.get('/clients/{id}/reports/stats.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl69">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/stats.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/clients/{id}/reports/stats.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php69">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/stats.json/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/clients/{id}/reports/stats.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node69">
   <pre>
-var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/stats.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
 <h3>Reseller API</h3>
 <pre>
-var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/clients/{id}/reports/stats.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
@@ -8558,31 +8558,31 @@ api.get('/clients/{id}/reports/statsbyzone.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl100">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/statsbyzone.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/clients/{id}/reports/statsbyzone.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php100">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/statsbyzone.json/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/clients/{id}/reports/statsbyzone.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node100">
   <pre>
-var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/statsbyzone.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
 <h3>Reseller API</h3>
 <pre>
-var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/clients/{id}/reports/statsbyzone.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
@@ -8718,37 +8718,37 @@ api.get('/clients/{id}/reports/'+id+'/stats.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl70">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/stats.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/clients/{id}/reports/" . $id . "/stats.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php70">
     <pre>
 $id = '96061';
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/'.$id.'/stats.json/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
 $id = '96061';
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/clients/{id}/reports/'.$id.'/stats.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node70">
   <pre>
 var id = '96061'
-var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/' + id + '/stats.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
 <h3>Reseller API</h3>
 <pre>
 var id = '96061'
-var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/clients/{id}/reports/' + id + '/stats.json/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
@@ -9172,31 +9172,31 @@ api.get('/clients/{id}/reports/nodes.json/stats'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl73">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/nodes.json/stats" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/clients/{id}/reports/nodes.json/stats" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php73">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/nodes.json/stats/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/clients/{id}/reports/nodes.json/stats/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node73">
   <pre>
-var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/nodes.json/stats/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
 <h3>Reseller API</h3>
 <pre>
-var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/clients/{id}/reports/nodes.json/stats/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
@@ -9395,37 +9395,37 @@ api.get('/clients/{id}/reports/'+id+'/nodes.json/stats'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl74">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/nodes.json/stats" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/clients/{id}/reports/" . $id . "/nodes.json/stats" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php74">
     <pre>
 $id = '96061';
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/'.$id.'/nodes.json/stats/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
 $id = '96061';
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/clients/{id}/reports/'.$id.'/nodes.json/stats/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node74">
   <pre>
 var id = '96061'
-var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/reports/' + id + '/nodes.json/stats/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
 <h3>Reseller API</h3>
 <pre>
 var id = '96061'
-var reportType = '' //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+var reportType = '' //Valid input includes '/daily', '/hourly', '/monthly' or ''
 api.get('/clients/{id}/reports/' + id + '/nodes.json/stats/' + reportType, function(err, response) {
   console.log('err', err, 'response', response)
 })</pre>
@@ -9768,24 +9768,24 @@ api.get('/clients/{id}/reports/nodes.json/'+id+'/stats'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl77">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 1;
 $api->get("/reports/nodes.json/" . $id . "/stats" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 1;
 $api->get("/clients/{id}/reports/nodes.json/" . $id . "/stats" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php77">
     <pre>
 $id = '1';
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/nodes.json/'.$id.'/stats/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
 $id = '1';
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/clients/{id}/reports/nodes.json/'.$id.'/stats/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node77">
@@ -9914,13 +9914,13 @@ api.get('/clients/{id}/reports/'+zoneId+'/nodes.json/'+nodeId+'/stats'+reportTyp
   </div>
     <div class="tab-pane" id="perl78">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $zoneId = 96061;
 my $nodeId = 1;
 $api->get("/reports/" . $zoneId . "/nodes.json/" . $nodeId . "/stats" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $zoneId = 96061;
 my $nodeId = 1;
 $api->get("/clients/{id}/reports/" . $zoneId . "/nodes.json/" . $nodeId . "/stats" . $reportType);</pre>
@@ -9929,13 +9929,13 @@ $api->get("/clients/{id}/reports/" . $zoneId . "/nodes.json/" . $nodeId . "/stat
     <pre>
 $zoneId='96061';
 $nodeId='1';
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/'.$zoneId.'/nodes.json/'.$nodeId.'/stats/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
 $zoneId='96061';
 $nodeId='1';
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/clients/{id}/reports/'.$zoneId.'/nodes.json/'.$nodeId.'/stats/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node78">
@@ -10300,20 +10300,20 @@ api.get('/clients/{id}/reports/statuscodes.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl81">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/statuscodes.json/" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/clients/{id}/reports/statuscodes.json/" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php81">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/statuscodes.json/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/clients/{id}/reports/statuscodes.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node81">
@@ -10429,23 +10429,23 @@ api.get('/clients/{id}/reports/'+id+'/statuscodes.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl82">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/statuscodes.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/clients/{id}/reports/" . $id . "/statuscodes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php82">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/reports/'.$id.'/statuscodes.json/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/clients/{id}/reports/'.$id.'/statuscodes.json/'.$reportType);</pre>
   </div>
@@ -10561,23 +10561,23 @@ api.get('/clients/{id}/reports/'+zoneType+'/statuscodes.json'+reportType)</pre>
   </div>
     <div class="tab-pane" id="perl83">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 $api->get("/reports/" . $zoneType . "/statuscodes.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 $api->get("/clients/{id}/reports/" . $zoneType . "/statuscodes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php83">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $api->get('/reports/'.$zoneType.'/statuscodes.json/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $api->get('/clients/{id}/reports/'.$zoneType.'/statuscodes.json/'.$reportType);</pre>
   </div>
@@ -10706,26 +10706,26 @@ api.get('/clients/{id}/reports/'+zoneType+'/'+id+'/statuscodes.json'+reportType)
   </div>
     <div class="tab-pane" id="perl84">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 my $zoneType = "pull";
 $api->get("/reports/" . $zoneType . "/" . $id . "/statuscodes.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 my $zoneType = "pull";
 $api->get("/clients/{id}/reports/" . $zoneType . "/" . $id . "/statuscodes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php84">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $id = '96061';
 $api->get('/reports/'.$zoneType.'/'.$id.'/statuscodes.json/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $id = '96061';
 $api->get('/clients/{id}/reports/'.$zoneType.'/'.$id.'/statuscodes.json/'.$reportType);</pre>
@@ -10845,20 +10845,20 @@ api.get('/clients/{id}/reports/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl85">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/filetypes.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/clients/{id}/reports/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php85">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/filetypes.json'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/clients/{id}/reports/filetypes.json'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node85">
@@ -10975,23 +10975,23 @@ api.get('/clients/{id}/reports/'+id+'/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl86">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/filetypes.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/clients/{id}/reports/" . $id . "/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php86">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/reports/'.$id.'/filetypes.json/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/clients/{id}/reports/'.$id.'/filetypes.json/'.$reportType);</pre>
   </div>
@@ -11102,23 +11102,23 @@ api.get('/clients/{id}/reports/'+zoneType+'/filetypes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl87">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 $api->get("/reports/" . $zoneType . "/filetypes.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 $api->get("/clients/{id}/reports/" . $zoneType . "/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php87">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $api->get('/reports/'.$zoneType.'/filetypes.json'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $api->get('/clients/{id}/reports/'.$zoneType.'/filetypes.json'.$reportType);</pre>
   </div>
@@ -11248,26 +11248,26 @@ api.get('/clients/{id}/reports/'+zoneType+'/'+id+'/filetypes.json'+reportType)</
   </div>
   <div class="tab-pane" id="perl88">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 my $id = 96061;
 $api->get("/reports/" . $zoneType . "/" . $id . "/filetypes.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 my $id = 96061;
 $api->get("/clients/{id}/reports/" . $zoneType . "/" . $id . "/filetypes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php88">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $id = '96061';
 $api->get('/reports/'.$zoneType.'/'.$id.'/filetypes.json/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $id = '96061';
 $api->get('/clients/{id}/reports/'.$zoneType.'/'.$id.'/filetypes.json/'.$reportType);</pre>
@@ -11399,20 +11399,20 @@ api.get('/clients/{id}/reports/filesizes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl89">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/filesizes.json/" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/clients/{id}/reports/filesizes.json/" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php89">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/filesizes.json/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/clients/{id}/reports/filesizes.json/'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node89">
@@ -11535,23 +11535,23 @@ api.get('/clients/{id}/reports/'+id+'/filesizes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl90">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/filesizes.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/clients/{id}/reports/" . $id . "/filesizes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php90">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/reports/'.$id.'/filesizes.json'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/clients/{id}/reports/'.$id.'/filesizes.json'.$reportType);</pre>
   </div>
@@ -11692,12 +11692,12 @@ api.get('/clients/{id}/reports/'+zoneType+'/filesizes.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="php91">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $api->get('/reports/'.$zoneType.'/filesizes.json'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $api->get('/clients/{id}/reports/'.$zoneType.'/filesizes.json'.$reportType);</pre>
   </div>
@@ -11832,26 +11832,26 @@ api.get('/clients/{id}/reports/'+zoneType+'/'+id+'/filesizes.json'+reportType)</
   </div>
   <div class="tab-pane" id="perl92">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 my $id = 96061;
 $api->get("/reports/" . $zoneType . "/" . $id . "/filesizes.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $zoneType = "pull";
 my $id = 96061;
 $api->get("/clients/{id}/reports/" . $zoneType . "/" . $id . "/filesizes.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php92">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $id = '96061';
 $api->get('/reports/'.$zoneType.'/'.$id.'/filesizes.json/'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $zoneType = 'pull';
 $id = '96061';
 $api->get('/clients/{id}/reports/'.$zoneType.'/'.$id.'/filesizes.json/'.$reportType);</pre>
@@ -11983,20 +11983,20 @@ api.get('/clients/{id}/reports/statsbydir.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl93">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/reports/statsbydir.json" . $reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 $api->get("/clients/{id}/reports/statsbydir.json" . $reportType);</pre>
   </div>
   <div class="tab-pane" id="php93">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/reports/statsbydir.json'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $api->get('/clients/{id}/reports/statsbydir.json'.$reportType);</pre>
   </div>
   <div class="tab-pane" id="node93">
@@ -12112,25 +12112,25 @@ api.get('/clients/{id}/reports/'+id+'/statsbydir.json'+reportType)</pre>
   </div>
   <div class="tab-pane" id="perl94">
     <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/reports/" . $id . "/statsbydir.json" . $reportType);
 </pre>
 <h3>Reseller API</h3>
 <pre>
-my $reportType = ""; #Vaild input includes /daily, /hourly, /monthly or ""
+my $reportType = ""; #Valid input includes /daily, /hourly, /monthly or ""
 my $id = 96061;
 $api->get("/clients/{id}/reports/" . $id . "/statsbydir.json" . $reportType);
 </pre>
   </div>
   <div class="tab-pane" id="php94">
     <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/reports/'.$id.'/statsbydir.json'.$reportType);</pre>
 <h3>Reseller API</h3>
 <pre>
-$reportType = ''; //Vaild input includes '/daily', '/hourly', '/monthly' or ''
+$reportType = ''; //Valid input includes '/daily', '/hourly', '/monthly' or ''
 $id = '96061';
 $api->get('/clients/{id}/reports/'.$id.'/statsbydir.json'.$reportType);</pre>
   </div>
